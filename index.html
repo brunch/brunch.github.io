@@ -12,6 +12,16 @@
       ul, ol {
         list-style-type: square;
       }
+      #header {
+        color: #FFFFFF;
+      }
+      #header h1 div {
+        font-size: 62px;
+      }
+      #header h1 p.tagline {
+        margin-top: 0;
+        font-size: 30px;
+      }
       #page {
         background: #FFFFFF;
         width: 960px;
@@ -31,23 +41,18 @@
         color: #939393;
         font-weight: normal;
         line-height: 32px;
-      }        
-      h1 div {
-        font-size: 62px;
-      }
-      h1 p.tagline {
-        margin-top: 0;
-        font-size: 30px;
       }
     </style>
     <title>brunch - with coffee</title>
   </head>
   <body>
-    <div id="page">
+    <div id="header">
       <h1>
         <div>brunch</div>
         <p class="tagline">with coffee</p>
       </h1>
+    </div>
+    <div id="page">
       <p class="teaser">
       brunch is an opinionated client side framework with REST, HTML and CSS in mind.
       </p>
