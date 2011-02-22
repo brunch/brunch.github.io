@@ -21,6 +21,7 @@
         height: 140px;
         margin: 22px auto 0 auto;
         background: #A1AFC9 url('/static/img/logo.png') no-repeat -13px 10px;
+        cursor: pointer;
       }
       #page {
         background: #FFFFFF;
@@ -57,7 +58,7 @@
     <title>brunch - with coffee</title>
   </head>
   <body>
-    <div id="header">
+    <div id="header" onclick="window.location.reload(true)">
     </div>
     <div id="page">
       <h2>About</h2>
@@ -65,7 +66,7 @@
       A lightweight approach to building HTML5 applications<br>with emphasis on elegance and simplicity.
       </p>
 
-      <h3>Standing on the Shoulders of Giants <a href="http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants#Application_to_the_free_software_movement">*</a></h3>
+      <h3 id='standing-on-the-shoulders-of-giants'>Standing on the Shoulders of Giants <a href="http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants#Application_to_the_free_software_movement">*</a></h3>
       <p>Instead of reinventing the wheel, brunch assembles awesome wheels.</p>
       <ul>
         <li><a href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a></li>
@@ -75,7 +76,15 @@
         <li><a href="http://jquery.com/">jQuery</a> & <a href="http://zeptojs.com/">Zepto.js</a></li>
       </ul>
 
-      <h3>Getting Started</h3>
+      <h3 id='examples'>Examples</h3>
+
+      <strong>brunch colors</strong>
+      <p>A simple puzzle game with CouchDb backend. <a href="http://brunch-colors.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/brunch_colors_game">code</a></p>
+
+      <strong>brunch events</strong>
+      <p>A simple event manager with facebook connect support. <a href="http://facebook-events.appspot.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/facebook-events">code</a></p>
+
+      <h3 id='getting-started'>Getting Started</h3>
 
       <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a>
       <code>
@@ -95,7 +104,7 @@
 
       <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
       
-      <h3>Open Source Licensed</h3>
+      <h3 id='open-source-licensed'>Open Source Licensed</h3>
       <p>brunch may be freely distributed under the MIT license</p>
       <p class="footer"></div>
       <div id="fork-me">
