@@ -35,6 +35,19 @@
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
+        overflow: auto;
+      }
+      #content {
+        width: 700px;
+        float: left;
+      }
+      #sidebar {
+        padding-top: 35px;
+      }
+      #sidebar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
       }
       h2, h3 {
         font: 35px 'Droid Sans', Arial, sans-serif;
@@ -65,68 +78,78 @@
     <div id="header" onclick="window.location.reload(true)">
     </div>
     <div id="page">
-      <h2>About</h2>
-      <p class="teaser">
-      A lightweight approach to building HTML5 applications<br>with emphasis on elegance and simplicity.
-      </p>
+      <div id="content">
+        <h2>About</h2>
+        <p class="teaser">
+        A lightweight approach to building HTML5 applications<br>with emphasis on elegance and simplicity.
+        </p>
 
-      <h3 id='standing-on-the-shoulders-of-giants'>Standing on the Shoulders of Giants <a href="http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants#Application_to_the_free_software_movement">*</a></h3>
-      <p>Instead of reinventing the wheel, brunch assembles awesome wheels.</p>
-      <ul>
-        <li><a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a></li>
-        <li><a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a></li>
-        <li><a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a></li>
-        <li><a href="https://github.com/sstephenson/eco" target="_blank">Eco</a></li>
-        <li><a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a></li>
-        <li><a href="http://jashkenas.github.com/docco/" target="_blank">Docco</a></li>
-        <li><a href="http://jquery.com/" target="_blank">jQuery</a> & <a href="http://zeptojs.com/" target="_blank">Zepto.js</a></li>
-      </ul>
+        <h3 id='standing-on-the-shoulders-of-giants'>Standing on the Shoulders of Giants <a href="http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants#Application_to_the_free_software_movement">*</a></h3>
+        <p>Instead of reinventing the wheel, brunch assembles awesome wheels.</p>
+        <ul>
+          <li><a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a></li>
+          <li><a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a></li>
+          <li><a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a></li>
+          <li><a href="https://github.com/sstephenson/eco" target="_blank">Eco</a></li>
+          <li><a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a></li>
+          <li><a href="http://jashkenas.github.com/docco/" target="_blank">Docco</a></li>
+          <li><a href="http://jquery.com/" target="_blank">jQuery</a> & <a href="http://zeptojs.com/" target="_blank">Zepto.js</a></li>
+        </ul>
 
-      <h3 id='examples'>Examples</h3>
+        <h3 id='examples'>Examples</h3>
 
-      <strong>brunch colors</strong>
-      <p>A simple puzzle game with CouchDB backend. <a href="http://brunch-colors.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/brunch_colors_game">code</a></p>
+        <strong>brunch colors</strong>
+        <p>A simple puzzle game with CouchDB backend. <a href="http://brunch-colors.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/brunch_colors_game">code</a></p>
 
-      <strong>brunch events</strong>
-      <p>A simple event manager with facebook connect support. <a href="http://facebook-events.appspot.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/facebook-events">code</a></p>
+        <strong>brunch events</strong>
+        <p>A simple event manager with facebook connect support. <a href="http://facebook-events.appspot.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/facebook-events">code</a></p>
 
-      <h3 id='getting-started'>Getting Started</h3>
+        <h3 id='getting-started' name="getting-started">Getting Started</h3>
 
-      <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a>
-      <code>
-        npm install brunch
-      </code>
+        <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a>
+        <code>
+          npm install brunch
+        </code>
 
-      <p>Once installed, you can create a new project using</p>
-      <code>
-        brunch new $proj
-      </code>
-      <p>where $proj is the namespace you want to use for your application (e.g. 'app').
+        <p>Once installed, you can create a new project using</p>
+        <code>
+          brunch new $proj
+        </code>
+        <p>where $proj is the namespace you want to use for your application (e.g. 'app').
 
-      <p>This will create the initial project structure for you. Then you can start the file-watcher using</p>
-      <code>
-        brunch watch
-      </code>
+        <p>This will create the initial project structure for you. Then you can start the file-watcher using</p>
+        <code>
+          brunch watch
+        </code>
 
-      <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
+        <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
       
-      <h3 id='open-source-licensed'>Open Source Licensed</h3>
+        <h3 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h3>
 
-      <p>brunch may be freely distributed under the MIT license</p>
+        <p>brunch may be freely distributed under the MIT license</p>
 
-      <h3 id='who-is-already-enjoying-brunch'>Who is already enjoying brunch?</h3>
+        <h3 id='who-is-already-enjoying-brunch' name="who-uses-brunch">Who is already enjoying brunch?</h3>
 
-      <p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Please drop us a line!</p>
+        <p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Please drop us a line!</p>
 
-      <img id="peers" src="/static/img/peers.jpg" width="718" height="98" alt="Who is already enjoying brunch?" title="Who is already enjoying brunch?">
+        <img id="peers" src="/static/img/peers.jpg" width="718" height="98" alt="Who is already enjoying brunch?" title="Who is already enjoying brunch?">
 
-      <p class="footer"></div>
-      <div id="fork-me">
-        <a href="https://github.com/brunch/brunch">
-          <img style="position: fixed; top: 0; right: 0; border: 0;"
-               src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-               alt="Fork me on GitHub">
-        </a>
+        <p class="footer"></div>
+        <div id="sidebar">
+          <ul id="nav">
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#open-source-licensed">Open Source Licensed</a></li>
+            <li><a href="#who-uses-brunch">Who is already enjoying brunch?</a></li>
+          </ul>
+        </div>
+        <div id="fork-me">
+          <a href="https://github.com/brunch/brunch">
+            <img style="position: fixed; top: 0; right: 0; border: 0;"
+                 src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+                 alt="Fork me on GitHub">
+          </a>
+        </div>
       </div>
     </div>
   </body>
