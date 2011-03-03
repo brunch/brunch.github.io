@@ -71,6 +71,10 @@
         margin: 0 auto;
         display: block;
       }
+      
+      code{
+        padding-left: 20px;
+      }
     </style>
     <title>brunch - with coffee</title>
   </head>
@@ -104,12 +108,23 @@
         <strong>brunch events</strong>
         <p>A simple event manager with facebook connect support. <a href="http://facebook-events.appspot.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/facebook-events">code</a></p>
 
-        <h3 id='getting-started' name="getting-started">Getting Started</h3>
+        <h3 id='installing' name="getting-started">Installing</h3>
 
-        <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a>
+        <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a></p>
+          
         <code>
           npm install brunch
         </code>
+        
+        <p>
+          If you get errors when creating projects, install pygments - it is required by Docco.
+        </p>
+        
+        <code>
+          easy_install pygments
+        </code>
+
+        <h3 id='getting-started' name="getting-started">Getting Started</h3>
 
         <p>Once installed, you can create a new project using</p>
         <code>
