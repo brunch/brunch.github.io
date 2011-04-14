@@ -74,7 +74,7 @@
         font-size: 18px;
       }
       h5 {
-        font-size: 14px;
+        font-size: 16px;
       }
       p.teaser {
         font: 24px 'Droid Sans', Arial, sans-serif;
@@ -107,6 +107,7 @@
         <p>Instead of reinventing the wheel, brunch assembles awesome wheels.</p>
         <ul>
           <li><a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a></li>
+          <li><a href="https://github.com/sstephenson/stitch" target="_blank">Stitch</a></li>
           <li><a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a></li>
           <li><a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a></li>
           <li><a href="https://github.com/sstephenson/eco" target="_blank">Eco</a></li>
@@ -222,6 +223,78 @@
           <li><a href="https://github.com/wavded/vim-stylus">Stylus</a></li>
         </ul>
 
+        <h4 id="migrate-to-0-7-0-plus">Migrate to 0.7.0+</h4>
+
+        <p>Since 0.7.0 brunch uses stitch which comes with a CommonJS modules implementation. This led to the fact, that developers have to require modules and export variables and functions manually. See an upgrade example here: <a href="https://github.com/brunch/example-todos/commits/master">https://github.com/brunch/example-todos/commits/master</a></p>
+
+        <h5>Update Vendor</h5>
+
+        <p>First of all you need to remove brunch-0.x.js file from brunch/src/vendor and instead add these files:</p>
+
+        <ul>
+          <li>backbone-master.js</li>
+          <li>ConsoleDummy.js</li>
+          <li>jquery-1.5.2.js</li>
+          <li>underscore-1.1.5.js</li>
+        </ul>
+
+        <p>You can find them by creating a new brunch app in src/vendor</p>
+
+        <h5>Update index.html</h5>
+
+        <p>Replace all your 'script' tags by</p>
+
+        <pre><code>
+          &lt;script src="web/js/app.js"&gt;&lt;/script&gt;
+          &lt;script&gt;require('main');&lt;/script&gt;
+        </code></pre>
+
+        <h5>Modules</h5>
+
+        <p>For everything which should be visible in another file you need to export it. For example a Todo Model should change from</p>
+
+        <pre>
+        <code>
+          class Todo extends Backbone.Model
+        </code>
+        <span>to</span>
+        <code>
+          class exports.Todo extends Backbone.Model
+        </code>
+        </pre>
+
+        <p>If you want to use any object or function from another module you need to require it. For example if the Todo model is used in Todos collection you need to add this piece of code to todos_collection.coffee.</p>
+
+        <pre><code>
+          Todo = require('models/todo_model').Todo
+        </code></pre>
+
+        <p>Stitch also compiles templates. So you have to require them as well.</p>
+
+        <pre><code>
+          homeTemplate = require('templates/home')
+
+          class exports.HomeView extends Backbone.View
+            render: -&gt;
+              @$(@el).html homeTemplate()
+        </code></pre>
+
+        <h5>Cleanup Directory Structure</h5>
+
+        <p>You now can remove these legacy files/directories</p>
+
+        <ul>
+          <li>brunch/build/web/js/concatenation.js</li>
+          <li>brunch/build/web/js/templates.js</li>
+          <li>brunch/build/web/js/vendor</li>
+          <li>brunch/config</li>
+          <li>docs (keep it in case you still want to use docco manually)</li>
+        </ul>
+
+        <h5>Weeeee, it's done!</h5>
+
+        <p>Congratulation you have upgraded you application.</p>
+
         <h3 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h3>
 
         <p>brunch may be freely distributed under the MIT license</p>
@@ -244,6 +317,7 @@
                 <li><a href="#directory-structure">Directory Structure</a></li>
                 <li><a href="#command-line-interface">Command-line interface</a></li>
                 <li><a href="#editors">Editors</a></li>
+                <li><a href="#migrate-to-0-7-0-plus">Migrate to 0.7.0+</a></li>
               </ol>
             </li>
             <li><a href="#open-source-licensed">Open Source Licensed</a></li>
