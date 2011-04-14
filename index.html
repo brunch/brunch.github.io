@@ -185,6 +185,26 @@
 
         <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to it's generated output.</p>
 
+        <h4 id="command-line-interface">Command-line interface</h4>
+
+        <ul>
+          <li>brunch new [&lt;path&gt;]</li>
+          <li>brunch build [&lt;path&gt;]</li>
+          <li>brunch watch [&lt;path&gt;]</li>
+        </ul>
+
+        <p>Usually in all commands you don't need to specify a directory path, because it falls back to it's default 'brunch'.</p>
+
+        <h5>Available Options</h5>
+
+        <ul>
+          <li>-ep &lt;port&gt;, --expressPort=&lt;port&gt; set the port when using the express project template ('brunch watch')</li>
+          <li>-p &lt;template&gt;, --projectTemplate=&lt;template&gt;	set which kind of project template should be used ('brunch new')</li>
+          <li>-v, --version	display brunch version</li>
+          <li>-h, --help display brunch help</li>
+          <li>-o, --output set build path</li>
+        </ul>
+
         <h4 id="editors">Editors</h4>
 
         <h5>Textmate Bundles</h5>
@@ -222,6 +242,7 @@
             <li>
               <ol>
                 <li><a href="#directory-structure">Directory Structure</a></li>
+                <li><a href="#command-line-interface">Command-line interface</a></li>
                 <li><a href="#editors">Editors</a></li>
               </ol>
             </li>
