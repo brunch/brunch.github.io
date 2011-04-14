@@ -161,6 +161,7 @@
               <li>web/</li>
             </ol>
           </li>
+          <li>config.yaml</li>
           <li>src/</li>
           <li>
             <ol>
@@ -180,7 +181,7 @@
           </li>
         </ol>
 
-        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories. They are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in src directory.</p>
+        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories and one file. The directories are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in src directory. 'config.yaml' allows us to set some options. What kind of options will be explaind later in this documentation.</p>
 
         <p>'src' is splitted into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All you models should end up in 'models' directory, views in 'views' and so on.</p>
 
@@ -205,6 +206,24 @@
           <li>-h, --help display brunch help</li>
           <li>-o, --output set build path</li>
         </ul>
+
+        <h4 id="configuration">Congratulation</h4>
+
+        <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for the dependencies. Possible options are:</p>
+
+        <ul>
+          <li>expressPort</li>
+          <li>projectTemplate</li>
+          <li>buildPath</li>
+          <li>dependencies</li>
+        </ul>
+
+        <p>Options from arguments overwrite options from config file.</p>
+
+        <h4 id="dependencies">Dependencies</h4>
+
+        <p>All files from 'vendor' are included to app.js. Dependencies defined in config.yaml will be added in correct order
+        before the rest of the libaries in 'vendor'.</p>
 
         <h4 id="editors">Editors</h4>
 
@@ -316,6 +335,8 @@
               <ol>
                 <li><a href="#directory-structure">Directory Structure</a></li>
                 <li><a href="#command-line-interface">Command-line interface</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#dependencies">Dependencies</a></li>
                 <li><a href="#editors">Editors</a></li>
                 <li><a href="#migrate-to-0-7-0-plus">Migrate to 0.7.0+</a></li>
               </ol>
