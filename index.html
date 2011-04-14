@@ -14,7 +14,8 @@
         text-decoration: none;
       }
       ul, ol {
-        list-style-type: square;
+        list-style-type: none;
+        padding-left: 20px;
       }
       #header {
         width: 960px;
@@ -40,16 +41,24 @@
       #content {
         width: 700px;
         float: left;
+        display: block;
       }
       #sidebar {
         padding-top: 35px;
+        float: left;
+        width: 250px;
+        display: block;
       }
-      #sidebar ul {
+      #sidebar ol {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        margin-left: 10px;
       }
-      h2, h3 {
+      #sidebar ol li ol {
+        font-size: 13px;
+      }
+      h2, h3, h4 {
         font: 35px 'Droid Sans', Arial, sans-serif;
         font-weight: normal;
         color: #363636
@@ -57,9 +66,12 @@
       h3 {
         font-size: 24px;
       }
-      h3 a, h3 a:visited {
+      h3 a, h3 a:visited, h4 a, h4 a:visited {
         color: #939393;
         text-decoration: none;
+      }
+      h4 {
+        font-size: 18px;
       }
       p.teaser {
         font: 24px 'Droid Sans', Arial, sans-serif;
@@ -71,7 +83,7 @@
         margin: 0 auto;
         display: block;
       }
-      
+
       code{
         padding-left: 20px;
       }
@@ -113,7 +125,7 @@
         <h3 id='installing' name="getting-started">Installing</h3>
 
         <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a></p>
-          
+
         <code>
           npm install brunch
         </code>
@@ -131,10 +143,44 @@
         </code>
 
         <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
-        
+
         <h3 id='documentation' name="documentation">Documentation</h3>
 
         <p>We are currently in the process of eliminating some rough edges and some things still need decisions (e.g. testing). Nonetheless we plan to put all our resources into documentation and example apps as soon as possible. In the meantime feel free to consult the <a href="https://github.com/brunch/brunch/wiki">wiki</a> and <a href="https://github.com/brunch/brunch/issues">issue tracker</a> on github. Participation is very welcome.</p>
+
+        <h4 id="directory-structure">Directory Structure</h4>
+
+        <ol>
+          <li>build/</li>
+          <li>
+            <ol>
+              <li>web/</li>
+            </ol>
+          </li>
+          <li>src/</li>
+          <li>
+            <ol>
+              <li>app/</li>
+              <li>
+                <ol>
+                  <li>collections/</li>
+                  <li>controllers/</li>
+                  <li>models/</li>
+                  <li>styles/</li>
+                  <li>templates/</li>
+                  <li>views/</li>
+                </ol>
+              </li>
+              <li>vendor/</li>
+            </ol>
+          </li>
+        </ol>
+
+        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories. They are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in src directory.</p>
+
+        <p>'src' is splitted into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All you models should end up in 'models' directory, views in 'views' and so on.</p>
+
+        <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to it's generated output.</p>
 
         <h3 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h3>
 
@@ -148,14 +194,19 @@
 
         <p class="footer"></div>
         <div id="sidebar">
-          <ul id="nav">
+          <ol id="nav">
             <li><a href="#standing-on-the-shoulders-of-giants">Standing on the Shoulders of Giants</a></li>
             <li><a href="#examples">Examples</a></li>
             <li><a href="#getting-started">Getting Started</a></li>
             <li><a href="#documentation">Documentation</a></li>
+            <li>
+              <ol>
+                <li><a href="#directory-structure">Directory Structure</a></li>
+              </ol>
+            </li>
             <li><a href="#open-source-licensed">Open Source Licensed</a></li>
             <li><a href="#who-is-already-enjoying-brunch">Who is already enjoying brunch?</a></li>
-          </ul>
+          </ol>
         </div>
         <div id="fork-me">
           <a href="https://github.com/brunch/brunch">
