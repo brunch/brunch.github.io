@@ -184,11 +184,11 @@
           </li>
         </ol>
 
-        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories and one file. The directories are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in src directory. 'config.yaml' allows us to set some options. What kind of options will be explaind later in this documentation.</p>
+        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories and one file. The directories are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in the 'src' directory. 'config.yaml' allows us to set some options. What kind of options will be explaind later in this documentation.</p>
 
-        <p>'src' is splitted into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All you models should end up in 'models' directory, views in 'views' and so on.</p>
+        <p>'src' is split into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All your models should end up in the 'models' directory, views in 'views' and so on.</p>
 
-        <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to it's generated output.</p>
+        <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to its generated output.</p>
 
         <h4 id="command-line-interface">Command-line interface</h4>
 
@@ -198,7 +198,7 @@
           <li>brunch watch [&lt;path&gt;]</li>
         </ul>
 
-        <p>Usually in all commands you don't need to specify a directory path, because it falls back to it's default 'brunch'.</p>
+        <p>The path to the project directory is optional. Brunch will look for a directory called 'brunch' in the current working directory, if the path is omitted.</p>
 
         <h5>Available Options</h5>
 
@@ -212,7 +212,7 @@
 
         <h4 id="configuration">Configuration</h4>
 
-        <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for the dependencies. Possible options are:</p>
+        <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for these dependencies. Possible options are:</p>
 
         <ul>
           <li>expressPort</li>
@@ -221,11 +221,11 @@
           <li>dependencies</li>
         </ul>
 
-        <p>Options from arguments overwrite options from config file.</p>
+        <p>Options from the arguments overwrite options from the config file.</p>
 
         <h4 id="dependencies">Dependencies</h4>
 
-        <p>All files from 'vendor' are included to app.js. Dependencies defined in config.yaml will be added in correct order
+        <p>All files from 'vendor' are concatenated to app.js. Dependencies defined in config.yaml will be added in correct order
         before the rest of the libaries in 'vendor'.</p>
 
         <p>Dependencies will be prepended to app.js instead of encapsulated as module.</p>
@@ -249,7 +249,7 @@
 
         <h4 id="migrate-to-0-7-0-plus">Migrate to 0.7.0+</h4>
 
-        <p>Since 0.7.0 brunch uses stitch which comes with a CommonJS modules implementation. This led to the fact, that developers have to require modules and export variables and functions manually. See an upgrade example here: <a href="https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652">https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652</a></p>
+        <p>Since 0.7.0 brunch uses stitch which comes with a CommonJS modules implementation. Therefore developers have to require modules and export variables and functions explicitly. See an upgrade example here: <a href="https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652">https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652</a></p>
 
         <h5>Update Vendor</h5>
 
@@ -270,7 +270,7 @@
 
         <h5>Update index.html</h5>
 
-        <p>Replace all your 'script' tags by</p>
+        <p>Replace all your 'script' tags with</p>
 
         <pre><code>
           &lt;script src="web/js/app.js"&gt;&lt;/script&gt;
@@ -279,7 +279,7 @@
 
         <h5>Modules</h5>
 
-        <p>For everything which should be visible in another file you need to export it. For example a Todo Model should change from</p>
+        <p>You need to explicitly export everything that needs to be visible in another file. For example a Todo Model should change from</p>
 
         <pre>
         <code>
