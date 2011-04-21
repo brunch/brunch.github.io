@@ -7,20 +7,24 @@
         font: 14px Arial, sans-serif;
         line-height: 1.5em;
         color: #343434;
-        background: #A1AFC9;
+        background: #91A2C0;
       }
       a, a:visited {
-        color: #DB672E;
+        color: #F95A5A;
         text-decoration: none;
       }
+      a:hover {
+        color: #665248;
+      }
       ul, ol {
-        list-style-type: square;
+        list-style-type: none;
+        padding-left: 20px;
       }
       #header {
         width: 960px;
-        height: 140px;
+        height: 130px;
         margin: 22px auto 0 auto;
-        background: #A1AFC9 url('/static/img/logo.png') no-repeat -13px 10px;
+        background: url('static/img/logo.png') no-repeat;
         cursor: pointer;
       }
       #page {
@@ -40,16 +44,24 @@
       #content {
         width: 700px;
         float: left;
+        display: block;
       }
       #sidebar {
         padding-top: 35px;
+        float: left;
+        width: 250px;
+        display: block;
       }
-      #sidebar ul {
+      #sidebar ol {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        margin-left: 10px;
       }
-      h2, h3 {
+      #sidebar ol li ol {
+        font-size: 13px;
+      }
+      h2, h3, h4, h5 {
         font: 35px 'Droid Sans', Arial, sans-serif;
         font-weight: normal;
         color: #363636
@@ -57,9 +69,15 @@
       h3 {
         font-size: 24px;
       }
-      h3 a, h3 a:visited {
+      h3 a, h3 a:visited, h4 a, h4 a:visited {
         color: #939393;
         text-decoration: none;
+      }
+      h4 {
+        font-size: 18px;
+      }
+      h5 {
+        font-size: 16px;
       }
       p.teaser {
         font: 24px 'Droid Sans', Arial, sans-serif;
@@ -71,7 +89,7 @@
         margin: 0 auto;
         display: block;
       }
-      
+
       code{
         padding-left: 20px;
       }
@@ -92,11 +110,11 @@
         <p>Instead of reinventing the wheel, brunch assembles awesome wheels.</p>
         <ul>
           <li><a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a></li>
+          <li><a href="https://github.com/sstephenson/stitch" target="_blank">Stitch</a></li>
           <li><a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a></li>
           <li><a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a></li>
           <li><a href="https://github.com/sstephenson/eco" target="_blank">Eco</a></li>
           <li><a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a></li>
-          <li><a href="http://jashkenas.github.com/docco/" target="_blank">Docco</a></li>
           <li><a href="http://jquery.com/" target="_blank">jQuery</a> & <a href="http://zeptojs.com/" target="_blank">Zepto.js</a></li>
         </ul>
 
@@ -105,38 +123,26 @@
         <strong>brunch todos</strong>
         <p>A port of the famous backbone localtodos example app. <a href="https://github.com/brunch/example-todos/">code</a></p>
 
-        <strong>brunch twitter</strong>
+        <strong>brunch twitter (using brunch 0.6.2)</strong>
         <p>A simple twitter client which uses the twitter anywhere API <a href="http://brunch.github.com/example-twitter/brunch/build/" target="_blank">demo</a> | <a href="https://github.com/brunch/example-twitter/">code</a></p>
 
-        <strong>brunch colors</strong>
+        <strong>brunch colors (using brunch 0.6.2)</strong>
         <p>A simple puzzle game with CouchDB backend. <a href="http://brunch-colors.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/brunch_colors_game">code</a></p>
-
-        <strong>brunch events</strong>
-        <p>A simple event manager with facebook connect support. <a href="http://facebook-events.appspot.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/facebook-events">code</a></p>
 
         <h3 id='installing' name="getting-started">Installing</h3>
 
         <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a></p>
-          
+
         <code>
           npm install brunch
-        </code>
-        
-        <p>
-          If you get errors when creating projects, install pygments - it is required by Docco.
-        </p>
-        
-        <code>
-          easy_install pygments
         </code>
 
         <h3 id='getting-started' name="getting-started">Getting Started</h3>
 
         <p>Once installed, you can create a new project using</p>
         <code>
-          brunch new $proj
+          brunch new
         </code>
-        <p>where $proj is the namespace you want to use for your application (e.g. 'app').
 
         <p>This will create the initial project structure for you. Then you can start the file-watcher using</p>
         <code>
@@ -144,10 +150,178 @@
         </code>
 
         <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
-        
+
         <h3 id='documentation' name="documentation">Documentation</h3>
 
         <p>We are currently in the process of eliminating some rough edges and some things still need decisions (e.g. testing). Nonetheless we plan to put all our resources into documentation and example apps as soon as possible. In the meantime feel free to consult the <a href="https://github.com/brunch/brunch/wiki">wiki</a> and <a href="https://github.com/brunch/brunch/issues">issue tracker</a> on github. Participation is very welcome.</p>
+
+        <h4 id="directory-structure">Directory Structure</h4>
+
+        <ol>
+          <li>build/</li>
+          <li>
+            <ol>
+              <li>web/</li>
+            </ol>
+          </li>
+          <li>config.yaml</li>
+          <li>src/</li>
+          <li>
+            <ol>
+              <li>app/</li>
+              <li>
+                <ol>
+                  <li>collections/</li>
+                  <li>controllers/</li>
+                  <li>models/</li>
+                  <li>styles/</li>
+                  <li>templates/</li>
+                  <li>views/</li>
+                </ol>
+              </li>
+              <li>vendor/</li>
+            </ol>
+          </li>
+        </ol>
+
+        <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories and one file. The directories are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in the 'src' directory. 'config.yaml' allows us to set some options. What kind of options will be explaind later in this documentation.</p>
+
+        <p>'src' is split into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All your models should end up in the 'models' directory, views in 'views' and so on.</p>
+
+        <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to its generated output.</p>
+
+        <h4 id="command-line-interface">Command-line interface</h4>
+
+        <ul>
+          <li>brunch new [&lt;path&gt;]</li>
+          <li>brunch build [&lt;path&gt;]</li>
+          <li>brunch watch [&lt;path&gt;]</li>
+        </ul>
+
+        <p>The path to the project directory is optional. Brunch will look for a directory called 'brunch' in the current working directory, if the path is omitted.</p>
+
+        <h5>Available Options</h5>
+
+        <ul>
+          <li>-ep &lt;port&gt;, --expressPort=&lt;port&gt; set the port when using the express project template ('brunch watch')</li>
+          <li>-p &lt;template&gt;, --projectTemplate=&lt;template&gt;	set which kind of project template should be used ('brunch new')</li>
+          <li>-v, --version	display brunch version</li>
+          <li>-h, --help display brunch help</li>
+          <li>-o, --output set build path</li>
+        </ul>
+
+        <h4 id="configuration">Configuration</h4>
+
+        <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for these dependencies. Possible options are:</p>
+
+        <ul>
+          <li>expressPort</li>
+          <li>projectTemplate</li>
+          <li>buildPath</li>
+          <li>dependencies</li>
+        </ul>
+
+        <p>Options from the arguments overwrite options from the config file.</p>
+
+        <h4 id="dependencies">Dependencies</h4>
+
+        <p>All files from 'vendor' are concatenated to app.js. Dependencies defined in config.yaml will be added in correct order
+        before the rest of the libaries in 'vendor'.</p>
+
+        <p>Dependencies will be prepended to app.js instead of encapsulated as module.</p>
+
+        <h4 id="editors">Editors</h4>
+
+        <h5>Textmate Bundles</h5>
+        <ul>
+          <li><a href="https://github.com/brunch/textmate-bundle">brunch</a> - automatically builds your project on save <a href="https://github.com/brunch/textmate-bundle/tarball/master">download bundle</a></li>
+          <li><a href="https://github.com/jashkenas/coffee-script-tmbundle">Coffeescript</a></li>
+          <li>Eco (haven't found anything yet)</li>
+          <li><a href="https://github.com/LearnBoost/stylus/tree/master/editors/Stylus.tmbundle">Stylus</a></li>
+        </ul>
+
+        <h5>Vim Plugins</h5>
+        <ul>
+          <li><a href="https://github.com/kchmck/vim-coffee-script">Coffeescript</a></li>
+          <li><a href="https://github.com/jayferd/eco.vim">Eco</a></li>
+          <li><a href="https://github.com/wavded/vim-stylus">Stylus</a></li>
+        </ul>
+
+        <h4 id="migrate-to-0-7-0-plus">Migrate to 0.7.0+</h4>
+
+        <p>Since 0.7.0 brunch uses stitch which comes with a CommonJS modules implementation. Therefore developers have to require modules and export variables and functions explicitly. See an upgrade example here: <a href="https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652">https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652</a></p>
+
+        <h5>Update Vendor</h5>
+
+        <p>First of all you need to remove brunch-0.x.js file from brunch/src/vendor and instead add these files:</p>
+
+        <ul>
+          <li>backbone-master.js</li>
+          <li>ConsoleDummy.js</li>
+          <li>jquery-1.5.2.js</li>
+          <li>underscore-1.1.5.js</li>
+        </ul>
+
+        <p>You can find them by creating a new brunch app in src/vendor</p>
+
+        <h5>Add config.yaml</h5>
+
+        <p>Add a config.yaml clone from a new brunch app to brunch/config.yaml</p>
+
+        <h5>Update index.html</h5>
+
+        <p>Replace all your 'script' tags with</p>
+
+        <pre><code>
+          &lt;script src="web/js/app.js"&gt;&lt;/script&gt;
+          &lt;script&gt;require('main');&lt;/script&gt;
+        </code></pre>
+
+        <h5>Modules</h5>
+
+        <p>You need to explicitly export everything that needs to be visible in another file. For example a Todo Model should change from</p>
+
+        <pre>
+        <code>
+          class Todo extends Backbone.Model
+        </code>
+        <span>to</span>
+        <code>
+          class exports.Todo extends Backbone.Model
+        </code>
+        </pre>
+
+        <p>If you want to use any object or function from another module you need to require it. For example if the Todo model is used in Todos collection you need to add this piece of code to todos_collection.coffee.</p>
+
+        <pre><code>
+          Todo = require('models/todo_model').Todo
+        </code></pre>
+
+        <p>Stitch also compiles templates. So you have to require them as well.</p>
+
+        <pre><code>
+          homeTemplate = require('templates/home')
+
+          class exports.HomeView extends Backbone.View
+            render: -&gt;
+              @$(@el).html homeTemplate()
+        </code></pre>
+
+        <h5>Cleanup Directory Structure</h5>
+
+        <p>You now can remove these legacy files/directories</p>
+
+        <ul>
+          <li>brunch/build/web/js/concatenation.js</li>
+          <li>brunch/build/web/js/templates.js</li>
+          <li>brunch/build/web/js/vendor/</li>
+          <li>brunch/config/</li>
+          <li>docs/ (keep it in case you still want to use docco manually)</li>
+        </ul>
+
+        <h5>Weeeee, it's done!</h5>
+
+        <p>Congratulation you have upgraded you application.</p>
 
         <h3 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h3>
 
@@ -161,14 +335,24 @@
 
         <p class="footer"></div>
         <div id="sidebar">
-          <ul id="nav">
+          <ol id="nav">
             <li><a href="#standing-on-the-shoulders-of-giants">Standing on the Shoulders of Giants</a></li>
             <li><a href="#examples">Examples</a></li>
             <li><a href="#getting-started">Getting Started</a></li>
             <li><a href="#documentation">Documentation</a></li>
+            <li>
+              <ol>
+                <li><a href="#directory-structure">Directory Structure</a></li>
+                <li><a href="#command-line-interface">Command-line interface</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#dependencies">Dependencies</a></li>
+                <li><a href="#editors">Editors</a></li>
+                <li><a href="#migrate-to-0-7-0-plus">Migrate to 0.7.0+</a></li>
+              </ol>
+            </li>
             <li><a href="#open-source-licensed">Open Source Licensed</a></li>
             <li><a href="#who-is-already-enjoying-brunch">Who is already enjoying brunch?</a></li>
-          </ul>
+          </ol>
         </div>
         <div id="fork-me">
           <a href="https://github.com/brunch/brunch">
