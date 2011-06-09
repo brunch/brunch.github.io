@@ -2,6 +2,9 @@
 <html>
   <head>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="static/css/typography.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="static/css/prettify.css" type="text/css" media="screen">
     <style type="text/css">
       body {
         font: 14px Arial, sans-serif;
@@ -89,11 +92,24 @@
         margin: 0 auto;
         display: block;
       }
-
-      code{
+      .prettyprint {
+        display: block;
+        margin-bottom: 1em;
+        padding: 6px;
         padding-left: 20px;
+        border: 1px solid #ccc;
+        background: #fefcf7;
       }
     </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="static/js/prettify.js"></script>
+    <script>
+      $(document).ready(function() {
+        prettyPrint();
+      });
+    </script>
+
     <title>brunch - with coffee</title>
   </head>
   <body>
@@ -133,19 +149,19 @@
 
         <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a></p>
 
-        <code>
+        <code class="prettyprint">
           npm install brunch
         </code>
 
         <h3 id='getting-started' name="getting-started">Getting Started</h3>
 
         <p>Once installed, you can create a new project using</p>
-        <code>
+        <code class="prettyprint">
           brunch new
         </code>
 
         <p>This will create the initial project structure for you. Then you can start the file-watcher using</p>
-        <code>
+        <code class="prettyprint">
           brunch watch
         </code>
 
@@ -273,9 +289,9 @@
 
         <p>Replace all your 'script' tags with</p>
 
-        <pre><code>
-          &lt;script src="web/js/app.js"&gt;&lt;/script&gt;
-          &lt;script&gt;require('main');&lt;/script&gt;
+        <pre><code class="prettyprint">
+&lt;script src="web/js/app.js"&gt;&lt;/script&gt;
+&lt;script&gt;require('main');&lt;/script&gt;
         </code></pre>
 
         <h5>Modules</h5>
@@ -283,29 +299,29 @@
         <p>You need to explicitly export everything that needs to be visible in another file. For example a Todo Model should change from</p>
 
         <pre>
-        <code>
-          class Todo extends Backbone.Model
+        <code class="prettyprint">
+class Todo extends Backbone.Model
         </code>
         <span>to</span>
-        <code>
-          class exports.Todo extends Backbone.Model
+        <code class="prettyprint">
+class exports.Todo extends Backbone.Model
         </code>
         </pre>
 
         <p>If you want to use any object or function from another module you need to require it. For example if the Todo model is used in Todos collection you need to add this piece of code to todos_collection.coffee.</p>
 
-        <pre><code>
-          Todo = require('models/todo_model').Todo
+        <pre><code class="prettyprint">
+Todo = require('models/todo_model').Todo
         </code></pre>
 
         <p>Stitch also compiles templates. So you have to require them as well.</p>
 
-        <pre><code>
-          homeTemplate = require('templates/home')
+        <pre><code class="prettyprint">
+homeTemplate = require('templates/home')
 
-          class exports.HomeView extends Backbone.View
-            render: -&gt;
-              @$(@el).html homeTemplate()
+class exports.HomeView extends Backbone.View
+  render: -&gt;
+    @$(@el).html homeTemplate()
         </code></pre>
 
         <h5>Cleanup Directory Structure</h5>
