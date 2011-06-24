@@ -100,6 +100,51 @@
         border: 1px solid #ccc;
         background: #fefcf7;
       }
+
+      .contributors {
+        width: 600px;
+        overflow: auto;
+        margin-bottom: 3em;
+      }
+      .contributors li {
+        width: 178px;
+        margin-right: 12px;
+        margin-bottom: 6px;
+        overflow: auto;
+        float: left;
+        padding: 1px 0px;
+      }
+      .contributors li a {
+        display: block;
+        text-decoration: none;
+        overflow: auto;
+      }
+      .contributors li span {
+        display: block;
+        float: left;
+        margin-left: 12px;
+        font-size: 15px;
+        padding-top: 5px;
+        color: #aaa;
+      }
+      .contributors li a span {
+        color: #888;
+      }
+      .contributors li img {
+        float: left;
+        border: 1px solid #fff;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+      .contributors li a:hover {
+      }
+      .contributors li a:hover span {
+        color: #000;
+      }
+      .contributors li a:hover img {
+        border: 1px solid #bbb;
+      }
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
@@ -139,7 +184,7 @@
         <strong>brunch todos</strong>
         <p>A port of the famous backbone localtodos example app.
           <a href="http://brunch.github.com/example-todos/brunch/build/" target="_blank">demo</a>
-           | 
+           |
           <a href="https://github.com/brunch/example-todos/">code</a>
         </p>
 
@@ -348,6 +393,10 @@ class exports.HomeView extends Backbone.View
 
         <p>brunch may be freely distributed under the MIT license</p>
 
+        <h3 id='contributors' name="contributors">Contributors</h3>
+
+        <div id="brunch-contributors" class="contributors"></div>
+
         <h3 id='who-is-already-enjoying-brunch' name="who-is-already-enjoying-brunch">Who is already enjoying brunch?</h3>
 
         <p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Please drop us a line!</p>
@@ -396,6 +445,11 @@ class exports.HomeView extends Backbone.View
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
 
+    </script>
+
+    <script src="http://lab.blossom.io/contributors/lib/contributors.min.js"></script>
+    <script>
+      contributors.generate('brunch', 'brunch', { placeholder: 'brunch-contributors'});
     </script>
   </body>
 </html>
