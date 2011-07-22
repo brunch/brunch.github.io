@@ -233,19 +233,24 @@
 
       <h2 id='getting-started' name="getting-started">Getting Started</h2>
 
-      <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager</a></p>
+      <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager (npm 1.0+)</a></p>
 
         <code class="prettyprint">
           npm install brunch -g
         </code>
-
 
         <p>Once installed, you can create a new project using</p>
         <code class="prettyprint">
           brunch new
         </code>
 
-        <p>This will create the initial project structure for you. Then you can start the file-watcher using</p>
+        <p>This will create the initial project structure for you. To get started easily, brunch ships with a small <a href="http://expressjs.com/">Express</a> app. To install Express into your local directory use</p>
+
+        <code class="prettyprint">
+          npm install express
+        </code>
+
+        <p>Then you can start the file-watcher using</p>
         <code class="prettyprint">
           brunch watch
         </code>
