@@ -64,6 +64,12 @@
         margin-bottom: 60px;
       }
 
+      img.screenshot {
+        padding: 5px;
+        border: 1px solid #ddd;
+        margin-bottom: 1em;
+      }
+
       #props {
         position: relative;
         top: 36px;
@@ -224,12 +230,7 @@
            |
           <a href="https://github.com/brunch/example-todos/">code</a>
         </p>
-
-      <strong>brunch twitter (using brunch 0.6.2)</strong>
-      <p>A simple twitter client which uses the twitter anywhere API <a href="http://brunch.github.com/example-twitter/brunch/build/" target="_blank">demo</a> | <a href="https://github.com/brunch/example-twitter/">code</a></p>
-
-      <strong>brunch colors (using brunch 0.6.2)</strong>
-      <p>A simple puzzle game with CouchDB backend. <a href="http://brunch-colors.com" target="_blank">demo</a> | <a href="https://github.com/brunch/brunch-examples/tree/master/brunch_colors_game">code</a></p>
+        <img src="static/img/screenshots/todos.png" width="360" height="360" class="screenshot" alt="Todos Example">
 
       <h2 id='getting-started' name="getting-started">Getting Started</h2>
 
@@ -244,18 +245,12 @@
           brunch new
         </code>
 
-        <p>This will create the initial project structure for you. To get started easily, brunch ships with a small <a href="http://expressjs.com/">Express</a> app. To install Express into your local directory use</p>
-
-        <code class="prettyprint">
-          npm install express
-        </code>
-
-        <p>Then you can start the file-watcher using</p>
+        <p>Then you can start the file watcher. It will compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
         <code class="prettyprint">
           brunch watch
         </code>
 
-      <p>It will then compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
+        <p>Open brunch/index.html and see you first running brunch application</p>
 
       <h2 id='documentation' name="documentation">Documentation</h2>
 
@@ -267,6 +262,7 @@
           <li><a href="#dependencies">Dependencies</a></li>
           <li><a href="#editors">Editors</a></li>
           <li><a href="#migrate-to-0-7-0-plus">Migrate to 0.7.0+</a></li>
+          <li><a href="#migrate-to-0-8-0-plus">Migrate to 0.8.0+</a></li>
         </ol>
       </div>
 
@@ -320,9 +316,7 @@
       <h4>Available Options</h4>
 
         <ul>
-          <li>-ep &lt;port&gt;, --expressPort=&lt;port&gt; set the port when using the express project template ('brunch watch')</li>
-          <li>-p &lt;template&gt;, --projectTemplate=&lt;template&gt;	set which kind of project template should be used ('brunch new')</li>
-          <li>-v, --version	display brunch version</li>
+          <li>-v, --version display brunch version</li>
           <li>-h, --help display brunch help</li>
           <li>-o, --output set build path</li>
           <li>-m, --minify minify the app.js output via UglifyJS</li>
@@ -330,13 +324,12 @@
 
       <h3 id="configuration">Configuration</h3>
 
-      <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for these dependencies. Possible options are:</p>
+      <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for dependencies. Possible options are:</p>
 
       <ul>
-        <li>expressPort</li>
-        <li>projectTemplate</li>
         <li>buildPath</li>
         <li>dependencies</li>
+        <li>minify</li>
       </ul>
 
       <p>Options from the arguments overwrite options from the config file.</p>
@@ -441,9 +434,34 @@ class exports.HomeView extends Backbone.View
 
       <p>Congratulation you have upgraded you application.</p>
 
+      <h3 id="migrate-to-0-8-0-plus">Migrate to 0.8.0+</h3>
+
+      <h4>Update Vendor</h4>
+
+      <p>First of all you need upgrade files from brunch/src/vendor:</p>
+
+      <ul>
+        <li>backbone-master.js -> backbone-0.5.2.js</li>
+        <li>ConsoleDummy.js</li>
+        <li>jquery-1.5.2.js -> jquery-1.6.2.js</li>
+        <li>underscore-1.1.5.js -> underscore-1.1.7.js</li>
+      </ul>
+
+      <h4>Upgrade to Backbone 0.5.0+</h4>
+
+      <p>
+        Rename Controllers to Routers, refresh to reset and call navigate instead of saveLocation and setLocation. For more details please visit <a href="http://documentcloud.github.com/backbone/#Upgrading">http://documentcloud.github.com/backbone/#Upgrading</a>
+      </p>
+
       <h2 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h2>
 
-      <p>brunch may be freely distributed under the MIT license</p>
+      <p>brunch may be freely distributed under the
+        <a href="https://github.com/brunch/brunch/blob/master/LICENSE">MIT license</a>
+      </p>
+
+      <h2 id='contact' name="contact">Contact</h2>
+
+      <p>Feel free to contact us at Freenode #brunch in the IRC client of your choice.</p>
 
       <h2 id='contributors' name="contributors">Contributors</h2>
 
