@@ -1,499 +1,188 @@
-<!doctype html>
-<html>
-  <head>
-    <script type="text/javascript" src="http://use.typekit.com/wgq0hwj.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <link rel="stylesheet" href="static/css/prettify.css" type="text/css" media="screen">
-    <style type="text/css">
-      /* reset from blueprint 1.0 */
-      html {margin:0;padding:0;border:0;}
-      body, div, span, object, iframe, h1, h2, h3, h3, h4, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
-      article, aside, dialog, figure, footer, header, hgroup, nav, section {display:block;}
-      body {line-height:1.4;background:white;}
-      table {border-collapse:separate;border-spacing:0;}
-      caption, th, td {text-align:left;font-weight:normal;float:none !important;}
-      table, th, td {vertical-align:middle;}
-      blockquote:before, blockquote:after, q:before, q:after {content:'';}
-      blockquote, q {quotes:"" "";}
-      a img {border:none;}
-      :focus {outline:0;}
-
-      /* Default font settings */
-      body {
-        font-size: 15px;
-        color: #666;
-        background: #fff;
-        font-family: "KievitPro", "ff-kievit-web-pro-1","ff-kievit-web-pro-2",sans-serif;
-      }
-
-      /* Headings */
-      h1,h2,h3,h3,h4 { font-weight: normal; color: #222; clear: left; }
-
-      h1 { font-size: 5em; line-height: 1.4; margin-bottom: 0.5em; }
-      h2 { font-size: 2em; line-height: 1; margin-bottom: 0.5em; }
-      h3 { font-size: 1.5em; line-height: 1; margin-bottom: 0.5em; }
-      h3 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
-      h4 { font-size: 1.1em; line-height: 1.25; margin-bottom: 1.25em; }
-
-      /* Text elements */
-      p           { margin: 0 0 1.5em; }
-
-      a:focus,
-      a:hover     { color: #F95A5A; text-decoration: underline; }
-      a           { color: #F95A5A; text-decoration: none}
-
-      pre         { margin: 1.5em 0; white-space: pre; }
-      pre,code,tt { font: 13px 'andale mono', 'lucida console', monospace; line-height: 1.5; }
-
-      /* Lists */
-      ul, ol      { margin: 0 1.5em 1.5em 0; list-style-type: none; }
-      dl          { margin: 0 0 1.5em 0; }
-      dl dt       { font-weight: bold; margin-top: 0.3em; }
-      dd          { margin-left: 1.5em;}
-
-      li ul, li ol {
-        margin-left: 1.5em;
-        margin-bottom: 0px;
-      }
-
-      /* Style */
-      .container {
-        width:605px;
-        margin:0 auto;
-        margin-top: 40px;
-        margin-bottom: 60px;
-      }
-
-      img.screenshot {
-        padding: 5px;
-        border: 1px solid #ddd;
-        margin-bottom: 1em;
-      }
-
-      #props {
-        position: relative;
-        top: 36px;
-        font-size: 18px;
-        padding-left: 373px;
-        color: #eee;
-        font-style: italic;
-      }
-
-      h1 {
-        background: #91A2C0;
-        background-image: url('static/img/brunch.png');
-        background-repeat: no-repeat;
-        background-position: 2px;
-        color: #fff;
-        width: 330px;
-        padding-left: 138px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-      }
-
-      #options {
-        margin-bottom: 0px;
-      }
-
-      #fork-me-on-github img {
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
-
-      #teaser {
-        position: relative;
-        top: -10px;
-        left: -15px;
-        width: 630px;
-        margin-bottom: 10px;
-      }
-
-      a#blossom-link {
-        text-decoration: none;
-        display: block;
-        padding: 12px;
-        position: relative;
-        float: left;
-        left: -12px;
-      }
-
-      a#blossom-link img {
-        position: relative;
-        top: 2px;
-      }
-
-      a#blossom-link span {
-        margin-left: 6px;
-        font-size: 15px;
-        padding-bottom: 60px;
-      }
-
-      #peers {
-        display: block;
-        margin-left: -32px;
-      }
-
-      .prettyprint {
-        display: block;
-        margin-bottom: 1em;
-        padding: 6px;
-        padding-left: 20px;
-        border: 1px solid #ccc;
-        background: #fefcf7;
-      }
-
-      .contributors {
-        width: 600px;
-        overflow: auto;
-        margin-bottom: 3em;
-        margin-top: 32px;
-      }
-      .contributors li {
-        width: 178px;
-        margin-right: 12px;
-        margin-bottom: 6px;
-        overflow: auto;
-        float: left;
-        padding: 1px 0px;
-      }
-      .contributors li a {
-        display: block;
-        text-decoration: none;
-        overflow: auto;
-      }
-      .contributors li span {
-        display: block;
-        float: left;
-        margin-left: 12px;
-        font-size: 15px;
-        padding-top: 5px;
-        color: #aaa;
-      }
-      .contributors li a span {
-        color: #888;
-      }
-      .contributors li img {
-        float: left;
-        border: 1px solid #fff;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-      }
-      .contributors li a:hover {
-      }
-      .contributors li a:hover span {
-        color: #000;
-      }
-      .contributors li a:hover img {
-        border: 1px solid #bbb;
-      }
-    </style>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script src="static/js/prettify.js"></script>
-    <script>
-      $(document).ready(function() {
-        prettyPrint();
-      });
-    </script>
-    <style>
-    </style>
-    <title>brunch</title>
-  </head>
-  <body>
-    <a id="fork-me-on-github" href="http://github.com/brunch/brunch"><img src="https://d3nwyuy0nl342s.cloudfront.net/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
-    <div class="container">
-      <h1>brunch</h1>
-      <h2>About</h2>
-      <p class="teaser">
-      A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.
-      </p>
-
-      <h2 id='standing-on-the-shoulders-of-giants' name="standing-on-the-shoulders-of-giants">Standing on the Shoulders of Giants <a href="http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants#Application_to_the_free_software_movement">*</a></h2>
-      <p>Instead of reinventing the wheel, brunch assembles awesome wheels:<br>
-        <a href="http://jashkenas.github.com/coffee-script/" target="_blank">CoffeeScript</a>,
-        <a href="http://documentcloud.github.com/backbone/" target="_blank">Backbone.js</a>,
-        <a href="http://documentcloud.github.com/underscore/" target="_blank">Underscore.js</a>,
-        <a href="https://github.com/sstephenson/stitch" target="_blank">Stitch</a>,
-        <a href="https://github.com/sstephenson/eco" target="_blank">Eco</a>,
-        <a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a> &amp;
-        <a href="http://jquery.com/" target="_blank">jQuery</a>
-      </ul>
-
-      <h2 id='examples' name="examples">Examples</h2>
-        <strong>brunch todos</strong>
-        <p>A port of the famous backbone localtodos example app.
-          <a href="http://brunch.github.com/example-todos/brunch/build/" target="_blank">demo</a>
-           |
-          <a href="https://github.com/brunch/example-todos/">code</a>
-        </p>
-        <img src="static/img/screenshots/todos.png" width="360" height="360" class="screenshot" alt="Todos Example">
-
-      <h2 id='getting-started' name="getting-started">Getting Started</h2>
-
-      <p>You can get brunch via the <a href="http://npmjs.org/">nodejs package manager (npm 1.0+)</a></p>
-
-        <code class="prettyprint">
-          npm install brunch -g
-        </code>
-
-        <p>Once installed, you can create a new project using</p>
-        <code class="prettyprint">
-          brunch new
-        </code>
-
-        <p>Then you can start the file watcher. It will compile your .coffee, .styl and .eco files on the fly after every change so you don't have to do it manually.</p>
-        <code class="prettyprint">
-          brunch watch
-        </code>
-
-        <p>Open brunch/index.html and see you first running brunch application</p>
-
-      <h2 id='documentation' name="documentation">Documentation</h2>
-
-      <div id="toc">
-        <ol>
-          <li><a href="#directory-structure">Directory Structure</a></li>
-          <li><a href="#command-line-interface">Command-line interface</a></li>
-          <li><a href="#configuration">Configuration</a></li>
-          <li><a href="#dependencies">Dependencies</a></li>
-          <li><a href="#editors">Editors</a></li>
-          <li><a href="#migrate-to-0-7-0-plus">Migrate to 0.7.0+</a></li>
-          <li><a href="#migrate-to-0-8-0-plus">Migrate to 0.8.0+</a></li>
-        </ol>
-      </div>
-
-      <p>We are currently in the process of eliminating some rough edges and some things still need decisions (e.g. testing). Nonetheless we plan to put all our resources into documentation and example apps as soon as possible. In the meantime feel free to consult the <a href="https://github.com/brunch/brunch/wiki">wiki</a> and <a href="https://github.com/brunch/brunch/issues">issue tracker</a> on github. Participation is very welcome.</p>
-
-      <h3 id="directory-structure">Directory Structure</h3>
-
-      <ol>
-        <li>build/</li>
-        <li>
-          <ol>
-            <li>web/</li>
-          </ol>
-        </li>
-        <li>config.yaml</li>
-        <li>src/</li>
-        <li>
-          <ol>
-            <li>app/</li>
-            <li>
-              <ol>
-                <li>collections/</li>
-                <li>controllers/</li>
-                <li>models/</li>
-                <li>styles/</li>
-                <li>templates/</li>
-                <li>views/</li>
-              </ol>
-            </li>
-            <li>vendor/</li>
-          </ol>
-        </li>
-      </ol>
-
-      <p>Usually the root directory is called 'brunch'. So it's easily discoverable. Inside 'brunch' there are two directories and one file. The directories are 'src' and 'build' similar to other directory layouts which have to deal with a compilation/build step. You should only work in the 'src' directory. 'config.yaml' allows us to set some options. What kind of options will be explaind later in this documentation.</p>
-
-      <p>'src' is split into 'app' and 'vendor'. 'app' contains collections, controllers, models, templates and views for you application. All your models should end up in the 'models' directory, views in 'views' and so on.</p>
-
-      <p>'vendor' should contain all third-party code. You can add any libary. Brunch will automatically add them to its generated output.</p>
-
-      <h3 id="command-line-interface">Command-line interface</h3>
-
-      <ul>
-        <li>brunch new [&lt;path&gt;]</li>
-        <li>brunch build [&lt;path&gt;]</li>
-        <li>brunch watch [&lt;path&gt;]</li>
-      </ul>
-
-      <p>The path to the project directory is optional. Brunch will look for a directory called 'brunch' in the current working directory, if the path is omitted.</p>
-
-      <h4>Available Options</h4>
-
-        <ul>
-          <li>-v, --version display brunch version</li>
-          <li>-h, --help display brunch help</li>
-          <li>-o, --output set build path</li>
-          <li>-m, --minify minify the app.js output via UglifyJS</li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Brunch</title>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="styles/bootstrap.css" rel="stylesheet" />
+  <link href="styles/main.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+</head>
+<body>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="#description">
+          <img class="brunch-logo" src="images/brunch.png" alt="brunch logo" />
+          <span class="logo-text">Brunch</span>
+        </a>
+        <ul class="nav">
+          <li><a href="#getting-started">Getting started</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="http://brunch.readthedocs.org/">Documentation</a></li>
+          <li><a href="https://github.com/brunch/brunch/issues">Issues</a></li>
         </ul>
-
-      <h3 id="configuration">Configuration</h3>
-
-      <p>Most of this options can be set in the config.yaml file. Additionally you can define an order for dependencies. Possible options are:</p>
-
-      <ul>
-        <li>buildPath</li>
-        <li>dependencies</li>
-        <li>minify</li>
-      </ul>
-
-      <p>Options from the arguments overwrite options from the config file.</p>
-
-      <h3 id="dependencies">Dependencies</h3>
-
-      <p>All files from 'vendor' are concatenated to app.js. Dependencies defined in config.yaml will be added in correct order
-      before the rest of the libaries in 'vendor'.</p>
-
-      <p>Dependencies will be prepended to app.js instead of encapsulated as module.</p>
-
-      <h3 id="editors">Editors</h3>
-
-      <h4>Textmate Bundles</h4>
-      <ul>
-        <li><a href="https://github.com/brunch/textmate-bundle">brunch</a> - automatically builds your project on save <a href="https://github.com/brunch/textmate-bundle/tarball/master">download bundle</a></li>
-        <li><a href="https://github.com/jashkenas/coffee-script-tmbundle">Coffeescript</a></li>
-        <li>Eco (haven't found anything yet)</li>
-        <li><a href="https://github.com/LearnBoost/stylus/tree/master/editors/Stylus.tmbundle">Stylus</a></li>
-      </ul>
-
-      <h4>Vim Plugins</h4>
-      <ul>
-        <li><a href="https://github.com/kchmck/vim-coffee-script">Coffeescript</a></li>
-        <li><a href="https://github.com/jayferd/eco.vim">Eco</a></li>
-        <li><a href="https://github.com/wavded/vim-stylus">Stylus</a></li>
-      </ul>
-
-      <h3 id="migrate-to-0-7-0-plus">Migrate to 0.7.0+</h3>
-
-      <p>Since 0.7.0 brunch uses stitch which comes with a CommonJS modules implementation. Therefore developers have to require modules and export variables and functions explicitly. See an upgrade example here: <a href="https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652">https://github.com/brunch/example-todos/commit/c57ec1a418b8dcf694185b03a254199217972652</a></p>
-
-      <h4>Update Vendor</h4>
-
-      <p>First of all you need to remove brunch-0.x.js file from brunch/src/vendor and instead add these files:</p>
-
-      <ul>
-        <li>backbone-master.js</li>
-        <li>ConsoleDummy.js</li>
-        <li>jquery-1.5.2.js</li>
-        <li>underscore-1.1.5.js</li>
-      </ul>
-
-      <p>You can find them by creating a new brunch app in src/vendor</p>
-
-      <h4>Add config.yaml</h4>
-
-      <p>Add a config.yaml clone from a new brunch app to brunch/config.yaml</p>
-
-      <h4>Update index.html</h4>
-
-      <p>Replace all your 'script' tags with</p>
-
-        <pre><code class="prettyprint">
-&lt;script src="web/js/app.js"&gt;&lt;/script&gt;
-&lt;script&gt;require('main');&lt;/script&gt;
-        </code></pre>
-
-      <h4>Modules</h4>
-
-      <p>You need to explicitly export everything that needs to be visible in another file. For example a Todo Model should change from</p>
-
-        <pre>
-        <code class="prettyprint">
-class Todo extends Backbone.Model
-        </code>
-        <span>to</span>
-        <code class="prettyprint">
-class exports.Todo extends Backbone.Model
-        </code>
-        </pre>
-
-      <p>If you want to use any object or function from another module you need to require it. For example if the Todo model is used in Todos collection you need to add this piece of code to todos_collection.coffee.</p>
-
-        <pre><code class="prettyprint">
-Todo = require('models/todo_model').Todo
-        </code></pre>
-
-      <p>Stitch also compiles templates. So you have to require them as well.</p>
-
-        <pre><code class="prettyprint">
-homeTemplate = require('templates/home')
-
-class exports.HomeView extends Backbone.View
-  render: -&gt;
-    @$(@el).html homeTemplate()
-        </code></pre>
-
-      <h4>Cleanup Directory Structure</h4>
-
-      <p>You now can remove these legacy files/directories</p>
-
-      <ul>
-        <li>brunch/build/web/js/concatenation.js</li>
-        <li>brunch/build/web/js/templates.js</li>
-        <li>brunch/build/web/js/vendor/</li>
-        <li>brunch/config/</li>
-        <li>docs/ (keep it in case you still want to use docco manually)</li>
-      </ul>
-
-      <h4>Weeeee, it's done!</h4>
-
-      <p>Congratulation you have upgraded you application.</p>
-
-      <h3 id="migrate-to-0-8-0-plus">Migrate to 0.8.0+</h3>
-
-      <h4>Update Vendor</h4>
-
-      <p>First of all you need upgrade files from brunch/src/vendor:</p>
-
-      <ul>
-        <li>backbone-master.js -> backbone-0.5.2.js</li>
-        <li>ConsoleDummy.js</li>
-        <li>jquery-1.5.2.js -> jquery-1.6.2.js</li>
-        <li>underscore-1.1.5.js -> underscore-1.1.7.js</li>
-      </ul>
-
-      <h4>Upgrade to Backbone 0.5.0+</h4>
-
-      <p>
-        Rename Controllers to Routers, refresh to reset and call navigate instead of saveLocation and setLocation. For more details please visit <a href="http://documentcloud.github.com/backbone/#Upgrading">http://documentcloud.github.com/backbone/#Upgrading</a>
-      </p>
-
-      <h2 id='open-source-licensed' name="open-source-licensed">Open Source Licensed</h2>
-
-      <p>brunch may be freely distributed under the
-        <a href="https://github.com/brunch/brunch/blob/master/LICENSE">MIT license</a>
-      </p>
-
-      <h2 id='contact' name="contact">Contact</h2>
-
-      <p>Our twitter: <a href="https://twitter.com/#!/brunch">@brunch</a></p>
-      <p>Our google+ page: <a href="https://plus.google.com/103222632910810384455">Brunch</a></p>
-      <p>Feel free to contact us at Freenode #brunch in the IRC client of your choice.</p>
-
-      <h2 id='contributors' name="contributors">Contributors</h2>
-
-      <div id="brunch-contributors" class="contributors"></div>
-
-      <h2 id='who-is-already-enjoying-brunch' name="who-is-already-enjoying-brunch">Who is already enjoying brunch?</h2>
-
-      <p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Please drop us a line!</p>
-
-      <img id="peers" src="static/img/peers.jpg" width="718" height="98" alt="Who is already enjoying brunch?" title="Who is already enjoying brunch?">
-
-        <p class="footer"></div>
       </div>
     </div>
-    <script type="text/javascript">
+  </div>
 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-21627327-1']);
-      _gaq.push(['_trackPageview']);
+  <div class="container">
+    <div class="page-section" id="description"></div>
+    <div class="hero-unit">
+      <h1>Brunch</h1>
+      <p>A powerful approach to building HTML5 applications with emphasis on elegance and simplicity.</p>
+      <p>
+        <a class="btn primary large" href="https://github.com/brunch/brunch">Follow on GitHub</a>
+    </div>
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+    <div>
+      <h2>Standing on the shoulders of giants</h2>
+      <p>
+        Instead of reinventing the wheel, brunch assembles awesome wheels:
+        <a href="http://coffeescript.org/">CoffeeScript</a>,
+        <a href="http://documentcloud.github.com/backbone/">Backbone.js</a>,
+        <a href="http://documentcloud.github.com/underscore/">Underscore.js</a>,
+        <a href="https://github.com/sstephenson/eco">Eco</a>,
+        <a href="http://learnboost.github.com/stylus/">Stylus</a> &amp;
+        <a href="http://jquery.com/">jQuery</a>.
+        <a href="http://visionmedia.github.com/jade/">Jade templates</a>, <a href="http://lesscss.org/">LESS stylesheets</a> &amp; <a href="http://roy.brianmckenna.org/">Roy</a> are supported out-of-box too.
+      </p>
+      <p>
+        Want to use different language, like SASS / HAML? No problem!
+        <a href="http://brunch.readthedocs.org/en/latest/plugins.html">We have a nice plugin API</a>.
+      </p>
+     </div>
 
-    </script>
+     <div class="page-section" id="getting-started">
+       <h2>Getting started</h2>
+       <p>You'll need <a href="http://nodejs.org/">node.js</a> 0.6. Execute:</p>
+       <pre>npm install -g brunch</pre>
+       <p>You're done!</p>
+       <p>To create a new project, execute <code>brunch new &lt;project name&gt;</code>.</p>
+       <p>To build it, execute <code>brunch build</code> in project directory.</p>
+       <p>To continuously rebuild the project on every change, run <code>brunch watch</code>.</p>
+       <p>To run a simple http server, execute <code>brunch watch --server</code>.</p>
+       <p>See <a href="http://brunch.readthedocs.org/">docs</a> for more info.</p>
+     </div>
+     
+     <div class="page-section" id="examples">
+       <h2>Examples</h2>
 
-    <script src="http://lab.blossom.io/contributors/lib/contributors.min.js"></script>
-    <script>
-      contributors.generate('brunch', 'brunch', { placeholder: 'brunch-contributors'});
-    </script>
-  </body>
+       <div class="example" id="todos-example">
+         <h3><a href="todos">Todos</a> <a href="https://github.com/brunch/todos"><em>(code)</em></a></h3>
+         <p>A port of the famous backbone localtodos example app.</p>
+         <a href="todos">
+           <img src="images/screenshots/todos.png" alt="todos screenshot" />
+          </a>
+       </div>
+
+       <div class="example" id="twitter-example">
+         <h3>Twitter <em>(coming soon)</em></h3>
+         <p>A simple twitter client, built with brunch. Uses Jade templates instead of eco.</p>
+         <!--
+         <h3><a href="twitter">Twitter</a> <a href="https://github.com/brunch/twitter"><em>(code)</em></a></h3>
+         <p>A simple twitter client, built with brunch. Uses Jade templates instead of eco.</p>
+         <a href="twitter">
+           <img src="images/screenshots/twitter.png" alt="twitter screenshot" />
+         </a>
+         -->
+       </div>
+     </div>
+    <div class="page-section" id="community">
+      <h2>Community</h2>
+
+      <p>Follow <a href="https://twitter.com/brunch"><strong>@brunch</strong></a> on twitter.</p>
+      <p>Feel free to contact us at Freenode #brunch in the IRC client of your choice.</p>
+      <h3>Contributing to Brunch</h3>
+      <ul>
+        <li>Fork the <a href="https://github.com/brunch/brunch">official repository</a>.</li>
+        <li>Clone your fork: <code>git clone git@github.com:&lt;your-username&gt;/brunch.git</code></li>
+        <li>Make sure tests are passing for you: <code>npm install &amp;&amp; npm test</code></li>
+        <li>Create a topic branch: <code>git checkout -b features/new-feature-name</code></li>
+        <li>Add tests and code for your changes.</li>
+        <li>Once you're done, make sure all tests still pass: <code>npm install &amp;&amp; npm test</code></li>
+        <li>Commit and push to your fork.</li>
+        <li>Create an pull request from your branch.</li>
+        <li>Sit back and enjoy.</li>
+      </ul>
+      <p>
+        If the feature you want to add is large, you should probably ask brunch folks if it would be accepted. To do it, <a href="https://github.com/brunch/brunch/issues">start new discussion</a> on github or ping <a href="https://twitter.com/brunch"><strong>@brunch</strong></a> on twitter.
+      </p>
+        
+      <h3 id="users">Users</h3>
+        We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Projects-and-companies-using-Brunch">the wiki page</a>!
+        <div class="brunch-projects clearfix">
+          <div class="brunch-project">
+            <img src="images/users/jimbeam.png" alt="Jim Beam" />
+          </div>
+            
+          <div class="brunch-project">
+            <img src="images/users/redbull.png" alt="RedBull" />
+          </div>
+            
+          <div class="brunch-project">
+            <img src="images/users/uber.png" alt="Uber" />
+          </div>
+
+          <div class="brunch-project">
+            <img src="images/users/gormz.png" alt="GoRMZ" />
+          </div>
+            
+          <div class="brunch-project">
+            <img src="images/users/syoss.png" alt="Syoss" />
+          </div>
+            
+          <div class="brunch-project">
+            <img src="images/users/ykky.png" alt="YKKY" />
+          </div>
+        </div>
+        </a>
+      </h3>
+
+      <h3 class="team" id="team">Team <em>(sorted by the <a href="https://github.com/brunch/brunch/contributors">number of contributions</a>)</em></h3>
+      <ul class="team" id="brunch-contributors">
+        <li class="contributor clearfix">
+          <a href="http://nikgraf.com">
+            <img class="contributor-photo" src="https://secure.gravatar.com/avatar/7111722195d87231c263add622a583b6?size=30" alt="Nik Graf" />
+            <span class="contributor-name">Nik Graf (nikgraf)</span>
+          </a>
+        </li>
+
+        <li class="contributor clearfix">
+          <a href="http://paulmillr.com/">
+            <img class="contributor-photo" src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?size=30" alt="Paul Miller" />
+            <span class="contributor-name">Paul Miller (paulmillr)</span>
+          </a>
+        </li>
+
+        <li class="contributor clearfix">
+          <a href="http://tosh.at/">
+            <img class="contributor-photo" src="https://secure.gravatar.com/avatar/4c73a340266b12611feb5ce5069b6f43?size=30" alt="Thomas Schranz" />
+            <span class="contributor-name">Thomas Schranz (__tosh)</span>
+          </a>
+        </li>
+
+        <li class="contributor clearfix">
+          <a href="https://github.com/MSNexploder">
+            <img class="contributor-photo" src="https://secure.gravatar.com/avatar/d5187e837edd629ac73b1776d15306aa?size=30" alt="Stefan Huber" />
+            <span class="contributor-name">Stefan Huber (MSNExploder)</span>
+          </a>
+        </li>
+
+        <li class="contributor clearfix">
+          <a href="https://github.com/janmonschke">
+            <img class="contributor-photo" src="https://secure.gravatar.com/avatar/09dbf9c8bf6ff0738d2dd83c832d1f93?size=30" alt="Jan Monschke" />
+            <span class="contributor-name">Jan Monschke (thedeftone)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
 </html>
