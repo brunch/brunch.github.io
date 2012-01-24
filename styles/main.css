@@ -1,3 +1,5 @@
+
+
 .clearfix {
   *zoom: 1; }
   .clearfix:after {
@@ -12,6 +14,8 @@ body {
   height: 25px; }
 .logo-text {
   margin-left: 45px; }
+.follow-button {
+  font-weight: 500; }
 
 .page-section {
   margin-top: -40px;
@@ -26,39 +30,23 @@ li li {
 .brunch-project {
   padding: 10px 25px;
   float: left; }
-
-.team {
-  margin-left: 0; }
-  .contributor {
-    width: 300px;
-    padding: 1px 0px;
-    list-style: none; }
-    .contributor a {
-      display: block;
-      text-decoration: none;
-      overflow: auto; }
-      .contributor a:hover {
-        background: #ecf5fc;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px; }
-        .contributor a:hover .contributor-name {
-          color: #000; }
-        .contributor a:hover .contributor-photo {
-          border: 1px solid #bbb; }
-      .contributor-name {
-        display: block;
-        float: left;
-        font-size: 15px;
-        padding-top: 5px;
-        padding-left: 5px;
-        color: #aaa; }
-      .contributor-photo {
-        height: 30px;
-        float: left;
-        border: 1px solid #fff;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px; }
-
   
+.builders {
+  text-align: center; }
+.builders a {
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  text-align: left;
+  width: 11em; }
+.builders a:last-child {
+  width: auto;
+  margin-right: 0; }
+.builders img {
+  float: left;
+  margin-right: 1em;
+  border-radius: 0.2rem; }
+.builders b {
+  font-weight: normal;
+  display: block; }
+.builders small {
+  display: block; }
