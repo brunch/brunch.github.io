@@ -25,6 +25,7 @@
           <li><a href="#getting-started">Getting started</a></li>
           <li><a href="#examples">Examples</a></li>
           <li><a href="#community">Community</a></li>
+          <li><a href="https://github.com/brunch/brunch/wiki/Plugins">Plugins</a></li>
           <li><a href="http://brunch.readthedocs.org/">Documentation</a></li>
           <li><a href="https://github.com/brunch/brunch/issues">Issues</a></li>
         </ul>
@@ -43,16 +44,19 @@
 
     <div>
       <h2>Standing on the shoulders of giants</h2>
-      Instead of reinventing the wheel, brunch assembles awesome wheels
+      Brunch ships with backbone, coffeescript, underscore and jquery, 
+      but they're optional. In fact, brunch is <strong>completely agnostic</strong> to:
       <ul>
-        <li>MVC framework: <a href="http://documentcloud.github.com/backbone/">Backbone.js</a></li>
-        <li>Libs: <a href="http://jquery.com/">jQuery</a> (or <a href="http://zeptojs.com/">zepto</a>), <a href="http://underscorejs.org">Underscore</a></li>
-        <li>Programming languages: JavaScript, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://roy.brianmckenna.org/">Roy</a></li>
-        <li>Templates: <a href="https://github.com/sstephenson/eco">Eco</a>, <!--<a href="http://visionmedia.github.com/jade/">Jade</a>,--> <a href="http://twitter.github.com/hogan.js/">Mustache</a></li>
-        <li>Styles: <a href="http://learnboost.github.com/stylus/">Stylus</a>, <a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">Sass</a></li>
+        <li>MVC frameworks: <a href="http://documentcloud.github.com/backbone/">Backbone</a>, <a href="http://emberjs.com/">Ember</a> or <a href="http://batmanjs.org/">Batman</a></li>
+        <li>DOM libs: <a href="http://jquery.com/">jQuery</a>, <a href="http://zeptojs.com/">zepto</a></li>
+        <li>Programming languages: JavaScript, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://maxtaco.github.com/coffee-script/">IcedCoffeeScript</a>, <a href="http://roy.brianmckenna.org/">Roy</a></li>
+        <li>Templates: <a href="https://github.com/sstephenson/eco">Eco</a>, <a href="http://visionmedia.github.com/jade/">Jade</a>, <a href="http://twitter.github.com/hogan.js/">Mustache</a>, <a href="http://handlebarsjs.com/">Handlebars.js</a></li>
+        <li>Styles: CSS, <a href="http://learnboost.github.com/stylus/">Stylus</a>, <a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">Sass</a></li>
+        <li>Backend: from no backend apps to <a href="http://rubyonrails.org/">Rails</a>, <a href="http://djangoframework.org">Django</a>, <a href="http://nodejs.org/">Node.JS</a>, <a href="http://flask.pocoo.org/">Flask</a>, or even <a href="http://couchdb.apache.org/">CouchDB</a>.</li>
       </ul>
-      Everything from the list is optional, you can choose
-      only projects you want. In addition, we have
+      Mixing is allowed: stylus files can be combined with Sass,
+      coffeescripts can be blended with js / roy etc.
+      In addition, we have
       <ul>
         <li><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a> normalize.css, helpers.css &amp; index.html</li>
         <li><em>(Coming soon)</em> Testing of applications with <a href="https://github.com/visionmedia/mocha">Mocha</a></li>
@@ -60,7 +64,6 @@
         <li>A simple <a href="http://expressjs.com/">express</a> webserver</li>
         <li><a href="http://requirejs.org/">require.js</a>-compatible module system</li>
         <li>Source code minifiers: <a href="https://github.com/mishoo/UglifyJS">uglify.js</a> for javascript and <a href="https://github.com/GoalSmashers/clean-css">clean-css</a> for stylesheets.</li>
-        <!--<li><a href="http://rubyonrails.org/">Rails</a>, <a href="http://djangoframework.org">Django</a>, <a href="http://www.sinatrarb.com/">Sinatra</a> &amp; <a href="http://flask.pocoo.org/">Flask</a> support.</li>-->
         <li><a href="https://github.com/brunch/brunch.tmbundle">textmate / sublime2 bundle</a></li>
         <li>growl / libnotify support</li>
       </ul>
@@ -77,6 +80,7 @@
        <p>To continuously rebuild the project on every change, run <code>brunch watch</code>.</p>
        <p>To run a simple http server, execute <code>brunch watch --server</code>.</p>
        <p>See <a href="http://brunch.readthedocs.org/">docs</a> for more info.</p>
+       <p>If you're upgrading from earlier version, you might be interested in <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.</p>
      </div>
      
      <div class="page-section" id="examples">
@@ -102,13 +106,13 @@
          -->
        </div>
        
-       <div class="example" id="colors-example">
+       <!--<div class="example" id="colors-example">
          <h3><a href="http://brunch-colors.com/">Colors</a> <a href="https://github.com/janmonschke/Brunch-colors"><em>(code)</em></a></h3>
          <p>A simple, addictive color-matching game. Uses CouchDB &amp; <a href="https://github.com/janmonschke/backbone-couchdb">backbone couchdb library</a>.</p>
          <a href="todos">
            <img src="images/screenshots/colors.png" alt="colors screenshot" />
           </a>
-       </div>
+       </div>-->
      </div>
     <div class="page-section" id="community">
       <h2>Community</h2>
@@ -168,22 +172,22 @@
           <img src="http://api.twitter.com/1/users/profile_image/paulmillr?size=normal" alt="Paul Miller">
           <b>Paul</b> Miller
         </a>
-        
+
         <a href="http://nikgraf.com/">
           <img src="http://api.twitter.com/1/users/profile_image/nikgraf?size=normal" alt="Nik Graf">
           <b>Nik</b> Graf
         </a>
-        
+
         <a href="http://tosh.at/">
           <img src="http://api.twitter.com/1/users/profile_image/__tosh?size=normal" alt="Thomas Schranz">
           <b>Thomas</b> Schranz
         </a>
-        
+
         <a href="https://github.com/MSNexploder">
           <img src="http://api.twitter.com/1/users/profile_image/MSNExploder?size=normal" alt="Stefan Huber">
           <b>Stefan</b> Huber
         </a>
-        
+
         <a href="https://github.com/janmonschke">
           <img src="http://api.twitter.com/1/users/profile_image/thedeftone?size=normal" alt="Jan Monschke">
           <b>Jan</b> Monschke
