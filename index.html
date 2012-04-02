@@ -1,221 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Brunch</title>
-  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <link href="styles/bootstrap.css" rel="stylesheet" />
-  <link href="styles/main.css" rel="stylesheet" />
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-</head>
-<body>
-  <div class="topbar">
-    <div class="fill">
-      <div class="container">
-        <a class="brand" href="#description">
-          <img class="brunch-logo" src="images/brunch.png" alt="brunch logo" />
-          <span class="logo-text">Brunch</span>
-        </a>
-        <ul class="nav">
-          <li><a href="#getting-started">Getting started</a></li>
-          <li><a href="#examples">Examples</a></li>
-          <li><a href="#community">Community</a></li>
-          <li><a href="https://github.com/brunch/brunch/wiki/Plugins">Plugins</a></li>
-          <li><a href="http://brunch.readthedocs.org/">Documentation</a></li>
-          <li><a href="https://github.com/brunch/brunch/issues">Issues</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Brunch</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <div class="container">
-    <div class="page-section" id="description"></div>
-    <div class="hero-unit">
-      <h1>Brunch</h1>
-      <p>A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.</p>
-      <p>
-        <a class="btn primary large follow-button" href="https://github.com/brunch/brunch">Follow on GitHub</a>
-    </div>
+  </head>
+  <body>
 
-    <div>
-      <h2>Application assembler</h2>
-      <p>Brunch is an assembler for HTML5 applications. It's agnostic to frameworks, libraries, programming, stylesheet &amp; templating languages and backend technology.</p>
+      <header>
+        <h1>Brunch</h1>
+        <p>A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity.</p>
+      </header>
 
-      <p>To simplify app development, brunch watches your files for changes and automatically wraps your scripts and templates in common.js modules. All build errors are printed to console. If you have growl / libnotify, brunch will use them too.</p>
+      <div id="banner">
+        <span id="logo"></span>
 
-      <p>
-        Brunch uses node.js plugins to speak with compilers. There are a bunch of plugins already:
-        <ul>
-          <li>Programming languages: JavaScript, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://maxtaco.github.com/coffee-script/">IcedCoffeeScript</a>, <a href="http://roy.brianmckenna.org/">Roy</a></li>
-          <li>Pre-compiled templates: <a href="https://github.com/sstephenson/eco">Eco</a>, <a href="http://visionmedia.github.com/jade/">Jade</a>, <a href="http://twitter.github.com/hogan.js/">Mustache</a>, <a href="http://handlebarsjs.com/">Handlebars.js</a></li>
-          <li>Styles: CSS, <a href="http://learnboost.github.com/stylus/">Stylus</a>, <a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">Sass</a></li>
-          <li>Minifiers: <a href="https://github.com/mishoo/UglifyJS">uglify.js</a>, <a href="https://github.com/GoalSmashers/clean-css">clean-css</a></li>
-        </ul>
-      </p>
-
-      <p>In case your favorite language / tool is not supported yet, you can write brunch plugin for it, it's very simple. See  <a href="http://brunch.readthedocs.org/en/latest/plugins.html">documentation</a> for required steps. Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Plugins">wiki page</a> and add new plugins there.</p>
-
-      <p>
-        Brunch doesn't encourage you to use any particular technology, but application skeletons can do it. Some interesting skeletons:
-        <ul>
-          <li><a href="https://github.com/brunch/simple-coffee-skeleton">Simple coffee (comes with brunch)</a>: very simple, HTML5 Boilerplate with Backbone.js. Main languages are CoffeeScript, Stylus and Eco. If you don't like coffeescript, there's a very same project that uses js as main scripting language: <a href="https://github.com/brunch/simple-js-skeleton">simple js</a>.</li>
-          <li><a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin</a>: Bootstrap, HTML5 Boilerplate, Chaplin classes over Backbone.js. Main languages are CoffeeScript, Stylus and Handlebars.</li>
-          <li><a href="https://github.com/jokull/brunch-template">@jokull's skeleton</a>: Backbone.js, Zepto.js, forms, Stylus adjustable responsive grid, modernizr, Facebook login, slideshow.</li>
-        </ul>
-        Of course, you can throw skeleton technologies away and buald your own structure.
-      </p>
-
-     <div class="page-section" id="getting-started">
-       <h2>Getting started</h2>
-       <p>You'll need <a href="http://nodejs.org/">node.js</a> 0.6.10+. Execute:</p>
-       <pre>npm install -g brunch</pre>
-       <p>You're done! Note that windows support is not there yet, but it's coming soon™.</p>
-       <p>To create a new project, execute <code>brunch new &lt;project name&gt;</code>.</p>
-       <p>Now you can edit the code. <code>app/</code> directory has files of your project and <code>vendor/</code> has libraries etc. that would not be wrapped in common.js modules.</p>
-       <p>To build it, execute <code>brunch build</code> in project directory.</p>
-       <p>To continuously rebuild the project on every change, run <code>brunch watch</code>.</p>
-       <p>To run a simple http server, execute <code>brunch watch --server</code>.</p>
-       <p>To install / uninstall a plugin, add it to <code>package.json</code> and execute <code>npm install</code></p>
-       <p>
-         See <a href="http://brunch.readthedocs.org/">docs</a> for more info. If you're upgrading from earlier version, you might be interested in
-         <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a>
-         and
-         <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.
-       </p>
-     </div>
-     
-     <div class="page-section" id="examples">
-       <h2>Examples</h2>
-
-       <div class="example" id="todos-example">
-         <h3><a href="todos/public/">Todos</a> <a href="https://github.com/brunch/todos"><em>(code)</em></a></h3>
-         <p>A port of the famous backbone todos example app. Uses localStorage to persist data.</p>
-         <p><a href="https://github.com/sebastibe">Sébastien Béal</a> also made alternative which uses Django + Django Rest Framework to persist data. See <a href="https://github.com/sebastibe/brunch-django-examples">code</a>.</p>
-         <a href="todos/public/">
-           <img src="images/screenshots/todos.png" alt="todos screenshot" />
-          </a>
-       </div>
-
-       <div class="example" id="twitter-example">
-         <h3><a href="twitter/public/">Twitter</a> <a href="https://github.com/brunch/twitter"><em>(code)</em></a></h3>
-         <p>A simple twitter client. Uses <a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin</a> as app skeleton.</p>
-         <a href="twitter/public/">
-           <img src="images/screenshots/twitter.png" alt="twitter screenshot" />
-         </a>
-       </div>
-
-       <!--<div class="example" id="colors-example">
-         <h3><a href="http://brunch-colors.com/">Colors</a> <a href="https://github.com/janmonschke/Brunch-colors"><em>(code)</em></a></h3>
-         <p>A simple, addictive color-matching game. Uses CouchDB &amp; <a href="https://github.com/janmonschke/backbone-couchdb">backbone couchdb library</a>.</p>
-         <a href="todos">
-           <img src="images/screenshots/colors.png" alt="colors screenshot" />
-          </a>
-       </div>-->
-     </div>
-    <div class="page-section" id="community">
-      <h2>Community</h2>
-
-      <p>Follow <a href="https://twitter.com/brunch"><strong>@brunch</strong></a> on twitter.</p>
-      <h3>Contributing to Brunch</h3>
-      <ul>
-        <li>Fork the <a href="https://github.com/brunch/brunch">official repository</a>.</li>
-        <li>Clone your fork: <code>git clone git@github.com:&lt;your-username&gt;/brunch.git</code></li>
-        <li>Make sure tests are passing for you: <code>npm install &amp;&amp; npm test</code></li>
-        <li>Create a topic branch: <code>git checkout -b features/new-feature-name</code></li>
-        <li>Add tests and code for your changes.</li>
-        <li>Once you're done, make sure all tests still pass: <code>npm install &amp;&amp; npm test</code></li>
-        <li>Make sure your code conforms <a href="https://github.com/paulmillr/code-style-guides#coffeescript">coffee style guide</a></li>
-        <li>Commit and push to your fork.</li>
-        <li>Create an pull request from your branch.</li>
-        <li>Sit back and enjoy.</li>
-      </ul>
-      <p>
-        If the feature you want to add is large, you should probably ask brunch folks if it would be accepted. To do it, <a href="https://github.com/brunch/brunch/issues">start new discussion</a> on github or ping <a href="https://twitter.com/brunch"><strong>@brunch</strong></a> / <a href="https://twitter.com/paulmillr"><strong>@paulmillr</strong></a> on twitter.
-      </p>
-        
-      <h3 id="users">Users</h3>
-        We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Projects-and-companies-using-Brunch">the wiki page</a>!
-        <div class="brunch-projects clearfix">
-          <div class="brunch-project">
-            <img src="images/users/jimbeam.png" alt="Jim Beam" />
-          </div>
-            
-          <div class="brunch-project">
-            <img src="images/users/redbull.png" alt="RedBull" />
-          </div>
-            
-          <div class="brunch-project">
-            <img src="images/users/uber.png" alt="Uber" />
-          </div>
-
-          <div class="brunch-project">
-            <img src="images/users/gormz.png" alt="GoRMZ" />
-          </div>
-            
-          <div class="brunch-project">
-            <img src="images/users/syoss.png" alt="Syoss" />
-          </div>
-            
-          <div class="brunch-project">
-            <img src="images/users/ykky.png" alt="YKKY" />
-          </div>
+        <a href="https://github.com/brunch/brunch" class="button fork"><strong>Follow On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/brunch/brunch/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/brunch/brunch/tarball/master" class="button">TAR</a></li>
+          </ul>
         </div>
-        </a>
-      </h3>
 
-      <h3 class="team" id="team">Brought to you by</h3>
-      <p class="builders">
-        <!--<a rel="author" href="https://plus.google.com/104268979289869409607?rel=author" style="display: none;">
-          <b>Paul</b> Miller
-        </a>-->
-        <a href="http://paulmillr.com/">
-          <img src="http://api.twitter.com/1/users/profile_image/paulmillr?size=normal" alt="Paul Miller">
-          <b>Paul</b> Miller
-        </a>
+      </div><!-- end banner -->
 
-        <!-- todo: add g+ links when I find them -->
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>Application assembler</h1>
 
-        <a href="http://nikgraf.com/">
-          <img src="http://api.twitter.com/1/users/profile_image/nikgraf?size=normal" alt="Nik Graf">
-          <b>Nik</b> Graf
-        </a>
+<p>Brunch is an assembler for HTML5 applications. It's agnostic to frameworks, libraries, programming, stylesheet &amp; templating languages and backend technology.</p>
 
-        <a href="http://tosh.at/">
-          <img src="http://api.twitter.com/1/users/profile_image/__tosh?size=normal" alt="Thomas Schranz">
-          <b>Thomas</b> Schranz
-        </a>
+<p>To simplify app development, brunch watches your files for changes and automatically wraps your scripts and templates in common.js modules. All build errors are printed to console. If you have growl / libnotify, brunch will use them too.</p>
 
-        <a href="https://github.com/MSNexploder">
-          <img src="http://api.twitter.com/1/users/profile_image/MSNExploder?size=normal" alt="Stefan Huber">
-          <b>Stefan</b> Huber
-        </a>
+<p>Brunch uses node.js plugins to speak with compilers. There are a bunch of plugins already:</p>
 
-        <a href="https://github.com/janmonschke">
-          <img src="http://api.twitter.com/1/users/profile_image/thedeftone?size=normal" alt="Jan Monschke">
-          <b>Jan</b> Monschke
-        </a>
+<ul>
+<li>Programming languages: JavaScript, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://maxtaco.github.com/coffee-script/">IcedCoffeeScript</a>, <a href="http://roy.brianmckenna.org/">Roy</a>
+</li>
+<li>Pre-compiled templates: <a href="http://handlebarsjs.com/">Handlebars.js</a>, <a href="http://visionmedia.github.com/jade/">Jade</a>, <a href="http://twitter.github.com/hogan.js/">Mustache</a>, <a href="https://github.com/sstephenson/eco">Eco</a>
+</li>
+<li>Styles: CSS, <a href="http://learnboost.github.com/stylus/">Stylus</a>, <a href="http://lesscss.org/">LESS</a>, <a href="http://sass-lang.com/">Sass</a>
+</li>
+<li>Minifiers: <a href="https://github.com/mishoo/UglifyJS">uglify.js</a>, <a href="https://github.com/GoalSmashers/clean-css">clean-css</a>
+</li>
+</ul><p>In case your favorite language / tool is not supported yet, you can write brunch plugin for it, it's <a href="http://brunch.readthedocs.org/en/latest/plugins.html">very simple</a>. Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Plugins">the wiki page</a> and add new plugins there.</p>
 
-        <a href="https://github.com/brunch/brunch/contributors">&amp; more</a>
-      </p>
+<p>Brunch doesn't encourage you to use any particular technology, but application skeletons can do it. Some interesting skeletons:</p>
+
+<ul>
+<li>
+<a href="https://github.com/brunch/simple-coffee-skeleton">Simple coffee (comes with brunch)</a>: very simple, HTML5 Boilerplate with Backbone.js. Main languages are CoffeeScript, Stylus and Handlebars. If you don't like coffeescript, there's a very same project that uses js as main scripting language: <a href="https://github.com/brunch/simple-js-skeleton">simple js</a>.</li>
+<li>
+<a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin</a>: Bootstrap, HTML5 Boilerplate, Chaplin classes over Backbone.js. Main languages are CoffeeScript, Stylus and Handlebars.</li>
+<li>
+<a href="https://github.com/jokull/brunch-template">@jokull's skeleton</a>: Backbone.js, Zepto.js, forms, Stylus adjustable responsive grid, modernizr, Facebook login, slideshow.</li>
+</ul><p>Of course, you can throw skeleton technologies away and buald your own structure.</p>
+
+<h2>Getting started</h2>
+
+<p>You'll need node.js 0.6.10+. Execute:</p>
+
+<pre><code>npm install -g brunch
+</code></pre>
+
+<p>You're done! Note that windows support is not there yet, but it's coming soon™.</p>
+
+<p>To create a new project, execute <code>brunch new &lt;project name&gt;</code>.</p>
+
+<p>Now you can edit the code. <code>app/</code> directory has files of your project and <code>vendor/</code> has libraries etc. that would not be wrapped in common.js modules.</p>
+
+<p>To build it, execute <code>brunch build</code> in project directory.</p>
+
+<p>To continuously rebuild the project on every change, run <code>brunch watch</code>.</p>
+
+<p>To run a simple http server, execute <code>brunch watch --server</code>.</p>
+
+<p>To install / uninstall a plugin, add it to <code>package.json</code> and execute <code>npm install</code>.</p>
+
+<h2>Documentation</h2>
+
+<p>More detailed documentation located at <a href="http://brunch.readthedocs.org/">brunch.readthedocs.org</a>. If you're upgrading from earlier version, you might be interested in <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a> and <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.</p>
+
+<h1>Examples</h1>
+
+<h2><a href="todos/public/">Todos</a></h2>
+
+<p>A port of the famous backbone todos example app (<a href="https://github.com/brunch/twitter">code</a>). Uses localStorage to persist data.</p>
+
+<p>Sébastien Béal also made <a href="https://github.com/sebastibe/brunch-django-examples">an alternative</a> which uses Django + Django Rest Framework to persist data.</p>
+
+<p><img src="images/screenshots/todos.png" alt=""></p>
+
+<h2><a href="twitter/public/">Twitter</a></h2>
+
+<p>A simple twitter client (<a href="https://github.com/brunch/twitter">code</a>). Uses <a href="https://github.com/paulmillr/brunch-with-chaplin">Chaplin</a> as app skeleton.</p>
+
+<p><img src="images/screenshots/twitter.png" alt=""></p>
+
+<h1>Community</h1>
+
+<p>Follow <a href="http://twitter.com/brunch">@brunch</a> on twitter to get latest updates &amp; news.</p>
+
+<h2>Contributing to Brunch</h2>
+
+<ul>
+<li>Fork the <a href="https://github.com/brunch/brunch">official repository</a>.</li>
+<li>Clone your fork: <code>git clone git@github.com:&lt;your-username&gt;/brunch.git</code>
+</li>
+<li>Make sure tests are passing for you: <code>npm install &amp;&amp; npm test</code>
+</li>
+<li>Create a topic branch: <code>git checkout -b features/new-feature-name</code>
+</li>
+<li>Add tests and code for your changes.</li>
+<li>Once you're done, make sure all tests still pass: <code>npm install &amp;&amp; npm test</code>
+</li>
+<li>Make sure your code conforms <a href="https://github.com/paulmillr/code-style-guides#coffeescript">coffee style guide</a>
+</li>
+<li>Commit and push to your fork.</li>
+<li>Create an pull request from your branch.</li>
+<li>Sit back and enjoy.</li>
+</ul>
+
+<h2>Users</h2>
+
+<p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Projects-and-companies-using-Brunch">the wiki page</a>!</p>
+
+<p class="users">
+  <img src="images/users/jimbeam.png" alt="Jim Beam">
+  <img src="images/users/redbull.png" alt="Red Bull">
+  <img src="images/users/uber.png" alt="Uber">
+  <img src="images/users/gormz.png" alt="GoRMZ">
+  <img src="images/users/syoss.png" alt="Syoss">
+  <img src="images/users/ykky.png" alt="YKKY">
+</p>
+
+<h2>Brought to you by</h2>
+
+<p class="builders">
+  <a href="http://paulmillr.com/"><img src="http://api.twitter.com/1/users/profile_image/paulmillr?size=normal" alt="Paul Miller">
+   <span class="name">Paul</span> Miller</a>
+  <a href="http://nikgraf.com/"><img src="http://api.twitter.com/1/users/profile_image/nikgraf?size=normal" alt="Nik Graf">
+   <span class="name">Nik</span> Graf</a>
+  <a href="http://tosh.at/"><img src="http://api.twitter.com/1/users/profile_image/__tosh?size=normal" alt="Thomas Schranz">
+   <span class="name">Thomas</span> Schranz</a>
+  <a href="https://github.com/MSNexploder"><img src="http://api.twitter.com/1/users/profile_image/MSNExploder?size=normal" alt="Stefan Huber">
+   <span class="name">Stefan</span> Huber</a>
+  <a href="https://github.com/janmonschke"><img src="http://api.twitter.com/1/users/profile_image/thedeftone?size=normal" alt="Jan Monschke">
+   <span class="name">Jan</span> Monschke</a>
+</p>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-  </div>
-  <script type="text/javascript">
-    var _gauges = _gauges || [];
-    (function() {
-      var t   = document.createElement('script');
-      t.type  = 'text/javascript';
-      t.async = true;
-      t.id    = 'gauges-tracker';
-      t.setAttribute('data-site-id', '4f1631bbcb25bc723b000007');
-      t.src = '//secure.gaug.es/track.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(t, s);
-    })();
-  </script>
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
 </html>
