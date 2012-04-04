@@ -20,7 +20,7 @@ $(document).ready(function(){
   });
   
   $("nav ul li a").live("click",function(event) {
-    $("body").animate({scrollTop:$($(this).attr("href")).offset().top-190},400);
+    $("html").animate({scrollTop:$($(this).attr("href")).offset().top-190},400);
     $("nav ul li a").parent().removeClass("active");
     $(this).parent().addClass("active");
     event.preventDefault();    
