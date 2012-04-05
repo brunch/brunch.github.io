@@ -948,9 +948,11 @@ footer {
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
   }
+  /* Don't hide the header 
   header p {
     display: none;
   }
+  */
 
   #banner {
     top: 80px;
