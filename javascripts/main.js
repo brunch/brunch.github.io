@@ -19,8 +19,13 @@ $(document).ready(function(){
     $("nav ul li:first-child a").parent().addClass("active");
   });
   
-  $("nav ul li a").live("click",function(event) {
-    $("html").animate({scrollTop:$($(this).attr("href")).offset().top-190},400);
+  $("nav ul li").on("click", "a", function(event) {
+    var position = $($(this).attr("href")).offset().top - 190;
+    var scroll = function(element) {
+      $(element).animate({scrollTop: position}, 400);
+    };
+    scroll("html");
+    scroll("body");
     $("nav ul li a").parent().removeClass("active");
     $(this).parent().addClass("active");
     event.preventDefault();    
