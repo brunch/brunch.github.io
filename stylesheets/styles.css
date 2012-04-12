@@ -856,6 +856,7 @@ nav ul a:hover {
   text-align: center; }
   .users img {
     display: inline-block;
+    padding-right: 40px;
     text-align: left; }
 .builders {
   text-align: center; }
