@@ -851,29 +851,6 @@ nav ul a:hover {
   color: #999;
 }
 
-/* Start custom css. */
-.users {
-  text-align: center; }
-  .users img {
-    display: inline-block;
-    padding-right: 40px;
-    text-align: left; }
-.builders {
-  text-align: center; }
-  .builders a {
-    display: inline-block;
-    margin: 0 1em 1em 0;
-    text-align: left;
-    width: 11em; }
-  .builders img {
-    float: left;
-    margin-right: 1em;
-    border-radius: 0.2rem; }
-  .builders .name {
-    font-weight: normal;
-    display: block; }
-/* End custom css. */
-
 footer {
   width: 180px;
   position: fixed;
@@ -942,7 +919,7 @@ footer {
     margin: 0;
   }
   header h1 {
-    font-size: 32px;
+/*    font-size: 32px;*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -983,7 +960,7 @@ footer {
     min-height: 0px;
   }
   header h1 {
-    font-size: 24px;
+/*    font-size: 24px;*/
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1034,3 +1011,54 @@ footer {
     width: auto;
   }
 }
+
+/* Start custom css. */
+.users {
+  text-align: center; }
+  .users img {
+    display: inline-block;
+    padding-right: 40px;
+    text-align: left; }
+.builders {
+  text-align: center; }
+  .builders a {
+    display: inline-block;
+    margin: 0 1em 1em 0;
+    text-align: left;
+    width: 11em; }
+  .builders img {
+    float: left;
+    margin-right: 1em;
+    border-radius: 0.2rem; }
+  .builders .name {
+    font-weight: normal;
+    display: block; }
+
+@media print, screen and (max-width: 1080px) {
+  header p {
+    padding-right: 25px;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  #banner {
+    top: 120px;
+  }
+  section {
+    margin-top: 150px;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  header {
+    height: 139px;
+  }
+  #banner {
+    top: 140px;
+    display: block;
+  }
+  section {
+    margin-top: 35px;
+  }
+}
+/* End custom css. */
