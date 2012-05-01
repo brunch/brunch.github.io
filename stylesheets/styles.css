@@ -1056,7 +1056,12 @@ footer {
   #banner {
     top: 140px;
     display: block;
+    position: absolute;
   }
+  #banner .fork {
+    position: absolute;
+  }
+  
   section {
     margin-top: 35px;
   }
