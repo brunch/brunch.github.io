@@ -1024,6 +1024,7 @@ footer {
 
 .compare-link-container {
   position: relative;
+  visibility: hidden;
 }
 
 .compare-link {
