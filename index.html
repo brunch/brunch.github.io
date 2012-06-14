@@ -37,7 +37,13 @@
 
 <p>Brunch is an assembler for HTML5 applications. It's agnostic to frameworks, libraries, programming, stylesheet &amp; templating languages and backend technology.</p>
 
-<p>To simplify app development, brunch watches your files for changes and automatically wraps your scripts and templates in common.js modules. All build errors are printed to console. If you have growl / libnotify, brunch will use them too.</p>
+<p>To simplify app development, brunch watches your files for changes and automatically wraps your scripts and templates in common.js modules. All build errors are printed to console. If you have growl / libnotify, brunch will use them too. See <a href="#compare">compare table</a> for detailed info.</p>
+
+<p>Installation is one-line. You'll need node.js 0.6.10+. Execute in console:</p>
+
+<pre><code>npm install -g brunch
+</code></pre>
+
 
 <p>Brunch uses node.js plugins to speak with compilers. There are a bunch of plugins already:</p>
 
@@ -51,6 +57,8 @@
 <li>Minifiers: <a href="https://github.com/mishoo/UglifyJS">uglify.js</a>, <a href="https://github.com/GoalSmashers/clean-css">clean-css</a>
 </li>
 </ul><p>In case your favorite language / tool is not supported yet, you can write brunch plugin for it, it's <a href="http://brunch.readthedocs.org/en/latest/plugins.html">very simple</a>. Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Plugins">the wiki page</a> and add new plugins there.</p>
+
+<h2>Skeletons</h2>
 
 <p>Brunch doesn't encourage you to use any particular technology, but application skeletons can do it. Some interesting skeletons:</p>
 
@@ -71,13 +79,6 @@
 
 <h2>Getting started</h2>
 
-<p>You'll need node.js 0.6.10+. Execute:</p>
-
-<pre><code>npm install -g brunch
-</code></pre>
-
-<p>You're done!</p>
-
 <p>To create a new project, execute <code>brunch new &lt;project name&gt;</code>.</p>
 
 <p>Now you can edit the code. <code>app/</code> directory has files of your project and <code>vendor/</code> has libraries etc. that would not be wrapped in common.js modules.</p>
@@ -94,6 +95,135 @@
 
 <p>More detailed documentation located at <a href="http://brunch.readthedocs.org/">brunch.readthedocs.org</a>. If you're upgrading from earlier version, you might be interested in <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a> and <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.</p>
 
+<h2>Compare table</h2>
+<div class="compare-link-container">
+  <div class="compare-link" id="compare" name="compare">h</div>
+</div>
+
+<p>
+  Brunch is similar to Grunt, LiveReload and CodeKit.
+  And it's also different.
+
+  Here's a quick table that compares their features:
+</p>
+
+<table class="compare-builders">
+  <tr>
+    <th>Feature</th>
+    <th>Brunch</th>
+    <th><a href="http://gruntjs.com/">Grunt</a></th>
+    <th><a href="http://livereload.com/">LiveReload</a></th>
+    <th><a href="http://incident57.com/codekit/">CodeKit</a></th>
+    <th>Comment</th>
+  </tr>
+  <tr>
+    <th>Builder, concatenator, minifier</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td>Brunch can compile your JS, CoffeeScript, Stylus, Sass (+ Compass), LESS, Mustache, Handlebars, Jade, Eco (and much more) files, concatenate output to and minify it. It just doesn't care about languages or frameworks you use.</td>
+  </tr>
+  <tr>
+    <th>File watcher</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td>Brunch recompiles and concats all your stuff automatically on any change, headlessly. No more need in compicated Makefiles and watchers.</td>
+  </tr>
+  <tr>
+    <th>Automatic browser reloading</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td>Brunch reloads your browser window every time you change stuff. (with autoreload plugin)</td>
+  </tr>
+  <tr>
+    <th>Blazing fast async API</th>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Speed is important for app watchers. Usual brunch compilation takes less than 100ms. You can use Brunch features in your node.js projects without mess.</td>
+  </tr>
+  <!--
+  <tr>
+    <th>Template precompilation</th>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch precompiles various templates like Jade and Handlebars on a server to make frontend more performant.</td>
+  </tr>
+  -->
+  <tr>
+    <th>Automatic wrapping of scripts in modules</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>All script and template files in `app/` directory are wrapped in modules to prohibit global public access and encapsulate objects.</td>
+  </tr>
+  <tr>
+    <th>Growl / Inotify output for errors</th>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>If any compiler throws an error, brunch displays it as detailed notification.</td>
+  </tr>
+  <tr>
+    <th>Built-in webserver</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch has a webserver that runs on `public` directory and an API for simple custom webservers.</td>
+  </tr>
+  <tr>
+    <th>Skeletons (boilerplates)</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch can generate your project from predefined template. There's a lot of great skeleton projects you can use already.</td>
+  </tr>
+  <tr>
+    <th>Scaffolding (generate / destroy)</th>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch can also scaffold files in your projects from templates.</td>
+  </tr>
+  <tr>
+    <th>Headless testing without a browser</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch has a `test` command which allows you to run tests in command line, without browser.</td>
+  </tr>
+  <tr>
+    <th>Cross-platform (Mac, *nix, Windows)</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch works everywhere.</td>
+  </tr>
+  <tr>
+    <th>Free</th>
+    <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch is free, both as in beer and as in speech.</td>
+  </tr>
+</table>
+
 <h1>Examples</h1>
 
 <p>We know of a few folks who are using brunch already. Ranging from internal tooling to high traffic facebook apps. Know someone else who is enjoying brunch already? Feel free to edit <a href="https://github.com/brunch/brunch/wiki/Projects-and-companies-using-Brunch">the wiki page</a>!</p>
@@ -107,7 +237,7 @@
 
 <h2>Todos</h2>
 
-<p>Disclaimer: besides of popular use, todos isn't a great example of a real-world web application. <a href="todos/public/">Todos</a> is a port of the famous backbone todos example app (<a href="https://github.com/brunch/todos">code</a>). Uses localStorage to persist data.</p>
+<p><strong>Disclaimer:</strong> besides of popular use, todos isn't a great example of a real-world web application. <a href="todos/public/">Todos</a> is a port of the famous backbone todos example app (<a href="https://github.com/brunch/todos">code</a>). Uses localStorage to persist data.</p>
 
 <p>Sébastien Béal also made <a href="https://github.com/sebastibe/brunch-django-examples">an alternative</a> which uses Django + Django Rest Framework to persist data.</p>
 

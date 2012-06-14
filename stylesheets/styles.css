@@ -1013,6 +1013,24 @@ footer {
 }
 
 /* Start custom css. */
+.compare-builders tr td:nth-child(2) {
+  border-left: 1px solid #fc0; }
+.has-feature {
+  background-color: #80bd9f;
+}
+.hasnt-feature {
+  background-color: #fb7f80;
+}
+
+.compare-link-container {
+  position: relative;
+}
+
+.compare-link {
+  position: absolute;
+  top: -226px;
+}
+
 .users {
   text-align: center; }
   .users img {
