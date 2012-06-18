@@ -747,7 +747,7 @@ header p {
   background: linear-gradient(#ffe788, #ffe788);
   background-color: #ffeca0;
 }
-#banner .fork {
+#banner .fork, #banner .follow {
   position: fixed;
   left: 50%;
   margin-left: -325px;
@@ -935,7 +935,7 @@ footer {
   #banner {
     top: 80px;
   }
-  #banner .fork {
+  #banner .fork, #banner .follow {
     float: left;
     display: inline-block;
     margin-left: 0px;
@@ -1013,6 +1013,9 @@ footer {
 }
 
 /* Start custom css. */
+.follow-github {
+  width: 111px;
+  margin-left: 190px; }
 .compare-builders tr td:nth-child(2) {
   border-left: 1px solid #fc0; }
 .has-feature {
@@ -1077,7 +1080,7 @@ footer {
     display: block;
     position: absolute;
   }
-  #banner .fork {
+  #banner .fork, #banner .follow {
     position: absolute;
   }
   
