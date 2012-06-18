@@ -824,6 +824,12 @@ nav {
   margin-left: -580px;
   text-align: right;
 }
+@media screen and (max-height: 800px){
+  nav {
+    position: absolute; 
+    top: 0;
+  }
+} 
 nav ul {
   list-style: none;
   list-style-image: none;
