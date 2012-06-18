@@ -1013,7 +1013,7 @@ footer {
 }
 
 /* Start custom css. */
-.follow-github {
+#banner .follow-github {
   width: 111px;
   margin-left: 190px; }
 .compare-builders tr td:nth-child(2) {
