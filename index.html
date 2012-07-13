@@ -37,7 +37,7 @@
 
 <p>
   Brunch is an assembler for HTML5 applications.
-  It's agnostic to frameworks, libraries, programming, stylesheet &amp;
+  It‘s agnostic to frameworks, libraries, programming, stylesheet &amp;
   templating languages and backend technology.
 </p>
 
@@ -50,7 +50,7 @@
 </p>
 
 <p>
-  Installation is one-line. You'll need node.js 0.6.10+. Execute in console:
+  Installation is one-line. You‘ll need node.js 0.6.10+. Execute in console:
 </p>
 
 <pre><code>npm install -g brunch</code></pre>
@@ -94,12 +94,12 @@
 
 <p>
   For example, if you use JavaScript files in your project,
-  you'll need a plugin that adds JS support.
+  you‘ll need a plugin that adds JS support.
   Same with styles, templates, minifiers, linters and much more.
 </p>
 
 <p>
-  To install new plugin or remove other one, usually you'll
+  To install new plugin or remove other one, usually you‘ll
   need to do three simple steps:
 
   <ol>
@@ -167,7 +167,7 @@
 </p>
 
 <p>
-  Brunch doesn't encourage you to use any particular technology,
+  Brunch doesn‘t encourage you to use any particular technology,
   but application skeletons can do it.
 </p>
 
@@ -202,7 +202,7 @@
   </li>
 
   <li>
-    <a href="https://github.com/jokull/brunch-template">@jokull's skeleton</a>:
+    <a href="https://github.com/jokull/brunch-template">@jokull‘s skeleton</a>:
     Backbone.js, Zepto.js, forms, Stylus adjustable responsive grid,
     modernizr, Facebook login, slideshow.
   </li>
@@ -210,6 +210,10 @@
   <li>
     <a href="https://github.com/icholy/ember-brunch">Brunch with Ember</a>:
     Ember.js, jQuery, Bootstrap. Main languages are JS, CSS and Handlebars.
+  </li>
+
+  <li>
+    <a href="https://github.com/damiencaselli/spine-on-brunch"></a>
   </li>
 </ul>
 
@@ -232,7 +236,7 @@
 <h2>Deploying</h2>
 
 <p>
-  Brunch-generated applications are simple static files. You can
+  Brunch-generated applications are a bunch of simple static files. You can
   host them everywhere, even on free hostings, like
   <a href="http://help.github.com/pages/">GitHub pages</a>.
 </p>
@@ -255,6 +259,16 @@
       If you use stuff that supports node.js, you can
       install brunch there and auto-build app every time.
     </li>
+    <li>
+      If you use <a href="http://help.github.com/pages/">GitHub pages</a>,
+      you‘ll need to build your app,
+      move <code>public/</code> directory to somewhere,
+      <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">switch to <code>gh-pages</code>
+      git branch</a>,
+      remove files from directory and move files from your temporary
+      dir here. There‘s no automated solution for this
+      currently, yet.
+    </li>
   </ol>
 </p>
 
@@ -263,7 +277,7 @@
 <p>
   More detailed documentation located at
   <a href="http://brunch.readthedocs.org/">brunch.readthedocs.org</a>.
-  If you're upgrading from earlier version, you might be interested in
+  If you‘re upgrading from earlier version, you might be interested in
   <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a>
   and
   <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.
@@ -277,9 +291,9 @@
 
 <p>
   Brunch is similar to Grunt, LiveReload and CodeKit.
-  And it's also different.
+  And it‘s also different.
 
-  Here's a quick table that compares their features:
+  Here‘s a quick table that compares their features:
 </p>
 
 <table class="compare-builders">
@@ -299,7 +313,7 @@
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td>Brunch can compile your JS, CoffeeScript, Stylus, Sass (+ Compass), LESS, Mustache, Handlebars, Jade, Eco (and much more) files, concatenate output to and minify it. It just doesn't care about languages or frameworks you use.</td>
+    <td>Brunch can compile your JS, CoffeeScript, Stylus, Sass (+ Compass), LESS, Mustache, Handlebars, Jade, Eco (and much more) files, concatenate output to and minify it. It just doesn‘t care about languages or frameworks you use.</td>
   </tr>
   <tr>
     <th>File watcher</th>
@@ -362,7 +376,7 @@
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="has-feature">✓</td>
-    <td>Brunch can generate your project from predefined template. There's a lot of great skeleton projects you can use already.</td>
+    <td>Brunch can generate your project from predefined template. There‘s a lot of great skeleton projects you can use already.</td>
   </tr>
   <tr>
     <th>Scaffolding (generate / destroy)</th>
@@ -415,7 +429,7 @@
 
 <h2>Todos</h2>
 
-<p><strong>Disclaimer:</strong> besides of popular use, todos isn't a great example of a real-world web application. <a href="todos/public/">Todos</a> is a port of the famous backbone todos example app (<a href="https://github.com/brunch/todos">code</a>). Uses localStorage to persist data.</p>
+<p><strong>Disclaimer:</strong> besides of popular use, todos isn‘t a great example of a real-world web application. <a href="todos/public/">Todos</a> is a port of the famous backbone todos example app (<a href="https://github.com/brunch/todos">code</a>). Uses localStorage to persist data.</p>
 
 <p>Sébastien Béal also made <a href="https://github.com/sebastibe/brunch-django-examples">an alternative</a> which uses Django + Django Rest Framework to persist data.</p>
 
@@ -479,7 +493,7 @@
 
 <h2>Uber</h2>
 <p>
-  <a href="http://uber.com">Uber</a> is everyone's private driver. Their <a href="http://clients.uber.com/">clients app</a> is made with brunch.
+  <a href="http://uber.com">Uber</a> is everyone‘s private driver. Their <a href="http://clients.uber.com/">clients app</a> is made with brunch.
 </p>
 
 <h1>Community</h1>
@@ -503,7 +517,7 @@ Feel free to discuss things with other users and ask for help in our ost.io <a h
   <li>Make sure tests are passing for you: <code>npm install &amp;&amp; npm test</code></li>
   <li>Create a topic branch: <code>git checkout -b topics/new-feature-name</code></li>
   <li>Add tests and code for your changes.</li>
-  <li>Once you're done, make sure all tests still pass: <code>npm install &amp;&amp; npm test</code></li>
+  <li>Once you‘re done, make sure all tests still pass: <code>npm install &amp;&amp; npm test</code></li>
   <li>Make sure your code conforms <a href="https://github.com/paulmillr/code-style-guides#coffeescript">coffee style guide</a></li>
   <li>Commit and push to your fork.</li>
   <li>Create an pull request from your branch.</li>
