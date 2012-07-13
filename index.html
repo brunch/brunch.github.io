@@ -213,11 +213,64 @@
   </li>
 </ul>
 
+<h2>Testing</h2>
+
+<p>
+  Brunch also has a built-in console-based test runner,
+  which will auto-require all your files in <code>test/</code>
+  directory and run them
+  via <a href="http://visionmedia.github.com/mocha/">Mocha</a>
+  test runner.
+</p>
+
+<p>
+  No more need to launch browser to run tests!
+
+  To launch Mocha in jsdom console environment, execute <code>brunch test</code>
+</p>
+
+<h2>Deploying</h2>
+
+<p>
+  Brunch-generated applications are simple static files. You can
+  host them everywhere, even on free hostings, like
+  <a href="http://help.github.com/pages/">GitHub pages</a>.
+</p>
+
+<p>
+  Because production environments are usually
+  slightly different than development envs,
+  brunch has minify option. To build application
+  that has minified JS and CSS, execute <code>brunch build --minify</code>.
+
+  Then you can deploy it:
+
+  <ol>
+    <li>
+      If you use static hosting site: build your application
+      at your machine and just upload <code>public/</code>
+      directory to the directory that is served by a webserver.
+    </li>
+    <li>
+      If you use stuff that supports node.js, you can
+      install brunch there and auto-build app every time.
+    </li>
+  </ol>
+</p>
+
 <h2>Documentation</h2>
 
-<p>More detailed documentation located at <a href="http://brunch.readthedocs.org/">brunch.readthedocs.org</a>. If you're upgrading from earlier version, you might be interested in <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a> and <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.</p>
+<p>
+  More detailed documentation located at
+  <a href="http://brunch.readthedocs.org/">brunch.readthedocs.org</a>.
+  If you're upgrading from earlier version, you might be interested in
+  <a href="http://brunch.readthedocs.org/en/latest/upgrading.html">upgrading guide</a>
+  and
+  <a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md">changelog</a>.
+</p>
 
 <h2>Compare table</h2>
+
 <div class="compare-link-container">
   <div class="compare-link" id="compare" name="compare">h</div>
 </div>
