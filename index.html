@@ -55,10 +55,40 @@
 
 <pre><code>npm install -g brunch</code></pre>
 
+<h2>Getting started</h2>
+
+<p>
+  To create a new project, execute
+  <code>brunch new &lt;project name&gt;</code>.
+</p>
+
+<p>
+  Now you can edit the code.
+  <code>app/</code> directory has files of your project and
+  <code>vendor/</code> has libraries etc.
+  that would not be wrapped in common.js modules.
+</p>
+
+<p>
+  To build it, execute <code>brunch build</code>
+  in project directory.
+</p>
+
+<p>
+  To continuously rebuild the project on every change,
+  run <code>brunch watch</code>.
+</p>
+
+<p>
+  To run a simple http server, execute
+  <code>brunch watch --server</code>.
+</p>
+
 <h2>Plugins</h2>
 
 <p>
-  Brunch has a plugin ecosystem to achieve interoperability simply via
+  Brunch has a plugin ecosystem to achieve interoperability
+  with various stuff simply via
   <a href="http://brunch.readthedocs.org/en/latest/plugins.html">plugin API</a>.
 </p>
 
@@ -182,20 +212,6 @@
     Ember.js, jQuery, Bootstrap. Main languages are JS, CSS and Handlebars.
   </li>
 </ul>
-
-<h2>Getting started</h2>
-
-<p>To create a new project, execute <code>brunch new &lt;project name&gt;</code>.</p>
-
-<p>Now you can edit the code. <code>app/</code> directory has files of your project and <code>vendor/</code> has libraries etc. that would not be wrapped in common.js modules.</p>
-
-<p>To build it, execute <code>brunch build</code> in project directory.</p>
-
-<p>To continuously rebuild the project on every change, run <code>brunch watch</code>.</p>
-
-<p>To run a simple http server, execute <code>brunch watch --server</code>.</p>
-
-<p>To install / uninstall a plugin, add it to <code>package.json</code> and execute <code>npm install</code>.</p>
 
 <h2>Documentation</h2>
 
