@@ -20,7 +20,7 @@ $(document).ready(function(){
   });
   
   $("nav ul li").on("click", "a", function(event) {
-    var position = $($(this).attr("href")).offset().top - 190;
+    var position = $($(this).attr("href")).offset().top - 20;
     var scroll = function(element) {
       $(element).animate({scrollTop: position}, 400);
     };
