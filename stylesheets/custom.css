@@ -1,16 +1,23 @@
-.has-feature {
-  color: #39AE40;
-}
-.hasnt-feature {
-  color: #FF5D55;
-}
 .compare-link-container {
   position: relative;
   visibility: hidden;
 }
 .compare-link {
   position: absolute;
-  top: -226px;
+  top: -60px;
+}
+
+.has-feature {
+  color: #39AE40;
+  text-align: center;
+}
+.hasnt-feature {
+  color: #FF5D55;
+  text-align: center;
+}
+
+.compare-builders tr td:last-child {
+  font-size: 12px;
 }
 
 .users {
@@ -19,17 +26,19 @@
     display: inline-block;
     padding-right: 40px;
     text-align: left; }
-.builders {
-  text-align: center; }
-  .builders a {
-    display: inline-block;
-    margin: 0 1em 1em 0;
-    text-align: left;
-    width: 11em; }
-  .builders img {
-    float: left;
-    margin-right: 1em;
-    border-radius: 0.2rem; }
-  .builders .name {
-    font-weight: normal;
-    display: block; }
+
+.builders a {
+  display: inline-block;
+  margin: 0 1em 1em 0;
+  width: 9em;
+  line-height: 1.2;
+}
+.builders img {
+  float: left;
+  margin-right: 1em;
+  border-radius: 0.2rem;
+}
+.builders .name {
+  font-weight: normal;
+  display: block;
+}

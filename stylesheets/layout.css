@@ -1,7 +1,7 @@
 .wrapper {
   width: 690px;
   margin: 0 auto;
-  position: relative;
+ position: relative;
 }
 
 header {
@@ -17,13 +17,11 @@ header {
 }
 
 header h1 {
-  display: block;
-  background: url('../images/brunch.png') no-repeat 0 0;
-  height: 100px;
-  width: 436px;
   margin: 0 auto;
-  text-indent: -999em;
-  -webkit-background-size: 93% auto;
+}
+
+header h1 img {
+  height: 100px;
 }
 
 header p {
@@ -62,19 +60,21 @@ nav {
 }
 
 nav ul {
-  list-style: none;
-  list-style-image: none;
+  list-style-image: url("../images/bullet.png");
   font-size: 14px;
   line-height: 24px;
 }
 
 nav ul li {
   padding: 5px 0px;
+  margin-left: 1em;
   line-height: 16px;
 }
 
 nav ul li.tag-h1 {
   font-size: 1.2em;
+  list-style: none;
+  margin-left: 0;
 }
 
 nav ul li.tag-h1 a {
@@ -96,8 +96,8 @@ nav ul a:hover {
 
 section {
   width: 690px;
-  padding: 30px 30px 50px 30px;
-  margin: 40px 0;
+  padding: 30px;
+  margin: 40px 0 20px 0;
   position: relative;
   background: #fbfbfb;
   border-radius: 3px;
@@ -109,7 +109,7 @@ footer {
   bottom: 20px;
 }
 
-@media print, screen and (max-width: 1060px) {
+@media only screen and (max-width: 1060px) {
   div.wrapper {
     width: auto;
     margin: 0;
@@ -125,10 +125,14 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 720px) {
+/* Tablets */
+@media only screen and (max-width: 1024px) {
   header {
     padding: 20px 20px;
     margin: 0;
+  }
+  header p {
+    margin: auto 100px;
   }
   #banner .button {
     display: block;
@@ -141,16 +145,14 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 480px) {
-  header {
-    min-height: 180px;
-  }
-  header h1 {
-    height: 80px;
-    width: 340px;
+/* Phones */
+@media only screen and (max-width: 480px) {
+  header h1 img {
+    height: 70px;
   }
   header p {
     font-size: 14px;
+    margin: auto 20px;
   }
   #banner {
     position: relative;
@@ -159,10 +161,21 @@ footer {
   #banner .button {
     display: inline-block;
     float: none;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+  .compare-builders {
+    font-size: 7px;
+  }
+  .compare-builders tr th:last-child,
+  .compare-builders tr td:last-child {
+    display: none;
   }
 }
 
-@media print, screen and (max-height: 480px) {
+@media only screen and (max-height: 480px) {
   nav {
     display: none;
   }

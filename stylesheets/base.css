@@ -54,6 +54,8 @@ a small {
 
 ul {
   list-style-image: url("../images/bullet.png");
+  padding-left: 0.75em;
+  line-height: 1.75;
 }
 
 strong {
@@ -78,7 +80,7 @@ code {
   background: #eee;
   color: #666;
   margin: 0 4px;
-  padding: 4px 6px;
+  padding: 3px 6px;
   border: 1px solid #ccc;
   border-radius: 2px;
 }
