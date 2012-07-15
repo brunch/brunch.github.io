@@ -43,6 +43,11 @@ h3 {
 a {
   color: #FF5D55;
   text-decoration: none;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 a:hover {
