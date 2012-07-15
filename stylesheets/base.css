@@ -45,6 +45,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #FF2D22;
+}
+
 a small {
   font-size: 11px;
   color: #666;

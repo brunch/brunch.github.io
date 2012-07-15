@@ -45,6 +45,10 @@ header p {
   margin-left: 10px;
 }
 
+#banner .button:hover {
+  background-color: #1d3871;
+}
+
 #banner .button strong {
   color: #fff;
   text-shadow: 0px 2px 0px #235796;
@@ -62,6 +66,7 @@ nav ul {
   list-style-image: url("../images/bullet.png");
   font-size: 14px;
   line-height: 24px;
+  padding-left: 50px;
 }
 
 nav ul li {
