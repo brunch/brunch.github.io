@@ -1,32 +1,41 @@
 <!doctype html>
+<!--
+
+   ____                        _
+  |  _ \                      | |
+  | |_) |_ __ _   _ _ __   ___| |__
+  |  _ <| '__| | | | '_ \ / __| '_ \
+  | |_) | |  | |_| | | | | (__| | | |
+  |____/|_|   \__,_|_| |_|\___|_| |_|
+
+-->
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Brunch</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <title>Brunch | HTML5 application assembler</title>
+    <link rel="stylesheet" href="stylesheets/application.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
   </head>
   <body>
 
-      <header>
-        <h1>Brunch</h1>
-        <p>A lightweight approach to building HTML5 applications with emphasis on elegance and simplicity</p>
-      </header>
-
+    <header>
+      <h1>
+        <a href="images/brunch.psd" title="Download the Brunch logo">
+          <img src="images/brunch.png" alt="Brunch">
+        </a>
+      </h1>
+      <p>A lightweight approach to building HTML5 applications with an emphasis on elegance and simplicity.</p>
       <div id="banner">
-        <span id="logo"></span>
-
         <a href="http://twitter.com/brunch" class="button follow follow-twitter"><strong>Follow On Twitter</strong></a>
         <a href="https://github.com/brunch/brunch" class="button follow follow follow-github"><strong>Follow On GitHub</strong></a>
-      </div><!-- end banner -->
+      </div>
+    </header>
 
     <div class="wrapper">
       <nav>
@@ -212,8 +221,10 @@
   </li>
 
   <li>
-    <a href="https://github.com/damiencaselli/spine-on-brunch"></a>
+    <a href="https://github.com/damiencaselli/spine-on-brunch">Spine on Brunch</a>:
+    Spine.js, jQuery. Main languages are CoffeeScript, Stylus and Handlebars.
   </li>
+
 </ul>
 
 <h2>Testing</h2>
@@ -260,7 +271,7 @@
     </li>
     <li>
       If you use
-      <strong><a href="http://help.github.com/pages/">GitHub pages</a></strong>,
+      <a href="http://help.github.com/pages/">GitHub pages</a>,
       you‘ll need to build your app,
       move <code>public/</code> directory to somewhere,
       <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">switch to <code>gh-pages</code>
@@ -533,32 +544,33 @@ Feel free to discuss things with other users and ask for help in our ost.io <a h
   <a href="http://nikgraf.com/"><img src="http://api.twitter.com/1/users/profile_image/nikgraf?size=normal" alt="Nik Graf">
    <span class="name">Nik</span> Graf</a>
 
-<!-- br lol --><br/>
-
   <a href="http://tosh.at/"><img src="http://api.twitter.com/1/users/profile_image/__tosh?size=normal" alt="Thomas Schranz">
    <span class="name">Thomas</span> Schranz</a>
 
   <a href="https://github.com/andihit"><img src="https://secure.gravatar.com/avatar/74d7e8869ad171950bff18c214b924b6?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" alt="Andreas Gerstmayr" width="48">
    <span class="name">Andreas</span> Gerstmayr</a>
 </p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/#!/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
-    <script type="text/javascript">
-      var _gauges = _gauges || [];
-      (function() {
-        var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
-        t.id    = 'gauges-tracker';
-        t.setAttribute('data-site-id', '4f1631bbcb25bc723b000007');
-        t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(t, s);
-      })();
-    </script>
-  </body>
+</section>
+
+<footer>
+  <p><small>Hosted on GitHub Pages &mdash; Theme based on <a href="https://github.com/mattgraham/Leap-Day">Leap Day</a>, tweaked by Brunch Team.</small></p>
+</footer>
+
+</div>
+
+<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f1631bbcb25bc723b000007');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
 </html>

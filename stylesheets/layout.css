@@ -1,0 +1,181 @@
+.wrapper {
+  width: 690px;
+  margin: 0 auto;
+ position: relative;
+}
+
+header {
+  padding: 20px 0 30px 0;
+  margin: 0;
+  text-align: center;
+  background: url(../images/background.png) #4276b6;
+  border-bottom: 6px solid #2D5891;
+  min-height: 76px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-font-smoothing: antialiased;
+}
+
+header h1 {
+  margin: 0 auto;
+}
+
+header h1 img {
+  height: 100px;
+}
+
+header p {
+  color: #d8d8d8;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
+  font-size: 18px;
+  margin: 0px;
+}
+
+#banner {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#banner .button {
+  font-size: 14px;
+  background: #2D5891;
+  padding: 9px 13px;
+  border-radius: 20px;
+  margin-left: 10px;
+}
+
+#banner .button strong {
+  color: #fff;
+  text-shadow: 0px 2px 0px #235796;
+}
+
+nav {
+  position: absolute;
+  width: 230px;
+  top: 30px;
+  left: 50%;
+  margin-left: -580px;
+}
+
+nav ul {
+  list-style-image: url("../images/bullet.png");
+  font-size: 14px;
+  line-height: 24px;
+}
+
+nav ul li {
+  padding: 5px 0px;
+  margin-left: 1em;
+  line-height: 16px;
+}
+
+nav ul li.tag-h1 {
+  font-size: 1.2em;
+  list-style: none;
+  margin-left: 0;
+}
+
+nav ul li.tag-h1 a {
+  font-weight: bold;
+  color: #333;
+}
+
+nav ul li.tag-h2 + .tag-h1 {
+  margin-top: 10px;
+}
+
+nav ul a {
+  color: #666;
+}
+
+nav ul a:hover {
+  color: #999;
+}
+
+section {
+  width: 690px;
+  padding: 30px;
+  margin: 40px 0 20px 0;
+  position: relative;
+  background: #fbfbfb;
+  border-radius: 3px;
+  border: 1px solid #cbcbcb;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+}
+
+footer {
+  bottom: 20px;
+}
+
+@media only screen and (max-width: 1060px) {
+  div.wrapper {
+    width: auto;
+    margin: 0;
+  }
+  nav {
+    display: none;
+  }
+  section {
+    margin: 30px auto 20px;
+  }
+  footer {
+    text-align: center;
+  }
+}
+
+/* Tablets */
+@media only screen and (max-width: 1024px) {
+  header {
+    padding: 20px 20px;
+    margin: 0;
+  }
+  header p {
+    margin: auto 100px;
+  }
+  #banner .button {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  section {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+/* Phones */
+@media only screen and (max-width: 480px) {
+  header h1 img {
+    height: 70px;
+  }
+  header p {
+    font-size: 14px;
+    margin: auto 20px;
+  }
+  #banner {
+    position: relative;
+    right: auto;
+  }
+  #banner .button {
+    display: inline-block;
+    float: none;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+  .compare-builders {
+    font-size: 7px;
+  }
+  .compare-builders tr th:last-child,
+  .compare-builders tr td:last-child {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  nav {
+    display: none;
+  }
+}
