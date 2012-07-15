@@ -95,7 +95,8 @@ nav ul a {
 }
 
 nav ul a:hover {
-  color: #999;
+  color: #666;
+  text-decoration: underline;
 }
 
 section {
