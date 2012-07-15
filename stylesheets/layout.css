@@ -9,7 +9,6 @@ header {
   margin: 0;
   text-align: center;
   background: url(../images/background.png) #4276b6;
-  border-bottom: 8px solid #ffcc00;
   border-bottom: 6px solid #2D5891;
   min-height: 76px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
