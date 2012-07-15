@@ -1,0 +1,35 @@
+.has-feature {
+  color: #39AE40;
+}
+.hasnt-feature {
+  color: #FF5D55;
+}
+.compare-link-container {
+  position: relative;
+  visibility: hidden;
+}
+.compare-link {
+  position: absolute;
+  top: -226px;
+}
+
+.users {
+  text-align: center; }
+  .users img {
+    display: inline-block;
+    padding-right: 40px;
+    text-align: left; }
+.builders {
+  text-align: center; }
+  .builders a {
+    display: inline-block;
+    margin: 0 1em 1em 0;
+    text-align: left;
+    width: 11em; }
+  .builders img {
+    float: left;
+    margin-right: 1em;
+    border-radius: 0.2rem; }
+  .builders .name {
+    font-weight: normal;
+    display: block; }
