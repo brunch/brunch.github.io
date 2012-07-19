@@ -31,13 +31,11 @@ header p {
   margin: 0px;
 }
 
-#banner {
-  position: absolute;
-  right: 20px;
-  top: 20px;
+.social-buttons {
+  padding-left: 10px;
 }
 
-#banner .button {
+.social-buttons .button {
   font-size: 14px;
   background: #2D5891;
   padding: 9px 13px;
@@ -45,28 +43,27 @@ header p {
   margin-left: 10px;
 }
 
-#banner .button:hover {
+.social-buttons .button:hover {
   background-color: #1d3871;
 }
 
-#banner .button strong {
+.social-buttons .button strong {
   color: #fff;
   text-shadow: 0px 2px 0px #235796;
 }
 
 nav {
   position: absolute;
-  width: 230px;
+  width: 175px;
   top: 30px;
   left: 50%;
-  margin-left: -580px;
+  margin-left: -540px;
 }
 
 nav ul {
   list-style-image: url("../images/bullet.png");
   font-size: 14px;
   line-height: 24px;
-  padding-left: 50px;
 }
 
 nav ul li {
@@ -139,7 +136,7 @@ footer {
   header p {
     margin: auto 100px;
   }
-  #banner .button {
+  .social-buttons .button {
     display: block;
     margin-bottom: 10px;
     font-size: 12px;
@@ -159,11 +156,11 @@ footer {
     font-size: 14px;
     margin: auto 20px;
   }
-  #banner {
+  .social-buttons {
     position: relative;
     right: auto;
   }
-  #banner .button {
+  .social-buttons .button {
     display: inline-block;
     float: none;
     margin-bottom: 20px;
