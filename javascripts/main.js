@@ -32,8 +32,8 @@
 }());
 
 var sectionHeight = function() {
-  var total    = $(window).height(),
-      $section = $('section').css('height','auto');
+  var total    = $(window).height();
+  var $section = $('section').css('height','auto');
 
   if ($section.outerHeight(true) < total) {
     var margin = $section.outerHeight(true) - $section.height();
