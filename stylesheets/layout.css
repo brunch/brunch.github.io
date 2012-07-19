@@ -53,6 +53,10 @@ header p {
   text-shadow: 0px 2px 0px #235796;
 }
 
+.social-button-twitter {
+  margin-bottom: 5px;
+}
+
 nav {
   position: absolute;
   width: 175px;
