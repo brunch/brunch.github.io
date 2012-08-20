@@ -162,6 +162,11 @@
   </li>
 
   <li>
+    Linters:
+    <a href="http://www.jshint.com">JSHint</a>
+  </li>
+
+  <li>
     Minifiers:
     <a href="https://github.com/mishoo/UglifyJS">uglify.js</a>,
     <a href="https://github.com/GoalSmashers/clean-css">clean-css</a>
@@ -391,7 +396,7 @@
     <th>Comment</th>
   </tr>
   <tr>
-    <th>Builder, concatenator, minifier</th>
+    <th>Builder, linter, concatenator, minifier</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
@@ -433,7 +438,7 @@
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="has-feature">✓</td>
-    <td>All script and template files in `app/` directory are wrapped in modules to prohibit global public access and encapsulate code.</td>
+    <td>All script and template files in `app/` directory are wrapped in modules (CommonJS or AMD) to prohibit global public access and encapsulate code.</td>
   </tr>
   <tr>
     <th>OS X Notification Center / Growl / Inotify output for errors</th>
