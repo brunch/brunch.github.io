@@ -33,7 +33,6 @@ header p {
 
 .social-buttons {
   margin-bottom: 20px;
-  padding-left: 10px;
 }
 
 .social-buttons .button {
@@ -54,7 +53,7 @@ header p {
 }
 
 .social-button-twitter {
-  margin-bottom: 5px;
+  float: right;
 }
 
 nav {
