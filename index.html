@@ -378,31 +378,27 @@
 </div>
 
 <p>
-  Brunch is similar to Grunt, LiveReload and CodeKit.
+  Brunch is similar to Yeoman, LiveReload and CodeKit.
   And it‘s also different.
 
   Here‘s a quick table that compares their features.
 </p>
 
 <p>
-  Google recently released
-  <a href="http://yeoman.io">Yeoman.io</a> builder, which is similar to
-  brunch too. See the <a href="https://github.com/brunch/brunch/issues/408">Differences between brunch and Yeoman</a> for more information.
+  Google’s Yeoman builder is the most popular alternative to Brunch. See the <a href="https://github.com/brunch/brunch/issues/408">Differences between brunch and Yeoman</a> for more information.
 </p>
 
 <table class="compare-builders">
   <tr>
     <th>Feature</th>
     <th>Brunch</th>
-    <th><a href="http://gruntjs.com/">Grunt</a></th>
+    <th><a href="http://yeoman.io/">Yeoman</a> (grunt)</th>
     <th><a href="http://livereload.com/">LiveReload</a></th>
     <th><a href="http://incident57.com/codekit/">CodeKit</a></th>
-    <th><a href="http://walmartlabs.github.com/lumbar/">Lumbar</a></th>
     <th>Comment</th>
   </tr>
   <tr>
     <th>Builder, linter, concatenator, minifier</th>
-    <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
@@ -415,7 +411,6 @@
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td class="has-feature">✓</td>
     <td>Brunch recompiles and concats all your stuff automatically on any change, headlessly. No more need in compicated Makefiles and watchers.</td>
   </tr>
   <tr>
@@ -424,13 +419,11 @@
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td class="hasnt-feature">✗</td>
     <td>Brunch reloads your browser window every time you change stuff. (with autoreload plugin)</td>
   </tr>
   <tr>
     <th>Blazing fast third-party API</th>
     <td class="has-feature">✓</td>
-    <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
@@ -442,7 +435,6 @@
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td class="has-feature">✓</td>
     <td>All script and template files in `app/` directory are wrapped in modules (CommonJS or AMD) to prohibit global public access and encapsulate code.</td>
   </tr>
   <tr>
@@ -451,14 +443,12 @@
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="has-feature">✓</td>
-    <td class="has-feature">✓</td>
     <td>If any compiler throws an error, brunch displays it as detailed notification.</td>
   </tr>
   <tr>
     <th>Built-in webserver</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td>Brunch has a webserver that runs on `public` directory and an API for simple custom webservers.</td>
@@ -469,16 +459,14 @@
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td class="has-feature">✓</td>
     <td>Brunch can generate your project from predefined template. There‘s a lot of great skeleton projects you can use already.</td>
   </tr>
   <tr>
     <th>Scaffolding (generate / destroy)</th>
     <td class="has-feature">✓</td>
-    <td class="hasnt-feature">✗</td>
-    <td class="hasnt-feature">✗</td>
-    <td class="hasnt-feature">✗</td>
     <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
     <td>Brunch can also scaffold files in your projects from templates.</td>
   </tr>
   <tr>
@@ -487,8 +475,15 @@
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td class="hasnt-feature">✗</td>
     <td>Brunch has a `test` command which allows you to run tests in command line, without browser.</td>
+  </tr>
+  <tr>
+    <th>Package manager</th>
+    <td class="hasnt-feature">✗</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch does not have frontend package manager integration currently, but it is coming in the next release.</td>
   </tr>
   <tr>
     <th>Cross-platform</th>
@@ -496,7 +491,6 @@
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td class="has-feature">✓</td>
     <td>Brunch works everywhere.</td>
   </tr>
   <tr>
@@ -505,7 +499,6 @@
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td class="has-feature">✓</td>
     <td>Brunch is free, both as in beer and as in speech.</td>
   </tr>
 </table>
