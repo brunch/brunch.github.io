@@ -1,3 +1,7 @@
+.example-screenshot {
+  text-align: center;
+}
+
 .compare-link-container {
   position: relative;
   visibility: hidden;
