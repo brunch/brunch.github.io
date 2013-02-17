@@ -115,25 +115,13 @@
 </p>
 
 <p>
-  To install new plugin or remove other one, usually you‘ll
-  need to do three simple steps:
+  To install new plugin, simply execute <code>npm install --save plugin-name</code>. This will install its node.js dependencies and save to <code>package.json</code>.
 </p>
 
-<ol>
-  <li>
-    Add plugin name and version
-    to <code>package.json</code>‘s <code>dependencies</code> hash.
-    See <a href="http://npmjs.org/doc/json.html#dependencies">npm docs</a>
-    for more docs on packages.
-    You can use npm package name or git / GitHub URL.
-  </li>
-  <li>
-    (sometimes needed)
-    Remove <code>node_modules</code> directory</li>
-  <li>
-    Execute <code>npm install</code> in app root directory.
-  </li>
-</ol>
+<p>To remove it, edit <code>package.json</code>‘s <code>dependencies</code> hash.
+  See <a href="http://npmjs.org/doc/json.html#dependencies">npm docs</a>
+  for more docs on packages.
+</p>
 
 <p>
   All plugins are available at
