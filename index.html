@@ -51,16 +51,30 @@
 </p>
 
 <p>
-  To simplify app development, brunch watches your files for changes
-  and automatically wraps your scripts and templates in common.js modules.
+  To simplify app development,
+  brunch automatically:
+</p>
+
+<ul>
+  <li><strong>compiles</strong> your scripts (like coffeescript), templates (like handlebars), styles (like stylus, sass or less)</li>
+  <li><strong>lints</strong> them</li>
+  <li><strong>wraps</strong> your scripts and templates in common.js modules.</li>
+  <li><strong>concatenates</strong> scripts / styles</li>
+  <li><strong>copies</strong> assets and static files</li>
+  <li><strong>optimizes</strong> the output by minifying it, improving
+    pngs</li>
+  <li><strong>watches</strong> your files for changes
+  and re-launches compilation cycle if needed</li>
+</ul>
+
+<p>
   All build errors are printed to console.
   If you have OS X 10.8+ (with <a href="https://github.com/alloy/terminal-notifier">terminal-notifier</a>) / growl / libnotify,
-  brunch will use them too. See <a href="#compare">compare table</a>
-  for detailed feature list.
+  brunch will use them too.
 </p>
 
 <p>
-  Installation is one-line. You’ll need node.js 0.6.10+. Execute in console:
+  Installation is one-line. You’ll need <a href="http://nodejs.org/download/">node.js 0.6.10+</a>. Execute in console:
 </p>
 
 <pre><code>npm install -g brunch</code></pre>
@@ -73,7 +87,7 @@
 </p>
 
 <p>
-  Now you can edit the code. The code resides in `app/` directory.
+  Now you can edit the code. The code resides in <code>app</code> directory.
   Full description of brunch application structure:
 </p>
 
@@ -165,10 +179,11 @@ root/         # Main brunch application directory.
 <ul>
   <li>
     Programming languages: JavaScript,
-    <a href="http://coffeescript.org/">CoffeeScript</a>,
-    <a href="http://maxtaco.github.com/coffee-script/">IcedCoffeeScript</a>,
-    <a href="http://gkz.github.com/LiveScript/">LiveScript</a>,
-    <a href="http://roy.brianmckenna.org/">Roy</a>
+    <a href="http://coffeescript.org">CoffeeScript</a>,
+    <a href="http://livescript.net">LiveScript</a>,
+    <a href="http://www.typescriptlang.org">TypeScript</a>,
+    <a href="http://maxtaco.github.com/coffee-script">IcedCoffeeScript</a>,
+    <a href="http://roy.brianmckenna.org">Roy</a>
   </li>
 
   <li>
@@ -227,7 +242,7 @@ root/         # Main brunch application directory.
     <a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin (comes with brunch)</a>:
     HTML5 Boilerplate,
     <a href="http://chaplinjs.org/">Chaplin</a>
-    classes over Backbone.js. Main languages are CoffeeScript,
+    framework over Backbone.js. Main languages are CoffeeScript,
     Stylus and Handlebars. Pretty useful for big apps.
   </li>
 
@@ -263,6 +278,8 @@ root/         # Main brunch application directory.
     <a href="https://github.com/monokrome/brunch-with-brunch">Brunch with Brunch</a> — super minimal skeleton, useful if you want to port
     existing application or use your own stack.
   </li>
+
+  <li><a href="https://github.com/brunch/brunch/wiki/Skeletons">Submit your own skeleton</a></li>
 </ul>
 
 <h2>Testing</h2>
@@ -617,6 +634,8 @@ You can also ask questions with <a href="http://stackoverflow.com/questions/tagg
   <a href="mailto:&#112;&#97;&#117;&#108;&#43;&#104;&#105;&#114;&#101;&#64;&#112;&#97;&#117;&#108;&#109;&#105;&#108;&#108;&#114;&#46;&#99;&#111;&#109;">an email</a>
   for more information.
 </p>
+
+<p><a href="https://github.com/brunch/brunch.github.com/edit/master/index.html">Add your company that offers Brunch services too.</a></p>
 
 <h2>Brought to you by</h2>
 
