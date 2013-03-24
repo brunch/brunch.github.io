@@ -222,20 +222,22 @@
   </li>
 </ul>
 
-<h2>Testing</h2>
+<h2>Scaffolding and testing</h2>
 
 <p>
-  Brunch also has a built-in console-based test runner,
-  which will auto-require all your files in <code>test/</code>
-  directory and run them
-  via <a href="http://visionmedia.github.com/mocha/">Mocha</a>
-  test runner.
+  If you need scaffolding, there is a separate
+  <a href="https://github.com/paulmillr/scaffolt">scaffolt</a> project,
+  which was once used to be a part of brunch as <code>brunch generate</code>.
+  It is the simplest one, with implementation based on JSON scaffolder specifications and Handlebars templates for stuff.
+  Use it like this: <code>scaffolt model user</code>.
 </p>
 
 <p>
-  No more need to launch browser to run tests!
-
-  To launch Mocha in jsdom console environment, execute <code>brunch test</code>
+  If you need console test runner and don’t want to launch browser,
+  there is a separate
+  <a href="http://metaskills.net/mocha-phantomjs/">mocha-phantomjs</a> project,
+  a successor of <code>brunch test</code> command.
+  Use it like this: <code>mocha-phantomjs public/test/index.html</code>.
 </p>
 
 <h2>Deploying</h2>
