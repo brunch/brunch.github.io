@@ -46,13 +46,14 @@
 
 <p>
   Brunch is an assembler for HTML5 applications.
+  It is a simple but powerful <strong>build process and pipeline</strong>.
   It’s agnostic to frameworks, libraries, programming, stylesheet &amp;
   templating languages and backend technology. To simplify app development,
   brunch automatically:
 </p>
 
 <ul>
-  <li><strong>compiles</strong> your scripts (like coffeescript), templates (like handlebars), styles (like stylus, sass or less), including these from   <a href="http://bower.io">Bower</a> package manager</li>
+  <li><strong>compiles</strong> your scripts (like coffeescript), templates (like handlebars), styles (like stylus, sass or less)</li>
 </li>
   <li><strong>lints</strong> them</li>
   <li><strong>wraps</strong> your scripts and templates in common.js / AMD modules.</li>
@@ -73,7 +74,7 @@
 <h2>Getting started</h2>
 
 <ul>
-  <li><code>brunch new &lt;skeleton-path-or-URI&gt; [optional-output-dir]</code> will create new project. <code>skeleton-path-or-URI</code> specifies <a href="http://brunch.io/#skeletons-list">skeleton</a> from which your application will be initialised. Now you can edit the code. See <a href="https://github.com/brunch/brunch/blob/master/docs/README.md">description of app structure</a>.</li>
+  <li><code>brunch new &lt;skeleton-path-or-URI&gt; [optional-output-dir]</code> will create new project. <code>skeleton-path-or-URI</code> specifies <a href="http://brunch.io/#skeletons-list">skeleton</a> from which your application will be initialised. Now you can edit the code. See <a href="https://github.com/brunch/brunch/blob/stable/docs/README.md">description of app structure</a>.</li>
   <li><code>brunch build</code> will then fully build the project. With <code>--optimize</code> flag it will be also minified.</li>
   <li><code>brunch watch</code> may be used for continuous incremental rebuild of the whole application. You can also use <code>--server</code> flag to launch simple web server with <a href="http://diveintohtml5.info/history.html">pushstate</a> support.</li>
 </ul>
@@ -171,7 +172,7 @@
 
 <pre><code>brunch new &lt;path-or-URI&gt; [optional-output-dir]</code></pre>
 <pre><code>brunch new gh:brunch/dead-simple</code></pre>
-<pre><code>brunch new gh:paulmillr/brunch-with-chaplin</code></pre>
+<pre><code>brunch new https://github.com/paulmillr/brunch-with-chaplin</code></pre>
 
 <p>
   Brunch doesn’t encourage you to use any particular technology,
@@ -188,7 +189,12 @@
 
 <ul>
   <li>
-    <a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin</a> (comes with brunch):
+    <a href="https://github.com/brunch/dead-simple">Dead-simple brunch</a> — super minimal skeleton, useful if you want to port
+    existing application or use your own stack.
+  </li>
+
+  <li>
+    <a href="https://github.com/paulmillr/brunch-with-chaplin">Brunch with Chaplin</a>:
     HTML5 Boilerplate,
     <a href="http://chaplinjs.org/">Chaplin</a>
     framework over Backbone.js. Main languages are CoffeeScript,
@@ -225,16 +231,6 @@
   </li>
 
   <li>
-    <a href="http://emberjs.com">Ember</a>-based:
-    <ul>
-      <li><a href="https://github.com/gcollazo/brunch-with-ember-reloaded">Brunch with Ember Reloaded</a>: Handlebars, H5BP, Swag; based on the official ember starter kit</li>
-      <li><a href="https://github.com/icholy/ember-brunch">Brunch with Ember</a>: Bootstrap, Handlebars</li>
-      <li><a href="https://github.com/wordofchristian/brunch-with-hampsters">Brunch with Hampsters</a>: Coffee, Stylus, Embem.js, Swag, Font Awesome and modernizr</li>
-    </ul>
-
-  </li>
-
-  <li>
     <a href="http://angularjs.org">Angular</a>-based:
     <ul>
       <li>
@@ -250,16 +246,22 @@
   </li>
 
   <li>
+    <a href="http://emberjs.com">Ember</a>-based:
+    <ul>
+      <li><a href="https://github.com/gcollazo/brunch-with-ember-reloaded">Brunch with Ember Reloaded</a>: Handlebars, H5BP, Swag; based on the official ember starter kit</li>
+      <li><a href="https://github.com/icholy/ember-brunch">Brunch with Ember</a>: Bootstrap, Handlebars</li>
+      <li><a href="https://github.com/wordofchristian/brunch-with-hampsters">Brunch with Hampsters</a>: Coffee, Stylus, Embem.js, Swag, Font Awesome and modernizr</li>
+    </ul>
+
+  </li>
+
+  <li>
     And others:
     <ul>
       <li>
         <a href="https://github.com/markmarijnissen/spine-livescript-brunch-skeleton">Spine on Brunch</a>:
         with <a href="http://spinejs.com">Spine.js</a>.
         Main languages are LiveScript, Less and Jade.
-      </li>
-      <li>
-        <a href="https://github.com/monokrome/brunch-with-brunch">Brunch with Brunch</a> — super minimal skeleton, useful if you want to port
-        existing application or use your own stack.
       </li>
       <li>
         <a href="https://github.com/jupl/cordova-brunch">Cordova-brunch</a> which works nice with <a href="http://cordova.apache.org">Apache Cordova</a> (aka phonegap)
@@ -292,16 +294,13 @@
   Brunch-generated applications are a bunch of simple static files. You can
   host them everywhere, even on free hostings, like
   <a href="http://help.github.com/pages/">GitHub pages</a>.
-</p>
 
-<p>
   Because production environments are usually
   slightly different than development envs,
-  brunch has minify option. To build application
-  that has minified JS and CSS, execute <code>brunch build --optimize</code>.
-
-  Then you can deploy it:
+  brunch has <code>optimize</code> option.
 </p>
+
+<p>To build application that has minified JS and CSS, execute <code>brunch build --optimize</code>. Then you can deploy it:</p>
 
 <ul>
   <li>
@@ -333,56 +332,16 @@
 
 <h2>Documentation</h2>
 
-<ul>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/README.md">Basics</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/faq.md">FAQ</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/commands.md">Commands</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/config.md">Config</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/plugins.md">Plugins</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/skeletons.md">Skeletons</a></li>
-  <li><a href="https://github.com/brunch/brunch/blob/master/docs/upgrading.md">Upgrading</a></li>
-</ul>
+<p>All docs are available <a href="https://github.com/brunch/brunch/tree/stable/docs">on GitHub</a>. Also take a look at <a href="https://github.com/brunch/brunch/wiki/Examples,-articles-and-tutorials">articles, tutorials and talks</a>.</p>
 
-<p>Brunch supports <a href="http://bower.io">Bower</a> package manager.</p>
-
-<p>To add package to your project:</p>
-
-<ol>
-<li>Make sure you have <code>bower.json</code>, which can be generated by <code>bower init</code></li>
-<li>Add packages to <code>dependencies</code> field of your <code>bower.json</code></li>
-<li>Optionally specify <a href="https://github.com/paulmillr/read-components#read-components"><code>overrides</code> property</a> for packages without <code>bower.json</code></li>
-</ol>
-
-<div class="markdown-body">
-<h3>Articles / tutorials <a href="https://github.com/brunch/brunch/wiki/Examples,-articles-and-tutorials">(add yours)</a></h3>
-
-<ul>
-  <li><a href="http://thomassileo.com/blog/2012/09/10/build-a-backbone-slash-brunch-slash-chaplin-backend-with-python-flask-and-mongodb/">Build a Backbone/Brunch/Chaplin Backend With Python Flask and MongoDB</a></li>
-  <li><a href="http://thomassileo.com/blog/2012/09/23/how-to-track-page-views-and-clicks-on-your-chaplin-slash-backbone-app-with-clicky-web-analytics/">How to Track Page Views and Clicks on Your Brunch/Chaplin/Backbone App With Clicky Web Analytics</a></li>
-  <li><a href="http://blog.stevenlu.com/2012/05/04/brunchio-on-mac-osx/">Brunch.io on OS X</a></li>
-  <li><a href="http://gelnior.wordpress.com/2012/04/28/how-to-quickly-start-a-single-page-application-with-node-js/">How to quickly start a single-page application with Node.js</a></li>
-  <li><a href="http://making.snip.it/2012/03/30/giving-backbone-some-backbone/">Sadly, A brunch that doesn't involve bacon</a> — description of snip.it’s experience with Brunch.</li>
-  <li><a href="http://making.snip.it/2012/05/06/building-on-brunch/">Adding hogan.js to Brunch</a> at snip.it blog.</li>
-  <li><a href="http://www.habdas.org/developing-modern-web-applications-on-windows-vagrant/">Developing modern web applications on Windows with Vagrant</a></li>
-</ul>
-
-<h3>Talks</h3>
-
-<ul>
-<li><a href="https://speakerdeck.com/u/jokull/p/brunchio">Brunch talk by @jokull</a></li>
-<li><a href="http://www.youtube.com/video/AnE6m1Q1520">Getting started with Brunch by @KyleAMathews</a></li>
-<li><a href="http://www.rvl.io/djebbz/brunch/">Brunch, an HTML5 application assembler by @Dj3bbZ</a></li>
-</ul>
-</div>
-
-<h2>Compare with <a href="http://gruntjs.com">Grunt</a></h2>
+<h2>Compare table</h2>
 
 <div class="compare-link-container">
   <a class="compare-link" id="compare" name="compare" href="#compare">h</a>
 </div>
 
 <p>
-  Brunch is similar to Grunt, LiveReload and CodeKit.
+  Brunch is similar to <a href="http://gruntjs.com">Grunt</a>, LiveReload and CodeKit.
   And it’s also different.
 </p>
 
@@ -393,12 +352,14 @@
 <table class="compare-builders">
   <tr>
     <th>Feature</th>
-    <th>Brunch workflow</th>
-    <th>Grunt workflow</th>
+    <th>Brunch</th>
+    <th>Grunt</th>
+    <th>Rails asset pipeline</th>
     <th>Comment</th>
   </tr>
   <tr>
     <th>Builder, linter, concatenator, minifier</th>
+    <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td>Brunch can compile your JS, CoffeeScript, Stylus, Sass (+ Compass), LESS, Mustache, Handlebars, Jade, Eco (and much more) files, concatenate output to and minify it. It just doesn’t care about languages or frameworks you use.</td>
@@ -407,35 +368,48 @@
     <th>File watcher</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
     <td>Brunch recompiles and concats all your stuff automatically on any change, headlessly. No more need in compicated Makefiles and watchers.</td>
   </tr>
   <tr>
-    <th>Automatic browser reloading</th>
+    <th>Auto-reload</th>
+    <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
     <td>Brunch reloads your browser window every time you change stuff (with autoreload plugin)</td>
   </tr>
   <tr>
-    <th>Module system support</th>
+    <th>Framework-agnostic</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td>All script and template files in <code>app/</code> directory may be wrapped in modules (CommonJS or AMD) to prohibit global public access and encapsulate code. Basically brunch may do the job of r.js optimizer.</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch just doesn’t care about stuff you’re using for structure. You can use any backend you like, be it node.js, Rails or Lift. You can even keep frontend and backend as separate projects.</td>
   </tr>
   <tr>
-    <th>Skeletons (boilerplates)</th>
+    <th>Auto-support for modules</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td>Brunch can generate your project from predefined template. There’s a lot of great skeleton projects you can use already. Grunt supports scaffolding too, via <a href="http://yeoman.org"><code>yo</code> utility</a></td>
+    <td class="hasnt-feature">✗</td>
+    <td>All script and template files may be wrapped in modules (CommonJS or AMD) to prohibit global public access and encapsulate code. Brunch may also do the job of r.js optimizer automatically.</td>
   </tr>
   <tr>
-    <th>Blazing fast recompilation</th>
+    <th>Skeletons / boilerplates</th>
     <td class="has-feature">✓</td>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch can generate your project from predefined template. There’s a lot of great skeleton projects you can use already.</a></td>
+  </tr>
+  <tr>
+    <th>Blazing fast</th>
+    <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td>Speed is important for app watchers. Usual brunch compilation takes less time than you need to alt-tab to browser window. Unlike Grunt, Brunch recompiles only changed parts of your app and extensively uses caching for others.</td>
   </tr>
   <tr>
-    <th>Super simple</th>
+    <th>Incredibly simple</th>
     <td class="has-feature">✓</td>
+    <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
     <td>All you need to do with Brunch is run one command and everything will be managed for you, without need to write <a href="https://gist.github.com/paulmillr/3697384">sophisticated 300LOC build configs</a>.</td>
   </tr>
@@ -443,25 +417,22 @@
     <th>Headless <a href="http://bower.io">Bower</a> integration</th>
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
-    <td>Brunch supports headless integration with Bower package manager. Unlike with Grunt, you don’t need to specify all used files in details — brunch will auto-detect them in most cases and automatically concat in correct order</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch supports <a href="https://github.com/brunch/brunch/blob/stable/docs/faq.md#how-to-use-bower">headless integration</a> with Bower package manager. Unlike with Grunt, you don’t need to specify all used files in details — brunch will auto-detect them in most cases and automatically concat in correct order</td>
   </tr>
   <tr>
     <th>Headless source maps generation</th>
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
-    <td>Brunch automatically generates source maps for all your files so debugging becomes very simple even when all files are concatenated and minified. Brunch simply generates even sophisticated source maps (compile coffeescript and templates -> concatenate all files -> minify with uglify.js)</td>
+    <td class="hasnt-feature">✗</td>
+    <td>Brunch automatically generates source maps for all your files so debugging becomes very simple even when all files are concatenated and minified. <!--Brunch simply generates even sophisticated source maps (compile coffeescript and templates -> concatenate all files -> minify with uglify.js)--></td>
   </tr>
   <tr>
-    <th>Cross-platform</th>
+    <th>Cross-platform and free</th>
     <td class="has-feature">✓</td>
     <td class="has-feature">✓</td>
-    <td>Brunch works everywhere.</td>
-  </tr>
-  <tr>
-    <th>Free</th>
     <td class="has-feature">✓</td>
-    <td class="has-feature">✓</td>
-    <td>Brunch is free, both as in beer and as in speech.</td>
+    <td>Brunch is free, both as in beer and as in speech and works everywhere.</td>
   </tr>
 </table>
 
@@ -606,7 +577,7 @@ You can also ask questions with <a href="http://stackoverflow.com/questions/tagg
 
 <p>
    <a href="http://andriy.drozdyuk.com">Andriy Drozdyuk</a> in Fredericton, NB, Canada. Contact me at <a href="mailto:drozzy@gmail.com">drozzy@gmail.com</a> for more information.
-   Local only.   
+   Local only.
 </p>
 <p>Are you providing Brunch consulting too? <a href="https://github.com/brunch/brunch.github.com/edit/master/index.html">Place yourself here!</a></p>
 
