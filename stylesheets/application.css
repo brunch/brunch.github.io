@@ -7,7 +7,5 @@ by Matt Graham (@michigangraham)
 */
 
 @import 'normalize.css';
-@import 'fonts.css';
 @import 'base.css';
 @import 'layout.css';
-@import 'custom.css';

@@ -49,13 +49,13 @@ var listenForScroll = function() {
   var lastScrollY = 0;
   var ticking = false;
   var wrapper = $('.wrapper');
-  var nav = wrapper.find('> nav');
+  var nav = wrapper.find('.nav-header');
 
   var update = function() {
-    if (lastScrollY > 230) {
-      nav.css({position: 'fixed'});
+    if (lastScrollY > 205) {
+      nav.css({position: 'fixed', top: 0});
     } else {
-      nav.css({position: 'absolute'});
+      nav.css({position: 'absolute', top: '-25px'});
     }
     ticking = false;
   };
@@ -73,32 +73,23 @@ var listenForScroll = function() {
   };
 
   $(window).on('scroll', onScroll);
+  onScroll();
 };
 
 $(document).ready(function(){
-  $("section h1, section h2").each(function(){
-    $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '') + "'>" + $(this).text().replace(/\(.*\)/, '') + "</a></li>");
-    $(this).attr("id", $(this).text().toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
-    $("nav ul li:first-child a").parent().addClass("active");
-  });
-
-  $("nav ul li").on("click", "a", function(event) {
-    var position = $($(this).attr("href")).offset().top - 20;
-    var scroll = function(element) {
-      $(element).animate({scrollTop: position}, 400);
-    };
-    scroll("html");
-    scroll("body");
-    $("nav ul li a").parent().removeClass("active");
-    $(this).parent().addClass("active");
-    event.preventDefault();
-  });
-
-  sectionHeight();
-
-  $('img').load(sectionHeight);
-
   listenForScroll();
+  (function() {
+    var queryAll = function(selector) {
+      return [].slice.call(document.querySelectorAll(selector));
+    };
+    var links = queryAll('.page-nav > li > a');
+    links.forEach(function(link) {
+      link.className = link.className.replace('active', '');
+      var re = new RegExp(link.getAttribute('data-pattern'));
+      console.log(location.href, re);
+      if (re.test(location.href)) link.className += ' active';
+    });
+  })();
 });
 
 fixScale = function(doc) {
