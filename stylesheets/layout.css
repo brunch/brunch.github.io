@@ -39,10 +39,10 @@ body {
   top: 9px;
   right: 10px;
   width: 48px;
-  height: 32px;
+  height: 39px;
   padding: 8px 12px;
-  background-color: rgba(188, 122, 152, 0.95);
-  border: 1px solid rgba(188, 122, 152, 0.95);
+  background-color: rgba(152, 122, 188, 0.95);
+  border: 1px solid rgba(152, 122, 188, 0.95);
 }
 
 .toggle-navigation > .icon-bar {
@@ -402,4 +402,118 @@ footer {
 }
 .page-nav li {
   display: inline;
+}
+
+.example-screenshot {
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 750px) {
+  .toggle-navigation {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .nav-header {
+    width: 100%;
+  }
+}
+
+/* Tablets */
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    width: auto;
+  }
+  .nav-header {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .nav-header .list-wrapper {
+    width: auto;
+    padding: 0;
+  }
+  .nav-header p {
+    margin: auto 100px;
+  }
+
+  .nav-header ul {
+    padding: 0;
+  }
+  .nav-header .toggle-navigation {
+    float: right;
+  }
+
+  .nav-header .nav-toggle-content {
+    display: none;
+  }
+
+  .nav-header li {
+    float: none;
+    display: list-item;
+    padding: 0;
+  }
+  .nav-header .logo {
+    display: inline-block;
+    float: none;
+    height: 30px;
+    width: 40px;
+  }
+  .nav-header .logo-text {
+    margin: 0;
+  }
+  .nav-header .logo-text-entity {
+    position: relative;
+    top: -2px;
+  }
+  .social-buttons .button {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  section {
+    width: auto;
+    margin: 30px 0 0 0;
+  }
+  .primary-downloads {
+    margin-left: auto;
+  }
+}
+
+/* Phones */
+@media only screen and (max-width: 480px) {
+  .nav-header h1 img {
+    height: 70px;
+  }
+  .nav-header p {
+    font-size: 14px;
+    margin: auto 20px;
+  }
+  .social-buttons {
+    position: relative;
+    right: auto;
+  }
+  .social-buttons .button {
+    display: inline-block;
+    float: none;
+    margin-bottom: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+  .compare-builders {
+    font-size: 7px;
+  }
+  .compare-builders tr th:last-child,
+  .compare-builders tr td:last-child {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  nav {
+    display: none;
+  }
 }
