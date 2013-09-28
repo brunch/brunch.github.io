@@ -1,0 +1,27 @@
+{
+  "name": "brunch.github.com",
+  "description": "The Brunch.io web site",
+  "author": "Michael Hellein",
+  "version": "0.0.1",
+  "repository": "git@github.com:brunch/brunch.github.com.git",
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "css-brunch": ">= 1.0 < 1.8",
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "jade-brunch": "~1.7.2",
+    "coffee-script-brunch": "~1.7.2",
+    "static-jade-brunch": "~1.4.11",
+    "auto-reload-brunch": "~1.7.0"
+  },
+  "devDependencies": {
+    "grunt-grunticon": "~0.6.12",
+    "grunt": "~0.4.1",
+    "grunt-sed": "~0.1.1",
+    "matchdep": "~0.1.2"
+  }
+}

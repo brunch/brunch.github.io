@@ -1,0 +1,30 @@
+!!! 5
+html(ng-app="Mockup")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+      block title
+    meta(name='viewport', content='width=device-width')
+    link(rel='shortcut icon', type="image/x-icon", href='/favicon.ico')
+    link(rel='stylesheet', href='styles/app.css')
+    include /assets/images/icons/grunticon.loader.txt
+
+  body
+
+    .icon-brunch-logo-web(style="width:200px; height:75px;")
+    
+    ul.nav
+      li
+      each item in nav
+        li: a(href='/'+item.path+(item.path?'.html':''))= item.title
+
+    .grid
+      .grid__item.two-thirds
+        block content
+      .grid__item.one-third
+        block sidebar
+
+    script(src='scripts/app.js')
+    script.
+      require('scripts/app');

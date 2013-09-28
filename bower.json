@@ -1,0 +1,19 @@
+{
+  "name": "brunch.github.com",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "inuit.css": "~5.0.0"
+  },
+  "overrides": {
+    "inuit.css": {
+      "main": "_inuit.scss"
+    }
+  }
+}
