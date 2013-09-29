@@ -4,6 +4,7 @@
 @import "inuit.css/inuit"
 
 $body-padding: 24px
+$brand-color: #3F894A
 
 .container, %container
   width: 100%
@@ -48,9 +49,14 @@ h1, h2, h3
   @extend .weight--light
   padding: 4px 15px
   text-decoration: none
+  color: $brand-color
+
+  &.active
+    border-bottom: 3px solid $brand-color
 
   &:hover
-    text-decoration: underline
+    color: darken($brand-color, 15%)
+    border-color: darken($brand-color, 15%)
 
 .nav--sentence
   li
@@ -104,6 +110,6 @@ pre code
   margin-bottom: 0
 
 .has-feature
-  color: #3F894A
+  color: $brand-color
 .hasnt-feature
   color: #874040

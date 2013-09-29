@@ -22,9 +22,9 @@ html
         a.icon-brunch-logo-web(href="/")
         
         ul.nav.nav--main-nav
-          li
           each item in nav
-            li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''))= item.title
+            active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
+            li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''), class=active?'active':null)= item.title
 
 
     block hero

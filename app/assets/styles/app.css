@@ -979,8 +979,9 @@ body { padding: 24px; padding-top: 0; }
 
 .nav--main-nav { float: right; margin-top: 28px; margin-bottom: 0; }
 
-.nav__item--main-nav { padding: 4px 15px; text-decoration: none; }
-.nav__item--main-nav:hover { text-decoration: underline; }
+.nav__item--main-nav { padding: 4px 15px; text-decoration: none; color: #3f894a; }
+.nav__item--main-nav.active { border-bottom: 3px solid #3f894a; }
+.nav__item--main-nav:hover { color: #27552e; border-color: #27552e; }
 
 .nav--sentence li { padding-right: 0.25em; }
 .nav--sentence li:last-child:before { content: " and "; }
