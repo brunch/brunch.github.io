@@ -16,7 +16,8 @@
     "jade-brunch": "~1.7.2",
     "coffee-script-brunch": "~1.7.2",
     "static-jade-brunch": "~1.4.11",
-    "auto-reload-brunch": "~1.7.0"
+    "auto-reload-brunch": "~1.7.0",
+    "marked": "~0.2.9"
   },
   "devDependencies": {
     "grunt-grunticon": "~0.6.12",

@@ -16,11 +16,14 @@ exports.config =
         nav: [
           {title: 'Home', path: ''},
           {title: 'Examples', path: 'examples'},
+          {title: 'Plugins', path: 'plugins'},
+          {title: 'Skeletons', path: 'skeletons'},
+          {title: 'Compare', path: 'compare'},
           {title: 'Support', path: 'support'},
         ]
         social:[
+          {classname: 'github', width: 165, src: 'http://ghbtns.com/github-btn.html?user=brunch&repo=brunch&type=watch&count=true&size=large'},
           {classname: 'twitter', width: 188, src: 'https://platform.twitter.com/widgets/follow_button.html?screen_name=brunch&show_count=true&size=l'},
-          {classname: 'github', width: 165, src: 'http://ghbtns.com/github-btn.html?user=brunch&repo=brunch&type=watch&count=true&size=large'}
         ]
     autoReload:
       # Disabling js is a workaround to avoid the jade compilation race condition in auto-reload-brunch.

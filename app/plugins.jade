@@ -1,0 +1,93 @@
+extends /_layouts/_default
+
+block content
+
+  :markdown
+
+    # Plugins
+
+    <p>
+      Brunch has a plugin ecosystem to achieve interoperability
+      with various stuff simply via
+      <a href="http://brunch.readthedocs.org/en/latest/plugins.html">plugin API</a>.
+    </p>
+
+    <p>
+      For example, if you use JavaScript files in your project,
+      you’ll need a plugin that adds JS support.
+      Same with styles, templates, minifiers, linters and much more.
+    </p>
+
+    <p>
+      To install new plugin, simply execute <code>npm install --save plugin-name</code>. This will install its node.js dependencies and save to <code>package.json</code>.
+    </p>
+
+    <p>To remove it, edit <code>package.json</code>’s <code>dependencies</code> hash.
+      See <a href="http://npmjs.org/doc/json.html#dependencies">npm docs</a>
+      for more docs on packages.
+    </p>
+
+    <p>
+      All plugins are available at
+      <a href="https://github.com/brunch/brunch/wiki/Plugins">the Plugins wiki page</a>.
+      Feel free to add your plugins to it.
+      Some interesting plugins from there:
+    </p>
+
+    <ul>
+      <li>
+        Programming languages: JavaScript,
+        <a href="http://coffeescript.org">CoffeeScript</a>,
+        <a href="http://livescript.net">LiveScript</a>,
+        <a href="http://maxtaco.github.com/coffee-script">IcedCoffeeScript</a>,
+        <a href="http://roy.brianmckenna.org">Roy</a>
+      </li>
+
+      <li>
+        Pre-compiled templates:
+        <a href="http://handlebarsjs.com/">Handlebars.js</a>,
+        <a href="http://visionmedia.github.com/jade/">Jade</a>,
+        <a href="http://twitter.github.com/hogan.js/">Mustache</a>,
+        <a href="https://github.com/sstephenson/eco">Eco</a>,
+        <a href="https://github.com/machty/emblem-brunch">Emblem</a>,
+        <a href="https://github.com/mgarbacz/dustjs-linkedin-brunch">Dust</a>
+      </li>
+
+      <li>
+        Styles: CSS,
+        <a href="http://learnboost.github.com/stylus/">Stylus</a>,
+        <a href="http://lesscss.org/">LESS</a>,
+        <a href="http://sass-lang.com/">Sass</a>
+      </li>
+
+      <li>
+        Linters:
+        <a href="http://www.jshint.com">JSHint</a>,
+        <a href="http://www.coffeelint.org">CoffeeLint</a>
+      </li>
+
+      <li>
+        Optimizers:
+        <a href="https://github.com/mishoo/UglifyJS2">uglify.js</a>,
+        <a href="https://github.com/GoalSmashers/clean-css">clean-css</a>,
+        <a href="https://github.com/steffenmllr/imageoptmizer-brunch">OptiPNG / OptiJPG</a>
+      </li>
+    </ul>
+
+    <h2>Scaffolding and testing</h2>
+
+    <p>
+      If you need scaffolding, there is a separate
+      <a href="https://github.com/paulmillr/scaffolt">scaffolt</a> project,
+      which was once used to be a part of brunch as <code>brunch generate</code>.
+      It is the simplest one, with implementation based on JSON scaffolder specifications and Handlebars templates for stuff.
+      Use it like this: <code>scaffolt model user</code>.
+    </p>
+
+    <p>
+      If you need console test runner and don’t want to launch browser,
+      there is a separate
+      <a href="http://metaskills.net/mocha-phantomjs/">mocha-phantomjs</a> project,
+      a successor of <code>brunch test</code> command.
+      Use it like this: <code>mocha-phantomjs public/test/index.html</code>.
+    </p>

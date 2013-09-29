@@ -215,14 +215,14 @@ label, input, textarea, button, select, option { cursor: pointer; }
 /*------------------------------------*\ $CLEARFIX
 \*------------------------------------*/
 /** Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php Extend the clearfix class with Sass to avoid the `.cf` class appearing over and over in your markup. */
-.cf:after, .nav:after, #navbar:after { content: ""; display: table; clear: both; }
+.cf:after, .nav:after, .island:after, pre code:after, .islet:after, #navbar:after { content: ""; display: table; clear: both; }
 
 /*------------------------------------*\ $SHARED
 \*------------------------------------*/
 /** Where `margin-bottom` is concerned, this value will be the same as the base line-height. This allows us to keep a consistent vertical rhythm. As per: csswizardry.com/2012/06/single-direction-margin-declarations */
 /** Base elements */
-h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dl, blockquote, p, address, table, fieldset, figure, pre, .form-fields > li, .media, .island, .islet { margin-bottom: 24px; margin-bottom: 1.5rem; }
-.islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet ul, .islet ol, .islet dl, .islet blockquote, .islet p, .islet address, .islet table, .islet fieldset, .islet figure, .islet pre, .islet .form-fields > li, .islet .media, .islet .island, .islet .islet { margin-bottom: 12px; margin-bottom: 0.75rem; }
+h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dl, blockquote, p, address, table, fieldset, figure, pre, .form-fields > li, .media, .island, pre code, .islet { margin-bottom: 24px; margin-bottom: 1.5rem; }
+.islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet ul, .islet ol, .islet dl, .islet blockquote, .islet p, .islet address, .islet table, .islet fieldset, .islet figure, .islet pre, .islet .form-fields > li, .islet .media, .islet .island, .islet pre code, pre .islet code, .islet .islet { margin-bottom: 12px; margin-bottom: 0.75rem; }
 
 /** Doubled up `margin-bottom` helper class. */
 .landmark { margin-bottom: 48px; margin-bottom: 3rem; }
@@ -523,6 +523,48 @@ label, .label { display: block; }
 /** Make a list of keywords. Extends `.nav`, e.g.:  `<ul class="nav  nav--keywords>`  */
 .nav--keywords > li:after { content: ", "; }
 .nav--keywords > li:last-child:after { display: none; }
+
+/*------------------------------------*\ $ISLAND
+\*------------------------------------*/
+/** Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object E.g.:  <div class=island> I am boxed off. </div>  Demo: jsfiddle.net/inuitcss/u8pV3  */
+.island, pre code, .islet { display: block; }
+
+.island, pre code { padding: 24px; }
+
+.island > :last-child, pre code > :last-child, .islet > :last-child { margin-bottom: 0; }
+
+/** Just like `.island`, only smaller. */
+.islet { padding: 12px; }
+
+/*------------------------------------*\ $BLOCK-LIST
+\*------------------------------------*/
+/** Create big blocky lists of content, e.g.:  <ul class=block-list> <li>Foo</li> <li>Bar</li> <li>Baz</li> <li><a href=# class=block-list__link>Foo Bar Baz</a></li> </ul>  Extend this object in your theme stylesheet.  Demo: jsfiddle.net/inuitcss/hR57q  */
+.block-list, .block-list > li { border: 0 solid #cccccc; }
+
+.block-list { list-style: none; margin-left: 0; border-top-width: 1px; }
+.block-list > li { border-bottom-width: 1px; padding: 12px; }
+
+.block-list__link { display: block; padding: 12px; margin: -12px; }
+
+/*------------------------------------*\ $RULES
+\*------------------------------------*/
+/** Horizontal rules, extend `hr`.  Demo: jsfiddle.net/inuitcss/L6GuZ  */
+.rule { color: #cccccc; border: none; border-bottom-width: 1px; border-bottom-style: solid; margin-bottom: 23px; margin-bottom: 1.4375rem; }
+
+/** Dotted rules */
+.rule--dotted { border-bottom-style: dotted; }
+
+/** Dashed rules */
+.rule--dashed { border-bottom-style: dashed; }
+
+/** Ornamental rules. Places a § over the rule. */
+.rule--ornament { position: relative; /**
+* Pass in an arbitrary ornament though a data attribute, e.g.:
+* <hr class="rule  rule--ornament" data-ornament="!">
+*
+*/ }
+.rule--ornament:after { content: "§"; position: absolute; top: 0; right: 0; left: 0; line-height: 0; text-align: center; }
+.rule--ornament[data-ornament]:after { content: attr(data-ornament); }
 
 /** Style trumps; helper and brand classes */
 /*------------------------------------*\ $WIDTHS
@@ -932,7 +974,7 @@ body, html { background: #eeeeee; }
 body { padding: 24px; padding-top: 0; }
 @media only screen and (min-width: 1024px) { body { padding-top: 95px; } }
 
-#navbar { padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; }
+#navbar { border-bottom: 2px solid #427684; padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; }
 @media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; } }
 
 .nav--main-nav { float: right; margin-top: 28px; margin-bottom: 0; }
@@ -940,12 +982,24 @@ body { padding: 24px; padding-top: 0; }
 .nav__item--main-nav { padding: 4px 15px; text-decoration: none; }
 .nav__item--main-nav:hover { text-decoration: underline; }
 
+.nav--sentence li { padding-right: 0.25em; }
+.nav--sentence li:last-child:before { content: " and "; }
+.nav--sentence li:last-child:after { display: inline; content: "."; }
+
 .page__content { margin-top: 45px; }
 
-.hero { padding-top: 35px; padding-bottom: 45px; background: #999999; color: white; margin-left: -24px; margin-right: -24px; }
+.hero { border-bottom: 1px solid #cccccc; padding-top: 33px; padding-bottom: 45px; background: #7fc4d6; margin-left: -24px; margin-right: -24px; }
+.hero h1 { color: white; }
+.hero .nav--keywords li:hover { padding-left: 0.25em; margin-left: -0.25em; background: white; }
 
 .hero__content { margin-top: 25px; margin-bottom: 25px; }
 
 .icon-brunch-logo-web { display: block; width: 200px; height: 75px; float: left; }
 
 .icon-brunch-logo-napkin { width: 250px; height: 250px; margin: 0 auto; }
+
+pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0; }
+
+.has-feature { color: #3f894a; }
+
+.hasnt-feature { color: #874040; }

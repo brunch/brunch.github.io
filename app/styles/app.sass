@@ -26,6 +26,7 @@ h1, h2, h3
 
 #navbar
   @extend .cf
+  border-bottom: 2px solid #427684
   padding-top: 10px
   padding-bottom: 10px
   background: #fff
@@ -51,16 +52,35 @@ h1, h2, h3
   &:hover
     text-decoration: underline
 
+.nav--sentence
+  li
+    padding-right: 0.25em
+  li:last-child
+    &:before
+      content: " and "
+    &:after
+      display: inline
+      content: "."
+
 .page__content
   margin-top: 45px
 
 .hero
-  padding-top: 35px
+  border-bottom: 1px solid #ccc
+  padding-top: 33px
   padding-bottom: 45px
-  background: #999
-  color: #fff
+  background: #7FC4D6
   margin-left: -$body-padding
   margin-right: -$body-padding
+
+  h1
+    color: #fff
+
+  .nav--keywords
+    li:hover
+      padding-left: 0.25em
+      margin-left: -0.25em
+      background: #fff
 
 .hero__content
   margin-top: 25px
@@ -76,3 +96,14 @@ h1, h2, h3
   width: 250px
   height: 250px
   margin: 0 auto
+
+pre code
+  @extend .island
+  border-top: 1px solid #ddd
+  background: #f4f4f4
+  margin-bottom: 0
+
+.has-feature
+  color: #3F894A
+.hasnt-feature
+  color: #874040

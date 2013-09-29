@@ -8,7 +8,106 @@ block hero
           .icon-brunch-logo-napkin
         .grid__item.one-whole.desk-two-thirds
           .hero__content
-            h1 Are you coming to brunch?
+            h1.kilo Will you be coming to brunch?
+
+            h3.flush--bottom.soft-half--bottom Brunch...
+            include /_includes/_features
 
 block content
-  include /_includes/main.html
+  h1 Brunch is an assembler for HTML5 applications
+
+  :markdown
+
+    Installation is one-line, once you have [node.js](http://nodejs.org/download/). In your console, run:
+
+        code npm install -g brunch
+
+    ## Getting started
+
+    #### Create a new Brunch project:
+
+        brunch new <skeleton-path-or-URI> [optional-output-dir]
+
+    `skeleton-path-or-URI` specifies a [skeleton](/skeletons.html) from which your application will be initialized. 
+
+    See the [README](https://github.com/brunch/brunch/blob/stable/docs/README.md) for a complete description of app structure.
+
+    #### Develop with Brunch:
+
+        brunch watch --server
+
+    tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional `server` flag launches a simple web server with [pushState](http://diveintohtml5.info/history.html) support.
+
+    If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal-notifier](https://github.com/alloy/terminal-notifier): `[sudo] gem install terminal-notifier`.
+
+    #### Build with Brunch:
+
+        brunch build --optimize
+
+    builds a project for distribution. The optionsl `optimize` flag enables minification.
+
+    # Documentation
+
+    All docs are available [on GitHub](https://github.com/brunch/brunch/tree/stable/docs).
+
+    ## A Quick Demo
+
+    See the <a href="http://vimeo.com/61056660">video that shows starting new app with Brunch</a>:
+
+    <iframe src="http://player.vimeo.com/video/61056660" style="width: 100%; height: 400px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+    <h2>Deploying</h2>
+
+    <p>
+      Brunch-generated applications are a bunch of simple static files. You can
+      host them everywhere, even on free hostings, like
+      <a href="http://help.github.com/pages/">GitHub pages</a>.
+
+      Because production environments are usually
+      slightly different than development envs,
+      brunch has <code>optimize</code> option.
+    </p>
+
+    <p>To build application that has minified JS and CSS, execute <code>brunch build --optimize</code>. Then you can deploy it:</p>
+
+    <ul>
+      <li>
+        If you use <strong>static hosting site</strong>: build your application
+        on your machine and just upload <code>public/</code>
+        directory to the directory that is served by a webserver.
+      </li>
+      <li>
+        If you use <strong>hosting that supports node.js</strong>, you can
+        install brunch there and auto-build app every time.
+      </li>
+      <li>
+        If you prefer <a href="http://heroku.com/">Heroku</a>,
+        there is <a href="https://gist.github.com/3596447">a nice small guide</a>
+        on deploying.
+        Should work even on free instances.
+      </li>
+      <li>
+        If you’re into
+        <a href="http://help.github.com/pages/">GitHub pages</a>,
+        you’ll need to build your app,
+        move <code>public/</code> directory to somewhere,
+        <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">switch to <code>gh-pages</code>
+        git branch</a>,
+        remove files from directory and move files from your temporary
+        dir here.
+      </li>
+    </ul>
+
+
+  h2 Brought to you by
+
+  ul.block-list
+    li
+      <a href="http://paulmillr.com/" rel="author"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller"><span class="name">Paul</span> Miller</a>
+    li
+      <a href="http://nikgraf.com/"><img src="https://secure.gravatar.com/avatar/8fc75580dbacd91ff28514b68baf1a8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Nik Graf"><span class="name">Nik</span> Graf</a>
+    li
+      <a href="http://ramen.io/"><img src="https://secure.gravatar.com/avatar/37c5132eed30539456c79906dd8c6065?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Thomas Schranz"><span class="name">Thomas</span> Schranz</a>
+    li
+      <a href="https://github.com/es128"><img src="https://secure.gravatar.com/avatar/c8c06173c01b4e95594e4af3a8a815f1?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Elan Shanker"><span class="name">Elan</span> Shanker</a>
+
