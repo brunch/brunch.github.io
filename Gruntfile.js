@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     grunticon: {
       logo: {
         options: {
-          src: "src/icons/",
-          dest: "app/assets/images/icons/",
+          src: "src/svg/",
+          dest: "app/assets/images/svg/",
           svgo: true
         }
       }
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
     sed: {
       relativePaths: {
-        path: 'app/assets/images/icons/grunticon.loader.txt',
+        path: 'app/assets/images/svg/grunticon.loader.txt',
         pattern: /\/app\/assets\//g,
         replacement: '/'
       }
