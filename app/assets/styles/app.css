@@ -215,7 +215,7 @@ label, input, textarea, button, select, option { cursor: pointer; }
 /*------------------------------------*\ $CLEARFIX
 \*------------------------------------*/
 /** Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php Extend the clearfix class with Sass to avoid the `.cf` class appearing over and over in your markup. */
-.cf:after, .nav:after { content: ""; display: table; clear: both; }
+.cf:after, .nav:after, #navbar:after { content: ""; display: table; clear: both; }
 
 /*------------------------------------*\ $SHARED
 \*------------------------------------*/
@@ -247,7 +247,7 @@ h2, .beta { font-size: 30px; font-size: 1.875rem; line-height: 1.6; }
 
 h3, .gamma { font-size: 24px; font-size: 1.5rem; line-height: 1; }
 
-h4, .delta { font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
+h4, .delta, .nav__item--main-nav { font-size: 20px; font-size: 1.25rem; line-height: 1.2; }
 
 h5, .epsilon { font-size: 16px; font-size: 1rem; line-height: 1.5; }
 
@@ -804,7 +804,7 @@ label, .label { display: block; }
 .text--right { text-align: right !important; }
 
 /** Font weights */
-.weight--light { font-weight: 300 !important; }
+.weight--light, h1, h2, h3, .nav__item--main-nav { font-weight: 300 !important; }
 
 .weight--normal { font-weight: 400 !important; }
 
@@ -925,4 +925,27 @@ label, .label { display: block; }
 @media only screen and (min-width: 1024px) { .accessibility--desk, .visuallyhidden--desk { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 @media only screen and (min-width: 1200px) { .accessibility--desk-wide, .visuallyhidden--desk-wide { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 /* endif */
-body { max-width: 1200px; margin: 0 auto; padding: 24px; padding-bottom: 0; }
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+body, html { background: #eeeeee; }
+
+body { padding: 24px; padding-top: 0; }
+@media only screen and (min-width: 1024px) { body { padding-top: 95px; } }
+
+#navbar { padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; }
+@media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; } }
+
+.nav--main-nav { float: right; margin-top: 28px; margin-bottom: 0; }
+
+.nav__item--main-nav { padding: 4px 15px; text-decoration: none; }
+.nav__item--main-nav:hover { text-decoration: underline; }
+
+.page__content { margin-top: 45px; }
+
+.hero { padding-top: 35px; padding-bottom: 45px; background: #999999; color: white; margin-left: -24px; margin-right: -24px; }
+
+.hero__content { margin-top: 25px; margin-bottom: 25px; }
+
+.icon-brunch-logo-web { display: block; width: 200px; height: 75px; float: left; }
+
+.icon-brunch-logo-napkin { width: 250px; height: 250px; margin: 0 auto; }

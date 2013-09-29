@@ -3,8 +3,76 @@
 @import "vars"
 @import "inuit.css/inuit"
 
-body
+$body-padding: 24px
+
+.container, %container
+  width: 100%
   max-width: 1200px
   margin: 0 auto
-  padding: 24px
-  padding-bottom: 0
+  padding: 0 20px
+
+body, html
+  background: #eee
+
+body
+  padding: $body-padding
+  padding-top: 0
+
+  @include media-query(desk)
+    padding-top: 95px
+
+h1, h2, h3
+  @extend .weight--light
+
+#navbar
+  @extend .cf
+  padding-top: 10px
+  padding-bottom: 10px
+  background: #fff
+  margin-bottom: 20px
+
+  @include media-query(desk)
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+
+.nav--main-nav
+  float: right
+  margin-top: 28px
+  margin-bottom: 0
+
+.nav__item--main-nav
+  @extend .delta
+  @extend .weight--light
+  padding: 4px 15px
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+.page__content
+  margin-top: 45px
+
+.hero
+  padding-top: 35px
+  padding-bottom: 45px
+  background: #999
+  color: #fff
+  margin-left: -$body-padding
+  margin-right: -$body-padding
+
+.hero__content
+  margin-top: 25px
+  margin-bottom: 25px
+
+.icon-brunch-logo-web
+  display: block
+  width: 200px
+  height: 75px
+  float: left
+
+.icon-brunch-logo-napkin
+  width: 250px
+  height: 250px
+  margin: 0 auto
