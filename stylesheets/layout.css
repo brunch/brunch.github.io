@@ -67,8 +67,10 @@ body {
   padding: 20px 0 30px 0;
   margin: 0;
   text-align: center;
-  background: url(../images/background.png) #4276b6;
-  border-bottom: 6px solid #2D5891;
+  background: url(../images/background.png) #7fc4d6;
+  background: #eee;
+  color: black;
+  border-bottom: 6px solid rgba(127, 196, 214, 0.99);
   min-height: 76px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-font-smoothing: antialiased;
@@ -84,7 +86,7 @@ body {
 
 .main-header p {
   color: #d8d8d8;
-  color: white;
+  color: black;
   text-shadow: rgba(0, 0, 0, 0.2) 0 1px 0;
   font-size: 18px;
   margin: 0px;
@@ -305,7 +307,7 @@ footer {
   border-bottom: 6px solid #2D5891;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   -webkit-font-smoothing: antialiased;
-  background-color: rgba(66, 118, 182, 0.95);
+  background-color: rgba(127, 196, 214, 0.95);
   border-bottom: 0;
   height: 40px;
   color: #fff;
@@ -379,11 +381,11 @@ footer {
 }
 
 .nav-header a:hover {
-  color: #E0F8D8;
+  color: #666;
 }
 
 .nav-header a.active {
-  color: #FCC376;
+  color: black;
 }
 
 .nav-header h1 {
