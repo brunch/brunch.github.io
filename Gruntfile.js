@@ -23,8 +23,20 @@ module.exports = function(grunt) {
       }
     },
 
+
+    'gh-pages': {
+      options: {
+        base: 'public',
+        branch: 'master',
+        message: 'Auto-generated build commit'
+      },
+      src: ['**']
+    }
+
   });
 
   grunt.registerTask('default', ['grunticon', 'sed']);
+
+  grunt.registerTask('publish', ['gh-pages']);
 
 };

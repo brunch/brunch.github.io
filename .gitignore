@@ -28,5 +28,8 @@ tmp/
 # Brunch output folder.
 public/
 
+# Local grunt temp folder
+.grunt/
+
 # Bower stuff.
 bower_components/

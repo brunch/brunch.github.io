@@ -23,6 +23,7 @@
     "grunt-grunticon": "~0.6.12",
     "grunt": "~0.4.1",
     "grunt-sed": "~0.1.1",
-    "matchdep": "~0.1.2"
+    "matchdep": "~0.1.2",
+    "grunt-gh-pages": "~0.7.5"
   }
 }
