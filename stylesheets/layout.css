@@ -413,6 +413,11 @@ footer {
   text-align: center;
 }
 
+.author-avatar-text {
+  position: relative;
+  top: -15px;
+}
+
 
 @media only screen and (min-width: 560px) {
   .toggle-navigation {
