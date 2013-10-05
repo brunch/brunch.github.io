@@ -363,6 +363,8 @@ footer {
 .nav-header .logo {
   width: 52px;
   float: left;
+  position: relative;
+  top: 5px;
 }
 
 .nav-header .logo-text {
