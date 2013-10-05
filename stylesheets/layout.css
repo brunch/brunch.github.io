@@ -42,6 +42,7 @@ body {
   height: 39px;
   padding: 8px 12px;
   background-color: transparent;
+  border: 0;
 }
 
 .toggle-navigation > .icon-bar {
