@@ -41,8 +41,7 @@ body {
   width: 48px;
   height: 39px;
   padding: 8px 12px;
-  background-color: rgba(152, 122, 188, 0.95);
-  border: 1px solid rgba(152, 122, 188, 0.95);
+  background-color: transparent;
 }
 
 .toggle-navigation > .icon-bar {
