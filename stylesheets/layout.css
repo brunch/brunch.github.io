@@ -427,12 +427,6 @@ footer {
   }
 }
 
-@media only screen and (max-width: 1060px) {
-  .nav-header {
-    width: 100%;
-  }
-}
-
 /* Tablets */
 @media only screen and (max-width: 560px) {
   .wrapper {
