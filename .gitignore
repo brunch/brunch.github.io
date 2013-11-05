@@ -33,3 +33,6 @@ public/
 
 # Bower stuff.
 bower_components/
+
+# Site.
+/_site/

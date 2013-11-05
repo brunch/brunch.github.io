@@ -974,6 +974,10 @@ body, html { background: #eeeeee; }
 body { padding: 24px; padding-top: 0; }
 @media only screen and (min-width: 1024px) { body { padding-top: 95px; } }
 
+a, a:visited { color: #3f894a; }
+
+a:hover { color: #27552e; }
+
 #navbar { border-bottom: 2px solid #427684; padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; }
 @media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; } }
 
@@ -1004,3 +1008,9 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 .has-feature { color: #3f894a; }
 
 .hasnt-feature { color: #874040; }
+
+.builders a { display: inline-block; margin: 0 0.9em 1em 0; width: 9em; height: 28px; line-height: 1.2; }
+
+.builders img { float: left; margin-right: 1em; border-radius: 0.2rem; max-width: 100%; }
+
+.builders .name { font-weight: normal; display: block; }

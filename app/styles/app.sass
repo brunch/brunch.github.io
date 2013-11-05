@@ -25,6 +25,12 @@ body
 h1, h2, h3
   @extend .weight--light
 
+a, a:visited
+  color: $brand-color
+
+a:hover
+  color: darken($brand-color, 15%)
+
 #navbar
   @extend .cf
   border-bottom: 2px solid #427684
@@ -113,3 +119,21 @@ pre code
   color: $brand-color
 .hasnt-feature
   color: #874040
+
+
+.builders a
+  display: inline-block
+  margin: 0 0.9em 1em 0
+  width: 9em
+  height: 28px
+  line-height: 1.2
+
+.builders img
+  float: left
+  margin-right: 1em
+  border-radius: 0.2rem
+  max-width: 100%
+
+.builders .name
+  font-weight: normal
+  display: block

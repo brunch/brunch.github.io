@@ -20,15 +20,15 @@ block content
 
     Installation is one-line, once you have [node.js](http://nodejs.org/download/). In your console, run:
 
-        code npm install -g brunch
+        npm install -g brunch
 
     ## Getting started
 
     #### Create a new Brunch project:
 
-        brunch new <skeleton-path-or-URI> [optional-output-dir]
+        brunch new <skeleton-URL> [optional-output-dir]
 
-    `skeleton-path-or-URI` specifies a [skeleton](/skeletons.html) from which your application will be initialized. 
+    `skeleton-URL` specifies a [skeleton](/skeletons.html) from which your application will be initialized.
 
     See the [README](https://github.com/brunch/brunch/blob/stable/docs/README.md) for a complete description of app structure.
 
@@ -42,9 +42,9 @@ block content
 
     #### Build with Brunch:
 
-        brunch build --optimize
+        brunch build --production
 
-    builds a project for distribution. The optionsl `optimize` flag enables minification.
+    builds a project for distribution. By default it enables minification.
 
     # Documentation
 
@@ -65,10 +65,10 @@ block content
 
       Because production environments are usually
       slightly different than development envs,
-      brunch has <code>optimize</code> option.
+      brunch has <code>production</code> option.
     </p>
 
-    <p>To build application that has minified JS and CSS, execute <code>brunch build --optimize</code>. Then you can deploy it:</p>
+    <p>To build application that has minified JS and CSS, execute <code>brunch build --production</code>. Then you can deploy it:</p>
 
     <ul>
       <li>

@@ -15,7 +15,7 @@
     "clean-css-brunch": ">= 1.0 < 1.8",
     "jade-brunch": "~1.7.2",
     "coffee-script-brunch": "~1.7.2",
-    "static-jade-brunch": "git://github.com/michaek/static-jade-brunch.git",
+    "static-jade-brunch": "git://github.com/ilkosta/static-jade-brunch.git",
     "auto-reload-brunch": "~1.7.0",
     "marked": "~0.2.9"
   },
