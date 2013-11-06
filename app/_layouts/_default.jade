@@ -30,17 +30,7 @@ html
     block hero
 
     .page__content.container
-      .grid
-        .grid__item.one-whole.desk-one-third(style="float:right")
-          .social-buttons
-            each service in social
-              div: iframe(class="social-button-#{service.classname}", allowtransparency="true", frameborder="0", scrolling="no", src=service.src, style="width: #{service.width}; height:30px;")
-          block sidebar
-          h3 People love Brunch!
-          | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/brunch/favorites" data-widget-id="397311715655684096">Favorite Tweets by @brunch</a>
-          | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-        .grid__item.one-whole.desk-two-thirds
-          block content
+      block main
 
       block below
 
