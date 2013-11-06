@@ -1018,3 +1018,7 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 .builders img { float: left; margin-right: 1em; border-radius: 0.2rem; max-width: 100%; }
 
 .builders .name { font-weight: normal; display: block; }
+
+@media only screen and (max-width: 1023px) { .tweets { display: none; } }
+
+@media only screen and (max-width: 640px) { .social-buttons > span { display: block; } }

@@ -143,3 +143,11 @@ pre code
 .builders .name
   font-weight: normal
   display: block
+
+.tweets
+  @include media-query(portable)
+    display: none
+
+.social-buttons > span
+  @media only screen and (max-width: 640px)
+    display: block
