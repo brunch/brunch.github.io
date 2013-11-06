@@ -978,8 +978,8 @@ a, a:visited { color: #3f894a; }
 
 a:hover { color: #27552e; }
 
-#navbar { border-bottom: 2px solid #427684; padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; }
-@media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; } }
+#navbar { border-bottom: 2px solid #427684; padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; margin-left: -24px; margin-right: -24px; }
+@media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; margin-left: 0; margin-right: 0; } }
 
 .nav--main-nav { float: right; margin-top: 28px; margin-bottom: 0; }
 
@@ -994,6 +994,7 @@ a:hover { color: #27552e; }
 .page__content { margin-top: 45px; }
 
 .hero { border-bottom: 1px solid #cccccc; padding-top: 33px; padding-bottom: 45px; background: #7fc4d6; margin-left: -24px; margin-right: -24px; }
+@media only screen and (max-width: 1023px) { .hero { margin-top: -20px; } }
 .hero h1 { color: white; }
 .hero .nav--keywords li:hover { padding-left: 0.25em; margin-left: -0.25em; background: white; }
 
@@ -1001,7 +1002,8 @@ a:hover { color: #27552e; }
 
 .icon-brunch-logo-web { display: block; width: 200px; height: 75px; float: left; }
 
-.icon-brunch-logo-napkin { width: 250px; height: 250px; margin: 0 auto; }
+.icon-brunch-logo-napkin { width: 250px; height: 250px; margin: 0 auto; transition: background-size 0.2s; background-size: 100%; }
+@media only screen and (max-width: 580px) and (min-width: 481px) { .icon-brunch-logo-napkin { background-size: 80%; } }
 
 pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0; }
 
@@ -1011,10 +1013,14 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 
 .builders { border: 0; }
 
-.builders li { float: left; }
+.builders li { float: left; border: 0; }
 
 .builders a { display: inline-block; margin: 0 0.8em 1em 0; width: 8em; height: 28px; line-height: 1.2; }
 
 .builders img { float: left; margin-right: 1em; border-radius: 0.2rem; max-width: 100%; }
 
 .builders .name { font-weight: normal; display: block; }
+
+@media only screen and (max-width: 1023px) { .tweets { display: none; } }
+
+@media only screen and (max-width: 640px) { .social-buttons > span { display: block; } }
