@@ -1009,7 +1009,11 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 
 .hasnt-feature { color: #874040; }
 
-.builders a { display: inline-block; margin: 0 0.9em 1em 0; width: 9em; height: 28px; line-height: 1.2; }
+.builders { border: 0; }
+
+.builders li { float: left; }
+
+.builders a { display: inline-block; margin: 0 0.8em 1em 0; width: 8em; height: 28px; line-height: 1.2; }
 
 .builders img { float: left; margin-right: 1em; border-radius: 0.2rem; max-width: 100%; }
 
