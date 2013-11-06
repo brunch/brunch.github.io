@@ -38,12 +38,16 @@ a:hover
   padding-bottom: 10px
   background: #fff
   margin-bottom: 20px
+  margin-left: -$body-padding
+  margin-right: -$body-padding
 
   @include media-query(desk)
     position: fixed
     top: 0
     left: 0
     right: 0
+    margin-left: 0
+    margin-right: 0
 
 .nav--main-nav
   float: right
@@ -84,6 +88,8 @@ a:hover
   background: #7FC4D6
   margin-left: -$body-padding
   margin-right: -$body-padding
+  @include media-query(portable)
+    margin-top: -20px
 
   h1
     color: #fff
@@ -108,6 +114,11 @@ a:hover
   width: 250px
   height: 250px
   margin: 0 auto
+  transition: background-size 0.2s
+  background-size: 100%
+
+  @media only screen and (max-width: 580px) and (min-width: 481px)
+    background-size: 80%
 
 pre code
   @extend .island
