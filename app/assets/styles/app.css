@@ -1011,7 +1011,7 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 
 .builders { border: 0; }
 
-.builders li { float: left; }
+.builders li { float: left; border: 0; }
 
 .builders a { display: inline-block; margin: 0 0.8em 1em 0; width: 8em; height: 28px; line-height: 1.2; }
 
