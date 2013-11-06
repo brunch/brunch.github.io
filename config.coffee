@@ -15,9 +15,9 @@ exports.config =
       locals:
         nav: [
           {title: 'Home', path: ''},
-          {title: 'Examples', path: 'examples'},
           {title: 'Plugins', path: 'plugins'},
           {title: 'Skeletons', path: 'skeletons'},
+          {title: 'Examples', path: 'examples'},
           {title: 'Compare', path: 'compare'},
           {title: 'Support', path: 'support'},
         ]
