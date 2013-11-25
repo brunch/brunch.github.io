@@ -383,3 +383,4 @@ if (typeof define === 'function' && define.amd) {
 });
 
 ;
+//# sourceMappingURL=static.js.map
