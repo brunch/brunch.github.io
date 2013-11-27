@@ -1,7 +1,7 @@
 Installation is one-line, once you have
 [node.js](http://nodejs.org/download/). In your console, run:
 
-    code npm install -g brunch
+    npm install -g brunch
 
 ## Getting started
 
@@ -9,7 +9,7 @@ Installation is one-line, once you have
 
     brunch new <skeleton-path-or-URI> [optional-output-dir]
 
-`skeleton-path-or-URI` specifies a [skeleton](/skeletons.html) from which your application will be initialized. 
+`skeleton-path-or-URI` specifies a [skeleton](/skeletons.html) from which your application will be initialized.
 
 See the [README](https://github.com/brunch/brunch/blob/stable/docs/README.md) for a complete description of app structure.
 
@@ -23,9 +23,9 @@ If you use OS X and want brunch to show system notification every time compilati
 
 #### Build with Brunch:
 
-    brunch build --optimize
+    brunch build --production
 
-builds a project for distribution. The optionsl `optimize` flag enables minification.
+builds a project for distribution. The optional `production` flag enables minification.
 
 ## A Quick Demo
 
