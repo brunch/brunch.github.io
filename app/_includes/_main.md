@@ -19,7 +19,7 @@ See the [README](https://github.com/brunch/brunch/blob/stable/docs/README.md) fo
 
 tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional `server` flag launches a simple web server with [pushState](http://diveintohtml5.info/history.html) support.
 
-If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal-notifier](https://github.com/alloy/terminal-notifier): `[sudo] gem install terminal-notifier`.
+If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal-notifier](https://github.com/alloy/terminal-notifier): `[sudo] brew install terminal-notifier`.
 
 #### Build with Brunch:
 
