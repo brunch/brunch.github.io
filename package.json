@@ -1,7 +1,7 @@
 {
   "name": "brunch.github.com",
   "description": "The Brunch.io web site",
-  "author": "Michael Hellein",
+  "author": "",
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "scripts": {
