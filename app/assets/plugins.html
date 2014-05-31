@@ -5,7 +5,7 @@
 /* grunticon Stylesheet Loader | https://github.com/filamentgroup/grunticon | (c) 2012 Scott Jehl, Filament Group, Inc. | MIT license. */
 window.grunticon=function(e){if(e&&3===e.length){var t=window,n=!(!t.document.createElementNS||!t.document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||window.opera&&-1===navigator.userAgent.indexOf("Chrome")),o=function(o){var r=t.document.createElement("link"),a=t.document.getElementsByTagName("script")[0];r.rel="stylesheet",r.href=e[o&&n?0:o?1:2],a.parentNode.insertBefore(r,a)},r=new t.Image;r.onerror=function(){o(!1)},r.onload=function(){o(1===r.width&&1===r.height)},r.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="}};
 grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css", "/images/svg/icons.fallback.css" ] );</script>
-<noscript><link href="/images/svg/icons.fallback.css" rel="stylesheet"></noscript></head><body><div id="navbar"><div class="container"><a href="/" class="icon-brunch-logo-web"></a><ul class="nav nav--main-nav"><li><a href="/" class="nav__item--main-nav">Home</a></li><li><a href="/plugins.html" class="nav__item--main-nav active">Plugins</a></li><li><a href="/skeletons.html" class="nav__item--main-nav">Skeletons</a></li><li><a href="/examples.html" class="nav__item--main-nav">Examples</a></li><li><a href="/compare.html" class="nav__item--main-nav">Compare</a></li><li><a href="/support.html" class="nav__item--main-nav">Support</a></li><li><a href="https://brunch.roon.io/" class="nav__item--main-nav">Blog</a></li></ul></div></div><div class="page__content container"><h1 id="plugins">Plugins</h1>
+<noscript><link href="/images/svg/icons.fallback.css" rel="stylesheet"></noscript></head><body><div id="navbar"><div class="container"><a href="/" class="icon-brunch-logo-web"></a><ul class="nav nav--main-nav"><li><a href="/" class="nav__item--main-nav">Home</a></li><li><a href="https://github.com/brunch/brunch/tree/stable/docs" class="nav__item--main-nav">Docs</a></li><li><a href="/plugins.html" class="nav__item--main-nav active">Plugins</a></li><li><a href="/skeletons.html" class="nav__item--main-nav">Skeletons</a></li><li><a href="/examples.html" class="nav__item--main-nav">Examples</a></li><li><a href="/compare.html" class="nav__item--main-nav">Compare</a></li><li><a href="/support.html" class="nav__item--main-nav">Support</a></li><li><a href="https://brunch.roon.io/" class="nav__item--main-nav">Blog</a></li></ul></div></div><div class="page__content container"><h1 id="plugins">Plugins</h1>
 <p>
   Brunch has a plugin ecosystem to achieve interoperability
   with various stuff simply via
@@ -49,6 +49,8 @@ grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css",
 <li>
 <a href="https://github.com/brunch/LiveScript-brunch">LiveScript-brunch</a>. <a href="http://gkz.github.com/LiveScript/">LiveScript</a> is more functional and feature rich CoffeeScript dialect.</li>
 <li>
+<a href="https://github.com/huafu/ember-script-brunch">EmberScript</a>. <a href="http://emberscript.com/">EmberScript</a> is Ember tasted CoffeeScript.</li>
+<li>
 <a href="https://github.com/brunch/roy-brunch">Roy-brunch</a>. <a href="http://roy.brianmckenna.org/">Roy</a> is a small functional language that compiles to js.</li>
 <li>
 <a href="https://github.com/joshheyse/typescript-brunch">typescript-brunch</a>. <a href="http://www.typescriptlang.org/">typescript</a> is a typed superset of JavaScript that compiles to plain JavaScript.</li>
@@ -77,6 +79,9 @@ grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css",
 <a href="https://github.com/anthonyshort/compass-brunch">Compass Brunch</a> Compiles a project using Compass with support for the configuration file.</li>
 <li>
 <a href="https://github.com/bolasblack/rework-brunch">Rework Brunch</a> Compiles a project using <a href="https://github.com/visionmedia/rework">Rework</a> with support for the configuration file.</li>
+<li>
+<li>
+<a href="https://github.com/iamvdo/postcss-brunch">PostCSS Brunch</a> Compiles a project using <a href="https://github.com/ai/postcss">PostCSS</a> (a CSS postprocessor). Add as many PostCSS based polyfills as you want (like Autoprefixer)</li>
 <li>
 <a href="https://github.com/lydell/autoprefixer-brunch">autoprefixer-brunch</a>. <a href="https://github.com/ai/autoprefixer">autoprefixer</a> parses plain CSS and takes care of all vendor prefixes, using data from the <a href="http://caniuse.com/">Can I use...</a> compatibility tables.</li>
 <li>
@@ -108,11 +113,15 @@ grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css",
 <li>
 <a href="https://github.com/jupl/markdown-brunch">Markdown-brunch</a>. <a href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).</li>
 <li>
+<a href="https://github.com/sir-dunxalot/yaml-front-matter-brunch">Yaml-front-matter-brunch</a> compiles markdown files with <a href="https://www.npmjs.org/package/yaml-front-matter">YAML front matter</a> into javascript objects with markdown support.</li>
+<li>
 <a href="https://github.com/wmdmark/swig-brunch">Swig-brunch</a>. <a href="http://paularmstrong.github.io/swig/">Swig</a> is a Django-like templating engine for node.js and the browser.</li>
 <li>
 <a href="https://github.com/obmarg/ractive-brunch">Ractive-brunch</a>. <a href="http://www.ractivejs.org/">RactiveJS</a> is a client side templating and DOM binding engine.</li>
 <li>
 <a href="https://github.com/PxlBuzzard/nunjucks-brunch">nunjucks-brunch</a>. <a href="http://jlongster.github.io/nunjucks/">Nunjucks</a> is a rich and powerful templating language for JavaScript.</li>
+<li>
+<a href="https://github.com/aberman/html2js-brunch">html2js-brunch</a>. <a href="https://github.com/aberman/html2js-brunch">Html2JS</a> mimics the functionality of <a href="https://github.com/karlgoldstein/grunt-html2js">grunt-html2js</a> by converting Angular templates into JavaScript.</li>
 </ul><h2>
 <a name="minifiers" class="anchor" href="#minifiers"><span class="octicon octicon-link"></span></a>Minifiers</h2>
 
@@ -175,7 +184,10 @@ grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css",
 <li>
 <a href="https://github.com/mutewinter/digest-brunch">digest-brunch</a> - appends a unique SHA digest to asset filenames.</li>
 <li>
+<a href="https://github.com/meleyal/git-digest-brunch">git-digest-brunch</a> - cache busts urls using the SHA digest of the current git revision.</li><br><li>
 <a href="https://github.com/ktmud/yaml-i18n-brunch">yaml-i18n-brunch</a> - use yaml to edit i18n translations.</li>
+<li>
+<a href="https://github.com/Tomtomgo/constangular-brunch">constangular-brunch</a> - environment aware YAML configurations for AngularJS.</li>
 </ul>
     </div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="scripts/app.js"></script><script>require('scripts/app');
 </script>  <script type="text/javascript">
