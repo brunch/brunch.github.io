@@ -23,10 +23,10 @@ html
 
         ul.nav.nav--main-nav
           each item in nav
+            - var active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
             if item.path.indexOf('http') == 0
               li: a.nav__item--main-nav(href=item.path, class=active?'active':null)= item.title
             else
-              active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
               li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''), class=active?'active':null)= item.title
 
 
