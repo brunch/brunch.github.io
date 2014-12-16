@@ -1,6 +1,12 @@
 # brunch.io
 Repository of the brunch website
 
+do
+
+```
+grunt publish
+```
+
 ## License
 
 The MIT License (MIT)
