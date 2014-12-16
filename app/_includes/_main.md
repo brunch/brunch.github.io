@@ -184,7 +184,7 @@ See the <a href="http://vimeo.com/61056660">video that shows starting new app wi
 <h2>Brought to you by</h2>
 
 <p class="builders">
-  <a href="http://paulmillr.com/" rel="author"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller">
+  <a href="http://paulmillr.com/" rel="publisher"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller">
    <span class="name">Paul</span> Miller</a>
 
   <a href="http://nikgraf.com/"><img src="https://secure.gravatar.com/avatar/8fc75580dbacd91ff28514b68baf1a8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Nik Graf">
