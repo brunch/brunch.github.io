@@ -8,6 +8,11 @@ block main
         each service in social
           span: iframe(class="social-button-#{service.classname}", allowtransparency="true", frameborder="0", scrolling="no", src=service.src, style="width: #{service.width}px; height:30px;")
       block sidebar
+      a(href="/#why").others
+        h3
+          | Why Brunch instead of competitors?
+        img(src="/images/others/grunt.png", alt="", height="128")
+        img(src="/images/others/gulp.png", alt="", height="128")
       .tweets
         h3 People love Brunch!
         | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/brunch/favorites" data-widget-id="397311715655684096">Favorite Tweets by @brunch</a>
