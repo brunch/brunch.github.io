@@ -20,7 +20,6 @@ exports.config =
           {title: 'Skeletons', path: 'skeletons'},
           {title: 'Examples', path: 'examples'},
           {title: 'Compare', path: 'compare'},
-          {title: 'Support', path: 'support'},
           {title: 'Blog', path: 'https://brunch.roon.io/'},
         ]
         social:[
