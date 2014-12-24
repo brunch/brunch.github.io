@@ -68,6 +68,20 @@ grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css",
   </li>
 </ul>
 
+<h2>Why Brunch and not Grunt and Gulp</h2>
+
+<p>So, you&#39;re coming from Grunt or Gulp and may be wondering how Brunch is better.</p>
+
+<p>First of all, Brunch is order-a-magnitude simpler. Check out typical configs for alternative build systems: <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-grunt-js">Grunt</a>, <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-gulp-js">Gulp</a>. And here&#39;s a typical <a href="https://github.com/paulmillr/brunch-with-chaplin/blob/master/brunch-config.coffee">Brunch config</a> for comparison.</p>
+
+<p>The reason for the big difference is <em>design</em>. Grunt is merely a set of tasks that would be executed one after another. When this may seem more flexible on a first glance, in reality it isn&#39;t. With plugins, Brunch could do anything Grunt tasks do (and beyond). Brunch even has an adapter for Grunt tasks. Gulp is &quot;better Grunt&quot;, as they market it; or so may it seem. Gulp doesn&#39;t make temporary files, that&#39;s why it&#39;s a &quot;streaming build system&quot;. Still, it&#39;s not enough. Brunches goal, in contast, is to provide you with simplest and fastest possible way of managing and building your HTML5 app.</p>
+
+<p>Think of it. In every app you take a set of files and produce new files with them. You may use different languages, include code quality testers such as JSHint or minify the output, but the basic pipeline is always the same. That&#39;s why all brunch plugins may take one of a few predefined roles.</p>
+
+<p>Besides configs, brunch is also simpler in terms of commands. Grunt / Gilp commands replicate all plugins it loads. Brunch always has three commands: <code>new</code>, <code>build</code> and <code>watch</code>. Build / watch commands may receive optional <code>production</code> flag which will tell Brunch to optimize assets, javascripts and stylesheets.</p>
+
+
+
 <h2>Brought to you by</h2><ul class="block-list builders"><li><a href="http://paulmillr.com/" rel="author"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller"><span class="name">Paul</span> Miller</a></li><li><a href="https://github.com/es128"><img src="https://secure.gravatar.com/avatar/c8c06173c01b4e95594e4af3a8a815f1?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Elan Shanker"><span class="name">Elan</span> Shanker</a></li><li><a href="http://nikgraf.com/"><img src="https://secure.gravatar.com/avatar/8fc75580dbacd91ff28514b68baf1a8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Nik Graf"><span class="name">Nik</span> Graf</a></li><li><a href="http://ramen.io/"><img src="https://secure.gravatar.com/avatar/37c5132eed30539456c79906dd8c6065?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Thomas Schranz"><span class="name">Thomas</span> Schranz</a></li></ul></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="scripts/app.js"></script><script>require('scripts/app');
 </script>  <script type="text/javascript">
     var _gauges = _gauges || [];
