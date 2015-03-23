@@ -20,7 +20,7 @@ exports.config =
           {title: 'Skeletons', path: 'skeletons'},
           {title: 'Examples', path: 'examples'},
           {title: 'Compare', path: 'compare'},
-          {title: 'Blog', path: 'https://brunch.roon.io/'},
+          # {title: 'Blog', path: 'https://brunch.roon.io/'},
         ]
         social:[
           {classname: 'github', width: 160, src: 'http://ghbtns.com/github-btn.html?user=brunch&repo=brunch&type=watch&count=true&size=large'},
