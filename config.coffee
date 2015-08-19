@@ -15,7 +15,7 @@ exports.config =
       locals:
         nav: [
           {title: 'Home', path: ''},
-          {title: 'Docs', path: 'https://github.com/brunch/brunch/tree/stable/docs'},
+          {title: 'Docs', path: 'https://github.com/brunch/brunch/tree/master/docs'},
           {title: 'Guide', path: 'https://github.com/brunch/brunch-guide#readme'},
           {title: 'Plugins', path: 'plugins'},
           {title: 'Skeletons', path: 'skeletons'},
