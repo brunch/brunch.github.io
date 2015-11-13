@@ -78,6 +78,8 @@ The best way to discover Brunch is probably to start with the <a href="https://g
 
 <p>First of all, Brunch is order-of-magnitude simpler. Check out typical configs for alternative build systems: <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-grunt-js">Grunt</a>, <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-gulp-js">Gulp</a>. And here&#39;s a typical <a href="https://github.com/paulmillr/brunch-with-chaplin/blob/master/brunch-config.coffee">Brunch config</a> for comparison.</p>
 
+<p>There&#39;s also speed. When you spin off a brunch file watcher, the usual compilation time is less than 500ms. When combined with auto reload plugin, this allows a very efficient development environment. All thanks to the complex incremental compilation.</p>
+
 <p>The reason for the big difference is <em>design</em>. Grunt is merely a set of tasks that would be executed one after another. When this may seem more flexible on a first glance, in reality it isn&#39;t. With plugins, Brunch could do anything Grunt tasks do (and beyond). Brunch even has an adapter for Grunt tasks. Gulp is &quot;better Grunt&quot;, as they market it; or so may it seem. Gulp doesn&#39;t make temporary files, that&#39;s why it&#39;s a &quot;streaming build system&quot;. Still, it&#39;s not enough. Brunch&#39;s goal, in contrast, is to provide you with simplest and fastest possible way of managing and building your HTML5 app.</p>
 
 <p>Think of it. In every app you take a set of files and produce new files with them. You may use different languages, include code quality testers such as JSHint or minify the output, but the basic pipeline is always the same. That&#39;s why all brunch plugins may take one of a few predefined roles.</p>
