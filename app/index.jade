@@ -25,9 +25,9 @@ block content
 
     #### Create a new Brunch project:
 
-        brunch new <skeleton-URL> [optional-output-dir]
+        brunch new [dir] [--skeleton url]
 
-    `skeleton-URL` specifies a [skeleton](/skeletons.html) from which your application will be initialized.
+    `skeleton` specifies a [skeleton](/skeletons.html) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
 
     There’s a great [guide](https://github.com/brunch/brunch-guide#readme) that lets you explore Brunch in-depth!
 
@@ -37,9 +37,9 @@ block content
 
         brunch watch --server
 
-    tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional `server` flag launches a simple web server with [pushState](http://diveintohtml5.info/history.html) support.
+    tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional `server` flag launches a simple web server with [push state](http://diveintohtml5.info/history.html) support.
 
-    If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal-notifier](https://github.com/alloy/terminal-notifier): `brew install terminal-notifier`.
+    If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal notifier](https://github.com/alloy/terminal-notifier): `brew install terminal-notifier`.
 
     #### Build with Brunch:
 
