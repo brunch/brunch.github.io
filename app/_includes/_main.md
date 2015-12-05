@@ -7,7 +7,7 @@ Installation is one-line, once you have
 
 #### Create a new Brunch project:
 
-    brunch new [dir] [--skeleton]
+    brunch new [dir] [--skeleton url]
 
 `skeleton` specifies a [skeleton](/skeletons.html) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
 
