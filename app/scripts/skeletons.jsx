@@ -1,6 +1,9 @@
 var Body = React.createClass({
   getInitialState: function() {
-    return { skeletons: [] };
+    return {
+      skeletons: [],
+      search: ''
+    };
   },
 
   componentWillMount: function() {
@@ -13,8 +16,32 @@ var Body = React.createClass({
       });
   },
 
+  handleKeyUp: function(e) {
+    this.setState({ search: e.target.value });
+  },
+
+  filteredSkeletons: function() {
+    var skeletons = this.state.skeletons;
+    var search = this.state.search;
+
+    var searchRes = search.split(' ').filter(function(expr) {
+      return expr !== '';
+    }).map(function(expr) {
+      return new RegExp(expr, 'i');
+    });
+
+    if (searchRes.length === 0) return skeletons;
+
+    return skeletons.filter(function(skeleton) {
+      var skeletonString = [skeleton.name, skeleton.url, skeleton.technologies, skeleton.description].join(' ');
+      return searchRes.every(function(searchRe) {
+        return searchRe.test(skeletonString);
+      });
+    });
+  },
+
   render: function() {
-    var skeletonItems = this.state.skeletons.map(function(skeleton, i) {
+    var skeletonItems = this.filteredSkeletons().map(function(skeleton, i) {
       var fullURL = "https://github.com/" + skeleton.url;
 
       return <tr key={i}>
@@ -25,6 +52,7 @@ var Body = React.createClass({
       </tr>;
     });
     return <div>
+      <input type="text" style={{width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0'}} onKeyUp={this.handleKeyUp}/>
       <table style={{border: "1px solid black"}}>
         <thead>
           <tr>
