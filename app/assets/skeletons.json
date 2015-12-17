@@ -1,0 +1,526 @@
+{
+  "skeletons": [
+    {
+      "name": "Node-Webkit Hipster Seed",
+      "url": "Anonyfox/node-webkit-hipster-seed",
+      "technologies": "Node-Webkit, Grunt building, brunch-angular-seed (Jade, Less, Coffeescript, Angular, Bootstrap)",
+      "description": "Ready to Use Skeleton to build Desktop Applications with all the Web goodies of today."
+    },
+    {
+      "name": "Brunch with Chaplin",
+      "url": "paulmillr/brunch-with-chaplin",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "Chaplin, Backbone, HTML5 Boilerplate, jQuery. Perfect for big applications"
+    },
+    {
+      "name": "Brunch with AngularJS",
+      "url": "scotch/angular-brunch-seed",
+      "technologies": "Coffeescript, Less, Jade",
+      "description": "Twitter Bootstrap with themes, <a href='https://github.com/vojtajina/testacular'> Testacular</a> for unit tests"
+    },
+    {
+      "name": "Brunch with Ember",
+      "url": "icholy/ember-brunch",
+      "technologies": "JavaScript, CSS, Handlebars",
+      "description": "Twitter Bootstrap, jQuery"
+    },
+    {
+      "name": "Brunch with Hipsters",
+      "url": "elving/brunch-with-hipsters",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "Swag, Lodash, Font Awesome, Normalize.css, HTML5 Boilerplate CSS Helpers, Brunch Auto-Reload, coffeelint-brunch and imageoptmizer-brunch. Works with Bower, includes generators and testing with Karma-Runner."
+    },
+    {
+      "name": "Brunch with eggs and bacon",
+      "url": "nezoomie/brunch-eggs-and-bacon",
+      "technologies": "JavaScript, Sass, LESS, Handlebars",
+      "description": "Twitter Bootstrap, Mediator"
+    },
+    {
+      "name": "Brunch with Ember Reloaded",
+      "url": "gcollazo/brunch-with-ember-reloaded",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, jQuery and Auto Reload"
+    },
+    {
+      "name": "Tapas with Ember",
+      "url": "mutewinter/tapas-with-ember",
+      "technologies": "CoffeeScript, Stylus, Handlebars, Ember Data, Ember Model",
+      "description": "A skeleton for rapid Ember development. Including automated Ember installation scripts, environment-specific JS builds, generators, and Ember.vim support."
+    },
+    {
+      "name": "Brunch with Coffee",
+      "url": "brunch/simple-coffee-skeleton",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, jQuery. It was the default skeleton in brunch 1.1. Unsupported but still working."
+    },
+    {
+      "name": "Brunch with Banana Pancakes",
+      "url": "Anaphase/brunch-banana-pancakes",
+      "technologies": "JavaScript, Sass, LESS, Handlebars",
+      "description": "Twitter Bootstrap, Mediator. Essentially the same as <a href='https://github.com/nezoomie/brunch-eggs-and-bacon'>Brunch with Eggs and Bacon</a>, but constantly updated to the latest library versions."
+    },
+    {
+      "name": "Brunch with JS",
+      "url": "brunch/simple-js-skeleton",
+      "technologies": "JavaScript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, jQuery. Unsupported but still working."
+    },
+    {
+      "name": "Brunch On Asteroids",
+      "url": "exlee/brunch-on-asteroids",
+      "technologies": "Jade, Sass, CoffeeScript/LiveScript",
+      "description": "Brunch with Twitter Bootstrap 2.3 extended by Bootswatch themes, Angular.JS, optional LiveScript or CoffeeScript and some extra libraries preconfigured and included such as D3.js, AngularUI, jQuery UI."
+    },
+    {
+      "name": "Express Brunch with Jade",
+      "url": "jerfowler/ExpressBrunchJade",
+      "technologies": "CoffeeScript, Stylus, Jade",
+      "description": "Custom server.coffee that watches your Express server files and restarts on hot code changes. Uses Jade for client and server side templates. Includes express framework generators and Mocha/Chai/Sinon for testacular testing. Everything hipsters has, and more..."
+    },
+    {
+      "name": "Brunch with AngularJS in LiveScript",
+      "url": "clkao/angular-brunch-seed-livescript",
+      "technologies": "LiveScript, Sass, Jade",
+      "description": "Twitter Bootstrap in Sass, LiveScript"
+    },
+    {
+      "name": "Brunch with MarionetteJS",
+      "url": "SimbCo/brunch-with-marionette",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "Based on the template we have been using for our MarionetteJS projects. Includes Twitter Bootstrap."
+    },
+    {
+      "name": "JavaScript App Skeleton",
+      "url": "damassi/Javascript-App-Skeleton",
+      "technologies": "JavaScript, SASS, Handlebars",
+      "description": "LiveReload, Backbone.Mediator, Mocha, Advanced Structure"
+    },
+    {
+      "name": "Brunch Facing True North",
+      "url": "scoarescoare/angular-brunch-true-north",
+      "technologies": "Coffeescript, Compass, Sass, Jade, Initializr",
+      "description": "Built on the amazing <a href='https://github.com/scotch/angular-brunch-seed'>Brunch with Angular skeleton</a> with a few tweaks including: Compass, Bootstrap SASS, HTML5BP"
+    },
+    {
+      "name": "Brunch with brunch",
+      "url": "monokrome/brunch-with-brunch",
+      "technologies": "—",
+      "description": "As minimal as possible for building your own toolchain on top of."
+    },
+    {
+      "name": "Brunch with Hampsters",
+      "url": "wordofchristian/brunch-with-hampsters",
+      "technologies": "CoffeeScript, Stylus, Emblem.js",
+      "description": "Also useful for rapid prototyping. Includes html5 boilerplate, Modernizer, and Twitter Bootstrap."
+    },
+    {
+      "name": "@jokull's skeleton",
+      "url": "jokull/brunch-template",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "Zepto, Stylus responsive grid, Modernizr, Facebook login, slideshow"
+    },
+    {
+      "name": "Brunch with SocketSoup",
+      "url": "pheuter/brunch-socket-soup",
+      "technologies": "Coffeescript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, Twitter Bootstrap, Express, Socket.io"
+    },
+    {
+      "name": "Spine on Brunch",
+      "url": "damiencaselli/spine-on-brunch",
+      "technologies": "CoffeeScript, CSS, Handlebars",
+      "description": "HTML5 Boilerplate, jQuery"
+    },
+    {
+      "name": "BTC-Chaplin",
+      "url": "jupl/btc-chaplin",
+      "technologies": "CoffeeScript, LESS, eco",
+      "description": "jQuery, Clearless, Twitter Bootstrap, Font Awesome, Backbone.stickit, Underscore.string. Cake tasks included. There's also a <a href='https://github.com/jupl/btc-chaplin/tree/cordova'>variant with Cordova</a>."
+    },
+    {
+      "name": "BTC-Ember",
+      "url": "jupl/btc-ember",
+      "technologies": "CoffeeScript, Handlebars, LESS",
+      "description": "Clearless, Twitter Bootstrap, Font Awesome. Require statements are not need for Ember modules. Cake tasks included. There's also a <a href='https://github.com/jupl/cinder-brunch/tree/cordova'>variant with Cordova</a>."
+    },
+    {
+      "name": "BTC-Cordova",
+      "url": "jupl/btc-cordova",
+      "technologies": "—",
+      "description": "Bare skeleton that includes support for building apps using Apache Cordova."
+    },
+    {
+      "name": "Brunch with Panache",
+      "url": "trunkclub/brunch-with-panache",
+      "technologies": "CoffeeScript, Sass, Handlebars",
+      "description": "BTC-Chaplin fork with Swag, Hapi, Browser Sync and Cordova. Provides file fingerprinting and accepts environment variables. Testing with Karma, PhantomJS, Mocha, Sinon and Chai. Jake for Rails-like CLI."
+    },
+    {
+      "name": "Brunch with Bootstrap, Sass, and Coffee",
+      "url": "eriwen/brunch-jade-bootstrap-and-coffee",
+      "technologies": "CoffeeScript, Sass, Jade",
+      "description": "Twitter Bootstrap, Bootstrap-Sass, Mediator, jQuery"
+    },
+    {
+      "name": "Brunch with bare livescript",
+      "url": "gkz/brunch-bare-livescript",
+      "technologies": "LiveScript, Less",
+      "description": "Extremely simple skeleton without any frameworks"
+    },
+    {
+      "name": "Sassy Brunch",
+      "url": "bc-luke/sassy-brunch",
+      "technologies": "CoffeeScript, Sass, Handlebars",
+      "description": "Just like Brunch with Chaplin, but replaces Stylus with Sass"
+    },
+    {
+      "name": "CoffeeScript App Skeleton",
+      "url": "damassi/Coffeescript-App-Skeleton",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, jQuery, Mediator, advanced structure"
+    },
+    {
+      "name": "Cinder Plate",
+      "url": "edgycircle/cinder-plate",
+      "technologies": "CoffeeScript, SASS, Handlebars",
+      "description": "CoffeeScript, SASS, Handlebars template pre-compilation, production and development builds with appropriate Ember.js version (debug or production)."
+    },
+    {
+      "name": "Brunch With Ketchup",
+      "url": "Nami-Doc/brunch-with-ketchup",
+      "technologies": "LiveScript, Stylus, Jade",
+      "description": "Meant for large applications. Includes express-resource."
+    },
+    {
+      "name": "Brunch with Bacon Pancakes",
+      "url": "eliellis/brunch-bacon-pancakes",
+      "technologies": "JavaScript, Sass, LESS, Handlebars",
+      "description": "Created with <a href='https://github.com/Anaphase/brunch-banana-pancakes'>Brunch with Banana Pancakes</a> as a base, Brunch with Bacon Pancakes includes Twitter Bootstrap with FontAwesome as style boilerplate."
+    },
+    {
+      "name": "Brunch with Chaplin and Bootstrap",
+      "url": "vip32/brunch-with-chaplin-and-bootstrap",
+      "technologies": "CoffeeScript, Stylus, Handlebars",
+      "description": "HTML5 Boilerplate, Bootstrap, jQuery"
+    },
+    {
+      "name": "Sassy Brunch with Ember and CoffeeSoup",
+      "url": "tricinel/brunch-ember-sassy",
+      "technologies": "CoffeeScript, Sass, Handlebars",
+      "description": "HTML5 Boilerplate, Twitter Bootstrap (Compass), jQuery"
+    },
+    {
+      "name": "Brunch Dutch Baby",
+      "url": "EnosFeedler/brunch-dutch-baby",
+      "technologies": "Coffeescript, Stylus, Jade",
+      "description": "Backbone.js, Bootstrap 3, Karma Test Runner"
+    },
+    {
+      "name": "Angular & Brunch - No fuss",
+      "url": "ocombe/angular-brunch-seed-no-fuss",
+      "technologies": "Angular, SASS-Bootstrap 3 & Bourbon",
+      "description": "Brunch with an Angular seed featuring SASS-Bootstrap 3. No ruby (using Node-SASS & Bourbon), no Jade, no Coffeescript. Unit tests with karma & e2e tests with protractor."
+    },
+    {
+      "name": "Brunch with Moby",
+      "url": "connorblack/brunch-with-moby",
+      "technologies": "PhoneGap (Cordova), Lungo.js",
+      "description": "Simple skeleton optimized for PhoneGap and integrated with Lungo.js for sexy prototyping. Easily create native-like mobile apps!"
+    },
+    {
+      "name": "Brunch Crumbs",
+      "url": "meleyal/brunch-crumbs",
+      "technologies": "CoffeeScript, jQuery, Sass, Eco",
+      "description": "Minimal structure based on H5BP, testing via Karma/Jasmine, Docs via Docco, deployment via Heroku."
+    },
+    {
+      "name": "Brunch chrunb",
+      "url": "tUrG0n/brunch-chrunb",
+      "technologies": "CoffeeScript, Stylus, Jade",
+      "description": "Twitter Bootstrap, jQuery"
+    },
+    {
+      "name": "Dead-simple brunch",
+      "url": "brunch/dead-simple",
+      "technologies": "—",
+      "description": "Dead-simple brunch skeleton. No opinions, just empty dirs and minimal configs."
+    },
+    {
+      "name": "Brunch with Chaplin and Initializr",
+      "url": "DallanQ/brunch-with-chaplin-and-initializr",
+      "technologies": "CoffeeScript, Stylus, LESS, Handlebars",
+      "description": "HTML5 Boilerplate, Bootstrap, jQuery, Modernizr — includes individual bootstrap style files and javascript plugins so you can omit or modify them"
+    },
+    {
+      "name": "Coffee purist brunch",
+      "url": "cbosco/coffee-purist-brunch",
+      "technologies": "CoffeeScript, LESS, eco templates",
+      "description": "jQuery, Mocha. Tests run with no need to build into public/ directory or duplicate test/vendor libraries. For those who want to bundle libs specifically made for CoffeeScript."
+    },
+    {
+      "name": "Cinnamon Toast Brunch",
+      "url": "Anaphase/cinnamon-toast-brunch",
+      "technologies": "CoffeeScript, Stylus, & SIML",
+      "description": "Never write a semicolon again! Cinnamon Toast Brunch focuses on concise and clean code."
+    },
+    {
+      "name": "Ultimate Omelette Brunch",
+      "url": "aheuermann/Ultimate-Omelette-Brunch",
+      "technologies": "CoffeeScript, Less, Jade",
+      "description": "CoffeeScript, Less, Jade, Bootstrap (<a href='http://bootswatch.com/flatly/'>Flatly Theme</a>), <a href='http://angular-ui.github.io/bootstrap/'>Angular UI-Bootstrap</a>"
+    },
+    {
+      "name": "Brunch with chicken and waffles",
+      "url": "thomdixon/brunch-chicken-and-waffles",
+      "technologies": "CoffeeScript",
+      "description": "Angular, AngularUI, and Bootstrap 3"
+    },
+    {
+      "name": "Brunch with Edge Benedict",
+      "url": "codevinsky/brunch-with-edge-benedict",
+      "technologies": "Coffeescript, Less, Jade",
+      "description": "Always kept up-to-date with the newest libraries: AngularJS 1.2.0-rc.3, Bootstrap 3, jQuery 2.0.3, Sling UI 0.2.3"
+    },
+    {
+      "name": "Sticky Brunch",
+      "url": "Nami-Doc/sticky-brunch",
+      "technologies": "LiveScript, Stylus, Jade",
+      "description": "Includes <a href='http://nytimes.github.com/backbone.stickit/'>Stickit</a> for MVVM-like behavior. No CSS framework included."
+    },
+    {
+      "name": "Brunch With Sass and Jade",
+      "url": "felipesabino/brunch-with-sass-and-jade",
+      "technologies": "CoffeeScript, Sass, Jade",
+      "description": "Brunch with Chaplin, Sass, Jade, jQuery and Underscore"
+    },
+    {
+      "name": "Brunch with Puppets",
+      "url": "sandy98/brunch-with-puppets",
+      "technologies": "CoffeeScript, Stylus",
+      "description": "MarionetteJS - Twitter Bootstrap based skeleton with expanded, login prepared menu and some other goodies"
+    },
+    {
+      "name": "Simple Brunch",
+      "url": "KyleAMathews/simple-brunch",
+      "technologies": "CoffeeScript, Sass / Compass, Eco",
+      "description": "Includes some nice typography defaults and <a href='http://susy.oddbird.net/'>Susy</a>, a responsive grid system."
+    },
+    {
+      "name": "Brunch Marcos",
+      "url": "smazurov/brunch-marcos",
+      "technologies": "JavaScript, Style / Handlebars",
+      "description": "<a href='http://layoutmanager.org/'>LayoutManager</a>, <b>Tests</b>, Sensible structure to write large maintainable apps."
+    },
+    {
+      "name": "Brunch Time",
+      "url": "sjlu/brunch-time",
+      "technologies": "Javascript, LESS, Handlebars",
+      "description": "Bower, Backbone.js, Normalize.css, lesshat"
+    },
+    {
+      "name": "Brunch with Angular-Express",
+      "url": "clonn/angular-express",
+      "technologies": "Coffeescript, Stylus, Angular, Express",
+      "description": "HTML5 Boilerplate, Angular.js, Express"
+    },
+    {
+      "name": "Brunch with MarionetteJS",
+      "url": "vip32/brunch-with-marionette",
+      "technologies": "CoffeeScript, Stylus, Handlebars, Bootstrap 3",
+      "description": "Copy of SimbCo/brunch-with-marionette which has specific implementation of routes/views"
+    },
+    {
+      "name": "Brunch Foundation",
+      "url": "talentriot/brunch-foundation",
+      "technologies": "JavaScript, Sass/Handlebars",
+      "description": "Foundation CSS framework, <a href='http://layoutmanager.org/'>LayoutManager</a>, <b>Tests</b>, Sensible structure to write large maintainable apps. Intended for mobile-first"
+    },
+    {
+      "name": "Brunch with Ember Sideloaded",
+      "url": "ksnyde/brunch-with-ember-sideloaded",
+      "technologies": "Javascript, LESS, Handlebars",
+      "description": "Bootstrap 3, MomentJS, HTML5 Boilerplate, jQuery and Auto Reload"
+    },
+    {
+      "name": "Brunch with SASS",
+      "url": "stefanvermaas/brunch-with-sass",
+      "technologies": "CoffeeScript, Sass, Handlebars",
+      "description": "Brunch with SASS provides a working Brunch with Chaplin skeleton with SASS enabled instead of Stylus"
+    },
+    {
+      "name": "Brunch with Grits",
+      "url": "monokrome/brunch-with-grits",
+      "technologies": "Backbone, Marionette, CoffeeScript, Stylus",
+      "description": "Brunch with CoffeeScript, Stylus, Backbone, Marrionette, and jQuery."
+    },
+    {
+      "name": "Brunch with Coffee & Dust",
+      "url": "pkmishra/Dhancha",
+      "technologies": "CoffeeScript, LESS, Dust.js",
+      "description": "Twitter Bootstrap and Aura based skeleton."
+    },
+    {
+      "name": "Pineapple in a Can",
+      "url": "timebox-designs/pineapple-in-a-can",
+      "technologies": "JavaScript, Stylus",
+      "description": "Backbone, bootstrap, font awesome, handlebars, jQuery, marionette, swag and underscore. Chock full of yummy goodness!"
+    },
+    {
+      "name": "Canned Coral",
+      "url": "timebox-designs/canned-coral",
+      "technologies": "JavaScript, Stylus",
+      "description": "A copy of Pineapple in a Can with a reverse proxy."
+    },
+    {
+      "name": "Brunch with Underscore, LESS and JS",
+      "url": "davidfregoli/brunch-with-underscore-js-less",
+      "technologies": "Underscore templates, LESS styles, plain JS",
+      "description": "Minimal Brunch Skeleton with Underscore templates, LESS styles and vanilla JS"
+    },
+    {
+      "name": "Brunch with Fruits",
+      "url": "askalyuk/brunch-fruits",
+      "technologies": "JavaScript, Handlebars, LESS/SASS",
+      "description": "Bootstrap, Mocha/Chai. It has example of deployed full-stack application."
+    },
+    {
+      "name": "Brunch with barebone AMD backbone, twtr bs, JST, _ and FA",
+      "url": "morriswchris/brunch-with-backbacon",
+      "technologies": "Underscore templates (JST), LESS styles, Bootstrap, Font Awesome, plain JS",
+      "description": "Minimal Brunch Skeleton with Underscore templates precompiled to JST, LESS styles including bootstrap and font awesome and vanilla JS"
+    },
+    {
+      "name": "Brunch with Ember and Bootstrap",
+      "url": "huafu/brunch-with-ember-and-bootstrap",
+      "technologies": "CoffeeScript, Ember, Ember data, Stylus and Handlebars",
+      "description": "HTML5 Boilerplate, Twitter Bootstrap (Stylus version), jQuery, Keyword, Ember Bootstrap and Auto Reload"
+    },
+    {
+      "name": "Brunch on fire",
+      "url": "abronte/brunch-on-fire",
+      "technologies": "CoffeeScript, SASS, Handlebars",
+      "description": "Straightforward ember bundle. Includes jQuery and tests are setup using mocha + chai."
+    },
+    {
+      "name": "Spine.js with Bootstrap OR jQuery Mobile",
+      "url": "markmarijnissen/spine-livescript-brunch-skeleton",
+      "technologies": "LiveScript, Less, Jade",
+      "description": "jQuery <br/>optionally add Twitter Bootstrap (LESS code!) or jQuery Mobile using generators. Also includes an Android Eclipse project using PhoneGap!"
+    },
+    {
+      "name": "Vegan Brunch",
+      "url": "MaggieCabrera/vegan-brunch",
+      "technologies": "Javascript, Sass, Compass",
+      "description": "Simple brunch skeleton to support foundation 4 and compass"
+    },
+    {
+      "name": "Simple Brunch with AngularJS",
+      "url": "ashleydavis/AngularJS-Skeleton",
+      "technologies": "",
+      "description": "AngularJS v1.1.4 and jQuery v2.0.2"
+    },
+    {
+      "name": "Brunch for libs",
+      "url": "monokrome/brunch-for-libs",
+      "technologies": "",
+      "description": "A super minimal brunch configuration for building Javascript libraries on top of."
+    },
+    {
+      "name": "Brunch with Wisp",
+      "url": "sandy98/brunch-with-wisp",
+      "technologies": "Wisp",
+      "description": "Tiny skeleton meant to be a proof of concept for the use of Wisp, the Clojure-like Lisp dialect with Brunch."
+    },
+    {
+      "name": "Brunch with CoffeeScript, Jade, Less, Bower",
+      "url": "GulinSS/brunch-bower-site",
+      "technologies": "CoffeeScript, Jade, Less, Bower",
+      "description": "Minimal skeleton for modern Client-Side development based on stack."
+    },
+    {
+      "name": "Brunch with Jade and Stylus",
+      "url": "TessaHarmon/brunch-jade-stylus",
+      "technologies": "Jade, Stylus",
+      "description": "Minimal skeleton based on brunch-with-brunch for jade/stylus lovers."
+    },
+    {
+      "name": "Brunch with React and Less",
+      "url": "warrenseine/brunch-react-less",
+      "technologies": "Javascript, React, Less, Bower, Vagrant",
+      "description": "Skeleton for cross-platform rapid development with React and Less. Just run <code>vagrant up</code> and edit the code."
+    },
+    {
+      "name": "Brunch with LiveScript, Stylus, React",
+      "url": "DimensionSoftware/brunch-with-pb",
+      "technologies": "LiveScript, React, Stylus, Express",
+      "description": "This is a skeleton for a React-based single-page application that can also do server-side rendering."
+    },
+    {
+      "name": "Brunch with Emmett",
+      "url": "jhabdas/brunch-with-emmett",
+      "technologies": "CoffeeScript, Exim (React + Flux), React Router, no-JSX",
+      "description": "Builds on top of Exim. Puts on Topcoat for CSS. Sings with Bluebird."
+    },
+    {
+      "name": "Brunch With Hyyan",
+      "url": "hyyan/brunch-with-hyyan",
+      "technologies": "Bower, Bootstrap Sass, Bootstrap RTL And jQuery",
+      "description": "This is a skeleton for building new sass projects with Bootstrap Sass and jQuery, it can be used with wordpress themes easily"
+    },
+    {
+      "name": "Brunch with Whey Protein",
+      "url": "dobromir-hristov/brunch-with-whey-protein",
+      "technologies": "SASS, Foundation",
+      "description": "This skeleton is based on the Foundation framework. It a basic website kick starter. Includes Foundation, SASS, jQuery, Bourbon."
+    },
+    {
+      "name": "Brunch with Dragons",
+      "url": "smokku/brunch-with-dragons",
+      "technologies": "LESS, Jade, Bootstrap, FontAwesome, AngularJS, AngularUI, Bower, Brunch, Karma, Mocha, Chai, Sinon, Protractor, LiveScript",
+      "description": "Frontend (API based) application with streamlined workflow explained by many examples."
+    },
+    {
+      "name": "Brunch with Jarvis",
+      "url": "morriswchris/brunch-with-jarvis",
+      "technologies": "Literally Nothing! .. oh wait I left a sample css and index file",
+      "description": "Copies everything form app/assets to build. Makes for an awesome static site server"
+    },
+    {
+      "name": "Brunch with a Sassy Zigzag",
+      "url": "borisschapira/brunch-with-a-sassy-zigzag",
+      "technologies": "AngularJS (route, directive, filter, template compilation), JSHint, Sass, Karma + Jasmine",
+      "description": "An angular setup with Sass"
+    },
+    {
+      "name": "Brunch gentleman set",
+      "url": "lnikell/brunch-gentleman-set",
+      "technologies": "Stylus, Coffeescript, Backbone, Jade, jQuery, Underscore",
+      "description": "Backbone.LayoutManager, Autoprefixer, HTML5 template. All what you need to fast start."
+    },
+    {
+      "name": "Brunch With Ionic",
+      "url": "hyyan/brunch-with-ionic",
+      "technologies": "Bower, Ionic Sass, AngularJS, Cordova",
+      "description": "HTML5 mobile application skeleton with Brunch, Ionic Framework And AngularJS"
+    },
+    {
+      "name": "Brunch With OnsenUI",
+      "url": "hyyan/brunch-with-onsenui",
+      "technologies": "Bower, OnsenUI, Stylus, AngularJS, Cordova",
+      "description": "HTML5 mobile application skeleton with Brunch, Onsenui Framework And AngularJS"
+    },
+    {
+      "name": "Brunch Materialistic and Arrogantular",
+      "url": "row1/brunch-materialistic-arrogantular",
+      "technologies": "AngularJS, Angular Material, SASS, UI-Router",
+      "description": "AngularJS skeleton using Google Material Design and following John Papa's AngularJS style guide."
+    },
+    {
+      "name": "Brunch with Sass Typogrid",
+      "url": "dommmel/brunch-with-sass-typogrid",
+      "technologies": "SASS",
+      "description": "HTML Skeleton with sassy typography and responsive grid using susy, modular-scale, breakpoint."
+    }
+  ]
+}
