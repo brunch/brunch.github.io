@@ -16,7 +16,7 @@
       "name": "Brunch with AngularJS",
       "url": "scotch/angular-brunch-seed",
       "technologies": "Coffeescript, Less, Jade",
-      "description": "Twitter Bootstrap with themes, <a href='https://github.com/vojtajina/testacular'> Testacular</a> for unit tests"
+      "description": "Twitter Bootstrap with themes, <a href='https://github.com/vojtajina/testacular'>Testacular</a> for unit tests"
     },
     {
       "name": "Brunch with Ember",
