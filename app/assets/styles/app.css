@@ -236,7 +236,7 @@ ul, ol, dd { margin-left: 48px; margin-left: 3rem; }
 /** Base styles; unclassed HTML elements etc. */
 /*------------------------------------*\ $MAIN
 \*------------------------------------*/
-html { font: 1em/1.5 sans-serif; overflow-y: scroll; min-height: 100%; }
+html { font: 1em/1.5 -apple-system, sans-serif; overflow-y: scroll; min-height: 100%; }
 
 /*------------------------------------*\ $HEADINGS
 \*------------------------------------*/
@@ -822,9 +822,9 @@ label, .label { display: block; }
 /*------------------------------------*\ $BRAND
 \*------------------------------------*/
 /** `.brand` is a quick and simple way to apply your brand face and/or color to any element using a handy helper class. */
-.brand { font-family: "Helvetica Neue", sans-serif!important; color: #4a8ec2!important; }
+.brand { font-family: "Helvetica Neue", -apple-system, sans-serif !important; color: #4a8ec2!important; }
 
-.brand-face { font-family: "Helvetica Neue", sans-serif!important; }
+.brand-face { font-family: "Helvetica Neue", -apple-system, sans-serif !important; }
 
 .brand-color, .brand-colour { color: #4a8ec2!important; }
 
