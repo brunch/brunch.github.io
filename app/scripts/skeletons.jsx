@@ -48,7 +48,7 @@ var Body = React.createClass({
         <td><a href={fullURL} target="_blank">{skeleton.name}</a></td>
         <td><code>{skeleton.url}</code></td>
         <td>{skeleton.technologies}</td>
-        <td>{skeleton.description}</td>
+        <td dangerouslySetInnerHTML={{__html: skeleton.description}} />
       </tr>;
     });
     return <div>
