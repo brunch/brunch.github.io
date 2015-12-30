@@ -9,16 +9,17 @@
     "test": "brunch test"
   },
   "dependencies": {
-    "javascript-brunch": ">= 1.0 < 1.8",
-    "css-brunch": ">= 1.0 < 1.8",
-    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "auto-reload-brunch": "~1.8.0",
     "clean-css-brunch": ">= 1.0 < 1.8",
-    "jade-brunch": "~1.7.2",
     "coffee-script-brunch": "~1.7.2",
+    "css-brunch": ">= 1.0 < 1.8",
+    "jade-brunch": "~1.8.2",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "jstransformer-marked": "^1.0.1",
+    "marked": "^0.2.9",
     "react-brunch": "*",
     "static-jade-brunch": "git://github.com/ilkosta/static-jade-brunch.git",
-    "auto-reload-brunch": "~1.7.0",
-    "marked": "~0.2.9"
+    "uglify-js-brunch": ">= 1.0 < 1.8"
   },
   "devDependencies": {
     "grunt-grunticon": "~0.6.12",
