@@ -11,7 +11,7 @@ Installation is one-line, once you have
 
 `skeleton` specifies a [skeleton](/skeletons.html) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
 
-See the [README](https://github.com/brunch/brunch/blob/stable/docs/README.md) for a complete description of app structure.
+See the [README](https://github.com/brunch/brunch/blob/master/docs/README.md) for a complete description of app structure.
 
 #### Develop with Brunch:
 
@@ -77,7 +77,7 @@ See the <a href="http://vimeo.com/61056660">video that shows starting new app wi
 
 <h2>Documentation</h2>
 
-<p>All docs are available <a href="https://github.com/brunch/brunch/tree/stable/docs">on GitHub</a>. Also take a look at <a href="https://github.com/brunch/brunch/wiki/Examples,-articles-and-tutorials">articles, tutorials and talks</a>.</p>
+<p>All docs are available <a href="https://github.com/brunch/brunch/tree/master/docs">on GitHub</a>. Also take a look at <a href="https://github.com/brunch/brunch/wiki/Examples,-articles-and-tutorials">articles, tutorials and talks</a>.</p>
 
 <h2>Compare table</h2>
 
@@ -163,7 +163,7 @@ See the <a href="http://vimeo.com/61056660">video that shows starting new app wi
     <td class="has-feature">✓</td>
     <td class="hasnt-feature">✗</td>
     <td class="hasnt-feature">✗</td>
-    <td>Brunch supports <a href="https://github.com/brunch/brunch/blob/stable/docs/faq.md#how-to-use-bower">headless integration</a> with Bower package manager. Unlike with Grunt, you don’t need to specify all used files in details — brunch will auto-detect them in most cases and automatically concat in correct order</td>
+    <td>Brunch supports <a href="https://github.com/brunch/brunch/blob/master/docs/faq.md#how-to-use-bower">headless integration</a> with Bower package manager. Unlike with Grunt, you don’t need to specify all used files in details — brunch will auto-detect them in most cases and automatically concat in correct order</td>
   </tr>
   <tr>
     <th>Headless source maps generation</th>
