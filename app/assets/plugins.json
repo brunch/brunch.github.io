@@ -524,6 +524,12 @@
       "url": "kasselTrankos/copyfilemon-brunch",
       "category": "Others",
       "description": "You can copy files or folder content from vendor folder(or any other desired)"
+    },
+    {
+      "name": "environment-brunch",
+      "url": "colinbate/environment-brunch",
+      "category": "Others",
+      "description": "Replace a token in your JS/TS files with the current Brunch environment."
     }
   ]
 }
