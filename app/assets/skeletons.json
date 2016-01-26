@@ -521,6 +521,12 @@
       "url": "dommmel/brunch-with-sass-typogrid",
       "technologies": "SASS",
       "description": "HTML Skeleton with sassy typography and responsive grid using susy, modular-scale, breakpoint."
+    },
+    {
+      "name": "Brunch with Angular 2",
+      "url": "colinbate/ng2-brunch",
+      "technologies": "Angular 2, TypeScript",
+      "description": "Starter project for using Angular 2 with TypeScript."
     }
   ]
 }
