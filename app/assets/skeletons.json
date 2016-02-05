@@ -1,6 +1,30 @@
 {
   "skeletons": [
     {
+      "name": "Modern JS",
+      "url": "brunch/es6-skeleton",
+      "technologies": "Babel, ES6",
+      "description": "A modern JS stack"
+    },
+    {
+      "name": "React",
+      "url": "brunch/react-skeleton",
+      "technologies": "Babel, ES6, React",
+      "description": "A modern React starter"
+    },
+    {
+      "name": "Exim",
+      "url": "brunch/exim-skeleton",
+      "technologies": "Babel, ES6, React, Exim",
+      "description": "Exim starter"
+    },
+    {
+      "name": "React + Redux",
+      "url": "brunch/redux-sekeleton",
+      "technologies": "Babel, ES6, React, Redux",
+      "description": "Brunch Redux starter"
+    },
+    {
       "name": "Node-Webkit Hipster Seed",
       "url": "Anonyfox/node-webkit-hipster-seed",
       "technologies": "Node-Webkit, Grunt building, brunch-angular-seed (Jade, Less, Coffeescript, Angular, Bootstrap)",
