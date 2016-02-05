@@ -53,7 +53,7 @@ var Body = React.createClass({
     });
     return <div>
       <input type="text" style={{width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0'}} onKeyUp={this.handleKeyUp}/>
-      <table style={{border: "1px solid black"}}>
+      <table className="data-table">
         <thead>
           <tr>
             <th>Name</th>

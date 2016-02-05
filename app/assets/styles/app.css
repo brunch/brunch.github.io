@@ -1025,6 +1025,32 @@ pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0;
 
 @media only screen and (max-width: 640px) { .social-buttons > span { display: block; } }
 
+.data-table {
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 800px) {
+  .data-table {
+    border: none;
+  }
+
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table td {
+    display: block;
+  }
+
+  .data-table tr {
+    border-bottom: 1px dashed black;
+  }
+
+  .data-table tr:last-child {
+    border-bottom: none;
+  }
+}
+
 .others {
   display: block;
   margin: 40px 0;
