@@ -551,6 +551,18 @@
       "url": "colinbate/ng2-brunch",
       "technologies": "Angular 2, TypeScript",
       "description": "Starter project for using Angular 2 with TypeScript."
+    },
+    {
+      "name": "Bespoke Brunch",
+      "url": "makenew/deck-bespoke.js",
+      "technologies": "Bespoke.js, JavaScript (Babel, Standard, UglifyJS), Sass (Sass Lint), Smarter boilerplate",
+      "description": "Make your next talk in Bespoke.js. Instant-feedback dev pipeline. GitHub pages deploy."
+    },
+    {
+      "name": "Tasty Brunch",
+      "url": "makenew/tasty-brunch",
+      "technologies": "JavaScript (Babel, Standard, UglifyJS), Sass (Sass Lint), Dev extras",
+      "description": "Minimal and unopinionated. Tasty dev pipeline. Extra-tasty boilerplate."
     }
   ]
 }
