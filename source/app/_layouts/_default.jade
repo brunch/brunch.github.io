@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title
+      | Brunch - ultra-fast HTML5 build tool
+      block title
+    meta(name='description', content='Brunch builds, lints, compiles, concatenates and shrinks your HTML5 app in an ultra-simple way. No more Grunt / Gulp mess.')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='shortcut icon', type="image/x-icon", href='/favicon.ico')
+    link(rel='stylesheet', href='styles/app.css')
+    link(rel='publisher', href='https://plus.google.com/+PaulMillerLi')
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    script
+      include /assets/images/svg/grunticon.loader.js
+      | grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css", "/images/svg/icons.fallback.css" ] );
+
+  body
+
+    #navbar
+      .container
+        a.icon-brunch-logo-web(href="/")
+
+        ul.nav.nav--main-nav
+          each item in nav
+            - var active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
+            if item.path.indexOf('http') == 0
+              li: a.nav__item--main-nav(href=item.path, class=active?'active':null)= item.title
+            else
+              li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''), class=active?'active':null)= item.title
+
+
+    block hero
+
+    .page__content.container
+      block main
+
+      block below
+
+      footer
+        hr.rule
+        p: small Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a>
+
+    script(src='scripts/app.js')
+    script.
+      require('scripts/app');
+
+    include /_includes/track.html
