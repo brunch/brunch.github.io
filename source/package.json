@@ -1,0 +1,26 @@
+{
+  "name": "brunch.github.com",
+  "description": "The Brunch.io web site",
+  "author": "",
+  "version": "0.0.1",
+  "repository": "git@github.com:brunch/brunch.github.com.git",
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "auto-reload-brunch": "~1.8.0",
+    "clean-css-brunch": ">= 1.0 < 1.8",
+    "coffee-script-brunch": "~1.7.2",
+    "css-brunch": ">= 1.0 < 1.8",
+    "grunticon-lib": "^1.0.4",
+    "jade-brunch": "~1.8.2",
+    "javascript-brunch": ">= 1.0 < 1.8",
+    "jstransformer-marked": "^1.0.1",
+    "marked": "^0.2.10",
+    "react-brunch": "*",
+    "static-jade-brunch": "git://github.com/ilkosta/static-jade-brunch.git",
+    "uglify-js-brunch": ">= 1.0 < 1.8"
+  },
+  "devDependencies": {}
+}
