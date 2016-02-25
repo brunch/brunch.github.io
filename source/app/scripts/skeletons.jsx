@@ -33,7 +33,7 @@ var Body = React.createClass({
     if (searchRes.length === 0) return skeletons;
 
     return skeletons.filter(function(skeleton) {
-      var skeletonString = [skeleton.name, skeleton.url, skeleton.technologies, skeleton.description].join(' ');
+      var skeletonString = [skeleton.name, skeleton.url, skeleton.alias, skeleton.technologies, skeleton.description].join(' ');
       return searchRes.every(function(searchRe) {
         return searchRe.test(skeletonString);
       });
@@ -47,6 +47,7 @@ var Body = React.createClass({
       return <tr key={i}>
         <td><a href={fullURL} target="_blank">{skeleton.title}</a></td>
         <td><code>{skeleton.url}</code></td>
+        <td><code>{skeleton.alias || '-'}</code></td>
         <td>{skeleton.technologies}</td>
         <td dangerouslySetInnerHTML={{__html: skeleton.description}} />
       </tr>;
@@ -58,6 +59,7 @@ var Body = React.createClass({
           <tr>
             <th>Name</th>
             <th>URL</th>
+            <th>Alias</th>
             <th>Technologies</th>
             <th>Description</th>
           </tr>
