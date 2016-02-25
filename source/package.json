@@ -5,23 +5,23 @@
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "scripts": {
-    "start": "make skeletons && brunch watch --server",
-    "test": "brunch test"
+    "start": "make skeletons && brunch watch --server"
   },
   "dependencies": {
-    "auto-reload-brunch": "~1.8.0",
-    "clean-css-brunch": ">= 1.0 < 1.8",
-    "coffee-script-brunch": "~1.7.2",
-    "css-brunch": ">= 1.0 < 1.8",
+    "brunch-skeletons": "~0.1.0"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.0",
+    "babel-brunch": "^6.0.1",
+    "babel-preset-react": "^6.5.0",
+    "clean-css-brunch": "^2.0",
+    "css-brunch": "^2.0",
     "grunticon-lib": "^1.0.4",
-    "jade-brunch": "~1.8.2",
-    "javascript-brunch": ">= 1.0 < 1.8",
+    "jade-brunch": "^2.0",
+    "javascript-brunch": "^2.0",
     "jstransformer-marked": "^1.0.1",
     "marked": "^0.2.10",
-    "react-brunch": "*",
-    "static-jade-brunch": "git://github.com/ilkosta/static-jade-brunch.git",
-    "uglify-js-brunch": ">= 1.0 < 1.8",
-    "brunch-skeletons": "0.0.1"
-  },
-  "devDependencies": {}
+    "static-jade-brunch": "ilkosta/static-jade-brunch",
+    "uglify-js-brunch": "^2.0"
+  }
 }
