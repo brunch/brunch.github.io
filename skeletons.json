@@ -2,25 +2,25 @@
   "skeletons": [
     {
       "title": "Modern JS",
-      "url": "brunch/es6-skeleton",
+      "url": "brunch/with-es6",
       "technologies": "Babel, ES6",
       "description": "A modern JS stack"
     },
     {
       "title": "React",
-      "url": "brunch/react-skeleton",
+      "url": "brunch/with-react",
       "technologies": "Babel, ES6, React",
       "description": "A modern React starter"
     },
     {
       "title": "Exim",
-      "url": "brunch/exim-skeleton",
+      "url": "hellyeahllc/with-exim",
       "technologies": "Babel, ES6, React, Exim",
       "description": "Exim starter"
     },
     {
       "title": "React + Redux",
-      "url": "brunch/redux-sekeleton",
+      "url": "brunch/with-redux",
       "technologies": "Babel, ES6, React, Redux",
       "description": "Brunch Redux starter"
     },
