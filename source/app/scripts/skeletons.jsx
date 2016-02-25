@@ -45,7 +45,7 @@ var Body = React.createClass({
       var fullURL = "https://github.com/" + skeleton.url;
 
       return <tr key={i}>
-        <td><a href={fullURL} target="_blank">{skeleton.name}</a></td>
+        <td><a href={fullURL} target="_blank">{skeleton.title}</a></td>
         <td><code>{skeleton.url}</code></td>
         <td>{skeleton.technologies}</td>
         <td dangerouslySetInnerHTML={{__html: skeleton.description}} />
