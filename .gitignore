@@ -32,3 +32,4 @@ bower_components/
 /_site/
 
 source/app/assets/skeletons.json
+*.map
