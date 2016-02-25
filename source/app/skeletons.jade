@@ -4,7 +4,7 @@ block content
 
   script.
     document.addEventListener('DOMContentLoaded', function() {
-      ReactDOM.render(React.createElement(require('scripts/skeletons'), null), document.getElementById('skeletons-body'));
+      ReactDOM.render(React.createElement(require('scripts/skeletons'), null), document.querySelector('#skeletons-body'));
     });
 
   :marked
@@ -26,7 +26,7 @@ block content
     Brunch doesn’t encourage you to use any particular technology,
     but application skeletons can start you on your way with a specific pattern.
 
-    The [complete skeletons list](https://github.com/brunch/brunch/wiki/Skeletons) is on GitHub. If you create your own open-source skeleton,
+    The [complete skeletons list](https://github.com/brunch/skeletons) is on GitHub. If you create your own open-source skeleton,
     feel free to add it!
 
   div#skeletons-body

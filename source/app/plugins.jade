@@ -4,7 +4,7 @@ block content
 
   script.
     document.addEventListener('DOMContentLoaded', function() {
-      ReactDOM.render(React.createElement(require('scripts/plugins'), null), document.getElementById('plugins-body'));
+      ReactDOM.render(React.createElement(require('scripts/plugins'), null), document.querySelector('#plugins-body'));
     });
 
   :marked
@@ -40,7 +40,7 @@ block content
     <h1>
     <a name="plugins" class="anchor" href="#plugins"><span class="octicon octicon-link"></span></a>Plugins</h1>
 
-    <p>If you want to <strong>add your project here</strong>, simply <a href="https://github.com/brunch/brunch.github.io/blob/brunch/app/assets/plugins.json">edit this file</a> and submit a pull request.</p>
+    <p>If you want to <strong>add your project here</strong>, simply <a href="https://github.com/brunch/brunch.github.io/blob/master/plugins.json">edit this file</a> and submit a pull request.</p>
     </div>
 
   div#plugins-body
