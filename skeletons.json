@@ -4,37 +4,43 @@
       "title": "Modern JS",
       "url": "brunch/with-es6",
       "technologies": "Babel, ES6",
-      "description": "A modern JS stack"
+      "description": "A modern JS stack",
+      "alias": "es6"
     },
     {
       "title": "React",
       "url": "brunch/with-react",
       "technologies": "Babel, ES6, React",
-      "description": "A modern React starter"
+      "description": "A modern React starter",
+      "alias": "react"
     },
     {
       "title": "Exim",
       "url": "hellyeahllc/with-exim",
       "technologies": "Babel, ES6, React, Exim",
-      "description": "Exim starter"
+      "description": "Exim starter",
+      "alias": "exim"
     },
     {
       "title": "React + Redux",
       "url": "brunch/with-redux",
       "technologies": "Babel, ES6, React, Redux",
-      "description": "Brunch Redux starter"
+      "description": "Brunch Redux starter",
+      "alias": "redux"
     },
     {
       "title": "Node-Webkit Hipster Seed",
       "url": "Anonyfox/node-webkit-hipster-seed",
       "technologies": "Node-Webkit, Grunt building, brunch-angular-seed (Jade, Less, Coffeescript, Angular, Bootstrap)",
-      "description": "Ready to Use Skeleton to build Desktop Applications with all the Web goodies of today."
+      "description": "Ready to Use Skeleton to build Desktop Applications with all the Web goodies of today.",
+      "alias": "hipster"
     },
     {
       "title": "Brunch with Chaplin",
       "url": "paulmillr/brunch-with-chaplin",
       "technologies": "CoffeeScript, Stylus, Handlebars",
-      "description": "Chaplin, Backbone, HTML5 Boilerplate, jQuery. Perfect for big applications"
+      "description": "Chaplin, Backbone, HTML5 Boilerplate, jQuery. Perfect for big applications",
+      "alias": "chaplin"
     },
     {
       "title": "Brunch with AngularJS",
@@ -46,7 +52,8 @@
       "title": "Brunch with Ember",
       "url": "icholy/ember-brunch",
       "technologies": "JavaScript, CSS, Handlebars",
-      "description": "Twitter Bootstrap, jQuery"
+      "description": "Twitter Bootstrap, jQuery",
+      "alias": "ember"
     },
     {
       "title": "Brunch with Hipsters",
@@ -82,7 +89,8 @@
       "title": "Brunch with Banana Pancakes",
       "url": "Anaphase/brunch-banana-pancakes",
       "technologies": "JavaScript, Sass, LESS, Handlebars",
-      "description": "Twitter Bootstrap, Mediator. Essentially the same as <a href='https://github.com/nezoomie/brunch-eggs-and-bacon'>Brunch with Eggs and Bacon</a>, but constantly updated to the latest library versions."
+      "description": "Twitter Bootstrap, Mediator. Essentially the same as <a href='https://github.com/nezoomie/brunch-eggs-and-bacon'>Brunch with Eggs and Bacon</a>, but constantly updated to the latest library versions.",
+      "alias": "banana-pancakes"
     },
     {
       "title": "Brunch with JS",
@@ -172,7 +180,8 @@
       "title": "BTC-Cordova",
       "url": "jupl/btc-cordova",
       "technologies": "—",
-      "description": "Bare skeleton that includes support for building apps using Apache Cordova."
+      "description": "Bare skeleton that includes support for building apps using Apache Cordova.",
+      "alias": "cordova"
     },
     {
       "title": "Brunch with Panache",
@@ -268,7 +277,8 @@
       "title": "Dead-simple brunch",
       "url": "brunch/dead-simple",
       "technologies": "—",
-      "description": "Dead-simple brunch skeleton. No opinions, just empty dirs and minimal configs."
+      "description": "Dead-simple brunch skeleton. No opinions, just empty dirs and minimal configs.",
+      "alias": "simple"
     },
     {
       "title": "Brunch with Chaplin and Initializr",

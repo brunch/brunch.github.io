@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "scripts": {
-    "start": "brunch watch --server",
+    "start": "make skeletons && brunch watch --server",
     "test": "brunch test"
   },
   "dependencies": {
@@ -20,7 +20,8 @@
     "marked": "^0.2.10",
     "react-brunch": "*",
     "static-jade-brunch": "git://github.com/ilkosta/static-jade-brunch.git",
-    "uglify-js-brunch": ">= 1.0 < 1.8"
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "brunch-skeletons": "0.0.1"
   },
   "devDependencies": {}
 }
