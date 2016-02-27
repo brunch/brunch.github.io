@@ -30,7 +30,7 @@ html
             if item.path.indexOf('http') == 0
               li: a.nav__item--main-nav(href=item.path, class=active?'active':null)= item.title
             else
-              li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''), class=active?'active':null)= item.title
+              li: a.nav__item--main-nav(href='/'+item.path+(item.path?'':''), class=active?'active':null)= item.title
 
 
     block hero
