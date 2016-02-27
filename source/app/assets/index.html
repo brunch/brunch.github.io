@@ -10,16 +10,22 @@ We also provide a <a href="http://hellyeah.is/">paid support</a>.</p></div><div 
 </code></pre><h2 id="getting-started">Getting started</h2>
 <h4 id="create-a-new-brunch-project-">Create a new Brunch project:</h4>
 <pre><code>brunch new [dir] [--skeleton url]
-</code></pre><p><code>skeleton</code> specifies a <a href="/skeletons.html">skeleton</a> from which your application will be initialized. The default structure doesn&#39;t have any opinions about frameworks or libraries.</p>
+</code></pre><p>You may specify a skeleton from which your application will be initialized:</p>
+<ul>
+<li><code>brunch new</code>: The default skeleton does not add any libraries or frameworks</li>
+<li><code>brunch new -s es6</code> would init a simple app that supports ECMAScript 6 compilation with Babel.</li>
+<li><code>brunch new -s react</code> and <code>brunch new -s redux</code> are lovely skeletons for React fans.</li>
+<li>Other 50+ community-made skeletons are available at the <a href="/skeletons">skeletons</a> page.</li>
+</ul>
 <p>There’s a great <a href="https://github.com/brunch/brunch-guide#readme">guide</a> that lets you explore Brunch in-depth!</p>
 <p>You can also see the <a href="https://github.com/brunch/brunch/blob/master/docs/README.md">README</a> for a complete description of app structure.</p>
 <h4 id="develop-with-brunch-">Develop with Brunch:</h4>
 <pre><code>brunch watch --server
 </code></pre><p>tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional <code>server</code> flag launches a simple web server with <a href="http://diveintohtml5.info/history.html">push state</a> support.</p>
 <p>If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install <a href="https://github.com/alloy/terminal-notifier">terminal notifier</a>: <code>brew install terminal-notifier</code>.</p>
-<h4 id="build-with-brunch-">Build with Brunch:</h4>
+<h4 id="deploy-with-brunch-">Deploy with Brunch:</h4>
 <pre><code>brunch build --production
-</code></pre><p>builds a project for distribution. By default it enables minification.</p>
+</code></pre><p>builds a project for distribution. By default it enables minification. You can then publish those static assets to a server or a CDN of your preference.</p>
 <h1 id="documentation">Documentation</h1>
 <p>All reference docs are available <a href="https://github.com/brunch/brunch/tree/master/docs">on GitHub</a>.
 The best way to discover Brunch is probably to start with the <a href="https://github.com/brunch/brunch-guide#readme">guide</a>.</p>

@@ -27,7 +27,12 @@ block content
 
         brunch new [dir] [--skeleton url]
 
-    `skeleton` specifies a [skeleton](/skeletons.html) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
+    You may specify a skeleton from which your application will be initialized:
+
+    - `brunch new`: The default skeleton does not add any libraries or frameworks
+    - `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
+    - `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
+    - Other 50+ community-made skeletons are available at the [skeletons](/skeletons) page.
 
     There’s a great [guide](https://github.com/brunch/brunch-guide#readme) that lets you explore Brunch in-depth!
 
@@ -41,11 +46,11 @@ block content
 
     If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal notifier](https://github.com/alloy/terminal-notifier): `brew install terminal-notifier`.
 
-    #### Build with Brunch:
+    #### Deploy with Brunch:
 
         brunch build --production
 
-    builds a project for distribution. By default it enables minification.
+    builds a project for distribution. By default it enables minification. You can then publish those static assets to a server or a CDN of your preference.
 
     # Documentation
 
