@@ -1,6 +1,13 @@
 {
   "plugins": [
     {
+      "name": "Vue Brunch",
+      "url": "nblackburn/vue-brunch",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "Adds support to Brunch for pre-compiling single file Vue components."
+    },
+    {
       "name": "JavaScript-brunch",
       "url": "brunch/javascript-brunch",
       "category": "Compilers",
