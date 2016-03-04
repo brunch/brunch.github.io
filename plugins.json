@@ -1,13 +1,6 @@
 {
   "plugins": [
     {
-      "name": "Vue Brunch",
-      "url": "nblackburn/vue-brunch",
-      "category": "Compilers",
-      "subcategory": "Pre-compiled templates",
-      "description": "Adds support to Brunch for pre-compiling single file Vue components."
-    },
-    {
       "name": "JavaScript-brunch",
       "url": "brunch/javascript-brunch",
       "category": "Compilers",
@@ -544,6 +537,13 @@
       "category": "Compilers",
       "subcategory": "Script languages",
       "description": "<a href=\"http://www.typescriptlang.org/\">Typescript</a> is a typed superset of JavaScript that compiles to plain JavaScript."
+    },
+    {
+      "name": "Vue Brunch",
+      "url": "nblackburn/vue-brunch",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "Adds support to Brunch for pre-compiling single file Vue components."
     }
   ]
 }
