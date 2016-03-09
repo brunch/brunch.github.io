@@ -5,11 +5,9 @@
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "scripts": {
-    "start": "make skeletons && brunch watch --server"
+    "start": "brunch watch --server"
   },
-  "dependencies": {
-    "brunch-skeletons": "~0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "auto-reload-brunch": "^2.0",
     "babel-brunch": "^6.0.1",

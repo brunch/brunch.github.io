@@ -9,7 +9,7 @@ var Body = React.createClass({
   componentWillMount: function() {
     var self = this;
 
-    fetch('/skeletons.json')
+    fetch('https://raw.githubusercontent.com/brunch/skeletons/master/skeletons.json')
       .then(function(x) { return x.json(); })
       .then(function(x) {
         self.setState({ skeletons: x.skeletons });
