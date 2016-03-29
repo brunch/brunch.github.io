@@ -1,7 +1,7 @@
 var nav = [
   {title: 'Home', path: ''},
   {title: 'Docs', path: 'https://github.com/brunch/brunch/tree/master/docs'},
-  {title: 'Guide', path: 'https://github.com/brunch/brunch-guide#readme'},
+  {title: 'Guide', path: 'https://github.com/brunch/brunch/blob/master/docs/README.md'},
   {title: 'Plugins', path: 'plugins'},
   {title: 'Skeletons', path: 'skeletons'},
   {title: 'Examples', path: 'examples'},
