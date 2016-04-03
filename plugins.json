@@ -544,6 +544,12 @@
       "category": "Compilers",
       "subcategory": "Pre-compiled templates",
       "description": "Adds support to Brunch for pre-compiling single file Vue components."
-    }
+    },
+    {
+      "name": "karma-brunch",
+      "url": "denar90/karma-brunch",
+      "category": "Others",
+      "description": "Adds karma support to brunch."
+    },
   ]
 }
