@@ -5,6 +5,8 @@ var nav = [
   {title: 'Plugins', path: 'plugins'},
   {title: 'Skeletons', path: 'skeletons'},
   {title: 'Examples', path: 'examples'},
+  {title: 'Examples', path: 'examples'},
+  {title: 'Support', path: 'support'},
   {title: 'Compare', path: 'compare'}
 ];
 

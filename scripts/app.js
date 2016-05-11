@@ -806,6 +806,87 @@ if (typeof define === 'function' && define.amd) {
 }
 });
 
+;require.register("support.jade", function(exports, require, module) {
+var __templateData = function template(locals) {
+var buf = [];
+var jade_mixins = {};
+var jade_interp;
+;var locals_for_with = (locals || {});(function (filename, nav, social, undefined) {
+buf.push("<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"><title>Brunch - ultra-fast HTML5 build tool</title><meta name=\"description\" content=\"Brunch builds, lints, compiles, concatenates and shrinks your HTML5 app in an ultra-simple way. No more Grunt / Gulp mess.\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/favicon.ico\"><link rel=\"stylesheet\" href=\"styles/app.css\"><link rel=\"publisher\" href=\"https://plus.google.com/+PaulMillerLi\"><!--[if lt IE 9]>\n<script src=\"//html5shiv.googlecode.com/svn/trunk/html5.js\"></script>\n<![endif]--><script>/*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */\n\n!function(){function e(e,n,t){\"use strict\";var o=window.document.createElement(\"link\"),a=n||window.document.getElementsByTagName(\"script\")[0],i=window.document.styleSheets;return o.rel=\"stylesheet\",o.href=e,o.media=\"only x\",a.parentNode.insertBefore(o,a),o.onloadcssdefined=function(e){for(var n,t=0;t<i.length;t++)i[t].href&&i[t].href===o.href&&(n=!0);n?e():setTimeout(function(){o.onloadcssdefined(e)})},o.onloadcssdefined(function(){o.media=t||\"all\"}),o}function n(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},\"isApplicationInstalled\"in navigator&&\"onloadcssdefined\"in e&&e.onloadcssdefined(n)}!function(t){var o=function(a,i){\"use strict\";if(a&&3===a.length){var r=t.navigator,d=t.document,s=t.Image,c=!(!d.createElementNS||!d.createElementNS(\"http://www.w3.org/2000/svg\",\"svg\").createSVGRect||!d.implementation.hasFeature(\"http://www.w3.org/TR/SVG11/feature#Image\",\"1.1\")||t.opera&&-1===r.userAgent.indexOf(\"Chrome\")||-1!==r.userAgent.indexOf(\"Series40\")),l=new s;l.onerror=function(){o.method=\"png\",o.href=a[2],e(a[2])},l.onload=function(){var t=1===l.width&&1===l.height,r=a[t&&c?0:t?1:2];t&&c?o.method=\"svg\":t?o.method=\"datapng\":o.method=\"png\",o.href=r,n(e(r),i)},l.src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==\",d.documentElement.className+=\" grunticon\"}};o.loadCSS=e,o.onloadCSS=n,t.grunticon=o}(this)}();grunticon( [ \"/images/svg/icons.data.svg.css\", \"/images/svg/icons.data.png.css\", \"/images/svg/icons.fallback.css\" ] );</script></head><body><div id=\"navbar\"><div class=\"container\"><a href=\"/\" class=\"icon-brunch-logo-web\"></a><ul class=\"nav nav--main-nav\">");
+// iterate nav
+;(function(){
+  var $$obj = nav;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var item = $$obj[$index];
+
+var active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
+if ( item.path.indexOf('http') == 0)
+{
+buf.push("<li><a" + (jade.attr("href", item.path, true, true)) + (jade.cls(['nav__item--main-nav',active?'active':null], [null,true])) + ">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a></li>");
+}
+else
+{
+buf.push("<li><a" + (jade.attr("href", '/'+item.path+(item.path?'':''), true, true)) + (jade.cls(['nav__item--main-nav',active?'active':null], [null,true])) + ">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a></li>");
+}
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var item = $$obj[$index];
+
+var active = (filename == item.path + '.jade') || (filename == 'index.jade' && !item.path)
+if ( item.path.indexOf('http') == 0)
+{
+buf.push("<li><a" + (jade.attr("href", item.path, true, true)) + (jade.cls(['nav__item--main-nav',active?'active':null], [null,true])) + ">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a></li>");
+}
+else
+{
+buf.push("<li><a" + (jade.attr("href", '/'+item.path+(item.path?'':''), true, true)) + (jade.cls(['nav__item--main-nav',active?'active':null], [null,true])) + ">" + (jade.escape(null == (jade_interp = item.title) ? "" : jade_interp)) + "</a></li>");
+}
+    }
+
+  }
+}).call(this);
+
+buf.push("</ul></div></div><div class=\"page__content container\"><div class=\"grid\"><div style=\"float:right\" class=\"grid__item one-whole desk-one-third\"><div class=\"social-buttons\">");
+// iterate social
+;(function(){
+  var $$obj = social;
+  if ('number' == typeof $$obj.length) {
+
+    for (var $index = 0, $$l = $$obj.length; $index < $$l; $index++) {
+      var service = $$obj[$index];
+
+buf.push("<span><iframe allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"" + (jade.attr("src", service.src, true, true)) + (jade.attr("style", "width: " + (service.width) + "px; height:30px;", true, true)) + (jade.cls(["social-button-" + (service.classname) + ""], [true])) + "></iframe></span>");
+    }
+
+  } else {
+    var $$l = 0;
+    for (var $index in $$obj) {
+      $$l++;      var service = $$obj[$index];
+
+buf.push("<span><iframe allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\"" + (jade.attr("src", service.src, true, true)) + (jade.attr("style", "width: " + (service.width) + "px; height:30px;", true, true)) + (jade.cls(["social-button-" + (service.classname) + ""], [true])) + "></iframe></span>");
+    }
+
+  }
+}).call(this);
+
+buf.push("</div><a href=\"/#why\" class=\"others\"><h3>Why Brunch instead of competitors?</h3><img src=\"/images/others/grunt.png\" alt=\"\" height=\"128\"><img src=\"/images/others/gulp.png\" alt=\"\" height=\"128\"></a><div class=\"tweets\"><h3>People love Brunch!</h3><a class=\"twitter-timeline\" data-dnt=\"true\" href=\"https://twitter.com/brunch/favorites\" data-widget-id=\"397311715655684096\">Favorite Tweets by @brunch</a>\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script></div><h3 style=\"margin-top: 20px\">Community</h3><p>Report any bugs or request features on our <a href=\"http://github.com/brunch/brunch\">GitHub Issues</a>.\nWe have a <a href=\"http://ost.io/@brunch/brunch\">Forum</a> and\n<a href=\"http://stackoverflow.com/questions/tagged/brunch\">Stack Overflow tag</a>.\nWe also provide a <a href=\"http://hellyeah.is/\">paid support</a>.</p></div><div class=\"grid__item one-whole desk-two-thirds\"><h1 id=\"community\">Community</h1>\n<p>All docs are available <a href=\"https://github.com/brunch/brunch/tree/master/docs\">on GtiHub</a>.</p>\n<p>Follow <a href=\"http://twitter.com/brunch\">@brunch</a> and <a href=\"http://twitter.com/paulmillr\">@paulmillr</a> on twitter to get latest updates &amp; news.\nFeel free to discuss things with other users and ask for help in our ost.io <a href=\"http://ost.io/@brunch/brunch\">forum section</a>.\nYou can also ask questions with <a href=\"http://stackoverflow.com/questions/tagged/brunch\">#brunch tag at Stack Overflow</a>.</p>\n<p>If you want to add something new to brunch or create your own plugin, <a href=\"https://github.com/brunch/brunch/blob/master/CONTRIBUTING.md\">contributing guidelines</a> can help you.</p>\n<p>There are also some text editor plugins that simplify developing apps:</p>\n<ul>\n<li><a href=\"https://atom.io/packages/brunch-with-atom\">brunch-with-atom</a></li>\n<li><a href=\"https://visualstudiogallery.msdn.microsoft.com/de706ad0-8a73-4df3-bef5-867bb9a70d51\">Brunch Task Runner for Visual Studio</a></li>\n</ul>\n<h2 id=\"commercial-support\">Commercial support</h2>\n<p><a href=\"http://hellyeah.is/\"><img src=\"http://hellyeah.is/images/logo.png\" width=\"64\" height=\"64\" alt=\"Hell Yeah\"></a></p>\n<p><a href=\"http://hellyeah.is/\">Hell Yeah LLC</a>, a company behind Brunch is offering commercial support, consulting and training for Brunch, Chaplin and Backbone-based web applications.\nDrop us\n<a href=\"mailto:&#x69;&#x6E;&#x66;&#x6F;&#x40;&#x68;&#x65;&#x6C;&#x6C;&#x79;&#x65;&#x61;&#x68;&#x2E;&#x69;&#x73;\">an email</a>\nfor more information.</p>\n<p><a href=\"http://andriy.drozdyuk.com/\">Andriy Drozdyuk</a> in Fredericton, NB, Canada.\nContact me at <a href=\"mailto:drozzy@gmail.com\">drozzy@gmail.com</a> for more information. Local only.</p>\n<p>Are you providing Brunch consulting too? <a href=\"https://github.com/brunch/brunch.github.com/edit/master/source/app/support.jade\">Place yourself here!</a></p>\n</div></div><footer><hr class=\"rule\"><p><small>Hosted on <a href=\"https://github.com/brunch/brunch.github.com\">GitHub Pages</a>. The content on this website is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/3.0/deed.en_US\">CC BY 3.0</a>. Logo by <a href=\"http://helle.in\">Michael Hellein</a></small></p></footer></div><script src=\"scripts/app.js\"></script><script>require('scripts/app');\n</script>  <script type=\"text/javascript\">\n    var _gauges = _gauges || [];\n    (function() {\n      var t   = document.createElement('script');\n      t.type  = 'text/javascript';\n      t.async = true;\n      t.id    = 'gauges-tracker';\n      t.setAttribute('data-site-id', '4f1631bbcb25bc723b000007');\n      t.src = '//secure.gaug.es/track.js';\n      var s = document.getElementsByTagName('script')[0];\n      s.parentNode.insertBefore(t, s);\n    })();\n  </script>\n</body></html>");}.call(this,"filename" in locals_for_with?locals_for_with.filename:typeof filename!=="undefined"?filename:undefined,"nav" in locals_for_with?locals_for_with.nav:typeof nav!=="undefined"?nav:undefined,"social" in locals_for_with?locals_for_with.social:typeof social!=="undefined"?social:undefined,"undefined" in locals_for_with?locals_for_with.undefined:typeof undefined!=="undefined"?undefined:undefined));;return buf.join("");
+};
+if (typeof define === 'function' && define.amd) {
+  define([], function() {
+    return __templateData;
+  });
+} else if (typeof module === 'object' && module && module.exports) {
+  module.exports = __templateData;
+} else {
+  __templateData;
+}
+});
+
 ;require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
@@ -21005,7 +21086,100 @@ module.exports = warning;
   return React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 });
 
-"use strict";
+'use strict';
+
+/* jshint ignore:start */
+(function () {
+  var WebSocket = window.WebSocket || window.MozWebSocket;
+  var br = window.brunch = window.brunch || {};
+  var ar = br['auto-reload'] = br['auto-reload'] || {};
+  if (!WebSocket || ar.disabled) return;
+  if (window._ar) return;
+  window._ar = true;
+
+  var cacheBuster = function cacheBuster(url) {
+    var date = Math.round(Date.now() / 1000).toString();
+    url = url.replace(/(\&|\\?)cacheBuster=\d*/, '');
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'cacheBuster=' + date;
+  };
+
+  var browser = navigator.userAgent.toLowerCase();
+  var forceRepaint = ar.forceRepaint || browser.indexOf('chrome') > -1;
+
+  var reloaders = {
+    page: function page() {
+      window.location.reload(true);
+    },
+
+    stylesheet: function stylesheet() {
+      [].slice.call(document.querySelectorAll('link[rel=stylesheet]')).filter(function (link) {
+        var val = link.getAttribute('data-autoreload');
+        return link.href && val != 'false';
+      }).forEach(function (link) {
+        link.href = cacheBuster(link.href);
+      });
+
+      // Hack to force page repaint after 25ms.
+      if (forceRepaint) setTimeout(function () {
+        document.body.offsetHeight;
+      }, 25);
+    },
+
+    javascript: function javascript() {
+      var scripts = [].slice.call(document.querySelectorAll('script'));
+      var textScripts = scripts.map(function (script) {
+        return script.text;
+      }).filter(function (text) {
+        return text.length > 0;
+      });
+      var srcScripts = scripts.filter(function (script) {
+        return script.src;
+      });
+
+      var loaded = 0;
+      var all = srcScripts.length;
+      var onLoad = function onLoad() {
+        loaded = loaded + 1;
+        if (loaded === all) {
+          textScripts.forEach(function (script) {
+            eval(script);
+          });
+        }
+      };
+
+      srcScripts.forEach(function (script) {
+        var src = script.src;
+        script.remove();
+        var newScript = document.createElement('script');
+        newScript.src = cacheBuster(src);
+        newScript.async = true;
+        newScript.onload = onLoad;
+        document.head.appendChild(newScript);
+      });
+    }
+  };
+  var port = ar.port || 9485;
+  var host = br.server || window.location.hostname || 'localhost';
+
+  var connect = function connect() {
+    var connection = new WebSocket('ws://' + host + ':' + port);
+    connection.onmessage = function (event) {
+      if (ar.disabled) return;
+      var message = event.data;
+      var reloader = reloaders[message] || reloaders.page;
+      reloader();
+    };
+    connection.onerror = function () {
+      if (connection.readyState) connection.close();
+    };
+    connection.onclose = function () {
+      window.setTimeout(connect, 1000);
+    };
+  };
+  connect();
+})();
+/* jshint ignore:end */
+;"use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 
