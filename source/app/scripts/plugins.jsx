@@ -1,3 +1,7 @@
+var utils = require('./utils');
+var filterItems = utils.filterItems;
+var compare = utils.compare;
+
 var Body = React.createClass({
   getInitialState: function() {
     return {
@@ -23,21 +27,7 @@ var Body = React.createClass({
   filteredPlugins: function() {
     var plugins = this.state.plugins;
     var search = this.state.search;
-
-    var searchRes = search.split(' ').filter(function(expr) {
-      return expr !== '';
-    }).map(function(expr) {
-      return new RegExp(expr, 'i');
-    });
-
-    if (searchRes.length === 0) return plugins;
-
-    return plugins.filter(function(plugin) {
-      var pluginString = [plugin.name, plugin.url, plugin.category, plugin.subcategory, plugin.description].join(' ');
-      return searchRes.every(function(searchRe) {
-        return searchRe.test(pluginString);
-      });
-    });
+    return filterItems(plugins, search, ['name', 'url', 'category', 'subcategory', 'description']);
   },
 
   groupedPlugins: function() {
@@ -75,19 +65,6 @@ var Body = React.createClass({
 
     var catPlugins = this.groupedPlugins();
 
-    var compare = function(order, key) {
-      return function(i1, i2) {
-        var id1 = order.indexOf(i1[key]);
-        var id2 = order.indexOf(i2[key]);
-
-        if (id1 !== -1 && id2 !== -1) {
-          return id1 > id2 ? 1 : -1;
-        } else {
-          return id1 ? 1 : id2 ? -1 : i1[key].localeCompare(i2[key]);
-        }
-      };
-    };
-
     catPlugins = catPlugins.map(function(cat) {
       return {
         category: cat.category,
@@ -96,6 +73,21 @@ var Body = React.createClass({
     });
 
     return catPlugins.sort(compare(sorting, 'category'));
+  },
+
+  renderFeatured: function() {
+    var featuredPlugins = this.state.plugins.filter(function(plug) { return plug.featured; });
+    var featuredItems = featuredPlugins.map(function(plugin, i) {
+      var fullURL = plugin.url ? "https://github.com/" + plugin.url : null;
+
+      return <li key={i}>
+        <a href={fullURL} target="_blank">{plugin.name}</a> — <span dangerouslySetInnerHTML={{__html: plugin.description}} />
+      </li>;
+    });
+    return this.state.search.length > 0 ? null : <div>
+      <h3>Here are some plugins to get you started:</h3>
+      <ul>{featuredItems}</ul>
+    </div>;
   },
 
   render: function() {
@@ -121,7 +113,8 @@ var Body = React.createClass({
     });
 
     return <div>
-      <input type="text" style={{width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0'}} onKeyUp={this.handleKeyUp}/>
+      <input placeholder="Type to search..." type="text" className="searchbox" onKeyUp={this.handleKeyUp}/>
+      {this.renderFeatured()}
       <table className="data-table">
         <thead>
           <tr>

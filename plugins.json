@@ -5,7 +5,8 @@
       "url": "brunch/javascript-brunch",
       "category": "Compilers",
       "subcategory": "Script languages",
-      "description": "Provides JS support out-of-box. Without it, your JS files will be ignored."
+      "description": "Provides JS support out-of-box. Without it, your JS files will be ignored.",
+      "featured": true
     },
     {
       "name": "HMR-brunch",
@@ -95,7 +96,8 @@
       "url": "babel/babel-brunch",
       "category": "Compilers",
       "subcategory": "Script languages",
-      "description": "Adds ES6 to ES5 transpiling with <a href=\"https://babeljs.io/\">Babel</a>."
+      "description": "Adds ES6 to ES5 transpiling with <a href=\"https://babeljs.io/\">Babel</a>.",
+      "featured": true
     },
     {
       "name": "sweet-js-brunch",
@@ -123,7 +125,8 @@
       "url": "brunch/css-brunch",
       "category": "Compilers",
       "subcategory": "Style languages",
-      "description": null
+      "description": "Provides CSS support out-of-box. Without it, your CSS files will be ignored.",
+      "featured": true
     },
     {
       "name": "cssnext-brunch",
@@ -325,7 +328,8 @@
       "name": "UglifyJS-brunch",
       "url": "brunch/uglify-js-brunch",
       "category": "Minifiers",
-      "description": "<a href=\"https://github.com/mishoo/UglifyJS\">UglifyJS</a> is a popular JavaScript minifier."
+      "description": "<a href=\"https://github.com/mishoo/UglifyJS\">UglifyJS</a> is a popular JavaScript minifier.",
+      "featured": true
     },
     {
       "name": "CleanCSS-brunch",
@@ -403,7 +407,8 @@
       "name": "Auto-reload-brunch",
       "url": "brunch/auto-reload-brunch",
       "category": "Others",
-      "description": "Adds automatic browser reloading support to brunch."
+      "description": "Adds automatic browser reloading support to brunch.",
+      "featured": true
     },
     {
       "name": "browser-sync-brunch",

@@ -1,3 +1,5 @@
+var filterItems = require('./utils').filterItems;
+
 var Body = React.createClass({
   getInitialState: function() {
     return {
@@ -23,21 +25,7 @@ var Body = React.createClass({
   filteredSkeletons: function() {
     var skeletons = this.state.skeletons;
     var search = this.state.search;
-
-    var searchRes = search.split(' ').filter(function(expr) {
-      return expr !== '';
-    }).map(function(expr) {
-      return new RegExp(expr, 'i');
-    });
-
-    if (searchRes.length === 0) return skeletons;
-
-    return skeletons.filter(function(skeleton) {
-      var skeletonString = [skeleton.name, skeleton.url, skeleton.alias, skeleton.technologies, skeleton.description].join(' ');
-      return searchRes.every(function(searchRe) {
-        return searchRe.test(skeletonString);
-      });
-    });
+    return filterItems(skeletons, search, ['name', 'url', 'alias', 'technologies', 'description']);
   },
 
   render: function() {
@@ -53,7 +41,7 @@ var Body = React.createClass({
       </tr>;
     });
     return <div>
-      <input type="text" style={{width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0'}} onKeyUp={this.handleKeyUp}/>
+      <input placeholder="Type to search... It could be a technology name or anything, really" type="text" className="searchbox" onKeyUp={this.handleKeyUp}/>
       <table className="data-table">
         <thead>
           <tr>

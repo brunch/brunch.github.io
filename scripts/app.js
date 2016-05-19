@@ -149,11 +149,76 @@ var __makeRelativeRequire = function(require, mappings, pref) {
   }
 };
 require.register("scripts/app.js", function(exports, require, module) {
-"use strict";
+'use strict';
+
+function anchorize() {
+  var headers = [].slice.call(document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]'));
+  headers.forEach(function (header) {
+    var id = header.id;
+    header.id = '';
+    header.innerHTML += '<a name="' + id + '">&nbsp;</a>';
+  });
+}
+
+function toc(contentClass, fallbackContentClass, tableClass) {
+  var art = document.getElementsByClassName(contentClass)[0] || document.getElementsByClassName(fallbackContentClass)[0];
+  if (!art) return;
+  var els = [].slice.call(art.childNodes).filter(function (el) {
+    return el.tagName === 'H2' || el.tagName === 'H3';
+  });
+  if (els.length === 0) return;
+  var grouped = els.reduce(function (memo, el) {
+    if (el.tagName === 'H2') {
+      memo.push([el]);
+    } else {
+      var last = memo[memo.length - 1];
+      if (!last) return memo;
+      last.push(el);
+    }
+    return memo;
+  }, []);
+  var tocHtml = '';
+  tocHtml += '<ul className="toc">';
+  grouped.forEach(function (group) {
+    var main = group[0];
+    var children = group.slice(1);
+    tocHtml += '<li>';
+    tocHtml += '<a href="#' + main.id + '">' + main.innerHTML + '</a>';
+    if (children.length) {
+      tocHtml += '<ul>';
+      children.forEach(function (child) {
+        tocHtml += '<li><a href="#' + child.id + '">' + child.innerHTML + '</a></li>';
+      });
+      tocHtml += '</ul>';
+    }
+    tocHtml += '</li>';
+  });
+  tocHtml += '</ul>';
+
+  [].slice.call(document.getElementsByClassName(tableClass)).forEach(function (placeholder) {
+    placeholder.innerHTML = tocHtml;
+  });
+}
+
+function setTitle(contentClass) {
+  var art = document.getElementsByClassName(contentClass)[0];
+  if (!art) return;
+  var heading = art.getElementsByTagName('h1')[0];
+  if (!heading) return;
+  document.title = heading.textContent + ' — Brunch';
+}
+
+setTitle('page__content');
+toc('doc-content', 'page__content', 'toc-placeholder');
+anchorize();
 });
 
-;require.register("scripts/plugins.jsx", function(exports, require, module) {
+require.register("scripts/plugins.jsx", function(exports, require, module) {
 'use strict';
+
+var utils = require('./utils');
+var filterItems = utils.filterItems;
+var compare = utils.compare;
 
 var Body = React.createClass({
   displayName: 'Body',
@@ -182,21 +247,7 @@ var Body = React.createClass({
   filteredPlugins: function filteredPlugins() {
     var plugins = this.state.plugins;
     var search = this.state.search;
-
-    var searchRes = search.split(' ').filter(function (expr) {
-      return expr !== '';
-    }).map(function (expr) {
-      return new RegExp(expr, 'i');
-    });
-
-    if (searchRes.length === 0) return plugins;
-
-    return plugins.filter(function (plugin) {
-      var pluginString = [plugin.name, plugin.url, plugin.category, plugin.subcategory, plugin.description].join(' ');
-      return searchRes.every(function (searchRe) {
-        return searchRe.test(pluginString);
-      });
-    });
+    return filterItems(plugins, search, ['name', 'url', 'category', 'subcategory', 'description']);
   },
 
   groupedPlugins: function groupedPlugins() {
@@ -234,19 +285,6 @@ var Body = React.createClass({
 
     var catPlugins = this.groupedPlugins();
 
-    var compare = function compare(order, key) {
-      return function (i1, i2) {
-        var id1 = order.indexOf(i1[key]);
-        var id2 = order.indexOf(i2[key]);
-
-        if (id1 !== -1 && id2 !== -1) {
-          return id1 > id2 ? 1 : -1;
-        } else {
-          return id1 ? 1 : id2 ? -1 : i1[key].localeCompare(i2[key]);
-        }
-      };
-    };
-
     catPlugins = catPlugins.map(function (cat) {
       return {
         category: cat.category,
@@ -255,6 +293,41 @@ var Body = React.createClass({
     });
 
     return catPlugins.sort(compare(sorting, 'category'));
+  },
+
+  renderFeatured: function renderFeatured() {
+    var featuredPlugins = this.state.plugins.filter(function (plug) {
+      return plug.featured;
+    });
+    var featuredItems = featuredPlugins.map(function (plugin, i) {
+      var fullURL = plugin.url ? "https://github.com/" + plugin.url : null;
+
+      return React.createElement(
+        'li',
+        { key: i },
+        React.createElement(
+          'a',
+          { href: fullURL, target: '_blank' },
+          plugin.name
+        ),
+        ' — ',
+        React.createElement('span', { dangerouslySetInnerHTML: { __html: plugin.description } })
+      );
+    });
+    return this.state.search.length > 0 ? null : React.createElement(
+      'div',
+      null,
+      React.createElement(
+        'h3',
+        null,
+        'Here are some plugins to get you started:'
+      ),
+      React.createElement(
+        'ul',
+        null,
+        featuredItems
+      )
+    );
   },
 
   render: function render() {
@@ -316,7 +389,8 @@ var Body = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement('input', { type: 'text', style: { width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0' }, onKeyUp: this.handleKeyUp }),
+      React.createElement('input', { placeholder: 'Type to search...', type: 'text', className: 'searchbox', onKeyUp: this.handleKeyUp }),
+      this.renderFeatured(),
       React.createElement(
         'table',
         { className: 'data-table' },
@@ -354,6 +428,8 @@ module.exports = Body;
 require.register("scripts/skeletons.jsx", function(exports, require, module) {
 'use strict';
 
+var filterItems = require('./utils').filterItems;
+
 var Body = React.createClass({
   displayName: 'Body',
 
@@ -381,21 +457,7 @@ var Body = React.createClass({
   filteredSkeletons: function filteredSkeletons() {
     var skeletons = this.state.skeletons;
     var search = this.state.search;
-
-    var searchRes = search.split(' ').filter(function (expr) {
-      return expr !== '';
-    }).map(function (expr) {
-      return new RegExp(expr, 'i');
-    });
-
-    if (searchRes.length === 0) return skeletons;
-
-    return skeletons.filter(function (skeleton) {
-      var skeletonString = [skeleton.name, skeleton.url, skeleton.alias, skeleton.technologies, skeleton.description].join(' ');
-      return searchRes.every(function (searchRe) {
-        return searchRe.test(skeletonString);
-      });
-    });
+    return filterItems(skeletons, search, ['name', 'url', 'alias', 'technologies', 'description']);
   },
 
   render: function render() {
@@ -443,7 +505,7 @@ var Body = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement('input', { type: 'text', style: { width: '100%', fontSize: '30px', padding: '5px 10px', margin: '0 0 20px 0' }, onKeyUp: this.handleKeyUp }),
+      React.createElement('input', { placeholder: 'Type to search... It could be a technology name or anything, really', type: 'text', className: 'searchbox', onKeyUp: this.handleKeyUp }),
       React.createElement(
         'table',
         { className: 'data-table' },
@@ -491,6 +553,45 @@ var Body = React.createClass({
 });
 
 module.exports = Body;
+});
+
+require.register("scripts/utils.js", function(exports, require, module) {
+'use strict';
+
+var filterItems = function filterItems(items, search, attributes) {
+  var searchRes = search.split(' ').filter(function (expr) {
+    return expr !== '';
+  }).map(function (expr) {
+    return new RegExp(expr, 'i');
+  });
+
+  if (searchRes.length === 0) return items;
+
+  return items.filter(function (item) {
+    var attributeValues = attributes.map(function (attr) {
+      return item[attr];
+    });
+    var itemString = attributeValues.join(' ');
+    return searchRes.every(function (searchRe) {
+      return searchRe.test(itemString);
+    });
+  });
+};
+
+var compare = function compare(order, key) {
+  return function (i1, i2) {
+    var id1 = order.indexOf(i1[key]);
+    var id2 = order.indexOf(i2[key]);
+
+    if (id1 !== -1 && id2 !== -1) {
+      return id1 > id2 ? 1 : -1;
+    } else {
+      return id1 ? 1 : id2 ? -1 : i1[key].localeCompare(i2[key]);
+    }
+  };
+};
+
+module.exports = { filterItems: filterItems, compare: compare };
 });
 
 require.register("___globals___", function(exports, require, module) {
@@ -1472,21 +1573,6 @@ require.register("___globals___", function(exports, require, module) {
     return
   }
 
-  var support = {
-    searchParams: 'URLSearchParams' in self,
-    iterable: 'Symbol' in self && 'iterator' in Symbol,
-    blob: 'FileReader' in self && 'Blob' in self && (function() {
-      try {
-        new Blob()
-        return true
-      } catch(e) {
-        return false
-      }
-    })(),
-    formData: 'FormData' in self,
-    arrayBuffer: 'ArrayBuffer' in self
-  }
-
   function normalizeName(name) {
     if (typeof name !== 'string') {
       name = String(name)
@@ -1502,24 +1588,6 @@ require.register("___globals___", function(exports, require, module) {
       value = String(value)
     }
     return value
-  }
-
-  // Build a destructive iterator for the value list
-  function iteratorFor(items) {
-    var iterator = {
-      next: function() {
-        var value = items.shift()
-        return {done: value === undefined, value: value}
-      }
-    }
-
-    if (support.iterable) {
-      iterator[Symbol.iterator] = function() {
-        return iterator
-      }
-    }
-
-    return iterator
   }
 
   function Headers(headers) {
@@ -1577,28 +1645,6 @@ require.register("___globals___", function(exports, require, module) {
     }, this)
   }
 
-  Headers.prototype.keys = function() {
-    var items = []
-    this.forEach(function(value, name) { items.push(name) })
-    return iteratorFor(items)
-  }
-
-  Headers.prototype.values = function() {
-    var items = []
-    this.forEach(function(value) { items.push(value) })
-    return iteratorFor(items)
-  }
-
-  Headers.prototype.entries = function() {
-    var items = []
-    this.forEach(function(value, name) { items.push([name, value]) })
-    return iteratorFor(items)
-  }
-
-  if (support.iterable) {
-    Headers.prototype[Symbol.iterator] = Headers.prototype.entries
-  }
-
   function consumed(body) {
     if (body.bodyUsed) {
       return Promise.reject(new TypeError('Already read'))
@@ -1629,8 +1675,22 @@ require.register("___globals___", function(exports, require, module) {
     return fileReaderReady(reader)
   }
 
+  var support = {
+    blob: 'FileReader' in self && 'Blob' in self && (function() {
+      try {
+        new Blob();
+        return true
+      } catch(e) {
+        return false
+      }
+    })(),
+    formData: 'FormData' in self,
+    arrayBuffer: 'ArrayBuffer' in self
+  }
+
   function Body() {
     this.bodyUsed = false
+
 
     this._initBody = function(body) {
       this._bodyInit = body
@@ -1640,8 +1700,6 @@ require.register("___globals___", function(exports, require, module) {
         this._bodyBlob = body
       } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
         this._bodyFormData = body
-      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
-        this._bodyText = body.toString()
       } else if (!body) {
         this._bodyText = ''
       } else if (support.arrayBuffer && ArrayBuffer.prototype.isPrototypeOf(body)) {
@@ -1656,8 +1714,6 @@ require.register("___globals___", function(exports, require, module) {
           this.headers.set('content-type', 'text/plain;charset=UTF-8')
         } else if (this._bodyBlob && this._bodyBlob.type) {
           this.headers.set('content-type', this._bodyBlob.type)
-        } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
-          this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
         }
       }
     }
@@ -1779,7 +1835,7 @@ require.register("___globals___", function(exports, require, module) {
 
   function headers(xhr) {
     var head = new Headers()
-    var pairs = (xhr.getAllResponseHeaders() || '').trim().split('\n')
+    var pairs = xhr.getAllResponseHeaders().trim().split('\n')
     pairs.forEach(function(header) {
       var split = header.trim().split(':')
       var key = split.shift().trim()
@@ -1832,9 +1888,9 @@ require.register("___globals___", function(exports, require, module) {
     return new Response(null, {status: status, headers: {location: url}})
   }
 
-  self.Headers = Headers
-  self.Request = Request
-  self.Response = Response
+  self.Headers = Headers;
+  self.Request = Request;
+  self.Response = Response;
 
   self.fetch = function(input, init) {
     return new Promise(function(resolve, reject) {
@@ -1857,25 +1913,26 @@ require.register("___globals___", function(exports, require, module) {
           return xhr.getResponseHeader('X-Request-URL')
         }
 
-        return
+        return;
       }
 
       xhr.onload = function() {
+        var status = (xhr.status === 1223) ? 204 : xhr.status
+        if (status < 100 || status > 599) {
+          reject(new TypeError('Network request failed'))
+          return
+        }
         var options = {
-          status: xhr.status,
+          status: status,
           statusText: xhr.statusText,
           headers: headers(xhr),
           url: responseURL()
         }
-        var body = 'response' in xhr ? xhr.response : xhr.responseText
+        var body = 'response' in xhr ? xhr.response : xhr.responseText;
         resolve(new Response(body, options))
       }
 
       xhr.onerror = function() {
-        reject(new TypeError('Network request failed'))
-      }
-
-      xhr.ontimeout = function() {
         reject(new TypeError('Network request failed'))
       }
 
@@ -20754,7 +20811,100 @@ module.exports = warning;
   return React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 });
 
-"use strict";
+'use strict';
+
+/* jshint ignore:start */
+(function () {
+  var WebSocket = window.WebSocket || window.MozWebSocket;
+  var br = window.brunch = window.brunch || {};
+  var ar = br['auto-reload'] = br['auto-reload'] || {};
+  if (!WebSocket || ar.disabled) return;
+  if (window._ar) return;
+  window._ar = true;
+
+  var cacheBuster = function cacheBuster(url) {
+    var date = Math.round(Date.now() / 1000).toString();
+    url = url.replace(/(\&|\\?)cacheBuster=\d*/, '');
+    return url + (url.indexOf('?') >= 0 ? '&' : '?') + 'cacheBuster=' + date;
+  };
+
+  var browser = navigator.userAgent.toLowerCase();
+  var forceRepaint = ar.forceRepaint || browser.indexOf('chrome') > -1;
+
+  var reloaders = {
+    page: function page() {
+      window.location.reload(true);
+    },
+
+    stylesheet: function stylesheet() {
+      [].slice.call(document.querySelectorAll('link[rel=stylesheet]')).filter(function (link) {
+        var val = link.getAttribute('data-autoreload');
+        return link.href && val != 'false';
+      }).forEach(function (link) {
+        link.href = cacheBuster(link.href);
+      });
+
+      // Hack to force page repaint after 25ms.
+      if (forceRepaint) setTimeout(function () {
+        document.body.offsetHeight;
+      }, 25);
+    },
+
+    javascript: function javascript() {
+      var scripts = [].slice.call(document.querySelectorAll('script'));
+      var textScripts = scripts.map(function (script) {
+        return script.text;
+      }).filter(function (text) {
+        return text.length > 0;
+      });
+      var srcScripts = scripts.filter(function (script) {
+        return script.src;
+      });
+
+      var loaded = 0;
+      var all = srcScripts.length;
+      var onLoad = function onLoad() {
+        loaded = loaded + 1;
+        if (loaded === all) {
+          textScripts.forEach(function (script) {
+            eval(script);
+          });
+        }
+      };
+
+      srcScripts.forEach(function (script) {
+        var src = script.src;
+        script.remove();
+        var newScript = document.createElement('script');
+        newScript.src = cacheBuster(src);
+        newScript.async = true;
+        newScript.onload = onLoad;
+        document.head.appendChild(newScript);
+      });
+    }
+  };
+  var port = ar.port || 9485;
+  var host = br.server || window.location.hostname || 'localhost';
+
+  var connect = function connect() {
+    var connection = new WebSocket('ws://' + host + ':' + port);
+    connection.onmessage = function (event) {
+      if (ar.disabled) return;
+      var message = event.data;
+      var reloader = reloaders[message] || reloaders.page;
+      reloader();
+    };
+    connection.onerror = function () {
+      if (connection.readyState) connection.close();
+    };
+    connection.onclose = function () {
+      window.setTimeout(connect, 1000);
+    };
+  };
+  connect();
+})();
+/* jshint ignore:end */
+;"use strict";
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 

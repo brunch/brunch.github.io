@@ -236,7 +236,11 @@ ul, ol, dd { margin-left: 48px; margin-left: 3rem; }
 /** Base styles; unclassed HTML elements etc. */
 /*------------------------------------*\ $MAIN
 \*------------------------------------*/
-html { font: 1em/1.5 -apple-system, system, sans-serif; overflow-y: scroll; min-height: 100%; }
+html {
+  font: 1em/1.5 -apple-system, system, "Helvetica Neue", Helvetica, sans-serif;
+  overflow-y: scroll;
+  min-height: 100%;
+}
 
 /*------------------------------------*\ $HEADINGS
 \*------------------------------------*/
@@ -967,94 +971,3 @@ label, .label { display: block; }
 @media only screen and (min-width: 1024px) { .accessibility--desk, .visuallyhidden--desk { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 @media only screen and (min-width: 1200px) { .accessibility--desk-wide, .visuallyhidden--desk-wide { border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; } }
 /* endif */
-.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-body, html { background: #eeeeee; }
-
-body { padding: 24px; padding-top: 0; }
-@media only screen and (min-width: 1024px) { body { padding-top: 95px; } }
-
-a, a:visited { color: #3f894a; }
-
-a:hover { color: #27552e; }
-
-#navbar { border-bottom: 2px solid #427684; padding-top: 10px; padding-bottom: 10px; background: white; margin-bottom: 20px; margin-left: -24px; margin-right: -24px; }
-@media only screen and (min-width: 1024px) { #navbar { position: fixed; top: 0; left: 0; right: 0; margin-left: 0; margin-right: 0; } }
-
-.nav--main-nav { float: right; margin-top: 28px; margin-bottom: 0; }
-
-.nav__item--main-nav { padding: 4px 15px; text-decoration: none; color: #3f894a; }
-.nav__item--main-nav.active { border-bottom: 3px solid #3f894a; }
-.nav__item--main-nav:hover { color: #27552e; border-color: #27552e; }
-
-.nav--sentence li { padding-right: 0.25em; }
-.nav--sentence li:last-child:before { content: " and "; }
-.nav--sentence li:last-child:after { display: inline; content: "."; }
-
-.page__content { margin-top: 45px; }
-
-.hero { border-bottom: 1px solid #cccccc; padding-top: 33px; padding-bottom: 45px; background: #7fc4d6; margin-left: -24px; margin-right: -24px; }
-@media only screen and (max-width: 1023px) { .hero { margin-top: -20px; } }
-.hero h1 { color: white; }
-.hero .nav--keywords li:hover { padding-left: 0.25em; margin-left: -0.25em; background: white; }
-
-.hero__content { margin-top: 25px; margin-bottom: 25px; }
-
-.icon-brunch-logo-web { display: block; width: 200px; height: 75px; float: left; }
-
-.icon-brunch-logo-napkin { width: 256px; height: 256px; margin: 0 auto; transition: background-size 0.2s; background-size: 100%; }
-@media only screen and (max-width: 600px) and (min-width: 481px) { .icon-brunch-logo-napkin { background-size: 80%; } }
-
-pre code { border-top: 1px solid #dddddd; background: #f4f4f4; margin-bottom: 0; }
-
-.has-feature { color: #3f894a; }
-
-.hasnt-feature { color: #874040; }
-
-.builders { border: 0; }
-
-.builders li { float: left; border: 0; }
-
-.builders a { display: inline-block; margin: 0 0.8em 1em 0; width: 8em; height: 28px; line-height: 1.2; }
-
-.builders img { float: left; margin-right: 1em; border-radius: 0.2rem; max-width: 100%; }
-
-.builders .name { font-weight: normal; display: block; }
-
-@media only screen and (max-width: 1023px) { .tweets { display: none; } }
-
-@media only screen and (max-width: 640px) { .social-buttons > span { display: block; } }
-
-.data-table {
-  border: 1px solid black;
-}
-
-@media only screen and (max-width: 800px) {
-  .data-table {
-    border: none;
-  }
-
-  .data-table thead {
-    display: none;
-  }
-
-  .data-table td {
-    display: block;
-  }
-
-  .data-table tr {
-    border-bottom: 1px dashed black;
-  }
-
-  .data-table tr:last-child {
-    border-bottom: none;
-  }
-}
-
-.others {
-  display: block;
-  margin: 40px 0;
-  padding: 20px;
-  border: 1px dashed;
-  text-align: center;
-}
