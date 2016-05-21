@@ -10,13 +10,13 @@
   "dependencies": {},
   "devDependencies": {
     "auto-reload-brunch": "^2.0",
-    "babel-brunch": "^6.0.1",
-    "babel-preset-react": "^6.5.0",
-    "brunch": "^2.8.0",
+    "babel-brunch": "^6.0",
+    "babel-preset-react": "^6.5",
+    "brunch": "^2.8",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",
     "grunticon-lib": "^1.0.4",
-    "jade-brunch": "^2.0",
+    "jade-brunch": "^2.8",
     "javascript-brunch": "^2.0",
     "jstransformer-marked": "^1.0.1",
     "uglify-js-brunch": "^2.0"
