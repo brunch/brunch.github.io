@@ -15,6 +15,7 @@
     "brunch": "^2.8",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",
+    "sass-brunch": "^2.6.3",
     "grunticon-lib": "^1.0.4",
     "jade-brunch": "^2.8",
     "javascript-brunch": "^2.0",

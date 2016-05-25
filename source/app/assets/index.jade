@@ -1,135 +1,98 @@
-extends /_layouts/_social
+extends /_layouts/_content-only
 
 block hero
   .hero
     .container
       .grid
-        .grid__item.one-whole.lap-and-up-one-third
+        .grid__item.one-whole.lap-and-up-one-quarter
           .icon-brunch-logo-napkin
-        .grid__item.one-whole.lap-and-up-two-thirds
+        .grid__item.one-whole.lap-and-up-three-quarters
           .hero__content
-            h1.kilo Will you be coming to brunch?
+            h1.kilo See your build tool in hightmares?<br> Try Brunch!
+            h2 It gets out of your way and lets you focus on what matters most to you — solving real problems, not messing around with the gluing.
 
-            h3.flush--bottom.soft-half--bottom Brunch...
-            include /_includes/_features
+        .grid_item.one-whole
+          a(class='button' href='/docs/getting-started.html')
+           | &#127860;
+           | Get Started
+
+  .highlights
+    .container
+      .grid
+        .grid__item.one-whole.lap-and-up-one-third
+          h2 Small configs
+          p By being opinionated about your build pipeline, Brunch is able to provide a smooth and fast experience, and makes your config files take a drastic cut.
+
+        .grid__item.one-whole.lap-and-up-one-third
+          h2 Three simple commands
+          p It doesn't take much to get around with brunch:
+          p
+            ul
+              li
+                <code>brunch new</code> to create a new project<br>
+              li
+                <code>brunch build</code> to build<br>
+              li
+                <code>brunch watch</code> to live-compile
+
+        .grid__item.one-whole.lap-and-up-one-third
+          h2 Productivity and happiness
+
+          ul
+            li NPM support
+            li source maps out-of-the-box
+            li fast from-zero builds
+            li incremental builds
+            li and more
+
+  .comparison
+    .container
+      .grid
+        .grid__item.one-whole.big-head
+          h2 Yes, the configs are <b>much</b> simpler
+
+        .grid__item.one-whole.lap-and-up-two-fifths.left-side-head
+          h3 Typical Grunt config
+        .grid__item.one-whole.lap-and-up-one-fifth.vs
+          h3 vs
+        .grid__item.one-whole.lap-and-up-two-fifths.right-side-head
+          h3 Typical Brunch config
+
+        .grid__item.one-whole.lap-and-up-one-half.grunt
+          include:marked ./_grunt_config.md
+
+        .grid__item.one-whole.lap-and-up-one-half.brunch
+          include:marked ./_brunch_config.md
 
 block content
-  h1 Brunch is an ultra-fast HTML5 build tool
+  .grid
+    .grid__item.one-whole.lap-and-up-one-half
+      :marked
+        ## Install
 
-  :marked
-    Installation is one-line, once you have [node.js](http://nodejs.org/download/). In your console, run:
+        Installation is one-line, once you have [node.js](http://nodejs.org/download/). In your console, run:
 
-        npm install -g brunch
+            npm install -g brunch
 
-    ## First steps
+        To learn more about Brunch, head over to the [docs](/docs/getting-started.html).
 
-    #### Start with Brunch
+        (For some unbiased perspective, see <a href="http://alxhill.com/blog/articles/brunch-coffeescript-angular/">this article</a>.)
 
-        brunch new [dir] [--skeleton url]
+      h2 Brought to you by
 
-    Would create a new Brunch project. You may specify a [skeleton](/skeletons) from which your application will be initialized:
+      ul.block-list.builders
+        li
+          <a href="http://paulmillr.com/" rel="author"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller"><span class="name">Paul</span> Miller</a>
+        li
+          <a href="https://github.com/es128"><img src="https://secure.gravatar.com/avatar/c8c06173c01b4e95594e4af3a8a815f1?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Elan Shanker"><span class="name">Elan</span> Shanker</a>
+        li
+          <a href="http://nikgraf.com/"><img src="https://secure.gravatar.com/avatar/8fc75580dbacd91ff28514b68baf1a8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Nik Graf"><span class="name">Nik</span> Graf</a>
+        li
+          <a href="http://ramen.io/"><img src="https://secure.gravatar.com/avatar/37c5132eed30539456c79906dd8c6065?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Thomas Schranz"><span class="name">Thomas</span> Schranz</a>
 
-    - `brunch new`: The default skeleton does not add any libraries or frameworks
-    - `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
-    - `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
-    - Other 50+ community-made skeletons are available at the [skeletons](/skeletons) page.
+    .grid__item.one-whole.lap-and-up-one-half
+      :marked
+        ## A Quick Demo
 
-    There’s a great [guide](https://github.com/brunch/brunch-guide#readme) that lets you explore Brunch in-depth!
+        <iframe src="http://player.vimeo.com/video/75702540" style="width: 100%; height: 388px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-    Also check out the [complete description](https://github.com/brunch/brunch/blob/master/docs/README.md) of app structure.
-
-    #### Develop with Brunch
-
-        brunch watch --server
-
-    tells Brunch to watch your project and incrementally rebuild it when source files are changed. The optional `server` flag launches a simple web server with [push state](http://diveintohtml5.info/history.html) support.
-
-    If you use OS X and want brunch to show system notification every time compilation error happens, you will need to install [terminal notifier](https://github.com/alloy/terminal-notifier): `brew install terminal-notifier`.
-
-    #### Deploy with Brunch
-
-        brunch build --production
-
-    builds a project for distribution. By default it enables minification. You can then publish those static assets to a server or a CDN of your preference.
-
-    #### Diving in
-
-    All reference docs are available [on GitHub](https://github.com/brunch/brunch/tree/master/docs).
-    The best way to discover Brunch is probably to start with the [guide](https://github.com/brunch/brunch-guide#readme).
-
-    ## A Quick Demo
-
-    For more info on getting started with Brunch, see <a href="http://alxhill.com/blog/articles/brunch-coffeescript-angular/">the article</a> or <a href="http://vimeo.com/75702540">the introductory video and screencast</a>:
-
-    <iframe src="http://player.vimeo.com/video/75702540" style="width: 100%; height: 388px" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-    <h2>Deploying</h2>
-
-    <p>
-      Brunch-generated applications are a bunch of simple static files. You can
-      host them everywhere, even on free hostings, like
-      <a href="http://help.github.com/pages/">GitHub pages</a>.
-
-      Because production environments are usually
-      slightly different than development envs,
-      brunch has <code>production</code> option.
-    </p>
-
-    <p>To build application that has minified JS and CSS, execute <code>brunch build --production</code>. Then you can deploy it:</p>
-
-    <ul>
-      <li>
-        If you use <strong>static hosting site</strong>: build your application
-        on your machine and just upload <code>public/</code>
-        directory to the directory that is served by a webserver.
-      </li>
-      <li>
-        If you use <strong>hosting that supports node.js</strong>, you can
-        install brunch there and auto-build app every time.
-      </li>
-      <li>
-        If you prefer <a href="http://heroku.com/">Heroku</a>,
-        there is <a href="https://gist.github.com/3596447">a nice small guide</a>
-        on deploying.
-        Should work even on free instances.
-      </li>
-      <li>
-        If you’re into
-        <a href="http://help.github.com/pages/">GitHub pages</a>,
-        you’ll need to build your app,
-        move <code>public/</code> directory to somewhere,
-        <a href="http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging">switch to <code>gh-pages</code>
-        git branch</a>,
-        remove files from directory and move files from your temporary
-        dir here.
-      </li>
-    </ul>
-
-    <h2 id="why">Why Brunch and not Webpack, Grunt or Gulp</h2>
-
-    <p>So, you're coming from Grunt or Gulp and may be wondering how Brunch is better.</p>
-
-    <p>First of all, Brunch is order-of-magnitude simpler. Check out typical configs for alternative build systems: <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-grunt-js">Grunt</a>, <a href="https://gist.github.com/paulmillr/eb3ae139aadbbb87ab9b#file-gulp-js">Gulp</a>. And here's a typical <a href="https://github.com/brunch/with-react/blob/master/brunch-config.js">Brunch config</a> for comparison.</p>
-
-    <p>There's also speed. When you spin off a brunch file watcher, the usual compilation time is less than 500ms. When combined with auto reload plugin, this allows a very efficient development environment. All thanks to the complex incremental compilation.</p>
-
-    <p>The reason for the big difference is <em>design</em>. Grunt is merely a set of tasks that would be executed one after another. When this may seem more flexible on a first glance, in reality it isn't. With plugins, Brunch could do anything Grunt tasks do (and beyond). Brunch even has an adapter for Grunt tasks. Gulp is "better Grunt", as they market it; or so may it seem. Gulp doesn't make temporary files, that's why it's a "streaming build system". Still, it's not enough. Brunch's goal, in contrast, is to provide you with simplest and fastest possible way of managing and building your HTML5 app.</p>
-
-    <p>Think of it. In every app you take a set of files and produce new files with them. You may use different languages, include code quality testers such as JSHint or minify the output, but the basic pipeline is always the same. That's why all brunch plugins may take one of a few predefined roles.</p>
-
-    <p>Besides configs, brunch is also simpler in terms of commands. Grunt / Gulp commands replicate all plugins it loads. Brunch always has three commands: `new`, `build` and `watch`. Build / watch commands may receive optional `production` flag which will tell Brunch to optimize assets, javascripts and stylesheets.</p>
-
-    <p>You can find a more in-depth discussion of what sets Brunch apart in [chapter 1 of the guide](https://github.com/brunch/brunch-guide/blob/master/content/en/chapter01-whats-brunch.md#readme).</p>
-
-
-  h2 Brought to you by
-
-  ul.block-list.builders
-    li
-      <a href="http://paulmillr.com/" rel="author"><img src="https://secure.gravatar.com/avatar/d342e4ef045c54a6a6f41d070d8a0406?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Paul Miller"><span class="name">Paul</span> Miller</a>
-    li
-      <a href="https://github.com/es128"><img src="https://secure.gravatar.com/avatar/c8c06173c01b4e95594e4af3a8a815f1?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Elan Shanker"><span class="name">Elan</span> Shanker</a>
-    li
-      <a href="http://nikgraf.com/"><img src="https://secure.gravatar.com/avatar/8fc75580dbacd91ff28514b68baf1a8a?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Nik Graf"><span class="name">Nik</span> Graf</a>
-    li
-      <a href="http://ramen.io/"><img src="https://secure.gravatar.com/avatar/37c5132eed30539456c79906dd8c6065?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" alt="Thomas Schranz"><span class="name">Thomas</span> Schranz</a>
