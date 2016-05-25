@@ -22,13 +22,13 @@ module.exports = {
 ```javascript
 {
   "devDependencies": {
-    "brunch": "^2.8.0",
-    "postcss-brunch": "^0.5.0",
-    "autoprefixer": "^6.3.0",
-    "sass-brunch": "^2.6.0",
-    "uglify-js-brunch": "^2.0.0",
-    "babel-brunch": "^6.0.0",
-    "babel-preset-react": "^6.5.0"
+    "brunch": "^2.0",
+    "babel-brunch": "^6.0",
+    "sass-brunch": "^2.0",
+    "uglify-js-brunch": "^2.0",
+    "postcss-brunch": "^0.5",
+    "autoprefixer": "^6.0",
+    "babel-preset-react": "^6.0"
   }
 }
 ```
