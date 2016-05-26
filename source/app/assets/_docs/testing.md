@@ -4,13 +4,13 @@
 
 ## Unit testing
 
-The curren options for unit testing are:
+The current options for unit testing are:
 
 * use your built bundle from `public` in node
 * run unit tests in the browser
 
 Currently, there is no way to run unit tests directly on node, but...
-A better approach is in the works. 🚧 
+A better approach is in the works. 🚧
 
 ## Integration testing
 
