@@ -234,7 +234,7 @@ module.exports = UglifyOptimizer;
 Jade templates to HTML is one example.
 You want to have a <code>.jade</code> file compiled into <code>.html</code>.
 Previously, what you would do in this case was to hook into <code>onCompile</code> and look for jade files... and then compile them and write them manually. Sucks.</p>
-<p>So starting Brunch <code>&lt;unreleased&gt;</code>, there is a better way.</p>
+<p>So starting Brunch <code>2.8.0</code>, there is a better way.</p>
 <pre><code class="lang-javascript">class JadeCompiler {
   compileStatic(params) {
     const path = params.path;
