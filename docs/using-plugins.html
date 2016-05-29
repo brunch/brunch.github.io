@@ -40,8 +40,8 @@ Refer to the plugin&#39;s <code>README</code> on details regarding configuration
 <p>Typically it would go under the <code>config.plugins.&lt;plugin&gt;</code>:</p>
 <pre><code class="lang-javascript">module.exports = {
   plugins: {
-    myPlugin: {
-      optionA: valueA
+    babel: {
+      presets: [&#39;react&#39;]
     }
   }
 }
@@ -71,7 +71,7 @@ Here are a few:</p>
 <h3 id="asset-compilation">Asset compilation</h3>
 <p>Sometimes you will want to transform a different kind of file, one that doesn&#39;t fit into the Brunch&#39;s general JS/CSS/template flow.
 One example of that would be compiling Jade into HTML.
-Starting Brunch 2.8.0, this is made available for plugins to implement.</p>
+Starting Brunch 2.8, this is made available for plugins to implement.</p>
 <h2 id="tips">Tips</h2>
 <ul>
 <li>Don&#39;t include plugins for languages or technologies your app does not use.

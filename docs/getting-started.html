@@ -15,8 +15,9 @@ community-provided <a href="http://brunch.io/skeletons">skeletons</a>.
 The popular &quot;ES6 skeleton&quot; may sound scary, but it&#39;s actually very modern and nice.
 Let&#39;s try to create a new app from it!</p>
 <p>Type</p>
-<pre><code>$ brunch new proj -s es6
-</code></pre><p> in your shell prompt. Executing the command will:</p>
+<pre><code class="lang-bash">$ brunch new proj -s es6
+</code></pre>
+<p> in your shell prompt. Executing the command will:</p>
 <ul>
 <li>Create directory <code>proj</code></li>
 <li>Clone git repo <code>git://github.com/brunch/with-es6.git</code> to the dir.
@@ -31,12 +32,12 @@ The Git URL is basically full name of our <code>&quot;es6&quot;</code> skeleton.
 <p>The app is there, let&#39;s take a quick look into the project&#39;s structure</p>
 <pre><code>README.md
 app/
-  assets/           // All files inside `assets` would be simply copied to `public` directory.
+  assets/           // Files inside `assets` would be simply copied to `public` dir.
     index.html
-  initialize.js     // The file
-brunch-config.js    // Contains basic assumptions about the project, like paths and outputs.
+  initialize.js
+brunch-config.js    // Basic assumptions about the project, like paths &amp; outputs.
 node_modules
-package.json        // Describes which dependencies and Brunch plugins your application uses.
+package.json        // Describes which dependencies and Brunch plugins your app uses.
 
 public/             // The &quot;output&quot; Brunch will re-generate on every build.
   index.html        // This was simply copied from our `app/assets`

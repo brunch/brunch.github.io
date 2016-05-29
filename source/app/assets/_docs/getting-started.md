@@ -18,7 +18,7 @@ Let's try to create a new app from it!
 
 Type
 
-```
+```bash
 $ brunch new proj -s es6
 ```
 
@@ -43,12 +43,12 @@ The app is there, let's take a quick look into the project's structure
 ```
 README.md
 app/
-  assets/           // All files inside `assets` would be simply copied to `public` directory.
+  assets/           // Files inside `assets` would be simply copied to `public` dir.
     index.html
-  initialize.js     // The file
-brunch-config.js    // Contains basic assumptions about the project, like paths and outputs.
+  initialize.js
+brunch-config.js    // Basic assumptions about the project, like paths & outputs.
 node_modules
-package.json        // Describes which dependencies and Brunch plugins your application uses.
+package.json        // Describes which dependencies and Brunch plugins your app uses.
 
 public/             // The "output" Brunch will re-generate on every build.
   index.html        // This was simply copied from our `app/assets`

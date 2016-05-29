@@ -50,8 +50,8 @@ Typically it would go under the `config.plugins.<plugin>`:
 ```javascript
 module.exports = {
   plugins: {
-    myPlugin: {
-      optionA: valueA
+    babel: {
+      presets: ['react']
     }
   }
 }
@@ -97,7 +97,7 @@ Note: this exmaple is real. CSS modules are supported by several core stylesheet
 
 Sometimes you will want to transform a different kind of file, one that doesn't fit into the Brunch's general JS/CSS/template flow.
 One example of that would be compiling Jade into HTML.
-Starting Brunch 2.8.0, this is made available for plugins to implement.
+Starting Brunch 2.8, this is made available for plugins to implement.
 
 ## Tips
 
