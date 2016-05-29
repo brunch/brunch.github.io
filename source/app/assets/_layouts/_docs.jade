@@ -13,7 +13,7 @@ block main
                 li
                   if item.path
                     if filename != 'docs/' + item.path + '.jade'
-                      a(href='/docs/' + item.path + '.html') #{item.title}
+                      a(href='/docs/' + item.path) #{item.title}
                     else
                       span.active #{item.title}
                   else
@@ -33,10 +33,10 @@ block main
         .grid
           .grid__item.one-whole.lap-and-up-one-half
             if prev
-              a(href='/docs/' + prev.path + '.html') &larr; #{prev.title}
+              a(href='/docs/' + prev.path) &larr; #{prev.title}
           .grid__item.one-whole.lap-and-up-one-half(style="text-align: right;")
             if next
-              a(href='/docs/' + next.path + '.html') #{next.title} &rarr;
+              a(href='/docs/' + next.path) #{next.title} &rarr;
           .grid__item.one-whole
               - var _split = filename.split('/')
               - var mdName = _split[_split.length - 1].replace('.jade', '.md')

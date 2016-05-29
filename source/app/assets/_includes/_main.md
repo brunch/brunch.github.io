@@ -9,7 +9,7 @@ Installation is one-line, once you have
 
     brunch new [dir] [--skeleton url]
 
-`skeleton` specifies a [skeleton](/skeletons.html) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
+`skeleton` specifies a [skeleton](/skeletons) from which your application will be initialized. The default structure doesn't have any opinions about frameworks or libraries.
 
 See the [README](https://github.com/brunch/brunch/blob/master/docs/README.md) for a complete description of app structure.
 

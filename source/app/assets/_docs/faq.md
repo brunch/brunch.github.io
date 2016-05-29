@@ -30,12 +30,12 @@ Be aware, that `main` attribute in `package.json` is a string, but array in `bow
 
 ```json
 "dependencies": {
-    "some-awesome-package": "~0.0.1"
+  "some-awesome-package": "~0.0.1"
 },
 "overrides": {
-    "some-awesome-package": {
-        "main": "./lib/just_one_component.js"
-    }
+  "some-awesome-package": {
+    "main": "./lib/just_one_component.js"
+  }
 }
 ```
 
@@ -44,9 +44,10 @@ Be aware, that `main` attribute in `package.json` is a string, but array in `bow
 
 Sometimes it's useful to create separate JS files for bookmarklets etc. Use this joinTo config. It will compile all files in `app/` (except in `app/namespace`) to one file and all files in `app/namespace` to another.
 
-```coffeescript
-joinTo:
+```javascript
+joinTo: {
   'javascripts/namespace.js': /^app(\/|\\)namespace/
   'javascripts/app.js': /^app(\/|\\)(?!namespace)/
-  'javascripts/vendor.js': /^vendor/
+  'javascripts/vendor.js': /^(?!app)/
+}
 ```

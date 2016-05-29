@@ -1,4 +1,4 @@
-var nav = [
+const nav = [
   {title: 'Home', path: ''},
   {title: 'Docs', path: 'docs/getting-started', activeOn: 'docs/'},
   {title: 'Plugins', path: 'plugins'},
@@ -7,7 +7,7 @@ var nav = [
   {title: 'Community', path: 'support'}
 ];
 
-var docSidebar = [
+const docSidebar = [
   {section: 'Quick Start', items: [
     {title: 'Getting started', path: 'getting-started'},
     {title: 'Core concepts', path: 'concepts'},
@@ -28,9 +28,9 @@ var docSidebar = [
     {title: 'FAQ', path: 'faq'},
     {title: 'Troubleshooting', path: 'troubleshooting'}
   ]}
-]
+];
 
-var social = [
+const social = [
   {
     classname: 'github',
     width: 160,
@@ -44,9 +44,9 @@ var social = [
 
 module.exports = {
   files: {
-    javascripts: {joinTo: 'scripts/app.js'},
-    templates: {joinTo: 'scripts/app.js'},
-    stylesheets: {joinTo: 'styles/app.css'}
+    javascripts: {joinTo: 'app.js'},
+    templates: {joinTo: 'app.js'},
+    stylesheets: {joinTo: 'app.css'}
   },
   paths: {public: '..'},
   plugins: {

@@ -51,29 +51,31 @@ Simply `npm install --save` your front-end packages as you normally would, `requ
 
 Just make sure that your don't forget to join `/^node_modules/` somewhere!
 
-```coffeescript
-files:
-  javascripts:
-    joinTo:
+```javascript
+files: {
+  javascripts: {
+    joinTo: {
       'js/app.js': /^app/
-      'js/vendor.js': /^node_modules/
+      'js/vendor.js': /^(?!app)/ // We could also use /node_modules/ regex.
+    }
+  }
+}
 ```
 
 ### Including modules' styles
 
 Brunch can also handle styles of client-side libraries, by providing `styles` attribute which is key-value object where key is package name and value is an array with relative to package path of styles which should be included.
 
-```coffeescript
-npm:
-  styles:
-    leaflet: [ 'dist/leaflet.css' ]
-files:
-  javascripts:
-    joinTo:
-      'js/vendor.js': /^node_modules/
-  stylesheets:
-    joinTo:
-      'css/vendor.css': /^node_modules/
+```javascript
+npm: {styles: {leaflet: ['dist/leaflet.css']}},
+files: {
+  javascripts: {
+    joinTo: {'js/vendor.js': /^node_modules/}
+  }
+  stylesheets: {
+    joinTo: {'css/vendor.css': /^node_modules/}
+  }
+}
 ```
 
 Note that for other assets that come from NPM packages (like images, fonts, etc), you will have to manually copy them to your public folder. You can use the npm's `postinstall` hook to do the copying. See [FAQ](/docs/faq.html).

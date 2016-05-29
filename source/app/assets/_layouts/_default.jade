@@ -9,7 +9,7 @@ html
     meta(name='description', content='Brunch builds, lints, compiles, concatenates and shrinks your HTML5 app in an ultra-simple way. No more Grunt / Gulp mess.')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='shortcut icon', type="image/x-icon", href='/favicon.ico')
-    link(rel='stylesheet', href='/styles/app.css')
+    link(rel='stylesheet', href='/app.css')
     link(rel='publisher', href='https://plus.google.com/+PaulMillerLi')
     link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
@@ -34,7 +34,7 @@ html
             if item.path.indexOf('http') == 0
               li: a.nav__item--main-nav(href=item.path, class=active?'active':null)= item.title
             else
-              li: a.nav__item--main-nav(href='/'+item.path+(item.path?'.html':''), class=active?'active':null)= item.title
+              li: a.nav__item--main-nav(href='/'+item.path+(item.path?'':''), class=active?'active':null)= item.title
 
 
     block hero
@@ -48,8 +48,8 @@ html
         hr.rule
         p: small Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a>
 
-    script(src='/scripts/app.js')
+    script(src='/app.js')
     script.
-      require('scripts/app');
+      require('init');
 
     include /_includes/track.html
