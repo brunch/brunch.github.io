@@ -17,17 +17,16 @@ const docSidebar = [
     {title: 'Testing', path: 'testing'},
     {title: 'Deploying', path: 'deploying'}
   ]},
-  {section: 'Community Resources', items: [
-    {title: 'The Brunch Guide', link: 'https://github.com/brunch/brunch-guide'}
-  ]},
   {section: 'Reference', items: [
     {title: 'Commands', path: 'commands'},
     {title: 'Config', path: 'config'},
     {title: 'Plugin API', path: 'plugins'},
+    {title: 'Troubleshooting', path: 'troubleshooting'},
     {title: 'Changelog', link: 'https://github.com/brunch/brunch/blob/master/CHANGELOG.md'},
-    {title: 'FAQ', path: 'faq'},
-    {title: 'Troubleshooting', path: 'troubleshooting'}
-  ]}
+  ]},
+  {section: 'Community Resources', items: [
+    {title: 'The Brunch Guide', link: 'https://github.com/brunch/brunch-guide'}
+  ]},
 ];
 
 const social = [
