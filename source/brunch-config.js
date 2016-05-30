@@ -13,7 +13,7 @@ const docSidebar = [
     {title: 'Core concepts', path: 'concepts'},
     {title: 'Why Brunch', path: 'why-brunch'},
     {title: 'Using plugins', path: 'using-plugins'},
-    {title: 'Using JS modules and NPM', path: 'js-modules-npm'},
+    {title: 'Using JS modules and NPM', path: 'using-modules'},
     {title: 'Testing', path: 'testing'},
     {title: 'Deploying', path: 'deploying'}
   ]},

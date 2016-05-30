@@ -35,7 +35,7 @@ Brunch supports several JS module styles:
 
 * CommonJS (default)
 * AMD
-* custom wrapper & definition
+* Custom wrapper & definition
 
 You can use either of these in your projects, however CommonJS is becoming the universal standard, and certain Brunch features, namely the NPM integration, only work with CommonJS.
 Additionally, most of the docs will assume you use CommonJS.
