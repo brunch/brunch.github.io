@@ -6,7 +6,7 @@ aspects of your app.
 * [**`paths`**](#-paths-) - where to take files from and where to put generated ones
 * [**`files`**](#-files-) - which files exactly should Brunch generate and how.
 * [**`npm`**](#-npm-) - NPM dependencies settings
-* [**`plugins`**](#-plugins=) - individual plugin settings.
+* [**`plugins`**](#-plugins-) - individual plugin settings.
 
 Less common options:
 
@@ -383,6 +383,18 @@ file watching library used in brunch.
 
 `Object`: Optional setting to specify handlers for different moments of building cycle.
 Possible values:
+* `preCompile` - `Function`: Optional callback to be called before brunch starts a compilation cycle. It is passed an `end` function to be called after the hook is finished to initiate the compilation cycle.
+
+    Example:
+
+    ```javascript
+    hooks: {
+      preCompile: (end) => {
+        console.log("About to compile...");
+        end();
+      }
+    }
+    ```
 * `onCompile` - `Function`: Optional callback to be called every time brunch completes a compilation cycle. It is passed a `generatedFiles` array, as well as `changedAssets` array. Each member of `generatedFiles` array is an object with:
     * `path` — path of the compiled file
     * `sourceFiles` — array of objects representing each source file
