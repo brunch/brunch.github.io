@@ -338,6 +338,12 @@
       "description": "<a href=\"https://github.com/GoalSmashers/clean-css\">CleanCSS</a> is CSS minifier."
     },
     {
+      "name": "html-pages-brunch",
+      "url": "tolyo/html-pages-brunch",
+      "category": "Minifiers",
+      "description": "<a href=\"https://github.com/kangax/html-minifier\">HTMLMinifier</a> is HTML compressor/minifier."
+    },
+    {
       "name": "Bless-brunch",
       "url": "ThomasConner/bless-brunch",
       "category": "Minifiers",
