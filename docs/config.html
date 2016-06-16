@@ -9,7 +9,7 @@ aspects of your app.</p>
 <li><a href="#-paths-"><strong><code>paths</code></strong></a> - where to take files from and where to put generated ones</li>
 <li><a href="#-files-"><strong><code>files</code></strong></a> - which files exactly should Brunch generate and how.</li>
 <li><a href="#-npm-"><strong><code>npm</code></strong></a> - NPM dependencies settings</li>
-<li><a href="#-plugins="><strong><code>plugins</code></strong></a> - individual plugin settings.</li>
+<li><a href="#-plugins-"><strong><code>plugins</code></strong></a> - individual plugin settings.</li>
 </ul>
 <p>Less common options:</p>
 <ul>
@@ -318,6 +318,16 @@ file watching library used in brunch.</p>
 <p><code>Object</code>: Optional setting to specify handlers for different moments of building cycle.
 Possible values:</p>
 <ul>
+<li><p><code>preCompile</code> - <code>Function</code>: Optional callback to be called before brunch starts a compilation cycle. It is passed an <code>end</code> function to be called after the hook is finished to initiate the compilation cycle.</p>
+<p>  Example:</p>
+<pre><code class="lang-javascript">  hooks: {
+    preCompile: (end) =&gt; {
+      console.log(&quot;About to compile...&quot;);
+      end();
+    }
+  }
+</code></pre>
+</li>
 <li><p><code>onCompile</code> - <code>Function</code>: Optional callback to be called every time brunch completes a compilation cycle. It is passed a <code>generatedFiles</code> array, as well as <code>changedAssets</code> array. Each member of <code>generatedFiles</code> array is an object with:</p>
 <ul>
 <li><code>path</code> — path of the compiled file</li>
