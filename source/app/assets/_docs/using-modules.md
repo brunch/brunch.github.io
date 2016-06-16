@@ -29,6 +29,25 @@ var config = require('config');
 makeRequest(config.api, 'GET', 'plugins');
 ```
 
+Your application should have an entry point module which will load other modules and bootstrap your app.
+When the HTML loads in the browser, you need to tell it to load your entry module.
+You can do it by either:
+
+* adding `<script>require('initialize');</script>` — where `initialize` is the name of the entry module (which would be located in `app/initialize.js`); **OR**
+* adding an [`autoRequire`](/docs/config#-modules-) to config, to make Brunch do the above for you:
+
+  ```javascript
+  // brunch-config
+  module.exports = {
+    modules: {
+      autoRequre: {
+        // outputFileName : [ entryModule ]
+        'javascripts/app.js': ['initialize']
+      }
+   }
+  };
+  ```
+
 ## Kinds of modules
 
 Brunch supports several JS module styles:
