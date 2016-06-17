@@ -112,7 +112,7 @@ Brunch also supports Hot Module Replacement with the [`hmr-brunch`](http://githu
 Brunch does support [Bower](http://bower.io), however NPM is becoming de-facto standard for front-end packages.
 You may still want/need to use bower for some of your packages that aren't on NPM yet, or just copy these to `vendor`.
 
-For more details on NPM integration, see the next section.
+For more details on NPM integration, see the previous section.
 
 To add packages to your project:
 
