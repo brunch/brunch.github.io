@@ -574,6 +574,13 @@
       "category": "Compilers",
       "subcategory": "Pre-compiled templates",
       "description": "Adds marko template support to brunch."
+    },
+    {
+      "name": "static-marko-brunch",
+      "url": "thomastorfs/static-marko-brunch",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "Adds static marko template support to brunch."
     }
   ]
 }
