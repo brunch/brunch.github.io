@@ -91,7 +91,7 @@ var style = require('./button.styl');
 <div className={style.button}>...</div>
 ```
 
-Note: this exmaple is real. CSS modules are supported by several core stylesheet compilers with a configuration option: [stylus-brunch](https://github.com/brunch/stylus-brunch#css-modules), [sass-brunch](https://github.com/brunch/sass-brunch#css-modules), and [css-brunch](https://github.com/brunch/css-brunch#css-modules).
+Note: this example is real. CSS modules are supported by several core stylesheet compilers with a configuration option: [stylus-brunch](https://github.com/brunch/stylus-brunch#css-modules), [sass-brunch](https://github.com/brunch/sass-brunch#css-modules), and [css-brunch](https://github.com/brunch/css-brunch#css-modules).
 
 ### Asset compilation
 
