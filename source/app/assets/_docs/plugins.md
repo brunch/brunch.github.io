@@ -286,7 +286,7 @@ class MyCompiler {
 }
 ```
 
-Note: exported JS will not be compiled or linter by any other plugin and its `require` statements will not be resolved. Make sure your exported JS is self-contained.
+Note: exported JS will not be compiled or linted by any other plugin and its `require` statements will not be resolved. Make sure your exported JS is self-contained.
 
 ### Static file compilers
 
