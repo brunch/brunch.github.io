@@ -305,17 +305,17 @@ class JadeCompiler {
 
     return new Promise((resolve, reject) => {
       toHtml(path, data, (err, data) => {
-        if (err) return reject(err);
-        resolve(data);
+        if (err) reject(err);
+        else resolve(data);
       });
     });
   }
 }
 JadeCompiler.prototype.brunchPlugin = true;
 JadeCompiler.prototype.type = 'template';
-JadeCompiler.prototype.extension = "jade";
+JadeCompiler.prototype.extension = 'jade';
 // alternatively, a static extension can be different from `extension`:
-// JadeCompiler.prototype.staticExtension = "static.jade";
+// JadeCompiler.prototype.staticExtension = 'static.jade';
 // this is used to tell Brunch which extension to use after static compilation
 JadeCompiler.prototype.staticTargetExtension = 'html';
 ```
