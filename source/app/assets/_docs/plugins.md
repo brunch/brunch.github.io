@@ -279,7 +279,7 @@ class MyCompiler {
 
     const compiled = magic(data);
     const mapping = mappingMagic(data);
-    const exports = 'module.exports = ' + JSON.stringify(mapping) + ';'
+    const exports = `module.exports = ${JSON.stringify(mapping)};`;
 
     return Promise.resolve({ data: compiled, exports });
   }
