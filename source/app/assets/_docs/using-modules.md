@@ -40,7 +40,7 @@ You can do it by either:
   // brunch-config
   module.exports = {
     modules: {
-      autoRequre: {
+      autoRequire: {
         // outputFileName : [ entryModule ]
         'javascripts/app.js': ['initialize']
       }
