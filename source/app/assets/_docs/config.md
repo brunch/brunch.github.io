@@ -172,7 +172,7 @@ Example:
 
 ```javascript
 conventions: {
-  ignored: (() => false), // override defaults for no ignored files
+  ignored: () => false, // override defaults for no ignored files
   assets: /files[\\/]/  // vendor/jquery/files/jq.img
 }
 ```
@@ -283,7 +283,7 @@ The server script must export a function that starts your custom server, either 
     // up to you to respect the `port` argument allowing users to change it from the CLI
     const myServer = http.createServer();
     myServer.listen(port, callback);
-    myServer.on('request', function(req, res) {/* do stuff */});
+    myServer.on('request', (req, res) => { /* do stuff */ });
     return myServer;
   }
   ```
@@ -292,7 +292,7 @@ The server script must export a function that starts your custom server, either 
   // Example using custom `close` method.
   module.exports = (port, path, callback) => {
     // custom server code
-    return {close: () => { /* code for shutting down server */ }}
+    return {close() { /* code for shutting down server */ }}
   }
   ```
 
