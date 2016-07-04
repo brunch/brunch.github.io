@@ -87,7 +87,7 @@ Optional.
 Same as `pattern` but allow to pick a different extension when processing static assets.
 If this is not specified, it falls back to `pattern`.
 
-### Proeprty: `staticTargetExtension`
+### Property: `staticTargetExtension`
 
 `String`.
 Required for static compilers.
