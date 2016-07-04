@@ -63,12 +63,12 @@ paths: {
 * `<type>`: `javascripts`, `stylesheets` or `templates`
     * joinTo: (required) describes how files will be compiled & joined together.
       Available formats:
-        * 'outputFilePath' in order to have all source files compiled together to one
-        * map of ('outputFilePath': [anymatch set](https://github.com/es128/anymatch#anymatch-))
+        * `'outputFilePath'` in order to have all source files compiled together to one
+        * map of (`'outputFilePath':` [anymatch set](https://github.com/es128/anymatch))
     * entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
       Available formats:
         * `'entryFile.js': 'outputFilePath'`
-        * `'entryFile.js':` map of (`'outputFilePath':` anymatch set)
+        * `'entryFile.js':` map of (`'outputFilePath':` [anymatch set](https://github.com/es128/anymatch))
     * order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
         * before: [anymatch set](https://github.com/es128/anymatch#anymatch-) defining files that will be loaded before other files
         * after: [anymatch set](https://github.com/es128/anymatch#anymatch-) defining files that will be loaded after other files
