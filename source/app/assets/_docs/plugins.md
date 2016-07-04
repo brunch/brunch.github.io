@@ -225,18 +225,15 @@ class UglifyOptimizer {
   }
 
   optimize(file) {
-    let error;
-    let optimized;
-
     try {
-      optimized = minifier(file.data, {
+      const optimized = minifier(file.data, {
         fromString: true,
         inSourceMap: file.map,
         pretty: this.isPretty
       });
       return Promise.resolve(optimized);
-    } catch (err) {
-      return Promise.reject(err);
+    } catch (error) {
+      return Promise.reject(error);
     }
   }
 }
