@@ -17,14 +17,14 @@ As you can see, `File`s are bald JS `Object`s, which may contain fields like:
 - `path` - system path to the file
 - `data` - file data as JS `String`
 - `map` - source map
-- and everything else that could be consumed by next plugins.
+- and anything else that could be consumed by next plugins.
   For example, the linter plugin may add `babelTree` to the `File`,
   the compiler plugin in pipeline would see it and won't do the parsing twice.
   (Though this will not work with parallelized build.)
 
-### Method: `getDependencies(path, data): Array[Path]`
+### Method: `getDependencies(file): Array[Path]`
 
-Given a file path and its content, this should return a list of file paths that depend on this one.
+Given a file, this should return a list of file paths that depend on this one.
 
 ### Method: `lint(file): Promise(ok, Error)`
 
