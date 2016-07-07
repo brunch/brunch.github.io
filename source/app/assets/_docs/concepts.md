@@ -42,7 +42,7 @@ module.exports = {
     javascripts: {joinTo: {
       'app.js': /^app/, // all code from 'app/',
       'vendor.js': /^(?!app)/ // all BUT app code - 'vendor/', 'node_modules/', etc
-    },
+    }},
     stylesheets: {joinTo: 'app.css'}
   }
 }
