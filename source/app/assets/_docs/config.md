@@ -326,6 +326,7 @@ server: {
 `String`:
   * set to `'old'` to use the old `@` control character instead of `#`.
   * set to `'absoluteUrl'` to set the `sourceMappingURL` to the complete URL path starting from `config.paths.public`
+  * set to `'inline'` to set the `sourceMappingURL` to a data URI containing the source map (no .map file will be written)
 
 ## `fileListInterval`
 
