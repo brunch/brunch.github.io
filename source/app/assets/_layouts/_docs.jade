@@ -41,6 +41,6 @@ block main
               - var _split = filename.split('/')
               - var mdName = _split[_split.length - 1].replace('.jade', '.md')
               - var mdPath = 'source/app/assets/_docs/' + mdName
-              - var ghUrl = 'https://github.com/brunch/brunch.github.io/tree/master/' + mdPath;
+              - var ghUrl = 'https://github.com/brunch/brunch.github.io/blob/master/' + mdPath;
               span.note
                 a(href=ghUrl) Edit #{mdName} on GitHub
