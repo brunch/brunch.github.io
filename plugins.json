@@ -581,6 +581,12 @@
       "category": "Compilers",
       "subcategory": "Pre-compiled templates",
       "description": "Adds static marko template support to brunch."
+    },
+    {
+      "name": "sw-precache-brunch",
+      "url": "denar90/sw-precache-brunch",
+      "category": "Others",
+      "description": "Service Worker Precache support for brunch"
     }
   ]
 }
