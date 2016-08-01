@@ -54,14 +54,14 @@ so you can also execute arbitrary JS and import Node.js modules there.</p>
 <li><code>&lt;type&gt;</code>: <code>javascripts</code>, <code>stylesheets</code> or <code>templates</code><ul>
 <li>joinTo: (required) describes how files will be compiled &amp; joined together.
 Available formats:<ul>
-<li><code>&#39;outputFilePath&#39;</code> in order to have all source files compiled together to one</li>
-<li>map of (<code>&#39;outputFilePath&#39;:</code> <a href="https://github.com/es128/anymatch">anymatch set</a>)</li>
+<li>&#39;outputFilePath&#39; in order to have all source files compiled together to one</li>
+<li>map of (&#39;outputFilePath&#39;: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a>)</li>
 </ul>
 </li>
 <li>entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles <code>joinTo</code> but allows to included only the files you need.
 Available formats:<ul>
 <li><code>&#39;entryFile.js&#39;: &#39;outputFilePath&#39;</code></li>
-<li><code>&#39;entryFile.js&#39;:</code> map of (<code>&#39;outputFilePath&#39;:</code> <a href="https://github.com/es128/anymatch">anymatch set</a>)</li>
+<li>`&#39;entryFile.js&#39;: map of (&#39;outputFilePath&#39;: anymatch set)</li>
 </ul>
 </li>
 <li>order: (optional) defines compilation order. <code>vendor</code> files will be compiled before other ones even if they are not present here.<ul>
@@ -154,7 +154,7 @@ Available formats:<ul>
 <p>Keep in mind that default brunch regexps, as you see, consider <strong>all</strong> <code>vendor/</code> (etc.) directories as vendor (etc.) files. So, <code>app/views/vendor/thing/chaplin_view.coffee</code> will be treated as vendor file.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">conventions: {
-  ignored: () =&gt; false, // override defaults for no ignored files
+  ignored: (() =&gt; false), // override defaults for no ignored files
   assets: /files[\\/]/  // vendor/jquery/files/jq.img
 }
 </code></pre>
@@ -236,14 +236,14 @@ modules: {nameCleaner: (path) =&gt; path.replace(/^app/, name); }
     // up to you to respect the `port` argument allowing users to change it from the CLI
     const myServer = http.createServer();
     myServer.listen(port, callback);
-    myServer.on(&#39;request&#39;, (req, res) =&gt; { /* do stuff */ });
+    myServer.on(&#39;request&#39;, function(req, res) {/* do stuff */});
     return myServer;
   }
 </code></pre>
 <pre><code class="lang-javascript">  // Example using custom `close` method.
   module.exports = (port, path, callback) =&gt; {
     // custom server code
-    return {close() { /* code for shutting down server */ }}
+    return {close: () =&gt; { /* code for shutting down server */ }}
   }
 </code></pre>
 <ul>
@@ -275,7 +275,6 @@ modules: {nameCleaner: (path) =&gt; path.replace(/^app/, name); }
 <ul>
 <li>set to <code>&#39;old&#39;</code> to use the old <code>@</code> control character instead of <code>#</code>.</li>
 <li>set to <code>&#39;absoluteUrl&#39;</code> to set the <code>sourceMappingURL</code> to the complete URL path starting from <code>config.paths.public</code></li>
-<li>set to <code>&#39;inline&#39;</code> to set the <code>sourceMappingURL</code> to a data URI containing the source map (no .map file will be written)</li>
 </ul>
 <h2 id="-filelistinterval-"><code>fileListInterval</code></h2>
 <p><code>Integer</code>: Sets an interval in ms which determines how often brunch file list should be
@@ -355,7 +354,7 @@ onCompile: (generatedFiles, changedAssets) =&gt; {
 <li>You can use CoffeeScript to write configuration files. This way they&#39;ll be
 much shorter and concise. Simply create a file called <code>brunch-config.coffee</code>.</li>
 </ul>
-<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/commands">&larr; Commands</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/plugins">Plugin API &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/blob/master/source/app/assets/_docs/config.md">Edit config.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="/app.js"></script><script>require('init');
+<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/commands">&larr; Commands</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/plugins">Plugin API &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/tree/master/app/assets/_docs/config.md">Edit config.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="/app.js"></script><script>require('init');
 </script>  <script type="text/javascript">
     var _gauges = _gauges || [];
     (function() {
