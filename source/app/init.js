@@ -55,11 +55,6 @@ function setTitle(contentClass) {
   document.title = heading.textContent + ' — Brunch';
 }
 
-function registerSW() {
-  if (navigator.serviceWorker) navigator.serviceWorker.register('/sw.js');
-}
-
 setTitle('page__content');
 toc('doc-content', 'page__content', 'toc-placeholder');
 anchorize();
-registerSW();

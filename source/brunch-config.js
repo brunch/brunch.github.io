@@ -49,35 +49,6 @@ module.exports = {
   },
   paths: {public: '..'},
   plugins: {
-    swPrecache: {
-      options: {
-        staticFileGlobs: [
-          '../app.css',
-          '../app.js',
-          '../**.html',
-          '../docs/**.html',
-          '../images/**/*.*'
-        ],
-        stripPrefix: '../',
-        dynamicUrlToDependencies: {
-          'docs/getting-started': [],
-          'docs/concepts': [],
-          'docs/why-brunch': [],
-          'docs/using-plugins': [],
-          'docs/using-modules': [],
-          'docs/testing': [],
-          'docs/deploying': [],
-          'docs/commands': [],
-          'docs/config': [],
-          'docs/plugins': [],
-          'docs/troubleshooting': [],
-          'plugins': [],
-          'skeletons': [],
-          'examples': [],
-          'support': []
-        }
-      }
-    },
     babel: {presets: ['es2015', 'react']},
     jade: {locals: {nav: nav, social: social, docSidebar: docSidebar}},
     autoReload: {enabled: {css: true, js: false, assets: true}}
