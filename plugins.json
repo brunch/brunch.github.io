@@ -587,6 +587,12 @@
       "url": "denar90/sw-precache-brunch",
       "category": "Others",
       "description": "Service Worker Precache support for brunch"
+    },
+    {
+      "name": "ejs-brunch",
+      "url": "munshkr/ejs-brunch",
+      "category": "Compilers",
+      "description": "Embedded Javascript template (EJS) support for brunch"
     }
   ]
 }
