@@ -127,6 +127,7 @@ It is important to keep a few things in mind regarding entry points & their know
 * `npm.globals`: `Object`: a mapping from global name (as a key) to the corresponding module name (string) to expose.
 * `npm.styles`: `Object`: a mapping from package name (string) to an array of stylesheet paths (relative to package root) to be included into the build.
 * `npm.static`: `Array`: a list of javascript files from npm packages to be included as-is, without analyzing their dependencies or wrapping them into modules.
+* `npm.aliases`: `Object`: a mapping of files from an alias to a real package name. For example, if you are using `exoskeleton` fork of Backbone, setting this to `{"backbone": "exoskeleton"}` would load Exoskeleton when requiring backbone.
 
 Example:
 

@@ -22,6 +22,37 @@ As you can see, `File`s are bald JS `Object`s, which may contain fields like:
   the compiler plugin in pipeline would see it and won't do the parsing twice.
   (Though this will not work with parallelized build.)
 
+### Pipeline
+
+The Brunch execution pipeline looks like this:
+
+```
+// [internal] Watch files with Chokidar.
+watch(files)
+|
+// When any file is added or changed, start the pipeline.
+// Check whether the file is correct.
+lint(file): Boolean
+|
+// Extract file's dependants & dependencies
+getDependencies(path, data): Array[Path]
+|
+// Transform file contents into js, css etc.
+compile(file): File
+|
+// [internal] wrap file into a module definition
+wrap(file): File
+|
+// [internal] concat many files into one
+concat(files): File
+|
+// Transform the output JS / CSS into different JS / CSS.
+optimize(file): File
+|
+// The compilation is finished.
+onCompile(files, assets)
+```
+
 ### Method: `getDependencies(file): Array[Path]`
 
 Given a file, this should return a list of file paths that depend on this one.
@@ -94,37 +125,6 @@ Required for static compilers.
 Specifies the new extension of the processed static asset.
 In case `extension` was specified, this will just replace it.
 If `pattern` was specified, everything pattern matches will be replaced with `staticTargetExtension`.
-
-## Internals
-
-The Brunch execution pipeline looks like this:
-
-```
-// [internal] Watch files with Chokidar.
-watch(files)
-|
-// When any file is added or changed, start the pipeline.
-// Check whether the file is correct.
-lint(file): Boolean
-|
-// Extract file's dependants & dependencies
-getDependencies(path, data): Array[Path]
-|
-// Transform file contents into js, css etc.
-compile(file): File
-|
-// [internal] wrap file into a module definition
-wrap(file): File
-|
-// [internal] concat many files into one
-concat(files): File
-|
-// Transform the output JS / CSS into different JS / CSS.
-optimize(file): File
-|
-// The compilation is finished.
-onCompile(files, assets)
-```
 
 ## Samples
 

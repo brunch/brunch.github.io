@@ -15,13 +15,39 @@
 <li><code>path</code> - system path to the file</li>
 <li><code>data</code> - file data as JS <code>String</code></li>
 <li><code>map</code> - source map</li>
-<li>and everything else that could be consumed by next plugins.
+<li>and anything else that could be consumed by next plugins.
 For example, the linter plugin may add <code>babelTree</code> to the <code>File</code>,
 the compiler plugin in pipeline would see it and won&#39;t do the parsing twice.
 (Though this will not work with parallelized build.)</li>
 </ul>
-<h3 id="method-getdependencies-path-data-array-path-">Method: <code>getDependencies(path, data): Array[Path]</code></h3>
-<p>Given a file path and its content, this should return a list of file paths that depend on this one.</p>
+<h3 id="pipeline">Pipeline</h3>
+<p>The Brunch execution pipeline looks like this:</p>
+<pre><code>// [internal] Watch files with Chokidar.
+watch(files)
+|
+// When any file is added or changed, start the pipeline.
+// Check whether the file is correct.
+lint(file): Boolean
+|
+// Extract file&#39;s dependants &amp; dependencies
+getDependencies(path, data): Array[Path]
+|
+// Transform file contents into js, css etc.
+compile(file): File
+|
+// [internal] wrap file into a module definition
+wrap(file): File
+|
+// [internal] concat many files into one
+concat(files): File
+|
+// Transform the output JS / CSS into different JS / CSS.
+optimize(file): File
+|
+// The compilation is finished.
+onCompile(files, assets)
+</code></pre><h3 id="method-getdependencies-file-array-path-">Method: <code>getDependencies(file): Array[Path]</code></h3>
+<p>Given a file, this should return a list of file paths that depend on this one.</p>
 <h3 id="method-lint-file-promise-ok-error-">Method: <code>lint(file): Promise(ok, Error)</code></h3>
 <p>When any file is added or changed, start the pipeline.
 Check whether the file is correct.</p>
@@ -60,39 +86,13 @@ If this is not specified, it falls back to <code>extension</code>.</p>
 Optional.
 Same as <code>pattern</code> but allow to pick a different extension when processing static assets.
 If this is not specified, it falls back to <code>pattern</code>.</p>
-<h3 id="proeprty-statictargetextension-">Proeprty: <code>staticTargetExtension</code></h3>
+<h3 id="property-statictargetextension-">Property: <code>staticTargetExtension</code></h3>
 <p><code>String</code>.
 Required for static compilers.
 Specifies the new extension of the processed static asset.
 In case <code>extension</code> was specified, this will just replace it.
 If <code>pattern</code> was specified, everything pattern matches will be replaced with <code>staticTargetExtension</code>.</p>
-<h2 id="internals">Internals</h2>
-<p>The Brunch execution pipeline looks like this:</p>
-<pre><code>// [internal] Watch files with Chokidar.
-watch(files)
-|
-// When any file is added or changed, start the pipeline.
-// Check whether the file is correct.
-lint(file): Boolean
-|
-// Extract file&#39;s dependants &amp; dependencies
-getDependencies(path, data): Array[Path]
-|
-// Transform file contents into js, css etc.
-compile(file): File
-|
-// [internal] wrap file into a module definition
-wrap(file): File
-|
-// [internal] concat many files into one
-concat(files): File
-|
-// Transform the output JS / CSS into different JS / CSS.
-optimize(file): File
-|
-// The compilation is finished.
-onCompile(files, assets)
-</code></pre><h2 id="samples">Samples</h2>
+<h2 id="samples">Samples</h2>
 <h3 id="boilerplate-plugin">Boilerplate plugin</h3>
 <p>Let&#39;s take a look at the <a href="https://github.com/brunch/brunch-boilerplate-plugin">boilerplate plugin</a>. Feel free to use it to create your own plugins:</p>
 <pre><code class="lang-javascript">&#39;use strict&#39;;
@@ -179,18 +179,15 @@ module.exports = CSSCompiler;
   }
 
   optimize(file) {
-    let error;
-    let optimized;
-
     try {
-      optimized = minifier(file.data, {
+      const optimized = minifier(file.data, {
         fromString: true,
         inSourceMap: file.map,
         pretty: this.isPretty
       });
       return Promise.resolve(optimized);
-    } catch (err) {
-      return Promise.reject(err);
+    } catch (error) {
+      return Promise.reject(error);
     }
   }
 }
@@ -222,13 +219,13 @@ module.exports = UglifyOptimizer;
 
     const compiled = magic(data);
     const mapping = mappingMagic(data);
-    const exports = &#39;module.exports = &#39; + JSON.stringify(mapping) + &#39;;&#39;
+    const exports = `module.exports = ${JSON.stringify(mapping)};`;
 
     return Promise.resolve({ data: compiled, exports });
   }
 }
 </code></pre>
-<p>Note: exported JS will not be compiled or linter by any other plugin and its <code>require</code> statements will not be resolved. Make sure your exported JS is self-contained.</p>
+<p>Note: exported JS will not be compiled or linted by any other plugin and its <code>require</code> statements will not be resolved. Make sure your exported JS is self-contained.</p>
 <h3 id="static-file-compilers">Static file compilers</h3>
 <p>Sometimes, you would want to process different kinds of files, to which the Brunch&#39;s general compile-join-write logic does not apply.
 Jade templates to HTML is one example.
@@ -242,17 +239,17 @@ Previously, what you would do in this case was to hook into <code>onCompile</cod
 
     return new Promise((resolve, reject) =&gt; {
       toHtml(path, data, (err, data) =&gt; {
-        if (err) return reject(err);
-        resolve(data);
+        if (err) reject(err);
+        else resolve(data);
       });
     });
   }
 }
 JadeCompiler.prototype.brunchPlugin = true;
 JadeCompiler.prototype.type = &#39;template&#39;;
-JadeCompiler.prototype.extension = &quot;jade&quot;;
+JadeCompiler.prototype.extension = &#39;jade&#39;;
 // alternatively, a static extension can be different from `extension`:
-// JadeCompiler.prototype.staticExtension = &quot;static.jade&quot;;
+// JadeCompiler.prototype.staticExtension = &#39;static.jade&#39;;
 // this is used to tell Brunch which extension to use after static compilation
 JadeCompiler.prototype.staticTargetExtension = &#39;html&#39;;
 </code></pre>
@@ -270,7 +267,7 @@ This will make more people aware of it.</p>
 <li>Make Brunch plugins as simple as possible. Don&#39;t try to copy Grunt, Gulp or other
 task runners approaches.</li>
 </ul>
-<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/config">&larr; Config</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/troubleshooting">Troubleshooting &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/tree/master/app/assets/_docs/plugins.md">Edit plugins.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="/app.js"></script><script>require('init');
+<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/config">&larr; Config</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/troubleshooting">Troubleshooting &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/blob/master/source/source/app/assets/_docs/plugins.md">Edit plugins.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="/app.js"></script><script>require('init');
 </script>  <script type="text/javascript">
     var _gauges = _gauges || [];
     (function() {
