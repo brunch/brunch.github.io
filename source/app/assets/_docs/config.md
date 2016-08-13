@@ -18,7 +18,7 @@ Less common options:
 * [`hooks`](#-hooks-) - allows to specify handlers for different moments of building cycle
 
 <span class="note">
-  You can see the config schema, and all the defaults, in the `configBaseSchema` of [`lib/config.js`](https://github.com/brunch/brunch/blob/master/lib/config.js#L27) in the Brunch source code.
+  You can see the config schema, and all the defaults, in the `configBaseSchema` of [`lib/utils/config-validate.js`](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js#L9) in the Brunch source code.
 </span>
 
 ## Example
