@@ -74,7 +74,7 @@ Just make sure that your don't forget to join `/^node_modules/` somewhere!
 files: {
   javascripts: {
     joinTo: {
-      'js/app.js': /^app/
+      'js/app.js': /^app/,
       'js/vendor.js': /^(?!app)/ // We could also use /node_modules/ regex.
     }
   }
@@ -90,7 +90,7 @@ npm: {styles: {leaflet: ['dist/leaflet.css']}},
 files: {
   javascripts: {
     joinTo: {'js/vendor.js': /^node_modules/}
-  }
+  },
   stylesheets: {
     joinTo: {'css/vendor.css': /^node_modules/}
   }
