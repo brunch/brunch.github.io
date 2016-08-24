@@ -217,7 +217,7 @@ modules: {
   wrapper: (path, data) => {
     return `
 require.define({${path}: function(exports, require, module) {
-  #{data}
+  ${data}
 }});\n\n
     `
   }
@@ -244,7 +244,7 @@ modules: {nameCleaner: (path) => path.replace(/^app\//, ''); }
 
 ```javascript
 // Add namespacing to a project.
-const name = require('./package.json').name;
+const {name} = require('./package.json');
 modules: {nameCleaner: (path) => path.replace(/^app/, name); }
 ```
 
