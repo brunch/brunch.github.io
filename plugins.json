@@ -593,6 +593,12 @@
       "url": "munshkr/ejs-brunch",
       "category": "Compilers",
       "description": "Embedded Javascript template (EJS) support for brunch"
+    },
+    {
+      "name": "imageoptmizer-brunch",
+      "url": "steffenmllr/imageoptmizer-brunch",
+      "category": "Minifiers",
+      "description": "Optimize PNG and JPG images with optipng & jpegtran"
     }
   ]
 }
