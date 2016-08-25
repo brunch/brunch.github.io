@@ -35,7 +35,7 @@ watch(files)
 lint(file): Boolean
 |
 // Extract file's dependants & dependencies
-getDependencies(path, data): Array[Path]
+getDependencies(file): Array[Path]
 |
 // Transform file contents into js, css etc.
 compile(file): File
@@ -270,10 +270,7 @@ All compiler needs to do is return `exports` in addition to `{data, map}`:
 
 ```javascript
 class MyCompiler {
-  compile(params) {
-    const path = params.path;
-    const data = params.data;
-
+  compile({data, path}) {
     const compiled = magic(data);
     const mapping = mappingMagic(data);
     const exports = `module.exports = ${JSON.stringify(mapping)};`;
@@ -296,10 +293,7 @@ So starting Brunch `2.8.0`, there is a better way.
 
 ```javascript
 class JadeCompiler {
-  compileStatic(params) {
-    const path = params.path;
-    const data = params.data;
-
+  compileStatic({data, path}) {
     return new Promise((resolve, reject) => {
       toHtml(path, data, (err, data) => {
         if (err) reject(err);
