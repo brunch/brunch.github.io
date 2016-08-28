@@ -599,6 +599,12 @@
       "url": "steffenmllr/imageoptmizer-brunch",
       "category": "Minifiers",
       "description": "Optimize PNG and JPG images with optipng & jpegtran"
+    },
+    {
+      "name": "closure-compiler-brunch",
+      "url": "prashnts/closure-compiler-brunch",
+      "category": "Minifiers",
+      "description": "JavaScript optimization with Closure Compiler in JS for brunch"
     }
   ]
 }
