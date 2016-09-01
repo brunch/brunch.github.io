@@ -21,7 +21,7 @@ aspects of your app.</p>
 <li><a href="#-hooks-"><code>hooks</code></a> - allows to specify handlers for different moments of building cycle</li>
 </ul>
 <p><span class="note">
-  You can see the config schema, and all the defaults, in the <code>configBaseSchema</code> of <a href="https://github.com/brunch/brunch/blob/master/lib/config.js#L27"><code>lib/config.js</code></a> in the Brunch source code.
+  You can see the config schema, and all the defaults, in the <code>configBaseSchema</code> of <a href="https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js#L9"><code>lib/utils/config-validate.js</code></a> in the Brunch source code.
 </span></p>
 <h2 id="example">Example</h2>
 <p>Simplest Brunch config looks like that. Just 7 lines of pure configuration:</p>
@@ -190,7 +190,7 @@ modules: {
   wrapper: (path, data) =&gt; {
     return `
 require.define({${path}: function(exports, require, module) {
-  #{data}
+  ${data}
 }});\n\n
     `
   }
@@ -210,7 +210,7 @@ for example, change all &#39;app/file&#39; to &#39;file&#39;. Example:</p>
 modules: {nameCleaner: (path) =&gt; path.replace(/^app\//, &#39;&#39;); }
 </code></pre>
 <pre><code class="lang-javascript">// Add namespacing to a project.
-const name = require(&#39;./package.json&#39;).name;
+const {name} = require(&#39;./package.json&#39;);
 modules: {nameCleaner: (path) =&gt; path.replace(/^app/, name); }
 </code></pre>
 <h2 id="-notifications-"><code>notifications</code></h2>

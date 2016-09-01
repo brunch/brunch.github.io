@@ -60,7 +60,7 @@ Simply <code>npm install --save</code> your front-end packages as you normally w
 <pre><code class="lang-javascript">files: {
   javascripts: {
     joinTo: {
-      &#39;js/app.js&#39;: /^app/
+      &#39;js/app.js&#39;: /^app/,
       &#39;js/vendor.js&#39;: /^(?!app)/ // We could also use /node_modules/ regex.
     }
   }
@@ -72,7 +72,7 @@ Simply <code>npm install --save</code> your front-end packages as you normally w
 files: {
   javascripts: {
     joinTo: {&#39;js/vendor.js&#39;: /^node_modules/}
-  }
+  },
   stylesheets: {
     joinTo: {&#39;css/vendor.css&#39;: /^node_modules/}
   }

@@ -30,7 +30,7 @@ watch(files)
 lint(file): Boolean
 |
 // Extract file&#39;s dependants &amp; dependencies
-getDependencies(path, data): Array[Path]
+getDependencies(file): Array[Path]
 |
 // Transform file contents into js, css etc.
 compile(file): File
@@ -213,10 +213,7 @@ module.exports = UglifyOptimizer;
 </code></pre>
 <p>All compiler needs to do is return <code>exports</code> in addition to <code>{data, map}</code>:</p>
 <pre><code class="lang-javascript">class MyCompiler {
-  compile(params) {
-    const path = params.path;
-    const data = params.data;
-
+  compile({data, path}) {
     const compiled = magic(data);
     const mapping = mappingMagic(data);
     const exports = `module.exports = ${JSON.stringify(mapping)};`;
@@ -233,10 +230,7 @@ You want to have a <code>.jade</code> file compiled into <code>.html</code>.
 Previously, what you would do in this case was to hook into <code>onCompile</code> and look for jade files... and then compile them and write them manually. Sucks.</p>
 <p>So starting Brunch <code>2.8.0</code>, there is a better way.</p>
 <pre><code class="lang-javascript">class JadeCompiler {
-  compileStatic(params) {
-    const path = params.path;
-    const data = params.data;
-
+  compileStatic({data, path}) {
     return new Promise((resolve, reject) =&gt; {
       toHtml(path, data, (err, data) =&gt; {
         if (err) reject(err);
