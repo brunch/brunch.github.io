@@ -465,6 +465,18 @@
       "description": "Adds C-style preprocessor directive support to JS brunch compilations."
     },
     {
+      "name": "js-preprocess-brunch",
+      "url": "walts81/js-preprocess-brunch",
+      "category": "Others",
+      "description": "Replaces jspreprocess-brunch to add C-style preprocessor directive support to both JS and CoffeeScript brunch compilations. (This will need to ordered prior to other JS compliation plugins)"
+    },
+    {
+      "name": "html-preprocess-brunch",
+      "url": "walts81/html-preprocess-brunch",
+      "category": "Others",
+      "description": "Similar to js-preprocess-brunch but adds C-style preprocessor directive support to HTML template brunch compilation. (This will need to be ordered prior to other HTML compilation plugins)"
+    },
+    {
       "name": "groundskeeper-brunch",
       "url": "aliel/groundskeeper-brunch",
       "category": "Others",
