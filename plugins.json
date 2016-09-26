@@ -617,6 +617,12 @@
       "url": "prashnts/closure-compiler-brunch",
       "category": "Minifiers",
       "description": "JavaScript optimization with Closure Compiler in JS for brunch"
+    },
+    {
+      "name": "typeset-brunch",
+      "url": "prashnts/typeset-brunch",
+      "category": "Others",
+      "description": "Brunch interface for Typeset, an html preprocessor for web typography."
     }
   ]
 }
