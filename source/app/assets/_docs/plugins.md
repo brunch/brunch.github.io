@@ -142,7 +142,7 @@ Let's take a look at the [boilerplate plugin](https://github.com/brunch/brunch-b
 class BrunchPlugin {
   constructor(config) {
     // Replace 'plugin' with your plugin's name;
-    this.config = config && config.plugins && config.plugins.plugin;
+    this.config = config.plugins.plugin;
   }
 
   // file: File => Promise[Boolean]
@@ -220,7 +220,7 @@ An abstract minifier that consumes source maps.
 ```javascript
 class UglifyOptimizer {
   constructor(config) {
-    this.config = config && config.plugins && config.plugins.uglify;
+    this.config = config.plugins.uglify;
     this.isPretty = this.config.pretty;
   }
 
