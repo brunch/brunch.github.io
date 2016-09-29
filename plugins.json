@@ -623,6 +623,13 @@
       "url": "prashnts/typeset-brunch",
       "category": "Others",
       "description": "Brunch interface for Typeset, an html preprocessor for web typography."
+    },
+    {
+      "name": "elm-lang-brunch",
+      "url": "karlspalding/elm-lang-brunch",
+      "category": "Compilers",
+      "subcategory": "Script languages",
+      "description": "<a href=\"http://elm-lang.org/\">Elm</a> is a functional language that compiles to JavaScript."
     }
   ]
 }
