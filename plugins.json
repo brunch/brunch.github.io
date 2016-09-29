@@ -630,6 +630,12 @@
       "category": "Compilers",
       "subcategory": "Script languages",
       "description": "<a href=\"http://elm-lang.org/\">Elm</a> is a functional language that compiles to JavaScript."
+    },
+    {
+      "name": "sass-lint-brunch",
+      "url": "karlspalding/sass-lint-brunch",
+      "category": "Linters",
+      "description": "<a href=\"https://github.com/sasstools/sass-lint\">Sass Lint</a> is a linter for sass and scss syntax."
     }
   ]
 }
