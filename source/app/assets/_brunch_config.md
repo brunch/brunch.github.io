@@ -26,7 +26,7 @@ module.exports = {
     "babel-brunch": "^6.0",
     "sass-brunch": "^2.0",
     "uglify-js-brunch": "^2.0",
-    "postcss-brunch": "^0.5",
+    "postcss-brunch": "^2.0",
     "autoprefixer": "^6.0",
     "babel-preset-react": "^6.0"
   }
