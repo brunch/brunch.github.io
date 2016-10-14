@@ -459,6 +459,12 @@
       "description": "Language agnostic sprite generator for brunch"
     },
     {
+      "name": "jscc-brunch",
+      "url": "aMarCruz/jscc-brunch",
+      "category": "Others",
+      "description": "Adds conditional compilation and variable replacement support to brunch."
+    },
+    {
       "name": "jspreprocess-brunch",
       "url": "jonuy/jspreprocess-brunch",
       "category": "Others",
