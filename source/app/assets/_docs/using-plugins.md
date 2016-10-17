@@ -57,6 +57,10 @@ module.exports = {
 }
 ```
 
+## Order of execution
+
+Plugins are executed in order they are specified in `package.json`: when they operate on the same files (usually target files), their order can impact their ability to work. For instance, [groundskeeper-brunch](https://www.npmjs.com/package/groundskeeper-brunch) requires running before any minifiers, as these will obfuscate some code constructs the former relies on to detect trimmable code.
+
 ## Advanced plugin features
 
 There are some additional ways plugins can enhance your development experience.
@@ -97,7 +101,7 @@ Note: this example is real. CSS modules are supported by several core stylesheet
 
 Sometimes you will want to transform a different kind of file, one that doesn't fit into the Brunch's general JS/CSS/template flow.
 One example of that would be compiling Jade into HTML.
-Starting Brunch 2.8, this is made available for plugins to implement.
+Starting with Brunch 2.8, this is made available for plugins to implement.
 
 ## Tips
 
