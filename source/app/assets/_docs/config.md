@@ -133,7 +133,7 @@ Example:
 
 ```javascript
 npm: {
-  styles: {pikaday: ['css/pikaday.css']}
+  styles: {pikaday: ['css/pikaday.css']},
   globals: {Pikaday: 'pikaday'}
 }
 ```
@@ -239,13 +239,13 @@ for example, change all 'app/file' to 'file'. Example:
 
 ```javascript
 // Default behaviour.
-modules: {nameCleaner: (path) => path.replace(/^app\//, ''); }
+modules: {nameCleaner: path => path.replace(/^app\//, '') }
 ```
 
 ```javascript
 // Add namespacing to a project.
 const {name} = require('./package.json');
-modules: {nameCleaner: (path) => path.replace(/^app/, name); }
+modules: {nameCleaner: path => path.replace(/^app/, name) }
 ```
 
 ## `notifications`
@@ -276,26 +276,28 @@ If a `brunch-server.js` or `brunch-server.coffee` file exists at the root of you
 
 The server script must export a function that starts your custom server, either as the default exported module. This function should return an instance of [`http.Server`](https://nodejs.org/api/http.html#http_class_http_server) or an object containing a `close` property assigned to a function that shuts down the server. Examples:
 
-  ```javascript
-  // javascript example using default export and node http core module
-  module.exports = (port, path, callback) => {
-    // your custom server code
-    // callback doesn't take any parameters and (if provided) should be called after server is started
-    // up to you to respect the `port` argument allowing users to change it from the CLI
-    const myServer = http.createServer();
-    myServer.listen(port, callback);
-    myServer.on('request', (req, res) => { /* do stuff */ });
-    return myServer;
-  }
-  ```
+```javascript
+// javascript example using default export and node http core module
+module.exports = (port, path, callback) => {
+  // your custom server code
+  // callback doesn't take any parameters and (if provided) should be called after server is started
+  // up to you to respect the `port` argument allowing users to change it from the CLI
+  const myServer = http.createServer();
+  myServer.listen(port, callback);
+  myServer.on('request', (req, res) => { /* do stuff */ });
+  return myServer;
+};
+```
 
-  ```javascript
-  // Example using custom `close` method.
-  module.exports = (port, path, callback) => {
-    // custom server code
-    return {close() { /* code for shutting down server */ }}
-  }
-  ```
+```javascript
+// Example using custom `close` method.
+module.exports = (port, path, callback) => {
+  // custom server code
+  return {
+    close() { /* code for shutting down server */ }
+  };
+}
+```
 
 * `path`: (optional) custom path to nodejs file that will be loaded to run your custom server.
 
@@ -385,15 +387,15 @@ file watching library used in brunch.
 
 `Object`: Optional setting to specify handlers for different moments of building cycle.
 Possible values:
-* `preCompile` - `Function`: Optional callback to be called before brunch starts a compilation cycle. It is passed an `end` function to be called after the hook is finished to initiate the compilation cycle.
+* `preCompile` - `Function`: Optional callback to be called before brunch starts a compilation cycle. If Promise is returned, it will be awaited.
 
     Example:
 
     ```javascript
     hooks: {
-      preCompile: (end) => {
+      preCompile() {
         console.log("About to compile...");
-        end();
+        return Promise.resolve();
       }
     }
     ```
@@ -411,7 +413,7 @@ Possible values:
 
     ```javascript
     hooks: {
-      onCompile: (generatedFiles, changedAssets) => {
+      onCompile(generatedFiles, changedAssets) {
         console.log(generatedFiles.map(f => f.path));
       }
     }
