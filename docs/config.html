@@ -1,8 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Brunch - ultra-fast HTML5 build tool</title><meta name="description" content="Brunch builds, lints, compiles, concatenates and shrinks your HTML5 app in an ultra-simple way. No more Grunt / Gulp mess."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/app.css"><link rel="publisher" href="https://plus.google.com/+PaulMillerLi"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><!--[if lt IE 9]>
-<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]--><script>/*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
-
-!function(){function e(e,n,t){"use strict";var o=window.document.createElement("link"),a=n||window.document.getElementsByTagName("script")[0],i=window.document.styleSheets;return o.rel="stylesheet",o.href=e,o.media="only x",a.parentNode.insertBefore(o,a),o.onloadcssdefined=function(e){for(var n,t=0;t<i.length;t++)i[t].href&&i[t].href===o.href&&(n=!0);n?e():setTimeout(function(){o.onloadcssdefined(e)})},o.onloadcssdefined(function(){o.media=t||"all"}),o}function n(e,n){e.onload=function(){e.onload=null,n&&n.call(e)},"isApplicationInstalled"in navigator&&"onloadcssdefined"in e&&e.onloadcssdefined(n)}!function(t){var o=function(a,i){"use strict";if(a&&3===a.length){var r=t.navigator,d=t.document,s=t.Image,c=!(!d.createElementNS||!d.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!d.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||t.opera&&-1===r.userAgent.indexOf("Chrome")||-1!==r.userAgent.indexOf("Series40")),l=new s;l.onerror=function(){o.method="png",o.href=a[2],e(a[2])},l.onload=function(){var t=1===l.width&&1===l.height,r=a[t&&c?0:t?1:2];t&&c?o.method="svg":t?o.method="datapng":o.method="png",o.href=r,n(e(r),i)},l.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",d.documentElement.className+=" grunticon"}};o.loadCSS=e,o.onloadCSS=n,t.grunticon=o}(this)}();grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css", "/images/svg/icons.fallback.css" ] );</script></head><body><div id="navbar"><div class="container"><a href="/" class="icon-brunch-logo-web"></a><ul class="nav nav--main-nav"><li><a href="/" class="nav__item--main-nav">Home</a></li><li><a href="/docs/getting-started" class="nav__item--main-nav active">Docs</a></li><li><a href="/plugins" class="nav__item--main-nav">Plugins</a></li><li><a href="/skeletons" class="nav__item--main-nav">Skeletons</a></li><li><a href="/examples" class="nav__item--main-nav">In Production</a></li><li><a href="/support" class="nav__item--main-nav">Community</a></li></ul></div></div><div class="page__content container"><div class="grid"><div class="grid__item one-whole desk-one-quarter"><div class="doc-sidebar"><div class="doc-section"><h3>Quick Start</h3><ul><li><a href="/docs/getting-started">Getting started</a></li><li><a href="/docs/concepts">Core concepts</a></li><li><a href="/docs/why-brunch">Why Brunch</a></li><li><a href="/docs/using-plugins">Using plugins</a></li><li><a href="/docs/using-modules">Using JS modules and NPM</a></li><li><a href="/docs/testing">Testing</a></li><li><a href="/docs/deploying">Deploying</a></li></ul></div><div class="doc-section"><h3>Reference</h3><ul><li><a href="/docs/commands">Commands</a></li><li><span class="active">Config</span></li><li><a href="/docs/plugins">Plugin API</a></li><li><a href="/docs/troubleshooting">Troubleshooting</a></li><li><a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md" target="_blank" class="external">Changelog</a></li></ul></div><div class="doc-section"><h3>Community Resources</h3><ul><li><a href="https://github.com/brunch/brunch-guide" target="_blank" class="external">The Brunch Guide</a></li></ul></div></div></div><div class="grid__item one-whole desk-three-quarters doc-content"><h1 id="brunch-config">Brunch: Config</h1>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Brunch - ultra-fast HTML5 build tool</title><meta name="description" content="Brunch builds, lints, compiles, concatenates and shrinks your HTML5 app in an ultra-simple way. No more Grunt / Gulp mess."><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link rel="stylesheet" href="/app.css"><!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js" defer></script>
+<![endif]--></head><body><div id="navbar"><div class="container"><a href="/" class="icon-brunch-logo-web"></a><ul class="nav nav--main-nav"><li><a href="/" class="nav__item--main-nav">Home</a></li><li><a href="/docs/getting-started" class="nav__item--main-nav active">Docs</a></li><li><a href="/plugins" class="nav__item--main-nav">Plugins</a></li><li><a href="/skeletons" class="nav__item--main-nav">Skeletons</a></li><li><a href="/examples" class="nav__item--main-nav">In Production</a></li><li><a href="/support" class="nav__item--main-nav">Community</a></li></ul></div></div><div class="page__content container"><div class="grid"><div class="grid__item one-whole desk-one-quarter"><div class="doc-sidebar"><div class="doc-section"><h3>Quick Start</h3><ul><li><a href="/docs/getting-started">Getting started</a></li><li><a href="/docs/concepts">Core concepts</a></li><li><a href="/docs/why-brunch">Why Brunch</a></li><li><a href="/docs/using-plugins">Using plugins</a></li><li><a href="/docs/using-modules">Using JS modules and NPM</a></li><li><a href="/docs/testing">Testing</a></li><li><a href="/docs/deploying">Deploying</a></li></ul></div><div class="doc-section"><h3>Reference</h3><ul><li><a href="/docs/commands">Commands</a></li><li><span class="active">Config</span></li><li><a href="/docs/plugins">Plugin API</a></li><li><a href="/docs/troubleshooting">Troubleshooting</a></li><li><a href="https://github.com/brunch/brunch/blob/master/CHANGELOG.md" target="_blank" class="external">Changelog</a></li></ul></div><div class="doc-section"><h3>Community Resources</h3><ul><li><a href="https://github.com/brunch/brunch-guide" target="_blank" class="external">The Brunch Guide</a></li></ul></div></div></div><div class="grid__item one-whole desk-three-quarters doc-content"><h1 id="brunch-config">Brunch: Config</h1>
 <p>Brunch uses configuration file <code>brunch-config.js</code> <em>(or <code>.coffee</code>)</em> to manage various
 aspects of your app.</p>
 <ul>
@@ -124,7 +122,7 @@ Available formats:<ul>
 </ul>
 <p>Example:</p>
 <pre><code class="lang-javascript">npm: {
-  styles: {pikaday: [&#39;css/pikaday.css&#39;]}
+  styles: {pikaday: [&#39;css/pikaday.css&#39;]},
   globals: {Pikaday: &#39;pikaday&#39;}
 }
 </code></pre>
@@ -207,11 +205,11 @@ modules: {
 <p><code>modules.nameCleaner</code>: <code>Function</code> Allows you to set filterer function for module names,
 for example, change all &#39;app/file&#39; to &#39;file&#39;. Example:</p>
 <pre><code class="lang-javascript">// Default behaviour.
-modules: {nameCleaner: (path) =&gt; path.replace(/^app\//, &#39;&#39;); }
+modules: {nameCleaner: path =&gt; path.replace(/^app\//, &#39;&#39;) }
 </code></pre>
 <pre><code class="lang-javascript">// Add namespacing to a project.
 const {name} = require(&#39;./package.json&#39;);
-modules: {nameCleaner: (path) =&gt; path.replace(/^app/, name); }
+modules: {nameCleaner: path =&gt; path.replace(/^app/, name) }
 </code></pre>
 <h2 id="-notifications-"><code>notifications</code></h2>
 <p><code>Boolean</code>: enables or disables
@@ -230,22 +228,24 @@ modules: {nameCleaner: (path) =&gt; path.replace(/^app/, name); }
 <p><code>Object</code>: contains params of webserver that runs on <code>brunch watch --server</code>.</p>
 <p>If a <code>brunch-server.js</code> or <code>brunch-server.coffee</code> file exists at the root of your project, Brunch will treat this as your custom web server. This can be overriden with the <code>server.path</code> option.</p>
 <p>The server script must export a function that starts your custom server, either as the default exported module. This function should return an instance of <a href="https://nodejs.org/api/http.html#http_class_http_server"><code>http.Server</code></a> or an object containing a <code>close</code> property assigned to a function that shuts down the server. Examples:</p>
-<pre><code class="lang-javascript">  // javascript example using default export and node http core module
-  module.exports = (port, path, callback) =&gt; {
-    // your custom server code
-    // callback doesn&#39;t take any parameters and (if provided) should be called after server is started
-    // up to you to respect the `port` argument allowing users to change it from the CLI
-    const myServer = http.createServer();
-    myServer.listen(port, callback);
-    myServer.on(&#39;request&#39;, (req, res) =&gt; { /* do stuff */ });
-    return myServer;
-  }
+<pre><code class="lang-javascript">// javascript example using default export and node http core module
+module.exports = (port, path, callback) =&gt; {
+  // your custom server code
+  // callback doesn&#39;t take any parameters and (if provided) should be called after server is started
+  // up to you to respect the `port` argument allowing users to change it from the CLI
+  const myServer = http.createServer();
+  myServer.listen(port, callback);
+  myServer.on(&#39;request&#39;, (req, res) =&gt; { /* do stuff */ });
+  return myServer;
+};
 </code></pre>
-<pre><code class="lang-javascript">  // Example using custom `close` method.
-  module.exports = (port, path, callback) =&gt; {
-    // custom server code
-    return {close() { /* code for shutting down server */ }}
-  }
+<pre><code class="lang-javascript">// Example using custom `close` method.
+module.exports = (port, path, callback) =&gt; {
+  // custom server code
+  return {
+    close() { /* code for shutting down server */ }
+  };
+}
 </code></pre>
 <ul>
 <li><code>path</code>: (optional) custom path to nodejs file that will be loaded to run your custom server.</li>
@@ -320,12 +320,12 @@ file watching library used in brunch.</p>
 <p><code>Object</code>: Optional setting to specify handlers for different moments of building cycle.
 Possible values:</p>
 <ul>
-<li><p><code>preCompile</code> - <code>Function</code>: Optional callback to be called before brunch starts a compilation cycle. It is passed an <code>end</code> function to be called after the hook is finished to initiate the compilation cycle.</p>
+<li><p><code>preCompile</code> - <code>Function</code>: Optional callback to be called before brunch starts a compilation cycle. If Promise is returned, it will be awaited.</p>
 <p>  Example:</p>
 <pre><code class="lang-javascript">  hooks: {
-    preCompile: (end) =&gt; {
+    preCompile() {
       console.log(&quot;About to compile...&quot;);
-      end();
+      return Promise.resolve();
     }
   }
 </code></pre>
@@ -342,7 +342,7 @@ Possible values:</p>
 <li><p><code>destinationPath</code> — path of an asset in the public directory</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">hooks: {
-onCompile: (generatedFiles, changedAssets) =&gt; {
+onCompile(generatedFiles, changedAssets) {
   console.log(generatedFiles.map(f =&gt; f.path));
 }
 }
@@ -356,8 +356,7 @@ onCompile: (generatedFiles, changedAssets) =&gt; {
 <li>You can use CoffeeScript to write configuration files. This way they&#39;ll be
 much shorter and concise. Simply create a file called <code>brunch-config.coffee</code>.</li>
 </ul>
-<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/commands">&larr; Commands</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/plugins">Plugin API &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/blob/master/source/app/assets/_docs/config.md">Edit config.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p></footer></div><script src="/app.js"></script><script>require('init');
-</script>  <script type="text/javascript">
+<div class="container doc-nav"><div class="grid"><div class="grid__item one-whole lap-and-up-one-half"><a href="/docs/commands">&larr; Commands</a></div><div style="text-align: right;" class="grid__item one-whole lap-and-up-one-half"><a href="/docs/plugins">Plugin API &rarr;</a></div><div class="grid__item one-whole"><span class="note"><a href="https://github.com/brunch/brunch.github.io/blob/master/source/app/assets/_docs/config.md">Edit config.md on GitHub</a></span></div></div></div></div></div><footer><hr class="rule"><p><small>Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a></small></p><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js" defer onload="hljs.initHighlightingOnLoad()"></script><script src="/app.js" defer onload="require('init')"></script><script src="/images/svg/grunticon.loader.js" defer onload="grunticon( [ '/images/svg/icons.data.svg.css', '/images/svg/icons.data.png.css', '/images/svg/icons.fallback.css' ] )"></script><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css"><link rel="publisher" href="https://plus.google.com/+PaulMillerLi"></footer></div>  <script type="text/javascript">
     var _gauges = _gauges || [];
     (function() {
       var t   = document.createElement('script');

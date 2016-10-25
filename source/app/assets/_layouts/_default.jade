@@ -10,17 +10,10 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='shortcut icon', type="image/x-icon", href='/favicon.ico')
     link(rel='stylesheet', href='/app.css')
-    link(rel='publisher', href='https://plus.google.com/+PaulMillerLi')
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js')
-    script.
-      hljs.initHighlightingOnLoad();
+
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" defer></script>
     <![endif]-->
-    script
-      include /images/svg/grunticon.loader.js
-      | grunticon( [ "/images/svg/icons.data.svg.css", "/images/svg/icons.data.png.css", "/images/svg/icons.fallback.css" ] );
 
   body
 
@@ -48,8 +41,13 @@ html
         hr.rule
         p: small Hosted on <a href="https://github.com/brunch/brunch.github.com">GitHub Pages</a>. The content on this website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">CC BY 3.0</a>. Logo by <a href="http://helle.in">Michael Hellein</a>
 
-    script(src='/app.js')
-    script.
-      require('init');
+        script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js' defer onload="hljs.initHighlightingOnLoad()")
+        script(src='/app.js' defer onload="require('init')")
+        script(src='/images/svg/grunticon.loader.js' defer onload="grunticon( [ '/images/svg/icons.data.svg.css', '/images/svg/icons.data.png.css', '/images/svg/icons.fallback.css' ] )")
+
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic')
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700')
+        link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css')
+        link(rel='publisher', href='https://plus.google.com/+PaulMillerLi')
 
     include /_includes/track.html
