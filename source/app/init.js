@@ -55,6 +55,44 @@ function setTitle(contentClass) {
   document.title = heading.textContent + ' — Brunch';
 }
 
+function deferIframe() {
+  var deferIframes = document.getElementsByClassName('defer-iframe');
+  var deferIframesNumber = deferIframes.length;
+
+  if (deferIframesNumber) {
+    for (var i = 0; i < deferIframesNumber; i++) {
+      var iframe = document.createElement('iframe');
+      var frameborder = document.createAttribute('frameborder');
+      var webkitallowfullscreen = document.createAttribute('webkitallowfullscreen');
+      var mozallowfullscreen = document.createAttribute('mozallowfullscreen');
+      var allowfullscreen = document.createAttribute('allowfullscreen');
+
+      frameborder.value = '0';
+
+      iframe.setAttributeNode(frameborder);
+      iframe.setAttributeNode(webkitallowfullscreen);
+      iframe.setAttributeNode(mozallowfullscreen);
+      iframe.setAttributeNode(allowfullscreen);
+
+      iframe = setDataValuesToIframe(iframe, Object.assign({}, deferIframes[i].dataset));
+
+      deferIframes[i].appendChild(iframe);
+    }
+  }
+}
+
+function setDataValuesToIframe(element, data) {
+  for (var attrName in data) {
+    var attr = document.createAttribute(attrName);
+
+    attr.value = data[attrName];
+    element.setAttributeNode(attr);
+  }
+
+  return element;
+}
+
 setTitle('page__content');
 toc('doc-content', 'page__content', 'toc-placeholder');
 anchorize();
+deferIframe();
