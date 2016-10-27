@@ -56,40 +56,25 @@ function setTitle(contentClass) {
 }
 
 function deferIframe() {
-  var deferIframes = document.getElementsByClassName('defer-iframe');
-  var deferIframesNumber = deferIframes.length;
+  var deferIframes = document.querySelectorAll('.defer-iframe');
 
-  if (deferIframesNumber) {
-    for (var i = 0; i < deferIframesNumber; i++) {
-      var iframe = document.createElement('iframe');
-      var frameborder = document.createAttribute('frameborder');
-      var webkitallowfullscreen = document.createAttribute('webkitallowfullscreen');
-      var mozallowfullscreen = document.createAttribute('mozallowfullscreen');
-      var allowfullscreen = document.createAttribute('allowfullscreen');
+  [].forEach.call(deferIframes, function (deferIframe) {
+    var iframe = document.createElement('iframe');
 
-      frameborder.value = '0';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('frameborder', 0);
 
-      iframe.setAttributeNode(frameborder);
-      iframe.setAttributeNode(webkitallowfullscreen);
-      iframe.setAttributeNode(mozallowfullscreen);
-      iframe.setAttributeNode(allowfullscreen);
+    Object.defineProperty(iframe, 'style', {
+      set: function(value) {
+        this.setAttribute('style', value);
+      }
+    });
 
-      iframe = setDataValuesToIframe(iframe, Object.assign({}, deferIframes[i].dataset));
+    // JSON.parse(JSON.stringify(deferIframe.dataset)) to convert DOMStringMap into Object (Safari thing)
+    Object.assign(iframe, JSON.parse(JSON.stringify(deferIframe.dataset)));
 
-      deferIframes[i].appendChild(iframe);
-    }
-  }
-}
-
-function setDataValuesToIframe(element, data) {
-  for (var attrName in data) {
-    var attr = document.createAttribute(attrName);
-
-    attr.value = data[attrName];
-    element.setAttributeNode(attr);
-  }
-
-  return element;
+    deferIframe.appendChild(iframe);
+  });
 }
 
 setTitle('page__content');
