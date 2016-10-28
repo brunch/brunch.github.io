@@ -64,14 +64,9 @@ function deferIframe() {
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('frameborder', 0);
 
-    Object.defineProperty(iframe, 'style', {
-      set: function(value) {
-        this.setAttribute('style', value);
-      }
+    Object.keys(deferIframe.dataset).forEach(key => {
+      iframe.setAttribute(key, deferIframe.dataset[key])
     });
-
-    // JSON.parse(JSON.stringify(deferIframe.dataset)) to convert DOMStringMap into Object (Safari thing)
-    Object.assign(iframe, JSON.parse(JSON.stringify(deferIframe.dataset)));
 
     deferIframe.appendChild(iframe);
   });
