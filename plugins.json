@@ -248,6 +248,13 @@
       "description": "<a href=\"http://jade-lang.com/\">Jade</a> is a haml big brother with much cleaner syntax."
     },
     {
+      "name": "PugJS-brunch",
+      "url": "aMarCruz/pugjs-brunch",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "Adds <a href=\"https://pugjs.org/\">Pug</a> support to brunch (dynamic and static templates)."
+    },
+    {
       "name": "Dust-brunch",
       "url": "sandosh/dustjs-brunch",
       "category": "Compilers",
