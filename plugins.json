@@ -649,6 +649,12 @@
       "url": "karlspalding/sass-lint-brunch",
       "category": "Linters",
       "description": "<a href=\"https://github.com/sasstools/sass-lint\">Sass Lint</a> is a linter for sass and scss syntax."
+    },
+    {
+      "name": "grunticon-brunch",
+      "url": "roperzh/grunticon-brunch",
+      "category": "Others",
+      "description": "<a href=\"https://github.com/roperzh/grunticon-brunch\">grunticon-brunch</a> adds <a href=\"https://github.com/filamentgroup/grunticon-lib\">Grunticon</a> support to Brunch."
     }
   ]
 }
