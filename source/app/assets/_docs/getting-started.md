@@ -109,7 +109,7 @@ output exactly what you've entered here. jQuery is up and running now.
 Let's say you want to try the new fancy **CoffeeScript** thing. Maybe your OCD would be eased by conforming
 to 66 **ESLint** rules. It doesn't matter, [more than 50 Brunch plugins](http://brunch.io/plugins) aim to help with all kinds of crazy cases.
 
-Install CoffeeScript plugin by executing `npm install --save coffee-script-brunch`.
+Install CoffeeScript plugin by executing `npm install --save-dev coffee-script-brunch`.
 Hmm...that's exactly the same command from our previous step. Whatever. Let's create the `drink.coffee` file with some content:
 
 ```

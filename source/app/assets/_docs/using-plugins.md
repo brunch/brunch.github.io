@@ -31,10 +31,10 @@ You can browse some of the community-supported plugins in the [Plugins](/plugins
 
 Plugins can be installed with a simple console command:
 
-`npm install --save sass-brunch` - would add `"sass-brunch": "^2.0.2"` to package.json of your brunch app.
+`npm install --save-dev sass-brunch` - would add `"sass-brunch": "^2.0.2"` to package.json of your brunch app.
 
 Sometimes you'll want to use plugins which have not yet been published to NPM and are available only through GIT.
-In this case you can specify Git URL for the command: `npm install --save brunch/sass-brunch`.
+In this case you can specify Git URL for the command: `npm install --save-dev brunch/sass-brunch`.
 
 To remove a plugin, just delete its line from `package.json`.
 See [npm docs](http://npmjs.org/doc/json.html#dependencies) for more docs on packages.
