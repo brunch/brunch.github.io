@@ -12,7 +12,7 @@
       "name": "HMR-brunch",
       "url": "brunch/hmr-brunch",
       "category": "Others",
-      "description": "Allows to use Hot Module Replacement in your Brunch porjects."
+      "description": "Allows to use Hot Module Replacement in your Brunch projects."
     },
     {
       "name": "CoffeeScript",
