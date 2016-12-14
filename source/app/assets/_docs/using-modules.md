@@ -68,7 +68,7 @@ Brunch supports handling client-side dependencies using the [NPM](https://npmjs.
 NPM integration is enabled by default starting Brunch 2.3 so there's no additional setup!
 Simply `npm install --save` your front-end packages as you normally would, `require` them in your app, and Brunch will figure out the rest.
 
-Just make sure that your don't forget to join `/^node_modules/` somewhere!
+Just make sure that you don't forget to join `/^node_modules/` somewhere!
 
 ```javascript
 files: {
