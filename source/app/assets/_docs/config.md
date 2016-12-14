@@ -412,11 +412,11 @@ Possible values:
     Example:
 
     ```javascript
-    hooks: {
-      onCompile(generatedFiles, changedAssets) {
-        console.log(generatedFiles.map(f => f.path));
+      hooks: {
+        onCompile(generatedFiles, changedAssets) {
+          console.log(generatedFiles.map(f => f.path));
+        }
       }
-    }
     ```
 
 ## Tips
