@@ -33,6 +33,40 @@ aspects of your app.</p>
 </code></pre>
 <p>Each Brunch config is an executable script,
 so you can also execute arbitrary JS and import Node.js modules there.</p>
+<h2 id="pattern-matching">Pattern matching</h2>
+<p>Internally, Brunch uses <a href="https://github.com/es128/anymatch">anymatch</a> for pattern matching — it&#39;s a module to match strings against configurable strings, globs, regular expressions or functions. If you want to define specific file pattern, you can use:</p>
+<ul>
+<li><p><strong>String</strong> — path to your source files to be directly matched. You can use <a href="https://en.m.wikipedia.org/wiki/Glob_(programming">globs</a>), so these strings may contain <a href="https://en.m.wikipedia.org/wiki/Wildcard_character">wildcard characters</a> (<code>*</code>, <code>?</code>, etc). Example:</p>
+<pre><code class="lang-javascript">  joinTo: {
+    &#39;app.css&#39;: &#39;path/to/*.css&#39; # matches all CSS files
+  }
+</code></pre>
+</li>
+<li><p><strong>Regular expression</strong> — feel free to define a pattern using regular expression if you used to. Example:</p>
+<pre><code class="lang-javascript">  joinTo: {
+    &#39;app.js&#39;: /.js$/ # matches all JavaScript files
+  }
+</code></pre>
+</li>
+<li><p><strong>Function</strong> — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like <code>Array.filter</code> function do). Example:</p>
+<pre><code class="lang-javascript">  joinTo: {
+    # matches all JavaScript files with filenames longer that 3 characters
+    &#39;app.js&#39;: str =&gt; str.indexOf(&#39;.js&#39;) !== -1 &amp;&amp; str.length &gt; 3
+  }
+</code></pre>
+</li>
+<li><p><strong>Array</strong> — an array of any number and mix of the above types. Example:</p>
+<pre><code class="lang-javascript">  joinTo: {
+    &#39;app.js&#39;: [
+      &#39;path/to/specific/file.js&#39;,       # include specific file
+      &#39;any/**/*.js&#39;,                    # all files with .js extension
+      /.es6.js$/,                       # all files with .es6.js extension
+      str =&gt; str.indexOf(&#39;tmp&#39;) === -1  # contains `tmp` substring
+    ]
+  }
+</code></pre>
+</li>
+</ul>
 <h2 id="-paths-"><code>paths</code></h2>
 <p><code>Object</code>: <code>paths</code> contains application paths to key directories. Paths are simple strings.</p>
 <ul>
@@ -53,18 +87,18 @@ so you can also execute arbitrary JS and import Node.js modules there.</p>
 <li>joinTo: (required) describes how files will be compiled &amp; joined together.
 Available formats:<ul>
 <li><code>&#39;outputFilePath&#39;</code> in order to have all source files compiled together to one</li>
-<li>map of (<code>&#39;outputFilePath&#39;:</code> <a href="https://github.com/es128/anymatch">anymatch set</a>)</li>
+<li>map of <code>&#39;outputFilePath&#39;</code> (see <a href="#pattern-matching">Pattern matching</a> section)</li>
 </ul>
 </li>
 <li>entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles <code>joinTo</code> but allows to included only the files you need.
 Available formats:<ul>
 <li><code>&#39;entryFile.js&#39;: &#39;outputFilePath&#39;</code></li>
-<li><code>&#39;entryFile.js&#39;:</code> map of (<code>&#39;outputFilePath&#39;:</code> <a href="https://github.com/es128/anymatch">anymatch set</a>)</li>
+<li><code>&#39;entryFile.js&#39;:</code> map of <code>&#39;outputFilePath&#39;</code> (see <a href="#pattern-matching">Pattern matching</a> section)</li>
 </ul>
 </li>
 <li>order: (optional) defines compilation order. <code>vendor</code> files will be compiled before other ones even if they are not present here.<ul>
-<li>before: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a> defining files that will be loaded before other files</li>
-<li>after: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a> defining files that will be loaded after other files</li>
+<li>before: <a href="#pattern-matching">matching pattern</a> defining files that will be loaded before other files</li>
+<li>after: <a href="#pattern-matching">matching pattern</a> defining files that will be loaded after other files</li>
 </ul>
 </li>
 <li>pluginHelpers: (optional) specify which output file (or array of files) plugins&#39; include files concatenate into. Defaults to the output file that <code>vendor</code> files are being joined to, the first one with <code>vendor</code> in its name/path, or just the first output file listed in your joinTo object.</li>
@@ -146,9 +180,9 @@ Available formats:<ul>
 <h2 id="-conventions-"><code>conventions</code></h2>
 <p><code>Object</code>: <code>conventions</code> define tests, against which all file pathnames will be checked.</p>
 <ul>
-<li><code>ignored</code> key: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a>. Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have <code>common.styl</code> file that you import in every stylus file, <code>common.styl</code> will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (<code>_common.styl</code>) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to <a href="http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/">Sass partials</a>. By default, files and directories that start with underscore (<code>_</code>) will be ignored, as well as anything under the <code>vendor/node/</code>, <code>vendor/ruby-*/</code>, <code>vendor/jruby-*/</code>, and <code>vendor/bundle/</code> directories.</li>
-<li><code>assets</code> key: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a>. Default value: <code>/assets[\\/]/</code>. If test gives true, file won&#39;t be compiled and will be just moved to public directory instead.</li>
-<li><code>vendor</code> key: <a href="https://github.com/es128/anymatch#anymatch-">anymatch set</a>. Default value: <code>/(^bower_components|node_modules|vendor)[\\/]/</code>. If test gives true, file won&#39;t be wrapped in module, if there are any.</li>
+<li><code>ignored</code> key: <a href="#pattern-matching">matching pattern</a>. Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have <code>common.styl</code> file that you import in every stylus file, <code>common.styl</code> will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (<code>_common.styl</code>) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to <a href="http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/">Sass partials</a>. By default, files and directories that start with underscore (<code>_</code>) will be ignored, as well as anything under the <code>vendor/node/</code>, <code>vendor/ruby-*/</code>, <code>vendor/jruby-*/</code>, and <code>vendor/bundle/</code> directories.</li>
+<li><code>assets</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/assets[\\/]/</code>. If test gives true, file won&#39;t be compiled and will be just moved to public directory instead.</li>
+<li><code>vendor</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/(^bower_components|node_modules|vendor)[\\/]/</code>. If test gives true, file won&#39;t be wrapped in module, if there are any.</li>
 </ul>
 <p>Keep in mind that default brunch regexps, as you see, consider <strong>all</strong> <code>vendor/</code> (etc.) directories as vendor (etc.) files. So, <code>app/views/vendor/thing/chaplin_view.coffee</code> will be treated as vendor file.</p>
 <p>Example:</p>
