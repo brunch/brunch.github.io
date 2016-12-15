@@ -38,6 +38,45 @@ module.exports = {
 Each Brunch config is an executable script,
 so you can also execute arbitrary JS and import Node.js modules there.
 
+## Pattern matching
+
+Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for pattern matching — it's a module to match strings against configurable strings, globs, regular expressions or functions. If you want to define specific file pattern, you can use:
+
+* **String** — path to your source files to be directly matched. You can use [globs](https://en.wikipedia.org/wiki/Glob_(programming)), so these strings may contain [wildcard characters](https://en.wikipedia.org/wiki/Wildcard_character) (`*`, `?`, etc). Example:
+
+  ```javascript
+  joinTo: {
+    'app.css': 'path/to/*.css' // matches all CSS files
+  }
+  ```
+* **Regular expression** — feel free to define a pattern using regular expression if you used to. Example:
+
+  ```javascript
+  joinTo: {
+    'app.js': /\.js$/ // matches all JavaScript files
+  }
+  ```
+* **Function** — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like `Array.filter` function do). Example:
+
+  ```javascript
+  joinTo: {
+    // matches all JavaScript files with filenames longer that 3 characters
+    'app.js': path => path.endsWith('.js') && path.length > 3
+  }
+  ```
+* **Array** — an array of any number and mix of the above types. Example:
+
+  ```javascript
+  joinTo: {
+    'app.js': [
+      'path/to/specific/file.js',   // include specific file
+      'any/**/*.js',                // all files with .js extension
+      /\.test\.js$/,                // all files with .test.js extension
+      path => path.includes('tmp')  // contains `tmp` substring
+    ]
+  }
+  ```
+
 ## `paths`
 
 `Object`: `paths` contains application paths to key directories. Paths are simple strings.
@@ -64,14 +103,14 @@ paths: {
     * joinTo: (required) describes how files will be compiled & joined together.
       Available formats:
         * `'outputFilePath'` in order to have all source files compiled together to one
-        * map of (`'outputFilePath':` [anymatch set](https://github.com/es128/anymatch))
+        * map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
     * entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
       Available formats:
         * `'entryFile.js': 'outputFilePath'`
-        * `'entryFile.js':` map of (`'outputFilePath':` [anymatch set](https://github.com/es128/anymatch))
+        * `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
     * order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
-        * before: [anymatch set](https://github.com/es128/anymatch#anymatch-) defining files that will be loaded before other files
-        * after: [anymatch set](https://github.com/es128/anymatch#anymatch-) defining files that will be loaded after other files
+        * before: [matching pattern](#pattern-matching) defining files that will be loaded before other files
+        * after: [matching pattern](#pattern-matching) defining files that will be loaded after other files
     * pluginHelpers: (optional) specify which output file (or array of files) plugins' include files concatenate into. Defaults to the output file that `vendor` files are being joined to, the first one with `vendor` in its name/path, or just the first output file listed in your joinTo object.
 
 All files from `vendor` directory are by default concatenated before all files from `app` directory. So, `vendor/scripts/jquery.js` would be loaded before `app/script.js` even if order config is empty. Files from Bower packages are included by default before the `vendor` files.
@@ -163,9 +202,9 @@ plugins: {
 
 `Object`: `conventions` define tests, against which all file pathnames will be checked.
 
-* `ignored` key: [anymatch set](https://github.com/es128/anymatch#anymatch-). Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have `common.styl` file that you import in every stylus file, `common.styl` will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (`_common.styl`) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to [Sass partials](http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/). By default, files and directories that start with underscore (`_`) will be ignored, as well as anything under the `vendor/node/`, `vendor/ruby-*/`, `vendor/jruby-*/`, and `vendor/bundle/` directories.
-* `assets` key: [anymatch set](https://github.com/es128/anymatch#anymatch-). Default value: `/assets[\\/]/`. If test gives true, file won't be compiled and will be just moved to public directory instead.
-* `vendor` key: [anymatch set](https://github.com/es128/anymatch#anymatch-). Default value: `/(^bower_components|node_modules|vendor)[\\/]/`. If test gives true, file won't be wrapped in module, if there are any.
+* `ignored` key: [matching pattern](#pattern-matching). Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have `common.styl` file that you import in every stylus file, `common.styl` will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (`_common.styl`) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to [Sass partials](http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/). By default, files and directories that start with underscore (`_`) will be ignored, as well as anything under the `vendor/node/`, `vendor/ruby-*/`, `vendor/jruby-*/`, and `vendor/bundle/` directories.
+* `assets` key: [matching pattern](#pattern-matching). Default value: `/assets[\\/]/`. If test gives true, file won't be compiled and will be just moved to public directory instead.
+* `vendor` key: [matching pattern](#pattern-matching). Default value: `/(^bower_components|node_modules|vendor)[\\/]/`. If test gives true, file won't be wrapped in module, if there are any.
 
 Keep in mind that default brunch regexps, as you see, consider **all** `vendor/` (etc.) directories as vendor (etc.) files. So, `app/views/vendor/thing/chaplin_view.coffee` will be treated as vendor file.
 
