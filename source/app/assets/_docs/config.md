@@ -45,36 +45,36 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
 * **String** — path to your source files to be directly matched. You can use [globs](https://en.m.wikipedia.org/wiki/Glob_(programming)), so these strings may contain [wildcard characters](https://en.m.wikipedia.org/wiki/Wildcard_character) (`*`, `?`, etc). Example:
 
   ```javascript
-    joinTo: {
-      'app.css': 'path/to/*.css' # matches all CSS files
-    }
+  joinTo: {
+    'app.css': 'path/to/*.css' # matches all CSS files
+  }
   ```
 * **Regular expression** — feel free to define a pattern using regular expression if you used to. Example:
 
   ```javascript
-    joinTo: {
-      'app.js': /.js$/ # matches all JavaScript files
-    }
+  joinTo: {
+    'app.js': /.js$/ # matches all JavaScript files
+  }
   ```
 * **Function** — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like `Array.filter` function do). Example:
 
   ```javascript
-    joinTo: {
-      # matches all JavaScript files with filenames longer that 3 characters
-      'app.js': str => str.indexOf('.js') !== -1 && str.length > 3
-    }
+  joinTo: {
+    # matches all JavaScript files with filenames longer that 3 characters
+    'app.js': str => str.indexOf('.js') !== -1 && str.length > 3
+  }
   ```
 * **Array** — an array of any number and mix of the above types. Example:
 
   ```javascript
-    joinTo: {
-      'app.js': [
-        'path/to/specific/file.js',       # include specific file
-        'any/**/*.js',                    # all files with .js extension
-        /.es6.js$/,                       # all files with .es6.js extension
-        str => str.indexOf('tmp') === -1  # contains `tmp` substring
-      ]
-    }
+  joinTo: {
+    'app.js': [
+      'path/to/specific/file.js',       # include specific file
+      'any/**/*.js',                    # all files with .js extension
+      /.es6.js$/,                       # all files with .es6.js extension
+      str => str.indexOf('tmp') === -1  # contains `tmp` substring
+    ]
+  }
   ```
 
 ## `paths`
