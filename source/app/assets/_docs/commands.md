@@ -45,3 +45,5 @@ alias bbp='brunch build --production'
 alias bw='brunch watch'
 alias bws='brunch watch --server'
 ```
+
+If you need to understand in which environment Brunch was run, take a look in `process.env.NODE_ENV` variable. The content of this variable will be replaced with strings `'production'` or `'development'` during build time.
