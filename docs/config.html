@@ -181,23 +181,23 @@ Available formats:<ul>
 <p><code>Object</code>: <code>conventions</code> define tests, against which all file pathnames will be checked.</p>
 <ul>
 <li><code>ignored</code> key: <a href="#pattern-matching">matching pattern</a>. Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have <code>common.styl</code> file that you import in every stylus file, <code>common.styl</code> will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (<code>_common.styl</code>) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to <a href="http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/">Sass partials</a>. By default, files and directories that start with underscore (<code>_</code>) will be ignored, as well as anything under the <code>vendor/node/</code>, <code>vendor/ruby-*/</code>, <code>vendor/jruby-*/</code>, and <code>vendor/bundle/</code> directories.</li>
-<li><code>assets</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/assets[\\/]/</code>. If test gives true, file won&#39;t be compiled and will be just moved to public directory instead.</li>
-<li><code>vendor</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/(^bower_components|node_modules|vendor)[\\/]/</code>. If test gives true, file won&#39;t be wrapped in module, if there are any.</li>
+<li><code>assets</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/assets\//</code>. If test gives true, file won&#39;t be compiled and will be just moved to public directory instead.</li>
+<li><code>vendor</code> key: <a href="#pattern-matching">matching pattern</a>. Default value: <code>/(^bower_components|node_modules|vendor)\//</code>. If test gives true, file won&#39;t be wrapped in module, if there are any.</li>
 </ul>
 <p>Keep in mind that default brunch regexps, as you see, consider <strong>all</strong> <code>vendor/</code> (etc.) directories as vendor (etc.) files. So, <code>app/views/vendor/thing/chaplin_view.coffee</code> will be treated as vendor file.</p>
 <p>Example:</p>
 <pre><code class="lang-javascript">conventions: {
   ignored: () =&gt; false, // override defaults for no ignored files
-  assets: /files[\\/]/  // vendor/jquery/files/jq.img
+  assets: /files\//  // vendor/jquery/files/jq.img
 }
 </code></pre>
 <p>If you want to add to the ignore pattern instead of replace, you must copy the defaults into your config.</p>
 <p>Default ignore pattern:</p>
 <pre><code class="lang-javascript">conventions: {
   ignored: [
-    /[\\/]_/,
-    /vendor[\\/]node[\\/]/,
-    /vendor[\\/](j?ruby-.*|bundle)[\\/]/
+    /\/_/,
+    /vendor\/node\//,
+    /vendor\/(j?ruby-.*|bundle)\//
   ]
 }
 </code></pre>
