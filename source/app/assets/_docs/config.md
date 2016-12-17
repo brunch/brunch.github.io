@@ -457,8 +457,3 @@ Possible values:
         }
       }
     ```
-
-## Tips
-
-- You can use CoffeeScript to write configuration files. This way they'll be
-much shorter and concise. Simply create a file called `brunch-config.coffee`.
