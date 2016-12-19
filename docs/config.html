@@ -36,32 +36,32 @@ so you can also execute arbitrary JS and import Node.js modules there.</p>
 <h2 id="pattern-matching">Pattern matching</h2>
 <p>Internally, Brunch uses <a href="https://github.com/es128/anymatch">anymatch</a> for pattern matching — it&#39;s a module to match strings against configurable strings, globs, regular expressions or functions. If you want to define specific file pattern, you can use:</p>
 <ul>
-<li><p><strong>String</strong> — path to your source files to be directly matched. You can use <a href="https://en.m.wikipedia.org/wiki/Glob_(programming">globs</a>), so these strings may contain <a href="https://en.m.wikipedia.org/wiki/Wildcard_character">wildcard characters</a> (<code>*</code>, <code>?</code>, etc). Example:</p>
+<li><p><strong>String</strong> — path to your source files to be directly matched. You can use <a href="https://en.wikipedia.org/wiki/Glob_(programming">globs</a>), so these strings may contain <a href="https://en.wikipedia.org/wiki/Wildcard_character">wildcard characters</a> (<code>*</code>, <code>?</code>, etc). Example:</p>
 <pre><code class="lang-javascript">joinTo: {
-  &#39;app.css&#39;: &#39;path/to/*.css&#39; # matches all CSS files
+  &#39;app.css&#39;: &#39;path/to/*.css&#39; // matches all CSS files
 }
 </code></pre>
 </li>
 <li><p><strong>Regular expression</strong> — feel free to define a pattern using regular expression if you used to. Example:</p>
 <pre><code class="lang-javascript">joinTo: {
-  &#39;app.js&#39;: /.js$/ # matches all JavaScript files
+  &#39;app.js&#39;: /\.js$/ // matches all JavaScript files
 }
 </code></pre>
 </li>
 <li><p><strong>Function</strong> — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like <code>Array.filter</code> function do). Example:</p>
 <pre><code class="lang-javascript">joinTo: {
-  # matches all JavaScript files with filenames longer that 3 characters
-  &#39;app.js&#39;: str =&gt; str.indexOf(&#39;.js&#39;) !== -1 &amp;&amp; str.length &gt; 3
+  // matches all JavaScript files with filenames longer that 3 characters
+  &#39;app.js&#39;: path =&gt; path.endsWith(&#39;.js&#39;) &amp;&amp; path.length &gt; 3
 }
 </code></pre>
 </li>
 <li><p><strong>Array</strong> — an array of any number and mix of the above types. Example:</p>
 <pre><code class="lang-javascript">joinTo: {
   &#39;app.js&#39;: [
-    &#39;path/to/specific/file.js&#39;,       # include specific file
-    &#39;any/**/*.js&#39;,                    # all files with .js extension
-    /.es6.js$/,                       # all files with .es6.js extension
-    str =&gt; str.indexOf(&#39;tmp&#39;) === -1  # contains `tmp` substring
+    &#39;path/to/specific/file.js&#39;,   // include specific file
+    &#39;any/**/*.js&#39;,                // all files with .js extension
+    /\.test\.js$/,                // all files with .test.js extension
+    path =&gt; path.includes(&#39;tmp&#39;)  // contains `tmp` substring
   ]
 }
 </code></pre>
