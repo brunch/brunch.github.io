@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "scripts": {
-    "start": "brunch watch --server",
+    "start": "brunch build && jekyll serve --source public",
     "prod": "brunch build --production"
   },
   "dependencies": {},
