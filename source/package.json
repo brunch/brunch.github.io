@@ -4,6 +4,7 @@
   "author": "",
   "version": "0.0.1",
   "repository": "git@github.com:brunch/brunch.github.com.git",
+  "license": "MIT",
   "scripts": {
     "start": "brunch watch --server",
     "prod": "brunch build --production"
@@ -20,6 +21,8 @@
     "grunticon-lib": "^1.0.4",
     "jade-brunch": "^2.8",
     "javascript-brunch": "^2.0",
+    "autoprefixer": "^6.0",
+    "postcss-brunch": "^0.5",
     "jstransformer-marked": "^1.0.1",
     "uglify-js-brunch": "^2.0"
   }
