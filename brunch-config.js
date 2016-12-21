@@ -50,6 +50,13 @@ module.exports = {
   plugins: {
     babel: {presets: ['es2015', 'react']},
     jade: {locals: {nav: nav, social: social, docSidebar: docSidebar}},
-    autoReload: {enabled: {css: true, js: false, assets: true}}
+    autoReload: {enabled: {css: true, js: false, assets: true}},
+    postcss: {
+      processors: [
+        require('autoprefixer')({
+          browsers: ['last 2 versions']
+        }),
+      ],
+    }
   }
 };

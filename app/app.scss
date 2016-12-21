@@ -98,16 +98,20 @@ a {
 }
 
 #navbar {
-  /*border-bottom: 2px solid darken(mix($color-green, $color-blue, 30%), 15%);*/
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #e0e0e0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.95);
   margin-bottom: 20px;
   margin-left: -24px;
   margin-right: -24px;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+}
+
+@supports (backdrop-filter: blur()) {
+  #navbar {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
