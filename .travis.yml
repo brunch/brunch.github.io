@@ -7,4 +7,4 @@ before_script:
   - npm i
   - bower i
 script:
-  - bash ./deploy.sh
+  - ./deploy.sh

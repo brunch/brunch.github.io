@@ -1,9 +1,9 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
 set -o pipefail
 
 echo "$TRAVIS_BRANCH"
 
-if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]
+if [ "$TRAVIS_BRANCH" = "source" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]
 then
   echo "Deploying!"
   npm run prod
@@ -13,7 +13,7 @@ then
   git init
   git add .
   git commit -m "deploy"
-  git push --force --quiet "https://${GH_TOKEN}@github.com/denar90/brunch.github.io.git" master:gh-pages > /dev/null 2>&1
+  git push --force "https://${GH_TOKEN}@github.com/brunch/brunch.github.io.git" master
 else
   npm run prod
 fi
