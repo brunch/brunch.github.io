@@ -47,7 +47,6 @@ module.exports = {
     templates: {joinTo: 'app.js'},
     stylesheets: {joinTo: 'app.css'}
   },
-  paths: {public: '..'},
   plugins: {
     babel: {presets: ['es2015', 'react']},
     jade: {locals: {nav: nav, social: social, docSidebar: docSidebar}},
