@@ -96,6 +96,11 @@ Can be either of `javascript`, `stylesheet`, or `template`.
 `String`.
 Specifies the file extension that will be processed by this plugin.
 
+### Property: `include`
+
+`Array`.
+Specifies additional files which will be included into build.
+
 ### Property: `pattern`
 
 `RegExp`.
@@ -144,6 +149,10 @@ class BrunchPlugin {
     // Replace 'plugin' with your plugin's name;
     this.config = config.plugins.plugin;
   }
+  
+  // Optional
+  // Specifies additional files which will be included into build.
+  // get include() { return ['path-to-file-1', 'path-to-file-2']; }
 
   // file: File => Promise[Boolean]
   // Called before every compilation. Stops it when the error is returned.
