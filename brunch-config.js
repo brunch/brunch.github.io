@@ -47,6 +47,10 @@ module.exports = {
     templates: {joinTo: 'app.js'},
     stylesheets: {joinTo: 'app.css'}
   },
+  npm: {
+    styles: {'inuit.css': ['_inuit.scss']},
+    globals: {React: 'react', ReactDOM: 'react-dom', Promise: 'es6-promise'}
+  },
   plugins: {
     babel: {presets: ['es2015', 'react']},
     jade: {locals: {nav: nav, social: social, docSidebar: docSidebar}},
