@@ -9,7 +9,13 @@
     "start": "brunch build && jekyll serve --source public",
     "prod": "brunch build --production"
   },
-  "dependencies": {},
+  "dependencies": {
+    "es6-promise": "^4.0.5",
+    "inuitcss": "^6.0.0-beta.4",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "whatwg-fetch": "^2.0.1"
+  },
   "devDependencies": {
     "auto-reload-brunch": "^2.0",
     "babel-brunch": "^6.0",

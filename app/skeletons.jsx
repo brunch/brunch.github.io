@@ -1,3 +1,4 @@
+require('whatwg-fetch');
 var filterItems = require('./utils').filterItems;
 
 var Body = React.createClass({

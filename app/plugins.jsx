@@ -1,3 +1,4 @@
+require('whatwg-fetch');
 var utils = require('./utils');
 var filterItems = utils.filterItems;
 var compare = utils.compare;
