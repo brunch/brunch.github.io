@@ -6,7 +6,7 @@
   "repository": "git@github.com:brunch/brunch.github.com.git",
   "license": "MIT",
   "scripts": {
-    "start": "brunch build && jekyll serve --source public",
+    "start": "brunch watch --server",
     "prod": "brunch build --production"
   },
   "dependencies": {
