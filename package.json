@@ -1,9 +1,9 @@
 {
-  "name": "brunch.github.com",
+  "name": "brunch.github.io",
   "description": "The Brunch.io web site",
-  "author": "",
+  "author": "Brunch team (http://brunch.io)",
   "version": "0.0.1",
-  "repository": "git@github.com:brunch/brunch.github.com.git",
+  "repository": "git@github.com:brunch/brunch.github.io.git",
   "license": "MIT",
   "scripts": {
     "start": "brunch build && jekyll serve --source public",
