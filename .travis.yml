@@ -1,7 +1,9 @@
-language: node_js
 sudo: false
+language: node_js
 node_js:
   - node
+branches:
+  only: source
 before_script:
   - npm i
 script:
