@@ -1,7 +1,8 @@
 'use strict';
 
 function anchorize() {
-  var headers = [].slice.call(document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]'));
+  var sel = 'h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]';
+  var headers = [].slice.call(document.querySelectorAll(sel));
   headers.forEach(function(header) {
     var id = header.id;
     header.id = '';
