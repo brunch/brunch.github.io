@@ -157,13 +157,6 @@
       "description": "<a href=\"http://lesscss.org\">LESS</a> is the most popular dynamic stylesheet language."
     },
     {
-      "name": "Compass Brunch",
-      "url": "anthonyshort/compass-brunch",
-      "category": "Compilers",
-      "subcategory": "Style languages",
-      "description": "Compiles a project using Compass with support for the configuration file."
-    },
-    {
       "name": "Rework",
       "url": "visionmedia/rework",
       "category": "Compilers",
