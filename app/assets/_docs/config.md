@@ -191,8 +191,8 @@ Example:
 
 ```javascript
 plugins: {
-  on: ['autoprefixer-brunch'],
-  off: ['jade-brunch', 'static-jade-brunch'],
+  on: ['postcss-brunch'],
+  off: ['jade-brunch', 'handlebars-brunch'],
   npm: ['babel-brunch'],
   autoReload: {enabled: true}
 }
