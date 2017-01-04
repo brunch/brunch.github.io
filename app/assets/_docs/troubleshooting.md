@@ -28,7 +28,7 @@ Here's a quick summary on how to fix this:
 
 * try add this to your config:
 
-  ```javascript
+  ```js
   watcher: {
     awaitWriteFinish: true,
     usePolling: true

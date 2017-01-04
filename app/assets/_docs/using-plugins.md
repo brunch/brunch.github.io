@@ -47,7 +47,7 @@ Refer to the plugin's `README` on details regarding configuration.
 
 Typically it would go under the `config.plugins.<plugin>`:
 
-```javascript
+```js
 module.exports = {
   plugins: {
     babel: {
@@ -87,8 +87,8 @@ Which gets turned into something like:
 
 To make your JS component aware of the actual class name, a compiler can allow you to `require` that css file to get information about its class name mappings:
 
-```javascript
-var style = require('./button.styl');
+```js
+const style = require('./button.styl');
 // ...
 
 // style.button will return the obfuscated class name (something like "_button_xkplk_42" perhaps)

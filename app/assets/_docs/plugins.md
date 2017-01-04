@@ -137,7 +137,7 @@ If `pattern` was specified, everything pattern matches will be replaced with `st
 
 Let's take a look at the [boilerplate plugin](https://github.com/brunch/brunch-boilerplate-plugin). Feel free to use it to create your own plugins:
 
-```javascript
+```js
 'use strict';
 
 // Documentation for Brunch plugins:
@@ -149,7 +149,7 @@ class BrunchPlugin {
     // Replace 'plugin' with your plugin's name;
     this.config = config.plugins.plugin;
   }
-  
+
   // Optional
   // Specifies additional files which will be included into build.
   // get include() { return ['path-to-file-1', 'path-to-file-2']; }
@@ -208,7 +208,7 @@ module.exports = BrunchPlugin;
 
 The plugin would simply read the file and return its contents.
 
-```javascript
+```js
 class CSSCompiler {
   compile(file) {
     return Promise.resolve(file);
@@ -226,7 +226,7 @@ module.exports = CSSCompiler;
 
 An abstract minifier that consumes source maps.
 
-```javascript
+```js
 class UglifyOptimizer {
   constructor(config) {
     this.config = config.plugins.uglify;
@@ -267,8 +267,8 @@ A use case could be a styles compiler with CSS modules support that allows you t
   margin: 0
 ```
 
-```javascript
-var style = require('./button.styl');
+```js
+const style = require('./button.styl');
 // ...
 
 // style.button will return the obfuscated class name (something like "_button_xkplk_42" perhaps)
@@ -277,7 +277,7 @@ var style = require('./button.styl');
 
 All compiler needs to do is return `exports` in addition to `{data, map}`:
 
-```javascript
+```js
 class MyCompiler {
   compile({data, path}) {
     const compiled = magic(data);
@@ -300,7 +300,7 @@ Previously, what you would do in this case was to hook into `onCompile` and look
 
 So starting Brunch `2.8.0`, there is a better way.
 
-```javascript
+```js
 class JadeCompiler {
   compileStatic({data, path}) {
     return new Promise((resolve, reject) => {

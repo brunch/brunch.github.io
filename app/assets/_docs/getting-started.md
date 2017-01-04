@@ -18,7 +18,7 @@ Let's try to create a new app from it!
 
 Type
 
-```bash
+```sh
 $ brunch new proj -s es6
 ```
 
@@ -31,7 +31,7 @@ $ brunch new proj -s es6
 
 After the project is created, let's try to build it:
 
-```bash
+```sh
 $ brunch build
 01 Apr 10:45:30 - info: compiled initialize.js into app.js, copied index.html in 857ms
 ```
@@ -60,7 +60,7 @@ public/             // The "output" Brunch will re-generate on every build.
 
 Let's add a few files to our app, then build the app one more time:
 
-```bash
+```sh
 $ echo "body {font-family: 'Comic Sans MS'}" > app/main.css
 $ echo "console.log('Hello, world')" > app/logger.js
 $ brunch build
@@ -94,7 +94,7 @@ jQuery to our app - we'll need to use it somewhere too.
 
 Add the following code anywhere in `initialize.js`:
 
-```javascript
+```js
 var $ = require('jquery');
 console.log('Tasty Brunch, just trying to use jQuery!', $('body'));
 ```

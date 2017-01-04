@@ -25,7 +25,7 @@ Less common options:
 
 Simplest Brunch config looks like that. Just 7 lines of pure configuration:
 
-```javascript
+```js
 module.exports = {
   files: {
     javascripts: {joinTo: 'app.js'},
@@ -44,21 +44,21 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
 
 * **String** — path to your source files to be directly matched. You can use [globs](https://en.wikipedia.org/wiki/Glob_(programming)), so these strings may contain [wildcard characters](https://en.wikipedia.org/wiki/Wildcard_character) (`*`, `?`, etc). Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.css': 'path/to/*.css' // matches all CSS files
   }
   ```
 * **Regular expression** — feel free to define a pattern using regular expression if you used to. Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.js': /\.js$/ // matches all JavaScript files
   }
   ```
 * **Function** — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like `Array.filter` function do). Example:
 
-  ```javascript
+  ```js
   joinTo: {
     // matches all JavaScript files with filenames longer that 3 characters
     'app.js': path => path.endsWith('.js') && path.length > 3
@@ -66,7 +66,7 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
   ```
 * **Array** — an array of any number and mix of the above types. Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.js': [
       'path/to/specific/file.js',   // include specific file
@@ -87,7 +87,7 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
 
 Example:
 
-```javascript
+```js
 paths: {
   public: '/user/www/deploy'
 }
@@ -129,7 +129,7 @@ Overall ordering is [before] -> [bower] -> [vendor] -> [everything else] -> [aft
 
 Common example:
 
-```javascript
+```js
 files: {
   javascripts: {
     joinTo: {
@@ -156,12 +156,12 @@ It is important to keep a few things in mind regarding entry points & their know
   - `match('/', 'app/Home')` (where `app/Home` gets translated into `require('components/app/Home')`) — :-1:
 * two entry points can't write to the same file
 
-  ```javascript
+  ```js
   javascripts: {
     entryPoints: {
-      'app/initialize.coffee': 'javascripts/bundle.js',
+      'app/initialize.js': 'javascripts/bundle.js',
       // INVALID
-      'app/bookmarklet.coffee': 'javascripts/bundle.js'
+      'app/bookmarklet.js': 'javascripts/bundle.js'
     }
   }
   ```
@@ -170,7 +170,7 @@ It is important to keep a few things in mind regarding entry points & their know
 
 ## `npm`
 
-`Object`: configures NPM integration for front-end packages. Make sure you also declare the packages you depend on in your package.json `dependencies` section.
+`Object`: configures NPM integration for front-end packages. Make sure you also declare the packages you depend on in your `package.json` dependencies section.
 
 * `npm.enabled`: `Boolean`: a toggle of whether the integration is enabled, defaults to `true`.
 * `npm.globals`: `Object`: a mapping from global name (as a key) to the corresponding module name (string) to expose.
@@ -180,7 +180,7 @@ It is important to keep a few things in mind regarding entry points & their know
 
 Example:
 
-```javascript
+```js
 npm: {
   styles: {pikaday: ['css/pikaday.css']},
   globals: {Pikaday: 'pikaday'}
@@ -199,7 +199,7 @@ npm: {
 
 Example:
 
-```javascript
+```js
 plugins: {
   on: ['postcss-brunch'],
   off: ['jade-brunch', 'handlebars-brunch'],
@@ -223,7 +223,7 @@ Example:
 ```javascript
 conventions: {
   ignored: () => false, // override defaults for no ignored files
-  assets: /files\//  // vendor/jquery/files/jq.img
+  assets: /files\//     // vendor/jquery/files/jq.img
 }
 ```
 
@@ -248,7 +248,7 @@ You may find default values for `ignored`, `assets` and `vendor` fields in [Brun
 
 Example:
 
-```javascript
+```js
 // Same as 'commonjs'.
 modules: {
   wrapper: (path, data) => {
@@ -262,7 +262,7 @@ require.define({${path}: function(exports, require, module) {
 ```
 `modules.autoRequire`: `Object` specifies requires to be automatically added at the end of joined file. The example below will require both 'app' and 'foo':
 
-```javascript
+```js
 // Default behaviour.
 modules: {
   autoRequire: {
@@ -274,14 +274,14 @@ modules: {
 `modules.nameCleaner`: `Function` Allows you to set filterer function for module names,
 for example, change all 'app/file' to 'file'. Example:
 
-```javascript
+```js
 // Default behaviour.
 modules: {
   nameCleaner: path => path.replace(/^app\//, '')
 }
 ```
 
-```javascript
+```js
 // Add namespacing to a project.
 const {name} = require('./package.json');
 modules: {
@@ -291,7 +291,7 @@ modules: {
 
 Also `nameCleaner` option may help you when you need to change the default directory for app code to `src`, for example:
 
-```javascript
+```js
 modules: {
   nameCleaner: path => path.replace(/^src\//, '')
 }
@@ -321,11 +321,11 @@ When set to `true`, only errors trigger notifications. If you want to display su
 
 `Object`: contains params of webserver that runs on `brunch watch --server`.
 
-If a `brunch-server.js` or `brunch-server.coffee` file exists at the root of your project, Brunch will treat this as your custom web server. This can be overriden with the `server.path` option.
+If a `brunch-server.js` or `brunch-server.coffee` file exists at the root of your project, Brunch will treat this as your custom web server. This can be overridden with the `server.path` option.
 
 The server script must export a function that starts your custom server, either as the default exported module. This function should return an instance of [`http.Server`](https://nodejs.org/api/http.html#http_class_http_server) or an object containing a `close` property assigned to a function that shuts down the server. Examples:
 
-```javascript
+```js
 // javascript example using default export and node http core module
 module.exports = (port, path, callback) => {
   // your custom server code
@@ -338,7 +338,7 @@ module.exports = (port, path, callback) => {
 };
 ```
 
-```javascript
+```js
 // Example using custom `close` method.
 module.exports = (port, path, callback) => {
   // custom server code
@@ -362,7 +362,7 @@ If a custom server is not present, Brunch will use [pushserve](https://github.co
 
 Example:
 
-```javascript
+```js
 server: {
   port: 6832,
   base: '/myapp',
@@ -405,7 +405,7 @@ BRUNCH_ENV="testing" brunch build
 
 Defaults:
 
-```javascript
+```js
 overrides: {
   production: {
     optimize: true,
@@ -426,10 +426,10 @@ In other words, `joinTo` and `order` don't merge if defined under `overrides`, b
 
 `Object`: Optional settings for
 [chokidar](https://github.com/paulmillr/chokidar)
-file watching library used in brunch.
+file watching library used in Brunch.
 
-* `usePolling` (default: `false`) Whether to use fs.watchFile
-    (backed by polling), or fs.watch.
+* `usePolling` (default: `false`) Whether to use `fs.watchFile`
+    (backed by polling), or `fs.watch`.
     Polling is slower but can be more reliable.
 
 ## `hooks`

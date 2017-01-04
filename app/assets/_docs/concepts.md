@@ -23,7 +23,7 @@ That's all there is, really. While Brunch does assume your code is going to live
 
 The only required piece of configuration is telling Brunch which output files you want — and it couldn't be simpler:
 
-```javascript
+```js
 module.exports = {
   files: {
     javascripts: {joinTo: 'app.js'},
@@ -36,11 +36,11 @@ This will concatenate all your javascript files into `public/app.js`.
 
 If you want a little more control, like splitting your app code from vendor files into separate bundles, that's just as easy:
 
-```javascript
+```js
 module.exports = {
   files: {
     javascripts: {joinTo: {
-      'app.js': /^app/, // all code from 'app/',
+      'app.js': /^app/,       // all code from 'app/',
       'vendor.js': /^(?!app)/ // all BUT app code - 'vendor/', 'node_modules/', etc
     }},
     stylesheets: {joinTo: 'app.css'}
