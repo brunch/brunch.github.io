@@ -101,11 +101,11 @@ files: {
 }
 ```
 
-Note that for other assets that come from NPM packages (like images, fonts, etc), you will have to manually copy them to your public folder. You can use the npm's `postinstall` hook to do the copying. See [FAQ](/docs/faq.html).
+Note that for other assets that come from NPM packages (like images, fonts, etc), you will have to manually copy them to your public folder. You can use the npm's `postinstall` hook to do the copying. See [FAQ](/docs/faq).
 
 ### Making packages global
 
-It's possible to expose npm packages to `window` — so that you can access the module without requiring it. See [docs](/docs/config.html#-npm-).
+It's possible to expose npm packages to `window` — so that you can access the module without requiring it. See [docs](/docs/config#-npm-).
 
 ## Hot Module Replacement
 

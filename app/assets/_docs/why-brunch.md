@@ -14,7 +14,7 @@ Even more so if you run the watcher — it will only rebuild what was changed, n
 (Obviously, you don't have to take our word for it. See [this story](https://github.com/brunch/brunch/issues/1234) shared with us by a webpack user.)
 
 In order to achieve both goals, Brunch does have to make certain assumptions about your application, and thus be opinionated.
-See the [core concepts page](/docs/concepts.html) for more on this.
+See the [core concepts page](/docs/concepts) for more on this.
 
 Besides configs, brunch is also **simpler in terms of commands**.
 Grunt / Gulp commands replicate all plugins it loads.

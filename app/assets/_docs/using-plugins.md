@@ -1,6 +1,6 @@
 # Brunch: Using plugins
 
-Brunch uses node.js plugins to provide compilation / linting / optimization functionality.
+Brunch uses Node.js plugins to provide compilation / linting / optimization functionality.
 
 Brunch has a plugin ecosystem to achieve interoperability with various tools simply via [plugin API](/docs/plugins.html).
 
@@ -25,7 +25,7 @@ Brunch plugins can fall into three broad categories (one plugin can belong to se
   As the name implies, they optimize compiled JS or CSS files.
   Examples of optimizers include: a JavaScript uglifier; a CSS prefixer and minifier.
 
-You can browse some of the community-supported plugins in the [Plugins](/plugins.html) section.
+You can browse some of the community-supported plugins in the [Plugins](/plugins) section.
 
 ## Installation
 

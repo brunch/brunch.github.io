@@ -1,6 +1,6 @@
 # Brunch: Plugin API
 
-Brunch plugins are plain JS classes which are initialized with brunch configs.
+Brunch plugins are plain JS classes which are initialized with Brunch configs.
 
 <div class="toc-placeholder"></div>
 
@@ -254,7 +254,7 @@ UglifyOptimizer.prototype.extension = 'js';
 module.exports = UglifyOptimizer;
 ```
 
-See the [plugins page](http://brunch.io/plugins.html) for a list of plugins. Feel free to add new plugins by editing [plugins.json](https://github.com/brunch/brunch.github.io/blob/master/plugins.json) and sending a Pull Request.
+See the [plugins page](http://brunch.io/plugins) for a list of plugins. Feel free to add new plugins by editing [plugins.json](https://github.com/brunch/brunch.github.io/blob/master/plugins.json) and sending a Pull Request.
 
 ### Exporting JS from stylesheets
 

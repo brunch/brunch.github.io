@@ -8,7 +8,7 @@
 
 ## Tasting your first Brunch
 
-So, you've installed node.js and brunch itself (`npm install -g brunch`).
+So, you've installed Node.js and brunch itself (`npm install -g brunch`).
 You're probably starving at this point. Let's get *straight to the business*.
 
 `brunch new` helps to init new Brunch project from one of
@@ -74,15 +74,9 @@ Let's inspect files in `public` to understand what happened at this point:
 
 ## Serving the Brunch
 
-Executing `brunch build` every time seems to take too much effort. Instead, let's
-just do `brunch watch --server`. The `watch` would **automatically & efficiently rebuild the
-app on every change**. `--server` flag would also launch a HTTP server. The default
-location for the server is [`http://localhost:3333`](http://localhost:3333), so open this URL in a browser
-of your choice. You'll see our app and everything which was located in `public`
-directory.
+Executing `brunch build` every time seems to take too much effort. Instead, let's just do `brunch watch --server`. The `watch` would **automatically & efficiently rebuild the app on every change**. `--server` flag would also launch a HTTP server. The default location for the server is [`http://localhost:3333`](http://localhost:3333), so open this URL in a browser of your choice. You'll see our app and everything which was located in `public` directory.
 
-Since the shell console would be busy with `brunch watch` command, we'll need
-to open a new window.
+Since the shell console would be busy with `brunch watch` command, we'll need to open a new window.
 
 ## Including third-party ingredients
 

@@ -3,6 +3,7 @@
 <div class="toc-placeholder"></div>
 
 <a name="emfile"></a>
+
 ## I get an EMFILE error when I build a Brunch project
 
 `EMFILE` means there are too many open files.

@@ -1,7 +1,6 @@
 # Brunch: Config
 
-Brunch uses configuration file `brunch-config.js` *(or `.coffee`)* to manage various
-aspects of your app.
+Brunch uses configuration file `brunch-config.js` _(or `.coffee`)_ to manage various aspects of your app.
 
 * [**`paths`**](#-paths-) — where to take files from and where to put generated ones
 * [**`files`**](#-files-) — which files exactly should Brunch generate and how.
@@ -348,7 +347,7 @@ module.exports = (port, path, callback) => {
 }
 ```
 
-* `path`: (optional) custom path to nodejs file that will be loaded to run your custom server.
+* `path`: (optional) custom path to Node.js file that will be loaded to run your custom server.
 
 If a custom server is not present, Brunch will use [pushserve](https://github.com/paulmillr/pushserve). If using your own, only `port` from the following options can be set from the config.
 
@@ -370,7 +369,7 @@ server: {
 }
 ```
 
-* `command`: command to launch a non-nodejs server as a child process. Ex: `server: command: 'php -S 0.0.0.0:3000 -t public'`
+* `command`: command to launch a non-Node.js server as a child process. Ex: `server: command: 'php -S 0.0.0.0:3000 -t public'`
 
 ## `sourceMaps`
 
@@ -453,22 +452,22 @@ Possible values:
   - `sourceFiles` — array of objects representing each source file
   - `allSourceFiles` array of objects representing each source file — this one also includes files that don't belong to the original type (e.g. if a styles compiler adds a JS module, path would be the concatenated JS file, and one of the `allSourceFiles` will be a style file
 
-    Each member of `changedAssets` array is an object with:
+  Each member of `changedAssets` array is an object with:
 
   - `path` — original path of an asset
   - `destinationPath` — path of an asset in the public directory
 
-    Example:
+  Example:
 
-    ```javascript
-      hooks: {
-        onCompile(generatedFiles, changedAssets) {
-          console.log(generatedFiles.map(f => f.path));
-        }
+  ```javascript
+    hooks: {
+      onCompile(generatedFiles, changedAssets) {
+        console.log(generatedFiles.map(f => f.path));
       }
-    ```
+    }
+  ```
 
 ## Tips
 
-- You can use CoffeeScript to write configuration files. This way they'll be
+You can use CoffeeScript to write configuration files. This way they'll be
 much shorter and concise. Simply create a file called `brunch-config.coffee`.
