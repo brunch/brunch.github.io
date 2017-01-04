@@ -71,13 +71,6 @@
       "description": "Adds support for <a href=\"https://github.com/Gozala/wisp\">Wisp</a>, which is a cute Clojure-like Lisp."
     },
     {
-      "name": "react-brunch",
-      "url": "darthapo/react-brunch",
-      "category": "Compilers",
-      "subcategory": "Script languages",
-      "description": "Adds support for <a href=\"http://facebook.github.io/react/\">React</a> templates."
-    },
-    {
       "name": "es6-module-transpiler-brunch",
       "url": "gcollazo/es6-module-transpiler-brunch",
       "category": "Compilers",
@@ -129,13 +122,6 @@
       "featured": true
     },
     {
-      "name": "cssnext-brunch",
-      "url": "cssnext/cssnext-brunch",
-      "category": "Compilers",
-      "subcategory": "Style languages",
-      "description": "Allow you to use tomorrow's CSS syntax today using <a href=\"http://cssnext.github.io/\">cssnext</a>."
-    },
-    {
       "name": "Stylus-brunch",
       "url": "brunch/stylus-brunch",
       "category": "Compilers",
@@ -176,13 +162,6 @@
       "category": "Compilers",
       "subcategory": "Style languages",
       "description": "(a CSS postprocessor). Add as many PostCSS plugins as you want (like <a href=\"https://github.com/postcss/autoprefixer\">Autoprefixer</a>)."
-    },
-    {
-      "name": "autoprefixer-brunch",
-      "url": null,
-      "category": "Compilers",
-      "subcategory": "Style languages",
-      "description": "autoprefixer-brunch. Deprecated. Switch to PostCSS-brunch instead."
     },
     {
       "name": "cssnano-brunch",
