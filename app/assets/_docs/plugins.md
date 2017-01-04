@@ -9,18 +9,18 @@ Brunch plugins are plain JS classes which are initialized with brunch configs.
 Almost every plugin is usually working with so-called `File` entities:
 
 ```json
-{"data": "var hello = 42;\n", "path": "app/file.js"}
+{
+  "data": "var hello = 42;\n",
+  "path": "app/file.js"
+}
 ```
 
 As you can see, `File`s are bald JS `Object`s, which may contain fields like:
 
-- `path` - system path to the file
-- `data` - file data as JS `String`
-- `map` - source map
-- and anything else that could be consumed by next plugins.
-  For example, the linter plugin may add `babelTree` to the `File`,
-  the compiler plugin in pipeline would see it and won't do the parsing twice.
-  (Though this will not work with parallelized build.)
+* `path` - system path to the file
+* `data` - file data as JS `String`
+* `map` - source map
+* and anything else that could be consumed by next plugins. For example, the linter plugin may add `babelTree` to the `File`, the compiler plugin in pipeline would see it and won't do the parsing twice. (Though this will not work with parallelized build.)
 
 ### Pipeline
 
@@ -337,5 +337,4 @@ This will make more people aware of it.
 
 ## Tips
 
-- Make Brunch plugins as simple as possible. Don't try to copy Grunt, Gulp or other
-  task runners approaches.
+Make Brunch plugins as simple as possible. Don't try to copy Grunt, Gulp or other task runners approaches.

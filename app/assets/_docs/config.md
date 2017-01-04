@@ -3,19 +3,19 @@
 Brunch uses configuration file `brunch-config.js` *(or `.coffee`)* to manage various
 aspects of your app.
 
-* [**`paths`**](#-paths-) - where to take files from and where to put generated ones
-* [**`files`**](#-files-) - which files exactly should Brunch generate and how.
-* [**`npm`**](#-npm-) - NPM dependencies settings
-* [**`plugins`**](#-plugins-) - individual plugin settings.
+* [**`paths`**](#-paths-) — where to take files from and where to put generated ones
+* [**`files`**](#-files-) — which files exactly should Brunch generate and how.
+* [**`npm`**](#-npm-) — NPM dependencies settings
+* [**`plugins`**](#-plugins-) — individual plugin settings.
 
 Less common options:
 
-* [`modules`](#-modules-) - specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
-* [`conventions`](#-conventions-) - defines which files are treated as assets and which ones are ignored in your app.
-* [`watcher`](#-watcher-) - low-level configuration of the file watcher which empowers Brunch.
-* [`server`](#-server-) - allows to describe custom web-servers instead of the built-in one.
-* `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` - simple true/false options
-* [`hooks`](#-hooks-) - allows to specify handlers for different moments of building cycle
+* [`modules`](#-modules-) — specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
+* [`conventions`](#-conventions-) — defines which files are treated as assets and which ones are ignored in your app.
+* [`watcher`](#-watcher-) — low-level configuration of the file watcher which empowers Brunch.
+* [`server`](#-server-) — allows to describe custom web-servers instead of the built-in one.
+* `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` — simple true/false options
+* [`hooks`](#-hooks-) — allows to specify handlers for different moments of building cycle
 
 <span class="note">
   You can see the config schema, and all the defaults, in the `configBaseSchema` of [`lib/utils/config-validate.js`](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js#L9) in the Brunch source code.
@@ -110,18 +110,18 @@ Also, consider [`module.nameCleaner` option](#-modules-), if you need to require
 `Required, object`: `files` configures handling of application files: which compiler would be used on which file, what name should output file have etc. Any paths specified here must be listed in `paths.watched` as described above, for building.
 
 * `<type>`: `javascripts`, `stylesheets` or `templates`
-    * joinTo: (required) describes how files will be compiled & joined together.
-      Available formats:
-        * `'outputFilePath'` in order to have all source files compiled together to one
-        * map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
-    * entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
-      Available formats:
-        * `'entryFile.js': 'outputFilePath'`
-        * `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
-    * order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
-        * before: [matching pattern](#pattern-matching) defining files that will be loaded before other files
-        * after: [matching pattern](#pattern-matching) defining files that will be loaded after other files
-    * pluginHelpers: (optional) specify which output file (or array of files) plugins' include files concatenate into. Defaults to the output file that `vendor` files are being joined to, the first one with `vendor` in its name/path, or just the first output file listed in your joinTo object.
+  - joinTo: (required) describes how files will be compiled & joined together.
+    Available formats:
+    + `'outputFilePath'` in order to have all source files compiled together to one
+    + map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
+  - entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
+    Available formats:
+    + `'entryFile.js': 'outputFilePath'`
+    + `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
+  - order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
+    + before: [matching pattern](#pattern-matching) defining files that will be loaded before other files
+    + after: [matching pattern](#pattern-matching) defining files that will be loaded after other files
+  - pluginHelpers: (optional) specify which output file (or array of files) plugins' include files concatenate into. Defaults to the output file that `vendor` files are being joined to, the first one with `vendor` in its name/path, or just the first output file listed in your joinTo object.
 
 All files from `vendor` directory are by default concatenated before all files from `app` directory. So, `vendor/scripts/jquery.js` would be loaded before `app/script.js` even if order config is empty. Files from Bower packages are included by default before the `vendor` files.
 
@@ -150,10 +150,10 @@ files: {
 
 It is important to keep a few things in mind regarding entry points & their known limitations:
 
-* only the things you `require` will be included into an entryPoint bundle. This means non-app/non-npm deps won't be included. Also means only statically analyzable `require`s will work:
-  * `require('something')` — :+1:
-  * `['a', 'b', 'c'].forEach(dep => require(dep))` — :-1:
-  * `match('/', 'app/Home')` (where `app/Home` gets translated into `require('components/app/Home')`) — :-1:
+* only the things you `require` will be included into an entryPoint bundle. This means non-app/non-npm dependencie won't be included. Also means only statically analyzable `require`s will work:
+  - `require('something')` — :+1:
+  - `['a', 'b', 'c'].forEach(dep => require(dep))` — :-1:
+  - `match('/', 'app/Home')` (where `app/Home` gets translated into `require('components/app/Home')`) — :-1:
 * two entry points can't write to the same file
 
   ```javascript
@@ -449,14 +449,14 @@ Possible values:
     }
     ```
 * `onCompile` - `Function`: Optional callback to be called every time brunch completes a compilation cycle. It is passed a `generatedFiles` array, as well as `changedAssets` array. Each member of `generatedFiles` array is an object with:
-    * `path` — path of the compiled file
-    * `sourceFiles` — array of objects representing each source file
-    * `allSourceFiles` array of objects representing each source file — this one also includes files that don't belong to the original type (e.g. if a styles compiler adds a JS module, path would the the concated JS file, and one of the `allSourceFiles` will be a style file
+  - `path` — path of the compiled file
+  - `sourceFiles` — array of objects representing each source file
+  - `allSourceFiles` array of objects representing each source file — this one also includes files that don't belong to the original type (e.g. if a styles compiler adds a JS module, path would be the concatenated JS file, and one of the `allSourceFiles` will be a style file
 
     Each member of `changedAssets` array is an object with:
 
-    * `path` — original path of an asset
-    * `destinationPath` — path of an asset in the public directory
+  - `path` — original path of an asset
+  - `destinationPath` — path of an asset in the public directory
 
     Example:
 

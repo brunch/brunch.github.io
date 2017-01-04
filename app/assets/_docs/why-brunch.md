@@ -58,7 +58,7 @@ But even then, your rebuilds during `watch` won't be incremental — they will a
 
 With Asset pipeline there are similar disadvantages. With Brunch:
 
-- You can use any backend you like, be it node.js, Rails or Lift. You can even keep frontend and backend as separate projects.
-- You'll get automated module support
-- You'll have NPM & Bower support
-- Rebuilds would be fast and incremental
+* You can use any backend you like, be it Node.js, Rails or Lift. You can even keep frontend and backend as separate projects.
+* You'll get automated module support
+* You'll have NPM & Bower support
+* Rebuilds would be fast and incremental

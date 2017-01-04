@@ -4,9 +4,9 @@ Brunch operates on a set of assumptions about how your app is authored and compi
 
 Any Brunch **project** consists of the following:
 
-* a **config**, which allows you to customize various aspects of Brunch, as well as configure plugins (see [config reference](/docs/config.html))
+* a **config**, which allows you to customize various aspects of Brunch, as well as configure plugins (see [config reference](/docs/config))
 * **`package.json`**, which lists the plugins you want Brunch to use, as well as your app's own dependencies
-  * a **plugin** is what allows Brunch to provide any custom behavior or handle all the various JS-/CSS- transpiled languages for you (see [Using plugins](/docs/using-plugins.html) and [plugins list](/plugins.html) to get an idea)
+  * a **plugin** is what allows Brunch to provide any custom behavior or handle all the various JS-/CSS- transpiled languages for you (see [Using plugins](/docs/using-plugins) and [plugins list](/plugins) to get an idea)
 * **source files** — files that you author in your preferred language, which later get compiled into either JS or CSS
 * **assets** — files that are copied as-is (in some cases these can be compiled too, e.g. Jade &rarr; HTML)
 * **vendor files** — JS and CSS files that do not need any processing
@@ -15,9 +15,9 @@ Any Brunch **project** consists of the following:
 What Brunch does, in essence, is this:
 
 1. compile your source files using appropriate plugins
-2. concatenate several compiled source files into one
-3. write the result into a file
-4. copy assets
+1. concatenate several compiled source files into one
+1. write the result into a file
+1. copy assets
 
 That's all there is, really. While Brunch does assume your code is going to live under `app/` and your assets under `app/assets/`, and build result is put under `public/`, you are by all means free to use your own structure. Just [tell Brunch what it is](/docs/config.html#paths).
 

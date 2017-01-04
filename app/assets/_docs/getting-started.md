@@ -69,10 +69,8 @@ $ brunch build
 
 Let's inspect files in `public` to understand what happened at this point:
 
-- `app.css` simply has content of `app/main.css` and nothing else
-- `app.js` has require definition and contents of both `initialize.js` and `logger.js`.
-  Each file is wrapped into a JS function, which defines a module. This
-  allows us to do things like `require('./logger')`.
+* `app.css` simply has content of `app/main.css` and nothing else
+* `app.js` has require definition and contents of both `initialize.js` and `logger.js`. Each file is wrapped into a JS function, which defines a module. This allows us to do things like `require('./logger')`.
 
 ## Serving the Brunch
 

@@ -9,9 +9,9 @@ Create new brunch project. Full syntax: `brunch new [path] [-s skeleton]`
 
 Example:
 
-- `brunch new`: The default skeleton does not add any libraries or frameworks
-- `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
-- `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
+* `brunch new`: The default skeleton does not add any libraries or frameworks
+* `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
+* `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
 
 ## `brunch build` / `brunch b`
 
