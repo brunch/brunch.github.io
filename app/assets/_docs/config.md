@@ -217,6 +217,8 @@ conventions: {
 }
 ```
 
+You may find default values for `ignored`, `assets` and `vendor` fields in [Brunch sources](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js).
+
 ## `modules`
 
 `Object`: consists of `wrapper` and `definition` subsettings.
