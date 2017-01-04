@@ -202,11 +202,11 @@ plugins: {
 
 `Object`: `conventions` define tests, against which all file pathnames will be checked.
 
-* `ignored` key: [matching pattern](#pattern-matching). Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have `common.styl` file that you import in every stylus file, `common.styl` will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (`_common.styl`) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to [Sass partials](http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/). By default, files and directories that start with underscore (`_`) will be ignored, as well as anything under the `vendor/node/`, `vendor/ruby-*/`, `vendor/jruby-*/`, and `vendor/bundle/` directories.
-* `assets` key: [matching pattern](#pattern-matching). Default value: `/assets\//`. If test gives true, file won't be compiled and will be just moved to public directory instead.
-* `vendor` key: [matching pattern](#pattern-matching). Default value: `/(^bower_components|node_modules|vendor)\//`. If test gives true, file won't be wrapped in module, if there are any.
+* `ignored` key: [matching pattern](#pattern-matching). Will check against files that should be ignored by brunch compiler, but are still watched by the watcher. For example, when you have `common.styl` file that you import in every stylus file, `common.styl` will be compiled on its own too which will result in duplicated code. When prefixing it with underscore (`_common.styl`) you are still able to import it in dependent files, but it won’t be compiled twice. The feature is very similar to [Sass partials](http://wiseheartdesign.com/articles/2010/01/22/structuring-a-sass-project/). By default, files and directories that start with underscore (`_`) will be ignored.
+* `assets` key: [matching pattern](#pattern-matching). If test gives true, file won't be compiled and will be just moved to public directory instead.
+* `vendor` key: [matching pattern](#pattern-matching). If test gives true, file won't be wrapped in module, if there are any.
 
-Keep in mind that default brunch regexps, as you see, consider **all** `vendor/` (etc.) directories as vendor (etc.) files. So, `app/views/vendor/thing/chaplin_view.coffee` will be treated as vendor file.
+Keep in mind that default brunch regexps, as you see, consider **all** `vendor/` (etc.) directories as vendor (etc.) files. So, `app/views/vendor/thing/file.js` will be treated as vendor file.
 
 Example:
 
@@ -217,19 +217,7 @@ conventions: {
 }
 ```
 
-If you want to add to the ignore pattern instead of replace, you must copy the defaults into your config.
-
-Default ignore pattern:
-
-```javascript
-conventions: {
-  ignored: [
-    /\/_/,
-    /vendor\/node\//,
-    /vendor\/(j?ruby-.*|bundle)\//
-  ]
-}
-```
+You may find default values for `ignored`, `assets` and `vendor` fields in [Brunch sources](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js).
 
 ## `modules`
 
