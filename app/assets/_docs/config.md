@@ -93,6 +93,16 @@ paths: {
 }
 ```
 
+If you need to change the default directory for application's code, don't forget to add this directory to the `watched` field, like so:
+
+```javascript
+paths: {
+  watched: ['src']
+}
+```
+
+Also, consider [`module.nameCleaner` option](#-modules-), if you need to require your modules without prefixing with folder name.
+
 ## `files`
 
 (`javascripts, stylesheets, templates`; `joinTo`s and `order`)
@@ -266,13 +276,25 @@ for example, change all 'app/file' to 'file'. Example:
 
 ```javascript
 // Default behaviour.
-modules: {nameCleaner: path => path.replace(/^app\//, '') }
+modules: {
+  nameCleaner: path => path.replace(/^app\//, '')
+}
 ```
 
 ```javascript
 // Add namespacing to a project.
 const {name} = require('./package.json');
-modules: {nameCleaner: path => path.replace(/^app/, name) }
+modules: {
+  nameCleaner: path => path.replace(/^app/, name)
+}
+```
+
+Also `nameCleaner` option may help you when you need to change the default directory for app code to `src`, for example:
+
+```javascript
+modules: {
+  nameCleaner: path => path.replace(/^src\//, '')
+}
 ```
 
 ## `notifications`
