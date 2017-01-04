@@ -116,7 +116,7 @@ Hmm...that's exactly the same command from our previous step. Whatever. Let's cr
 $ echo 'console.log(`Good morning, ${process.env.USER}!`)' > app/morning.js
 ```
 
-Since you've added Babel plugin to the board, Brunch would *magically* recompile the app and include *compiled* content of `morning.coffee` in the output file. **Voila!**
+Since you've added Babel plugin to the board, Brunch would *magically* recompile the app and include *compiled* content of `morning.js` in the output file. **Voila!**
 
 ## Becoming professional cook
 
