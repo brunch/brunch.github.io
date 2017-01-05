@@ -3,6 +3,7 @@
 <div class="toc-placeholder"></div>
 
 <a name="emfile"></a>
+
 ## I get an EMFILE error when I build a Brunch project
 
 `EMFILE` means there are too many open files.
@@ -16,7 +17,11 @@ If you are running `brunch watch` and change something, to later find out that t
 
 It is caused by the way some editors write to files.
 It also can happen when you edit files over ssh.
-You can see these threads for more details: https://github.com/brunch/brunch/issues/1250 https://github.com/brunch/brunch/issues/1219 https://github.com/brunch/brunch/issues/1303
+You can see these threads for more details:
+
+* [brunch/brunch#1250](https://github.com/brunch/brunch/issues/1250)
+* [brunch/brunch#1219](https://github.com/brunch/brunch/issues/1219)
+* [brunch/brunch#1303](https://github.com/brunch/brunch/issues/1303)
 
 Here's a quick summary on how to fix this:
 
@@ -24,7 +29,7 @@ Here's a quick summary on how to fix this:
 
 * try add this to your config:
 
-  ```javascript
+  ```js
   watcher: {
     awaitWriteFinish: true,
     usePolling: true

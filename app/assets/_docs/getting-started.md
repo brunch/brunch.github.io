@@ -8,7 +8,7 @@
 
 ## Tasting your first Brunch
 
-So, you've installed node.js and brunch itself (`npm install -g brunch`).
+So, you've installed Node.js and brunch itself (`npm install -g brunch`).
 You're probably starving at this point. Let's get *straight to the business*.
 
 `brunch new` helps to init new Brunch project from one of
@@ -18,7 +18,7 @@ Let's try to create a new app from it!
 
 Type
 
-```bash
+```sh
 $ brunch new proj -s es6
 ```
 
@@ -31,7 +31,7 @@ $ brunch new proj -s es6
 
 After the project is created, let's try to build it:
 
-```bash
+```sh
 $ brunch build
 01 Apr 10:45:30 - info: compiled initialize.js into app.js, copied index.html in 857ms
 ```
@@ -60,7 +60,7 @@ public/             // The "output" Brunch will re-generate on every build.
 
 Let's add a few files to our app, then build the app one more time:
 
-```bash
+```sh
 $ echo "body {font-family: 'Comic Sans MS'}" > app/main.css
 $ echo "console.log('Hello, world')" > app/logger.js
 $ brunch build
@@ -69,22 +69,14 @@ $ brunch build
 
 Let's inspect files in `public` to understand what happened at this point:
 
-- `app.css` simply has content of `app/main.css` and nothing else
-- `app.js` has require definition and contents of both `initialize.js` and `logger.js`.
-  Each file is wrapped into a JS function, which defines a module. This
-  allows us to do things like `require('./logger')`.
+* `app.css` simply has content of `app/main.css` and nothing else
+* `app.js` has require definition and contents of both `initialize.js` and `logger.js`. Each file is wrapped into a JS function, which defines a module. This allows us to do things like `require('./logger')`.
 
 ## Serving the Brunch
 
-Executing `brunch build` every time seems to take too much effort. Instead, let's
-just do `brunch watch --server`. The `watch` would **automatically & efficiently rebuild the
-app on every change**. `--server` flag would also launch a HTTP server. The default
-location for the server is [`http://localhost:3333`](http://localhost:3333), so open this URL in a browser
-of your choice. You'll see our app and everything which was located in `public`
-directory.
+Executing `brunch build` every time seems to take too much effort. Instead, let's just do `brunch watch --server`. The `watch` would **automatically & efficiently rebuild the app on every change**. `--server` flag would also launch a HTTP server. The default location for the server is [`http://localhost:3333`](http://localhost:3333), so open this URL in a browser of your choice. You'll see our app and everything which was located in `public` directory.
 
-Since the shell console would be busy with `brunch watch` command, we'll need
-to open a new window.
+Since the shell console would be busy with `brunch watch` command, we'll need to open a new window.
 
 ## Including third-party ingredients
 
@@ -96,7 +88,7 @@ jQuery to our app - we'll need to use it somewhere too.
 
 Add the following code anywhere in `initialize.js`:
 
-```javascript
+```js
 var $ = require('jquery');
 console.log('Tasty Brunch, just trying to use jQuery!', $('body'));
 ```

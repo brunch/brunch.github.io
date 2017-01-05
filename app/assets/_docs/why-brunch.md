@@ -14,7 +14,7 @@ Even more so if you run the watcher — it will only rebuild what was changed, n
 (Obviously, you don't have to take our word for it. See [this story](https://github.com/brunch/brunch/issues/1234) shared with us by a webpack user.)
 
 In order to achieve both goals, Brunch does have to make certain assumptions about your application, and thus be opinionated.
-See the [core concepts page](/docs/concepts.html) for more on this.
+See the [core concepts page](/docs/concepts) for more on this.
 
 Besides configs, brunch is also **simpler in terms of commands**.
 Grunt / Gulp commands replicate all plugins it loads.
@@ -58,7 +58,7 @@ But even then, your rebuilds during `watch` won't be incremental — they will a
 
 With Asset pipeline there are similar disadvantages. With Brunch:
 
-- You can use any backend you like, be it node.js, Rails or Lift. You can even keep frontend and backend as separate projects.
-- You'll get automated module support
-- You'll have NPM & Bower support
-- Rebuilds would be fast and incremental
+* You can use any backend you like, be it Node.js, Rails or Lift. You can even keep frontend and backend as separate projects.
+* You'll get automated module support
+* You'll have NPM & Bower support
+* Rebuilds would be fast and incremental

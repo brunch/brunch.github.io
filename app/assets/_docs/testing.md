@@ -18,8 +18,8 @@ For integration testing in the browser, there are no additional steps required.
 
 This simple function will load all your files that are ending with the `-test` suffix (`user-view-test.coffee` etc).
 
-```javascript
+```js
 window.require.list()
-  .filter(function(name) {return /-test$/.test(name);})
+  .filter(name => /-test$/.test(name))
   .forEach(require);
 ```

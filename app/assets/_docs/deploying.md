@@ -19,7 +19,7 @@
     directory to the directory that is served by a webserver.
   </li>
   <li>
-    If you use <strong>hosting that supports node.js</strong>, you can
+    If you use <strong>hosting that supports Node.js</strong>, you can
     install brunch there and auto-build app every time.
   </li>
   <li>

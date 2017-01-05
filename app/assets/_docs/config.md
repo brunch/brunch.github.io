@@ -1,21 +1,20 @@
 # Brunch: Config
 
-Brunch uses configuration file `brunch-config.js` *(or `.coffee`)* to manage various
-aspects of your app.
+Brunch uses configuration file `brunch-config.js` _(or `.coffee`)_ to manage various aspects of your app.
 
-* [**`paths`**](#-paths-) - where to take files from and where to put generated ones
-* [**`files`**](#-files-) - which files exactly should Brunch generate and how.
-* [**`npm`**](#-npm-) - NPM dependencies settings
-* [**`plugins`**](#-plugins-) - individual plugin settings.
+* [**`paths`**](#-paths-) — where to take files from and where to put generated ones
+* [**`files`**](#-files-) — which files exactly should Brunch generate and how.
+* [**`npm`**](#-npm-) — NPM dependencies settings
+* [**`plugins`**](#-plugins-) — individual plugin settings.
 
 Less common options:
 
-* [`modules`](#-modules-) - specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
-* [`conventions`](#-conventions-) - defines which files are treated as assets and which ones are ignored in your app.
-* [`watcher`](#-watcher-) - low-level configuration of the file watcher which empowers Brunch.
-* [`server`](#-server-) - allows to describe custom web-servers instead of the built-in one.
-* `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` - simple true/false options
-* [`hooks`](#-hooks-) - allows to specify handlers for different moments of building cycle
+* [`modules`](#-modules-) — specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
+* [`conventions`](#-conventions-) — defines which files are treated as assets and which ones are ignored in your app.
+* [`watcher`](#-watcher-) — low-level configuration of the file watcher which empowers Brunch.
+* [`server`](#-server-) — allows to describe custom web-servers instead of the built-in one.
+* `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` — simple true/false options
+* [`hooks`](#-hooks-) — allows to specify handlers for different moments of building cycle
 
 <span class="note">
   You can see the config schema, and all the defaults, in the `configBaseSchema` of [`lib/utils/config-validate.js`](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js#L9) in the Brunch source code.
@@ -25,7 +24,7 @@ Less common options:
 
 Simplest Brunch config looks like that. Just 7 lines of pure configuration:
 
-```javascript
+```js
 module.exports = {
   files: {
     javascripts: {joinTo: 'app.js'},
@@ -44,21 +43,21 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
 
 * **String** — path to your source files to be directly matched. You can use [globs](https://en.wikipedia.org/wiki/Glob_(programming)), so these strings may contain [wildcard characters](https://en.wikipedia.org/wiki/Wildcard_character) (`*`, `?`, etc). Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.css': 'path/to/*.css' // matches all CSS files
   }
   ```
 * **Regular expression** — feel free to define a pattern using regular expression if you used to. Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.js': /\.js$/ // matches all JavaScript files
   }
   ```
 * **Function** — if you need especially specific pattern, you can define it using function that takes the string as an argument and returns a truthy or falsy value (like `Array.filter` function do). Example:
 
-  ```javascript
+  ```js
   joinTo: {
     // matches all JavaScript files with filenames longer that 3 characters
     'app.js': path => path.endsWith('.js') && path.length > 3
@@ -66,7 +65,7 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
   ```
 * **Array** — an array of any number and mix of the above types. Example:
 
-  ```javascript
+  ```js
   joinTo: {
     'app.js': [
       'path/to/specific/file.js',   // include specific file
@@ -87,7 +86,7 @@ Internally, Brunch uses [anymatch](https://github.com/es128/anymatch) for patter
 
 Example:
 
-```javascript
+```js
 paths: {
   public: '/user/www/deploy'
 }
@@ -110,18 +109,18 @@ Also, consider [`module.nameCleaner` option](#-modules-), if you need to require
 `Required, object`: `files` configures handling of application files: which compiler would be used on which file, what name should output file have etc. Any paths specified here must be listed in `paths.watched` as described above, for building.
 
 * `<type>`: `javascripts`, `stylesheets` or `templates`
-    * joinTo: (required) describes how files will be compiled & joined together.
-      Available formats:
-        * `'outputFilePath'` in order to have all source files compiled together to one
-        * map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
-    * entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
-      Available formats:
-        * `'entryFile.js': 'outputFilePath'`
-        * `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
-    * order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
-        * before: [matching pattern](#pattern-matching) defining files that will be loaded before other files
-        * after: [matching pattern](#pattern-matching) defining files that will be loaded after other files
-    * pluginHelpers: (optional) specify which output file (or array of files) plugins' include files concatenate into. Defaults to the output file that `vendor` files are being joined to, the first one with `vendor` in its name/path, or just the first output file listed in your joinTo object.
+  - joinTo: (required) describes how files will be compiled & joined together.
+    Available formats:
+    + `'outputFilePath'` in order to have all source files compiled together to one
+    + map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
+  - entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
+    Available formats:
+    + `'entryFile.js': 'outputFilePath'`
+    + `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
+  - order: (optional) defines compilation order. `vendor` files will be compiled before other ones even if they are not present here.
+    + before: [matching pattern](#pattern-matching) defining files that will be loaded before other files
+    + after: [matching pattern](#pattern-matching) defining files that will be loaded after other files
+  - pluginHelpers: (optional) specify which output file (or array of files) plugins' include files concatenate into. Defaults to the output file that `vendor` files are being joined to, the first one with `vendor` in its name/path, or just the first output file listed in your joinTo object.
 
 All files from `vendor` directory are by default concatenated before all files from `app` directory. So, `vendor/scripts/jquery.js` would be loaded before `app/script.js` even if order config is empty. Files from Bower packages are included by default before the `vendor` files.
 
@@ -129,7 +128,7 @@ Overall ordering is [before] -> [bower] -> [vendor] -> [everything else] -> [aft
 
 Common example:
 
-```javascript
+```js
 files: {
   javascripts: {
     joinTo: {
@@ -150,18 +149,18 @@ files: {
 
 It is important to keep a few things in mind regarding entry points & their known limitations:
 
-* only the things you `require` will be included into an entryPoint bundle. This means non-app/non-npm deps won't be included. Also means only statically analyzable `require`s will work:
-  * `require('something')` — :+1:
-  * `['a', 'b', 'c'].forEach(dep => require(dep))` — :-1:
-  * `match('/', 'app/Home')` (where `app/Home` gets translated into `require('components/app/Home')`) — :-1:
+* only the things you `require` will be included into an entryPoint bundle. This means non-app/non-npm dependencie won't be included. Also means only statically analyzable `require`s will work:
+  - `require('something')` — :+1:
+  - `['a', 'b', 'c'].forEach(dep => require(dep))` — :-1:
+  - `match('/', 'app/Home')` (where `app/Home` gets translated into `require('components/app/Home')`) — :-1:
 * two entry points can't write to the same file
 
-  ```javascript
+  ```js
   javascripts: {
     entryPoints: {
-      'app/initialize.coffee': 'javascripts/bundle.js',
+      'app/initialize.js': 'javascripts/bundle.js',
       // INVALID
-      'app/bookmarklet.coffee': 'javascripts/bundle.js'
+      'app/bookmarklet.js': 'javascripts/bundle.js'
     }
   }
   ```
@@ -170,7 +169,7 @@ It is important to keep a few things in mind regarding entry points & their know
 
 ## `npm`
 
-`Object`: configures NPM integration for front-end packages. Make sure you also declare the packages you depend on in your package.json `dependencies` section.
+`Object`: configures NPM integration for front-end packages. Make sure you also declare the packages you depend on in your `package.json` dependencies section.
 
 * `npm.enabled`: `Boolean`: a toggle of whether the integration is enabled, defaults to `true`.
 * `npm.globals`: `Object`: a mapping from global name (as a key) to the corresponding module name (string) to expose.
@@ -180,7 +179,7 @@ It is important to keep a few things in mind regarding entry points & their know
 
 Example:
 
-```javascript
+```js
 npm: {
   styles: {pikaday: ['css/pikaday.css']},
   globals: {Pikaday: 'pikaday'}
@@ -199,7 +198,7 @@ npm: {
 
 Example:
 
-```javascript
+```js
 plugins: {
   on: ['postcss-brunch'],
   off: ['jade-brunch', 'handlebars-brunch'],
@@ -223,7 +222,7 @@ Example:
 ```javascript
 conventions: {
   ignored: () => false, // override defaults for no ignored files
-  assets: /files\//  // vendor/jquery/files/jq.img
+  assets: /files\//     // vendor/jquery/files/jq.img
 }
 ```
 
@@ -248,7 +247,7 @@ You may find default values for `ignored`, `assets` and `vendor` fields in [Brun
 
 Example:
 
-```javascript
+```js
 // Same as 'commonjs'.
 modules: {
   wrapper: (path, data) => {
@@ -262,7 +261,7 @@ require.define({${path}: function(exports, require, module) {
 ```
 `modules.autoRequire`: `Object` specifies requires to be automatically added at the end of joined file. The example below will require both 'app' and 'foo':
 
-```javascript
+```js
 // Default behaviour.
 modules: {
   autoRequire: {
@@ -274,14 +273,14 @@ modules: {
 `modules.nameCleaner`: `Function` Allows you to set filterer function for module names,
 for example, change all 'app/file' to 'file'. Example:
 
-```javascript
+```js
 // Default behaviour.
 modules: {
   nameCleaner: path => path.replace(/^app\//, '')
 }
 ```
 
-```javascript
+```js
 // Add namespacing to a project.
 const {name} = require('./package.json');
 modules: {
@@ -291,7 +290,7 @@ modules: {
 
 Also `nameCleaner` option may help you when you need to change the default directory for app code to `src`, for example:
 
-```javascript
+```js
 modules: {
   nameCleaner: path => path.replace(/^src\//, '')
 }
@@ -321,11 +320,11 @@ When set to `true`, only errors trigger notifications. If you want to display su
 
 `Object`: contains params of webserver that runs on `brunch watch --server`.
 
-If a `brunch-server.js` or `brunch-server.coffee` file exists at the root of your project, Brunch will treat this as your custom web server. This can be overriden with the `server.path` option.
+If a `brunch-server.js` or `brunch-server.coffee` file exists at the root of your project, Brunch will treat this as your custom web server. This can be overridden with the `server.path` option.
 
 The server script must export a function that starts your custom server, either as the default exported module. This function should return an instance of [`http.Server`](https://nodejs.org/api/http.html#http_class_http_server) or an object containing a `close` property assigned to a function that shuts down the server. Examples:
 
-```javascript
+```js
 // javascript example using default export and node http core module
 module.exports = (port, path, callback) => {
   // your custom server code
@@ -338,7 +337,7 @@ module.exports = (port, path, callback) => {
 };
 ```
 
-```javascript
+```js
 // Example using custom `close` method.
 module.exports = (port, path, callback) => {
   // custom server code
@@ -348,7 +347,7 @@ module.exports = (port, path, callback) => {
 }
 ```
 
-* `path`: (optional) custom path to nodejs file that will be loaded to run your custom server.
+* `path`: (optional) custom path to Node.js file that will be loaded to run your custom server.
 
 If a custom server is not present, Brunch will use [pushserve](https://github.com/paulmillr/pushserve). If using your own, only `port` from the following options can be set from the config.
 
@@ -362,7 +361,7 @@ If a custom server is not present, Brunch will use [pushserve](https://github.co
 
 Example:
 
-```javascript
+```js
 server: {
   port: 6832,
   base: '/myapp',
@@ -370,7 +369,7 @@ server: {
 }
 ```
 
-* `command`: command to launch a non-nodejs server as a child process. Ex: `server: command: 'php -S 0.0.0.0:3000 -t public'`
+* `command`: command to launch a non-Node.js server as a child process. Ex: `server: command: 'php -S 0.0.0.0:3000 -t public'`
 
 ## `sourceMaps`
 
@@ -405,7 +404,7 @@ BRUNCH_ENV="testing" brunch build
 
 Defaults:
 
-```javascript
+```js
 overrides: {
   production: {
     optimize: true,
@@ -426,10 +425,10 @@ In other words, `joinTo` and `order` don't merge if defined under `overrides`, b
 
 `Object`: Optional settings for
 [chokidar](https://github.com/paulmillr/chokidar)
-file watching library used in brunch.
+file watching library used in Brunch.
 
-* `usePolling` (default: `false`) Whether to use fs.watchFile
-    (backed by polling), or fs.watch.
+* `usePolling` (default: `false`) Whether to use `fs.watchFile`
+    (backed by polling), or `fs.watch`.
     Polling is slower but can be more reliable.
 
 ## `hooks`
@@ -449,26 +448,26 @@ Possible values:
     }
     ```
 * `onCompile` - `Function`: Optional callback to be called every time brunch completes a compilation cycle. It is passed a `generatedFiles` array, as well as `changedAssets` array. Each member of `generatedFiles` array is an object with:
-    * `path` — path of the compiled file
-    * `sourceFiles` — array of objects representing each source file
-    * `allSourceFiles` array of objects representing each source file — this one also includes files that don't belong to the original type (e.g. if a styles compiler adds a JS module, path would the the concated JS file, and one of the `allSourceFiles` will be a style file
+  - `path` — path of the compiled file
+  - `sourceFiles` — array of objects representing each source file
+  - `allSourceFiles` array of objects representing each source file — this one also includes files that don't belong to the original type (e.g. if a styles compiler adds a JS module, path would be the concatenated JS file, and one of the `allSourceFiles` will be a style file
 
-    Each member of `changedAssets` array is an object with:
+  Each member of `changedAssets` array is an object with:
 
-    * `path` — original path of an asset
-    * `destinationPath` — path of an asset in the public directory
+  - `path` — original path of an asset
+  - `destinationPath` — path of an asset in the public directory
 
-    Example:
+  Example:
 
-    ```javascript
-      hooks: {
-        onCompile(generatedFiles, changedAssets) {
-          console.log(generatedFiles.map(f => f.path));
-        }
+  ```javascript
+    hooks: {
+      onCompile(generatedFiles, changedAssets) {
+        console.log(generatedFiles.map(f => f.path));
       }
-    ```
+    }
+  ```
 
 ## Tips
 
-- You can use CoffeeScript to write configuration files. This way they'll be
+You can use CoffeeScript to write configuration files. This way they'll be
 much shorter and concise. Simply create a file called `brunch-config.coffee`.

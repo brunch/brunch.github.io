@@ -12,7 +12,7 @@ To make things a bit nicer, Brunch cuts the `app` portion from the module name.
 For example, `app/config.js` will have a module name of `config.js`.
 With CommonJS, your modules will return values by putting them into `module.exports`, just like you would with Node.
 
-```javascript
+```js
 // app/config.js
 module.exports = {
   api: {
@@ -23,8 +23,8 @@ module.exports = {
 
 To use it in other modules, just `require` it! Note that you can require using both a name with extension (like `config.js`) or a name without extension (`config`):
 
-```javascript
-var config = require('config');
+```js
+const config = require('config');
 
 makeRequest(config.api, 'GET', 'plugins');
 ```
@@ -36,7 +36,7 @@ You can do it by either:
 * adding `<script>require('initialize');</script>` — where `initialize` is the name of the entry module (which would be located in `app/initialize.js`); **OR**
 * adding an [`autoRequire`](/docs/config#-modules-) to config, to make Brunch do the above for you:
 
-  ```javascript
+  ```js
   // brunch-config
   module.exports = {
     modules: {
@@ -70,7 +70,7 @@ Simply `npm install --save` your front-end packages as you normally would, `requ
 
 Just make sure that you don't forget to join `/^node_modules/` somewhere!
 
-```javascript
+```js
 files: {
   javascripts: {
     joinTo: {
@@ -85,8 +85,12 @@ files: {
 
 Brunch can also handle styles of client-side libraries, by providing `styles` attribute which is key-value object where key is package name and value is an array with relative to package path of styles which should be included.
 
-```javascript
-npm: {styles: {leaflet: ['dist/leaflet.css']}},
+```js
+npm: {
+  styles: {
+    leaflet: ['dist/leaflet.css']
+  }
+},
 files: {
   javascripts: {
     joinTo: {'js/vendor.js': /^node_modules/}
@@ -97,11 +101,11 @@ files: {
 }
 ```
 
-Note that for other assets that come from NPM packages (like images, fonts, etc), you will have to manually copy them to your public folder. You can use the npm's `postinstall` hook to do the copying. See [FAQ](/docs/faq.html).
+Note that for other assets that come from NPM packages (like images, fonts, etc), you will have to manually copy them to your public folder. You can use the npm's `postinstall` hook to do the copying. See [FAQ](/docs/faq).
 
 ### Making packages global
 
-It's possible to expose npm packages to `window` — so that you can access the module without requiring it. See [docs](/docs/config.html#-npm-).
+It's possible to expose npm packages to `window` — so that you can access the module without requiring it. See [docs](/docs/config#-npm-).
 
 ## Hot Module Replacement
 

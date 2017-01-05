@@ -1,6 +1,6 @@
 # Brunch: Using plugins
 
-Brunch uses node.js plugins to provide compilation / linting / optimization functionality.
+Brunch uses Node.js plugins to provide compilation / linting / optimization functionality.
 
 Brunch has a plugin ecosystem to achieve interoperability with various tools simply via [plugin API](/docs/plugins.html).
 
@@ -25,7 +25,7 @@ Brunch plugins can fall into three broad categories (one plugin can belong to se
   As the name implies, they optimize compiled JS or CSS files.
   Examples of optimizers include: a JavaScript uglifier; a CSS prefixer and minifier.
 
-You can browse some of the community-supported plugins in the [Plugins](/plugins.html) section.
+You can browse some of the community-supported plugins in the [Plugins](/plugins) section.
 
 ## Installation
 
@@ -47,7 +47,7 @@ Refer to the plugin's `README` on details regarding configuration.
 
 Typically it would go under the `config.plugins.<plugin>`:
 
-```javascript
+```js
 module.exports = {
   plugins: {
     babel: {
@@ -87,8 +87,8 @@ Which gets turned into something like:
 
 To make your JS component aware of the actual class name, a compiler can allow you to `require` that css file to get information about its class name mappings:
 
-```javascript
-var style = require('./button.styl');
+```js
+const style = require('./button.styl');
 // ...
 
 // style.button will return the obfuscated class name (something like "_button_xkplk_42" perhaps)
@@ -105,5 +105,4 @@ Starting with Brunch 2.8, this is made available for plugins to implement.
 
 ## Tips
 
-- Don't include plugins for languages or technologies your app does not use.
-  They may unnecessarily slowdown the build process.
+Don't include plugins for languages or technologies your app does not use. They may unnecessarily slowdown the build process.

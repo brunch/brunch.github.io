@@ -1,6 +1,6 @@
 # Brunch: Plugin API
 
-Brunch plugins are plain JS classes which are initialized with brunch configs.
+Brunch plugins are plain JS classes which are initialized with Brunch configs.
 
 <div class="toc-placeholder"></div>
 
@@ -9,18 +9,18 @@ Brunch plugins are plain JS classes which are initialized with brunch configs.
 Almost every plugin is usually working with so-called `File` entities:
 
 ```json
-{"data": "var hello = 42;\n", "path": "app/file.js"}
+{
+  "data": "var hello = 42;\n",
+  "path": "app/file.js"
+}
 ```
 
 As you can see, `File`s are bald JS `Object`s, which may contain fields like:
 
-- `path` - system path to the file
-- `data` - file data as JS `String`
-- `map` - source map
-- and anything else that could be consumed by next plugins.
-  For example, the linter plugin may add `babelTree` to the `File`,
-  the compiler plugin in pipeline would see it and won't do the parsing twice.
-  (Though this will not work with parallelized build.)
+* `path` - system path to the file
+* `data` - file data as JS `String`
+* `map` - source map
+* and anything else that could be consumed by next plugins. For example, the linter plugin may add `babelTree` to the `File`, the compiler plugin in pipeline would see it and won't do the parsing twice. (Though this will not work with parallelized build.)
 
 ### Pipeline
 
@@ -137,7 +137,7 @@ If `pattern` was specified, everything pattern matches will be replaced with `st
 
 Let's take a look at the [boilerplate plugin](https://github.com/brunch/brunch-boilerplate-plugin). Feel free to use it to create your own plugins:
 
-```javascript
+```js
 'use strict';
 
 // Documentation for Brunch plugins:
@@ -149,7 +149,7 @@ class BrunchPlugin {
     // Replace 'plugin' with your plugin's name;
     this.config = config.plugins.plugin;
   }
-  
+
   // Optional
   // Specifies additional files which will be included into build.
   // get include() { return ['path-to-file-1', 'path-to-file-2']; }
@@ -208,7 +208,7 @@ module.exports = BrunchPlugin;
 
 The plugin would simply read the file and return its contents.
 
-```javascript
+```js
 class CSSCompiler {
   compile(file) {
     return Promise.resolve(file);
@@ -226,7 +226,7 @@ module.exports = CSSCompiler;
 
 An abstract minifier that consumes source maps.
 
-```javascript
+```js
 class UglifyOptimizer {
   constructor(config) {
     this.config = config.plugins.uglify;
@@ -254,7 +254,7 @@ UglifyOptimizer.prototype.extension = 'js';
 module.exports = UglifyOptimizer;
 ```
 
-See the [plugins page](http://brunch.io/plugins.html) for a list of plugins. Feel free to add new plugins by editing [plugins.json](https://github.com/brunch/brunch.github.io/blob/master/plugins.json) and sending a Pull Request.
+See the [plugins page](http://brunch.io/plugins) for a list of plugins. Feel free to add new plugins by editing [plugins.json](https://github.com/brunch/brunch.github.io/blob/master/plugins.json) and sending a Pull Request.
 
 ### Exporting JS from stylesheets
 
@@ -267,8 +267,8 @@ A use case could be a styles compiler with CSS modules support that allows you t
   margin: 0
 ```
 
-```javascript
-var style = require('./button.styl');
+```js
+const style = require('./button.styl');
 // ...
 
 // style.button will return the obfuscated class name (something like "_button_xkplk_42" perhaps)
@@ -277,7 +277,7 @@ var style = require('./button.styl');
 
 All compiler needs to do is return `exports` in addition to `{data, map}`:
 
-```javascript
+```js
 class MyCompiler {
   compile({data, path}) {
     const compiled = magic(data);
@@ -300,7 +300,7 @@ Previously, what you would do in this case was to hook into `onCompile` and look
 
 So starting Brunch `2.8.0`, there is a better way.
 
-```javascript
+```js
 class JadeCompiler {
   compileStatic({data, path}) {
     return new Promise((resolve, reject) => {
@@ -337,5 +337,4 @@ This will make more people aware of it.
 
 ## Tips
 
-- Make Brunch plugins as simple as possible. Don't try to copy Grunt, Gulp or other
-  task runners approaches.
+Make Brunch plugins as simple as possible. Don't try to copy Grunt, Gulp or other task runners approaches.
