@@ -106,17 +106,17 @@ output exactly what you've entered here. jQuery is up and running now.
 
 ## Plugging alternative tableware
 
-Let's say you want to try the new fancy **ECMAScript** thing. Maybe your OCD would be eased by conforming
+Let's say you want to try the new fancy **ECMAScript 201X** thing. Maybe your OCD would be eased by conforming
 to 66 **ESLint** rules. It doesn't matter, [more than 50 Brunch plugins](http://brunch.io/plugins) aim to help with all kinds of crazy cases.
 
 Install Babel plugin by executing `npm install --save-dev babel-brunch`.
-Hmm...that's exactly the same command from our previous step. Whatever. Let's create the `morning.js` file with some content:
+Hmm...that's exactly the same command from our previous step. Whatever. Let's create the `index.js` file with some content:
 
 ```
-$ echo 'console.log(`Good morning, ${process.env.USER}!`)' > app/morning.js
+$ echo 'console.log([1, 2, 3].reduce((s, n) => s + n ** 2))' > app/index.js
 ```
 
-Since you've added Babel plugin to the board, Brunch would *magically* recompile the app and include *compiled* content of `morning.js` in the output file. **Voila!**
+Since you've added Babel plugin to the board, Brunch would *magically* recompile the app and include *compiled* content of `index.js` in the output file. **Voila!**
 
 ## Becoming professional cook
 
