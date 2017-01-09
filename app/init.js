@@ -78,14 +78,8 @@ function deferIframe() {
 // Fix for: https://github.com/brunch/brunch.github.io/issues/233
 if (process.env.NODE_ENV === 'development') {
   [...document.querySelectorAll('a[href]')]
-    .filter(link => {
-      const href = link.getAttribute('href');
-      return href !== '/' && href.startsWith('/');
-    })
-    .forEach(link => {
-      const href = link.getAttribute('href');
-      link.setAttribute('href', `${href}.html`);
-    });
+    .filter(({ pathname }) => pathname !== '/' && pathname.startsWith('/'))
+    .forEach(link => link.href += '.html');
 }
 
 setTitle('page__content');
