@@ -3,7 +3,7 @@ var utils = require('./utils');
 var filterItems = utils.filterItems;
 var compare = utils.compare;
 
-var Body = React.createClass({
+var Body = createClass({
   getInitialState: function() {
     return {
       plugins: [],
