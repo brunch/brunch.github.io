@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "brunch watch --server",
-    "prod": "brunch build --production"
+    "prod": "brunch build --production",
+    "lint": "eslint app"
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
@@ -18,18 +19,33 @@
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.0",
+    "autoprefixer": "^6.0",
     "babel-brunch": "^6.0",
     "babel-preset-react": "^6.5",
     "brunch": "github:brunch/brunch",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",
-    "sass-brunch": "brunch/sass-brunch",
+    "eslint": "^3.13.1",
+    "eslint-config-brunch": "brunch/eslint-config-brunch",
+    "eslint-plugin-react": "^6.9.0",
     "grunticon-lib": "^1.0.4",
     "jade-brunch": "^2.8",
     "javascript-brunch": "^2.0",
-    "autoprefixer": "^6.0",
-    "postcss-brunch": "^0.5",
     "jstransformer-marked": "^1.0.1",
+    "postcss-brunch": "^0.5",
+    "sass-brunch": "brunch/sass-brunch",
     "uglify-js-brunch": "^2.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "browser": true
+    },
+    "extends": "brunch",
+    "plugins": ["react"]
   }
 }
