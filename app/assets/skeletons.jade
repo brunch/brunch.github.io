@@ -4,7 +4,7 @@ block content
 
   script.
     document.addEventListener('DOMContentLoaded', function() {
-      ReactDOM.render(React.createElement(require('skeletons'), null), document.querySelector('#skeletons-body'));
+      Inferno.render(createElement(require('skeletons'), null), document.querySelector('#skeletons-body'));
     });
 
   :marked

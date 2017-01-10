@@ -49,10 +49,16 @@ module.exports = {
   },
   npm: {
     styles: {'inuit.css': ['_inuit.scss']},
-    globals: {React: 'react', ReactDOM: 'react-dom', Promise: 'es6-promise'}
+    globals: {
+      Inferno: 'inferno',
+      infernoComponent: 'inferno-component',
+      createClass: 'inferno-create-class',
+      createElement: 'inferno-create-element',
+      Promise: 'es6-promise'
+    }
   },
   plugins: {
-    babel: {presets: ['es2015', 'react']},
+    babel: {presets: ['es2015'], plugins: ['inferno']},
     jade: {locals: {nav: nav, social: social, docSidebar: docSidebar}},
     autoReload: {enabled: {css: true, js: false, assets: true}},
     postcss: {
