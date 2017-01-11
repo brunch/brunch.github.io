@@ -62,15 +62,8 @@ const Body = React.createClass({
     const sorting = [
       'Compilers', 'Minifiers', 'Linters', 'Graphics', 'Others',
     ];
-    var subSorting = { 'Compilers': ['Script languages', 'Style languages', 'Pre-compiled templates'] };
 
     return this.groupedPlugins()
-      .map(function(cat) {
-        return {
-          category: cat.category,
-          subcategories: cat.subcategories.sort(subSorting[cat.category] || [], 'subcategory')
-        };
-      })
       .sort(compare(sorting, 'category'));
   },
 
