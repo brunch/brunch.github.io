@@ -2,10 +2,9 @@
 'use strict';
 
 require('whatwg-fetch');
-const React = require('react');
 const {filterItems} = require('./utils');
 
-var Body = React.createClass({
+const Body = createClass({
   getInitialState() {
     return {
       skeletons: [],

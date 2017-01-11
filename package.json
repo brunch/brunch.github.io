@@ -12,16 +12,17 @@
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
+    "inferno": "^1.1.1",
+    "inferno-create-class": "^1.1.1",
+    "inferno-create-element": "^1.1.1",
     "inuitcss": "^6.0.0-beta.4",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2.0",
     "autoprefixer": "^6.0",
     "babel-brunch": "^6.0",
-    "babel-preset-react": "^6.5",
+    "babel-plugin-inferno": "^1.5.0",
     "brunch": "github:brunch/brunch",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",

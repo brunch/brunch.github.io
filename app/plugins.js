@@ -2,10 +2,9 @@
 'use strict';
 
 require('whatwg-fetch');
-const React = require('react');
 const {filterItems, compare} = require('./utils');
 
-const Body = React.createClass({
+const Body = createClass({
   getInitialState() {
     return {
       plugins: [],
