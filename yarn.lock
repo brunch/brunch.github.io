@@ -2801,20 +2801,13 @@ indexof@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/indexof/-/indexof-0.0.1.tgz#82dc336d232b9062179d05ab3293a66059fd435d"
 
-inferno-component@1.1.2:
+inferno-component@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/inferno-component/-/inferno-component-1.1.2.tgz#e9ab1661a3e5731f5f40c1dbd96ad21d2083537e"
   dependencies:
     inferno "1.1.2"
 
-inferno-create-class@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/inferno-create-class/-/inferno-create-class-1.1.2.tgz#0f0300304b5a62e02d274340df3044842fec5451"
-  dependencies:
-    inferno "1.1.2"
-    inferno-component "1.1.2"
-
-inferno-create-element@^1.1.1:
+inferno-create-element@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/inferno-create-element/-/inferno-create-element-1.1.2.tgz#d7a24cf82813c9581f8d7ffda5cf0ba62e5290fd"
   dependencies:
@@ -2853,14 +2846,12 @@ ini@^1.3.4, ini@~1.3.0:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
-init-skeleton@brunch/init-skeleton#yarn:
+init-skeleton@~0.9.0:
   version "0.9.5"
-  resolved "https://codeload.github.com/brunch/init-skeleton/tar.gz/db0ee40ce37fa327280243f5387c926bea45f5f7"
+  resolved "https://registry.yarnpkg.com/init-skeleton/-/init-skeleton-0.9.5.tgz#aba23dc45517236c54836e4d736ed42f2d494eda"
   dependencies:
     brunch-skeletons "~0.1.4"
-    deps-install brunch/deps-install
     hosted-git-info "~2.1.4"
-    micro-promisify "~0.1.0"
     mkdirp "~0.5.0"
     ncp "^2.0.0"
     normalize-git-url "~3.0.1"

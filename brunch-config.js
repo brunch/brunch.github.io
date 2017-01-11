@@ -51,8 +51,6 @@ module.exports = {
     styles: {'inuit.css': ['_inuit.scss']},
     globals: {
       Inferno: 'inferno',
-      infernoComponent: 'inferno-component',
-      createClass: 'inferno-create-class',
       createElement: 'inferno-create-element',
       Promise: 'es6-promise'
     }

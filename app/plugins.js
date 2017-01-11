@@ -2,32 +2,34 @@
 'use strict';
 
 require('whatwg-fetch');
+const Component = require('inferno-component');
 const {filterItems, compare} = require('./utils');
 
-const Body = createClass({
-  getInitialState() {
-    return {
+class Body extends Component {
+  constructor() {
+    super();
+    this.state = {
       plugins: [],
       search: '',
     };
-  },
+  }
 
   componentWillMount() {
     fetch('/plugins.json')
       .then(res => res.json())
       .then(({plugins}) => this.setState({plugins}));
-  },
+  }
 
   handleKeyUp(e) {
     this.setState({search: e.target.value});
-  },
+  }
 
   filteredPlugins() {
     const {plugins, search} = this.state;
     return filterItems(plugins, search, [
       'name', 'url', 'category', 'subcategory', 'description',
     ]);
-  },
+  }
 
   groupedPlugins() {
     const plugins = this.filteredPlugins();
@@ -55,7 +57,7 @@ const Body = createClass({
         })),
       };
     });
-  },
+  }
 
   categorySortedPlugins() {
     const sorting = [
@@ -64,7 +66,7 @@ const Body = createClass({
 
     return this.groupedPlugins()
       .sort(compare(sorting, 'category'));
-  },
+  }
 
   renderFeatured() {
     const {plugins} = this.state;
@@ -87,7 +89,7 @@ const Body = createClass({
         <ul>{featuredPlugins}</ul>
       </div>
     );
-  },
+  }
 
   render() {
     // FIXME: Simplify this map in map in map. Too complex.
@@ -135,7 +137,7 @@ const Body = createClass({
         placeholder="Type to search..."
         type="text"
         className="searchbox"
-        onKeyUp={this.handleKeyUp} />
+        onKeyUp={this.handleKeyUp.bind(this)} />
       {this.renderFeatured()}
       <table className="data-table">
         <thead>
@@ -149,7 +151,7 @@ const Body = createClass({
         </tbody>
       </table>
     </div>;
-  },
-});
+  }
+};
 
 module.exports = Body;

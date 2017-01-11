@@ -2,32 +2,34 @@
 'use strict';
 
 require('whatwg-fetch');
+const Component = require('inferno-component');
 const {filterItems} = require('./utils');
 
-const Body = createClass({
-  getInitialState() {
-    return {
+class Body extends Component {
+  constructor() {
+    super();
+    this.state = {
       skeletons: [],
       search: '',
     };
-  },
+  }
 
   componentWillMount() {
     fetch('https://raw.githubusercontent.com/brunch/skeletons/master/skeletons.json')
       .then(res => res.json())
       .then(({skeletons}) => this.setState({skeletons}));
-  },
+  }
 
   handleKeyUp(e) {
     this.setState({search: e.target.value});
-  },
+  }
 
   filteredSkeletons() {
     const {skeletons, search} = this.state;
     return filterItems(skeletons, search, [
       'name', 'url', 'alias', 'technologies', 'description',
     ]);
-  },
+  }
 
   render() {
     const skeletonItems = this.filteredSkeletons().map((skeleton, i) => (
@@ -56,7 +58,7 @@ const Body = createClass({
           placeholder="Type to search... It could be a technology name or anything, really"
           type="text"
           className="searchbox"
-          onKeyUp={this.handleKeyUp} />
+          onKeyUp={this.handleKeyUp.bind(this)} />
         <table className="data-table">
           <thead>
             <tr>
@@ -73,7 +75,7 @@ const Body = createClass({
         </table>
       </div>
     );
-  },
-});
+  }
+};
 
 module.exports = Body;
