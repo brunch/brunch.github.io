@@ -37,19 +37,5 @@
     "postcss-brunch": "^0.5",
     "sass-brunch": "brunch/sass-brunch",
     "uglify-js-brunch": "^2.0"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "env": {
-      "browser": true
-    },
-    "extends": "brunch",
-    "plugins": [
-      "react"
-    ]
   }
 }

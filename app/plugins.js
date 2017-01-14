@@ -1,4 +1,3 @@
-/* eslint no-extra-parens: 0 */
 'use strict';
 
 require('whatwg-fetch');
