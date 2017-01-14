@@ -35,7 +35,7 @@ class Body extends Component {
     this.setState({search: e.target.value});
   }
 
-  filteredSkeletons() {
+  get filteredSkeletons() {
     const {skeletons, search} = this.state;
     return filterItems(skeletons, search, [
       'name', 'url', 'alias', 'technologies', 'description',
@@ -62,7 +62,7 @@ class Body extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.filteredSkeletons().map((skeleton, key) => (
+            {this.filteredSkeletons.map((skeleton, key) => (
               <Skeleton key={key} {...skeleton} />
             ))}
           </tbody>

@@ -6,7 +6,7 @@ const {filterItems, compare} = require('./utils');
 
 // Category and subcategory component
 const Category = ({sub = false, name}) => (
-  <tr key={name}>
+  <tr>
     <td colSpan={2}>
       {sub ? <h5>{name}</h5> : <h4>{name}</h4>}
     </td>
@@ -14,8 +14,8 @@ const Category = ({sub = false, name}) => (
 );
 
 // Plugin's table cell component
-const Plugin = ({key, url, name, description}) => (
-  <tr key={key}>
+const Plugin = ({url, name, description}) => (
+  <tr>
     <td>
       <a href={url ? `https://github.com/${url}` : null} target="_blank">
         {name}
@@ -26,8 +26,8 @@ const Plugin = ({key, url, name, description}) => (
 );
 
 // Featured plugin's list item component
-const FeaturedPlugin = ({key, url, name, description}) => (
-  <li key={key}>
+const FeaturedPlugin = ({url, name, description}) => (
+  <li>
     <a href={url ? `https://github.com/${url}` : null} target="_blank">
       {name}
     </a>
@@ -56,7 +56,7 @@ class Body extends Component {
     this.setState({search: e.target.value});
   }
 
-  filteredPlugins() {
+  get filteredPlugins() {
     const {plugins, search} = this.state;
     return filterItems(plugins, search, [
       'name', 'url', 'category', 'subcategory', 'description',
@@ -64,10 +64,8 @@ class Body extends Component {
   }
 
   groupedPlugins() {
-    const plugins = this.filteredPlugins();
-
     // FIXME: Simplify that shit. Defenitely it might be implemented easier
-    const groupedObj = plugins.reduce((memo, plugin) => {
+    const groupedObj = this.filteredPlugins.reduce((memo, plugin) => {
       const {category, subcategory} = plugin;
 
       if (!(category in memo)) memo[category] = {};
@@ -88,7 +86,7 @@ class Body extends Component {
     });
   }
 
-  categorySortedPlugins() {
+  get categorySortedPlugins() {
     const sorting = [
       'Compilers', 'Minifiers', 'Linters', 'Graphics', 'Others',
     ];
@@ -116,14 +114,14 @@ class Body extends Component {
 
   render() {
     // FIXME: Simplify this map in map in map. Too complex.
-    const pluginItems = this.categorySortedPlugins().map(({category, subcategories}) => {
+    const pluginItems = this.categorySortedPlugins.map(({category, subcategories}) => {
       const catItem = (
-        <Category name={category} />
+        <Category key={category} name={category} />
       );
 
       const subcatItems = subcategories.map(({subcategory, plugins}) => {
         const subcatItem = (
-          <Category name={subcategory} sub />
+          <Category sub key={category} name={subcategory} />
         );
 
         const pluginItems = plugins.map((plugin, i) => (
@@ -139,26 +137,28 @@ class Body extends Component {
       return [catItem, ...subcatItems];
     });
 
-    return <div>
-      <input
-        placeholder="Type to search..."
-        type="text"
-        className="searchbox"
-        onKeyUp={this.handleKeyUp.bind(this)}
-      />
-      {this.renderFeatured()}
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pluginItems}
-        </tbody>
-      </table>
-    </div>;
+    return (
+      <div>
+        <input
+          placeholder="Type to search..."
+          type="text"
+          className="searchbox"
+          onKeyUp={this.handleKeyUp.bind(this)}
+        />
+        {this.renderFeatured()}
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pluginItems}
+          </tbody>
+        </table>
+      </div>
+    );
   }
 };
 
