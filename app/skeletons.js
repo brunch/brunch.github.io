@@ -5,6 +5,16 @@ require('whatwg-fetch');
 const Component = require('inferno-component');
 const {filterItems} = require('./utils');
 
+const Skeleton = ({url, title, alias = '-', technologies, description}) => (
+  <tr>
+    <td><a href={`https://github.com/${url}`} target="_blank">{title}</a></td>
+    <td><code>{url}</code></td>
+    <td><code>{alias}</code></td>
+    <td>{technologies}</td>
+    <td dangerouslySetInnerHTML={{__html: description}} />
+  </tr>
+);
+
 class Body extends Component {
   constructor() {
     super();
@@ -32,33 +42,14 @@ class Body extends Component {
   }
 
   render() {
-    const skeletonItems = this.filteredSkeletons().map((skeleton, i) => (
-      <tr key={i}>
-        <td>
-          <a href={`https://github.com/${skeleton.url}`} target="_blank">
-            {skeleton.title}
-          </a>
-        </td>
-        <td>
-          <code>{skeleton.url}</code>
-        </td>
-        <td>
-          <code>{skeleton.alias || '-'}</code>
-        </td>
-        <td>
-          {skeleton.technologies}
-        </td>
-        <td dangerouslySetInnerHTML={{__html: skeleton.description}} />
-      </tr>
-    ));
-
     return (
       <div>
         <input
           placeholder="Type to search... It could be a technology name or anything, really"
           type="text"
           className="searchbox"
-          onKeyUp={this.handleKeyUp.bind(this)} />
+          onKeyUp={this.handleKeyUp.bind(this)}
+        />
         <table className="data-table">
           <thead>
             <tr>
@@ -70,7 +61,9 @@ class Body extends Component {
             </tr>
           </thead>
           <tbody>
-            {skeletonItems}
+            {this.filteredSkeletons().map((skeleton, key) => (
+              <Skeleton key={key} {...skeleton} />
+            ))}
           </tbody>
         </table>
       </div>

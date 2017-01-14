@@ -23,6 +23,7 @@
     "autoprefixer": "^6.0",
     "babel-brunch": "^6.0",
     "babel-plugin-inferno": "^1.5.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "brunch": "github:brunch/brunch",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",
