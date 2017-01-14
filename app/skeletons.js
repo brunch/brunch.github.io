@@ -5,6 +5,7 @@ require('whatwg-fetch');
 const Component = require('inferno-component');
 const {filterItems} = require('./utils');
 
+// Skeleton's table cell component
 const Skeleton = ({url, title, alias = '-', technologies, description}) => (
   <tr>
     <td><a href={`https://github.com/${url}`} target="_blank">{title}</a></td>
@@ -14,6 +15,7 @@ const Skeleton = ({url, title, alias = '-', technologies, description}) => (
     <td dangerouslySetInnerHTML={{__html: description}} />
   </tr>
 );
+
 
 class Body extends Component {
   constructor() {

@@ -5,6 +5,39 @@ require('whatwg-fetch');
 const Component = require('inferno-component');
 const {filterItems, compare} = require('./utils');
 
+// Category and subcategory component
+const Category = ({sub = false, name}) => (
+  <tr key={name}>
+    <td colSpan={2}>
+      {sub ? <h5>{name}</h5> : <h4>{name}</h4>}
+    </td>
+  </tr>
+);
+
+// Plugin's table cell component
+const Plugin = ({key, url, name, description}) => (
+  <tr key={key}>
+    <td>
+      <a href={url ? `https://github.com/${url}` : null} target="_blank">
+        {name}
+      </a>
+    </td>
+    <td dangerouslySetInnerHTML={{__html: description}} />
+  </tr>
+);
+
+// Featured plugin's list item component
+const FeaturedPlugin = ({key, url, name, description}) => (
+  <li key={key}>
+    <a href={url ? `https://github.com/${url}` : null} target="_blank">
+      {name}
+    </a>
+    {' — '}
+    <span dangerouslySetInnerHTML={{__html: description}} />
+  </li>
+);
+
+
 class Body extends Component {
   constructor() {
     super();
@@ -36,15 +69,12 @@ class Body extends Component {
 
     // FIXME: Simplify that shit. Defenitely it might be implemented easier
     const groupedObj = plugins.reduce((memo, plugin) => {
-      if (!memo[plugin.category]) {
-        memo[plugin.category] = {};
-      }
+      const {category, subcategory} = plugin;
 
-      if (!memo[plugin.category][plugin.subcategory]) {
-        memo[plugin.category][plugin.subcategory] = [];
-      }
+      if (!(category in memo)) memo[category] = {};
+      if (!(subcategory in memo[category])) memo[category][subcategory] = [];
 
-      memo[plugin.category][plugin.subcategory].push(plugin);
+      memo[category][subcategory].push(plugin);
       return memo;
     }, {});
 
@@ -73,14 +103,8 @@ class Body extends Component {
 
     const featuredPlugins = plugins
       .filter(plug => plug.featured)
-      .map(({url, name, description}, i) => (
-        <li key={i}>
-          <a href={url ? `https://github.com/${url}` : null} target="_blank">
-            {name}
-          </a>
-          {' — '}
-          <span dangerouslySetInnerHTML={{__html: description}} />
-        </li>
+      .map((plugin, i) => (
+        <FeaturedPlugin key={i} {...plugin} />
       ));
 
     return this.state.search.length > 0 ? null : (
@@ -95,41 +119,25 @@ class Body extends Component {
     // FIXME: Simplify this map in map in map. Too complex.
     const pluginItems = this.categorySortedPlugins().map(({category, subcategories}) => {
       const catItem = (
-        <tr key={category}>
-          <td colSpan={2}>
-            <h4>{category}</h4>
-          </td>
-        </tr>
+        <Category name={category} />
       );
 
       const subcatItems = subcategories.map(({subcategory, plugins}) => {
         const subcatItem = (
-          <tr key={subcategory}>
-            <td colSpan={2}>
-              <h5>{subcategory}</h5>
-            </td>
-          </tr>
+          <Category name={subcategory} sub />
         );
 
-        const pluginItems = plugins.map(({url, name, description}, i) => {
-          return (
-            <tr key={i}>
-              <td>
-                <a href={url ? `https://github.com/${url}` : null} target="_blank">
-                  {name}
-                </a>
-              </td>
-              <td dangerouslySetInnerHTML={{__html: description}} />
-            </tr>
-          );
-        });
+        const pluginItems = plugins.map((plugin, i) => (
+          <Plugin key={i} {...plugin} />
+        ));
 
+        // FIXME: subcategory is a string
         return subcategory === 'undefined' ?
           pluginItems :
           [subcatItem, ...pluginItems];
       });
 
-      return [catItem].concat(subcatItems);
+      return [catItem, ...subcatItems];
     });
 
     return <div>
@@ -137,7 +145,8 @@ class Body extends Component {
         placeholder="Type to search..."
         type="text"
         className="searchbox"
-        onKeyUp={this.handleKeyUp.bind(this)} />
+        onKeyUp={this.handleKeyUp.bind(this)}
+      />
       {this.renderFeatured()}
       <table className="data-table">
         <thead>
