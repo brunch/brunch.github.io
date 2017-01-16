@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "brunch watch --server",
-    "prod": "brunch build --production",
+    "prod": "npm run lint && brunch build --production",
     "lint": "eslint app"
   },
   "dependencies": {
