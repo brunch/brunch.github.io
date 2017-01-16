@@ -7,16 +7,15 @@
   "license": "MIT",
   "scripts": {
     "start": "brunch watch --server",
-    "prod": "brunch build --production"
+    "prod": "npm run lint && brunch build --production",
+    "lint": "eslint app"
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
     "inferno": "^1.1.1",
-    "inferno-create-class": "^1.1.1",
-    "inferno-create-element": "^1.1.1",
-    "install": "^0.8.4",
+    "inferno-component": "^1.1.2",
+    "inferno-create-element": "^1.1.2",
     "inuitcss": "^6.0.0-beta.4",
-    "npm": "^4.0.5",
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
@@ -24,9 +23,13 @@
     "autoprefixer": "^6.0",
     "babel-brunch": "^6.0",
     "babel-plugin-inferno": "^1.5.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "brunch": "github:brunch/brunch",
     "clean-css-brunch": "^2.0",
     "css-brunch": "^2.0",
+    "eslint": "^3.13.1",
+    "eslint-config-brunch": "brunch/eslint-config-brunch",
+    "eslint-plugin-react": "^6.9.0",
     "grunticon-lib": "^1.0.4",
     "jade-brunch": "^2.8",
     "javascript-brunch": "^2.0",

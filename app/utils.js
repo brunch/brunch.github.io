@@ -1,32 +1,31 @@
-var filterItems = function(items, search, attributes) {
-  var searchRes = search.split(' ').filter(function(expr) {
-    return expr !== '';
-  }).map(function(expr) {
-    return new RegExp(expr, 'i');
-  });
+'use strict';
+
+const filterItems = (items, search, attributes) => {
+  const searchRes = search
+    .split(' ')
+    .filter(expr => expr !== '')
+    .map(expr => new RegExp(expr, 'i'));
 
   if (searchRes.length === 0) return items;
 
-  return items.filter(function(item) {
-    var attributeValues = attributes.map(function(attr) { return item[attr]; });
-    var itemString = attributeValues.join(' ');
-    return searchRes.every(function(searchRe) {
-      return searchRe.test(itemString);
-    });
+  return items.filter(item => {
+    const itemString = attributes.map(attr => item[attr]).join(' ');
+    return searchRes.every(searchRe => searchRe.test(itemString));
   });
 };
 
-var compare = function(order, key) {
-  return function(i1, i2) {
-    var id1 = order.indexOf(i1[key]);
-    var id2 = order.indexOf(i2[key]);
+const compare = (order, key) => (i1, i2) => {
+  const id1 = order.indexOf(i1[key]);
+  const id2 = order.indexOf(i2[key]);
 
-    if (id1 !== -1 && id2 !== -1) {
-      return id1 > id2 ? 1 : -1;
-    } else {
-      return id1 ? 1 : id2 ? -1 : i1[key].localeCompare(i2[key]);
-    }
-  };
+  if (id1 !== -1 && id2 !== -1) {
+    return id1 > id2 ? 1 : -1;
+  }
+
+  return id1 ? 1 : id2 ? -1 : i1[key].localeCompare(i2[key]);
 };
 
-module.exports = {filterItems: filterItems, compare: compare};
+module.exports = {
+  filterItems,
+  compare,
+};

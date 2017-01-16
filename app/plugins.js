@@ -1,134 +1,165 @@
+'use strict';
+
 require('whatwg-fetch');
-var utils = require('./utils');
-var filterItems = utils.filterItems;
-var compare = utils.compare;
+const Component = require('inferno-component');
+const {filterItems, compare} = require('./utils');
 
-var Body = createClass({
-  getInitialState: function() {
-    return {
+// Category and subcategory component
+const Category = ({sub = false, name}) => (
+  <tr>
+    <td colSpan={2}>
+      {sub ? <h5>{name}</h5> : <h4>{name}</h4>}
+    </td>
+  </tr>
+);
+
+// Plugin's table cell component
+const Plugin = ({url, name, description}) => (
+  <tr>
+    <td>
+      <a href={url ? `https://github.com/${url}` : null} target="_blank">
+        {name}
+      </a>
+    </td>
+    <td dangerouslySetInnerHTML={{__html: description}} />
+  </tr>
+);
+
+// Featured plugin's list item component
+const FeaturedPlugin = ({url, name, description}) => (
+  <li>
+    <a href={url ? `https://github.com/${url}` : null} target="_blank">
+      {name}
+    </a>
+    {' — '}
+    <span dangerouslySetInnerHTML={{__html: description}} />
+  </li>
+);
+
+
+class Body extends Component {
+  constructor() {
+    super();
+    this.state = {
       plugins: [],
-      search: ''
+      search: '',
     };
-  },
+  }
 
-  componentWillMount: function() {
-    var self = this;
-
+  componentWillMount() {
     fetch('/plugins.json')
-      .then(function(x) { return x.json(); })
-      .then(function(x) {
-        self.setState({ plugins: x.plugins });
-      });
-  },
+      .then(res => res.json())
+      .then(({plugins}) => this.setState({plugins}));
+  }
 
-  handleKeyUp: function(e) {
-    this.setState({ search: e.target.value });
-  },
+  handleKeyUp(e) {
+    this.setState({search: e.target.value});
+  }
 
-  filteredPlugins: function() {
-    var plugins = this.state.plugins;
-    var search = this.state.search;
-    return filterItems(plugins, search, ['name', 'url', 'category', 'subcategory', 'description']);
-  },
+  get filteredPlugins() {
+    const {plugins, search} = this.state;
+    return filterItems(plugins, search, [
+      'name', 'url', 'category', 'subcategory', 'description',
+    ]);
+  }
 
-  groupedPlugins: function() {
-    var plugins = this.filteredPlugins();
+  groupedPlugins() {
+    // FIXME: Simplify that shit. Defenitely it might be implemented easier
+    const groupedObj = this.filteredPlugins.reduce((memo, plugin) => {
+      const {category, subcategory} = plugin;
 
-    var groupedObj = plugins.reduce(function(memo, plugin) {
-      if (!memo[plugin.category]) {
-        memo[plugin.category] = {};
-      }
+      if (!(category in memo)) memo[category] = {};
+      if (!(subcategory in memo[category])) memo[category][subcategory] = [];
 
-      if (!memo[plugin.category][plugin.subcategory]) {
-        memo[plugin.category][plugin.subcategory] = [];
-      }
-
-      memo[plugin.category][plugin.subcategory].push(plugin);
+      memo[category][subcategory].push(plugin);
       return memo;
     }, {});
 
-    return Object.keys(groupedObj).map(function(category) {
+    return Object.keys(groupedObj).map(category => {
       return {
-        category: category,
-        subcategories: Object.keys(groupedObj[category]).map(function(subcategory) {
-          return {
-            subcategory: subcategory,
-            plugins: groupedObj[category][subcategory]
-          };
-        })
+        category,
+        subcategories: Object.keys(groupedObj[category]).map(subcategory => ({
+          subcategory,
+          plugins: groupedObj[category][subcategory],
+        })),
       };
     });
-  },
-
-  categorySortedPlugins: function() {
-    var sorting = ['Compilers', 'Minifiers', 'Linters', 'Graphics', 'Others'];
-    var subSorting = { 'Compilers': ['Script languages', 'Style languages', 'Pre-compiled templates'] };
-
-    var catPlugins = this.groupedPlugins();
-
-    catPlugins = catPlugins.map(function(cat) {
-      return {
-        category: cat.category,
-        subcategories: cat.subcategories.sort(subSorting[cat.category] || [], 'subcategory')
-      };
-    });
-
-    return catPlugins.sort(compare(sorting, 'category'));
-  },
-
-  renderFeatured: function() {
-    var featuredPlugins = this.state.plugins.filter(function(plug) { return plug.featured; });
-    var featuredItems = featuredPlugins.map(function(plugin, i) {
-      var fullURL = plugin.url ? "https://github.com/" + plugin.url : null;
-
-      return <li key={i}>
-        <a href={fullURL} target="_blank">{plugin.name}</a> — <span dangerouslySetInnerHTML={{__html: plugin.description}} />
-      </li>;
-    });
-    return this.state.search.length > 0 ? null : <div>
-      <h3>Here are some plugins to get you started:</h3>
-      <ul>{featuredItems}</ul>
-    </div>;
-  },
-
-  render: function() {
-    var pluginItems = this.categorySortedPlugins().map(function(category) {
-      var catItem = <tr key={category.category}><td colSpan={2}><h4>{category.category}</h4></td></tr>;
-
-      var subcatItems = category.subcategories.map(function(subcategory) {
-        var subcatItem = <tr key={subcategory.subcategory}><td colSpan={2}><h5>{subcategory.subcategory}</h5></td></tr>;
-
-        var pluginItems = subcategory.plugins.map(function(plugin, i) {
-          var fullURL = plugin.url ? "https://github.com/" + plugin.url : null;
-
-          return <tr key={i}>
-            <td><a href={fullURL} target="_blank">{plugin.name}</a></td>
-            <td dangerouslySetInnerHTML={{__html: plugin.description}} />
-          </tr>;
-        });
-
-        return (subcategory.subcategory !== 'undefined' ? [subcatItem] : []).concat(pluginItems);
-      })
-
-      return [catItem].concat(subcatItems);
-    });
-
-    return <div>
-      <input placeholder="Type to search..." type="text" className="searchbox" onKeyUp={this.handleKeyUp}/>
-      {this.renderFeatured()}
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pluginItems}
-        </tbody>
-      </table>
-    </div>;
   }
-});
+
+  get categorySortedPlugins() {
+    const sorting = [
+      'Compilers', 'Minifiers', 'Linters', 'Graphics', 'Others',
+    ];
+
+    return this.groupedPlugins()
+      .sort(compare(sorting, 'category'));
+  }
+
+  renderFeatured() {
+    const {plugins} = this.state;
+
+    const featuredPlugins = plugins
+      .filter(plug => plug.featured)
+      .map((plugin, i) => (
+        <FeaturedPlugin key={i} {...plugin} />
+      ));
+
+    return this.state.search.length > 0 ? null : (
+      <div>
+        <h3>Here are some plugins to get you started:</h3>
+        <ul>{featuredPlugins}</ul>
+      </div>
+    );
+  }
+
+  render() {
+    // FIXME: Simplify this map in map in map. Too complex.
+    const pluginItems = this.categorySortedPlugins.map(({category, subcategories}) => {
+      const catItem = (
+        <Category key={category} name={category} />
+      );
+
+      const subcatItems = subcategories.map(({subcategory, plugins}) => {
+        const subcatItem = (
+          <Category sub key={category} name={subcategory} />
+        );
+
+        const pluginItems = plugins.map((plugin, i) => (
+          <Plugin key={i} {...plugin} />
+        ));
+
+        // FIXME: subcategory is a string
+        return subcategory === 'undefined' ?
+          pluginItems :
+          [subcatItem, ...pluginItems];
+      });
+
+      return [catItem, ...subcatItems];
+    });
+
+    return (
+      <div>
+        <input
+          placeholder="Type to search..."
+          type="text"
+          className="searchbox"
+          onKeyUp={this.handleKeyUp.bind(this)}
+        />
+        {this.renderFeatured()}
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pluginItems}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+};
 
 module.exports = Body;

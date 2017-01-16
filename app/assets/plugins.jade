@@ -4,7 +4,11 @@ block content
 
   script.
     document.addEventListener('DOMContentLoaded', function() {
-      Inferno.render(createElement(require('plugins'), null), document.querySelector('#plugins-body'));
+      // FIXME: Do not use globals
+      Inferno.render(
+        createElement(require('plugins'), null),
+        document.querySelector('#plugins-body')
+      );
     });
 
   :marked
