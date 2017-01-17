@@ -13,4 +13,4 @@ If you want to edit source files then you should switch to `source` branch and w
 
 ## License
 
-Brunch site is licensed under the [MIT license](https://raw.githubusercontent.com/brunch/brunch/master/LICENSE).
+Brunch site is licensed under the [MIT license](https://opensource.org/licenses/MIT).
