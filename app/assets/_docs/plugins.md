@@ -206,7 +206,9 @@ BrunchPlugin.prototype.brunchPlugin = true;
 // Required for compilers & linters.
 // It would filter-out the list of files to operate on.
 // BrunchPlugin.prototype.extension = 'js';
-// BrunchPlugin.prototype.pattern = /\.js$/;
+// BrunchPlugin.prototype.pattern = /\.jsx?$/;
+// `pattern` is preferred over `extension` by Brunch.
+// Please, specify only one of them.
 
 // Indicates which environment a plugin should be applied to.
 // The default value is '*' for usual plugins and
