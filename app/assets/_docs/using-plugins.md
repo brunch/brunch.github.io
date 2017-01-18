@@ -105,4 +105,4 @@ Starting with Brunch 2.8, this is made available for plugins to implement.
 
 ## Tips
 
-Don't include plugins for languages or technologies your app does not use. They may unnecessarily slowdown the build process.
+Don't include plugins for languages or technologies your app does not use. They may unnecessarily slow down the build process.
