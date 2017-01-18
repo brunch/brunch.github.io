@@ -6,7 +6,7 @@ Brunch plugins are plain JS classes which are initialized with Brunch configs.
 
 ## Reference
 
-Almost every plugin is usually working with so-called `File` entities:
+Plugins work with so-called `File` entities:
 
 ```json
 {
@@ -20,7 +20,7 @@ As you can see, `File`s are bald JS `Object`s, which may contain fields like:
 * `path` - system path to the file
 * `data` - file data as JS `String`
 * `map` - source map
-* and anything else that could be consumed by next plugins. For example, the linter plugin may add `babelTree` to the `File`, the compiler plugin in pipeline would see it and won't do the parsing twice. (Though this will not work with parallelized build.)
+* and anything else that could be consumed by next plugins.
 
 ### Pipeline
 
@@ -28,6 +28,7 @@ The Brunch execution pipeline looks like this:
 
 ```
 // [internal] Watch files with Chokidar.
+// When any file is added or changed, start the pipeline.
 watch(files)
 |
 // When any file is added or changed, start the pipeline.
@@ -59,14 +60,13 @@ Given a file, this should return a list of file paths that depend on this one.
 
 ### Method: `lint(file): Promise(ok, Error)`
 
-When any file is added or changed, start the pipeline.
 Check whether the file is correct.
 
 ### Method: `compile(file): File`
 
-Compile a source file into js/css.
+Compile a source file into JS or CSS.
 
-CSS compilers can optionally produce the result with the `exports` key, which should be a String containing JavaScript code (with `module.exports`), that will be added into the bundle if the project code `require`s a stylesheet.
+CSS compilers can optionally produce the result with the `exports` key, which should be a string of JavaScript code (with `module.exports`), that will be added into the bundle if the project code `require`s a stylesheet.
 
 ### Method: `compileStatic(file): File`
 
@@ -75,6 +75,10 @@ Compile a static asset.
 ### Method: `optimize(file): File`
 
 Transform the compiled js/css into optimized js/css.
+
+### Hook: `preCompile`
+
+Called only before first compilation.
 
 ### Hook: `onCompile`
 
@@ -91,23 +95,30 @@ Executed before Brunch process is closed.
 Specifies the file type the plugin works on.
 Can be either of `javascript`, `stylesheet`, or `template`.
 
-### Property: `extension`
-
-`String`.
-Specifies the file extension that will be processed by this plugin.
-
 ### Property: `include`
 
 `Array`.
 Specifies additional files which will be included into build.
 
+### Property: `extension`
+
+`String`.
+Specifies the file extension that will be processed by this plugin.
+
 ### Property: `pattern`
 
 `RegExp`.
 Allows more flexibility than `extension`, e.g. to process several extensions.
-If this is specified, `extension` will be ignored.
+If this is specified, `extension` will be **ignored**.
 Either `pattern` or `extension` needs to be specified for *compilers* and *linters*.
 *Optimizers* don't need it.
+
+### Property: `targetExtension`
+
+`String`.
+Convenience for making chains of compilers.
+Specifies the new extension of processed file.
+For example, `less-brunch` changes `.less` to `.css` so `postcss-brunch` matches file by extension.
 
 ### Property: `staticExtension`
 
@@ -146,8 +157,9 @@ Let's take a look at the [boilerplate plugin](https://github.com/brunch/brunch-b
 // Remove everything your plugin doesn't need.
 class BrunchPlugin {
   constructor(config) {
-    // Replace 'plugin' with your plugin's name;
-    this.config = config.plugins.plugin;
+    // Replace 'plugin' with your plugin's name.
+    // Don't include 'brunch' or 'plugin' words in configuration key.
+    this.config = config.plugins.plugin || {};
   }
 
   // Optional
@@ -165,7 +177,7 @@ class BrunchPlugin {
   // compile(file) { return Promise.resolve(file); }
 
   // file: File => Promise[Array: Path]
-  // Allows Brunch to calculate dependants of the file and re-compile them too.
+  // Allows Brunch to calculate dependants of the file and recompile them too.
   // Examples: SASS '@import's, Jade 'include'-s.
   // getDependencies(file) { return Promise.resolve(['dep.js']); }
 
