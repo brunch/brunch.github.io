@@ -25,12 +25,11 @@ node_modules/
 # Brunch folder for temporary files.
 tmp/
 
-# Bower stuff.
-bower_components/
-
 # Site.
 /_site/
 /public/
 
 source/app/assets/skeletons.json
 *.map
+
+yarn.lock
