@@ -22,14 +22,13 @@ Less common options:
 
 ## Example
 
-Simplest Brunch config looks like that. Just 7 lines of pure configuration:
+Simplest Brunch config looks like that. Just 6 lines of pure configuration:
 
 ```js
 module.exports = {
   files: {
     javascripts: {joinTo: 'app.js'},
     stylesheets: {joinTo: 'app.css'},
-    templates: {joinTo: 'app.js'}
   }
 }
 ```
