@@ -8,7 +8,7 @@
 
 ## Tasting your first Brunch
 
-So, you've installed Node.js and brunch itself (`npm install -g brunch`).
+So, you've installed Node.js and Brunch itself (`npm install -g brunch`).
 You're probably starving at this point. Let's get *straight to the business*.
 
 `brunch new` helps to init new Brunch project from one of
