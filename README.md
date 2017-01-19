@@ -1,6 +1,6 @@
 # Brunch.io site
 
-[![Build Status](https://travis-ci.org/brunch/brunch.github.io.svg?branch=master)](https://travis-ci.org/brunch/brunch.github.io)
+[![Build Status](https://travis-ci.org/brunch/brunch.github.io.svg?branch=source)](https://travis-ci.org/brunch/brunch.github.io)
 
 This is a source code repository for http://brunch.io.
 
