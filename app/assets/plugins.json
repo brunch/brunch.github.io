@@ -166,8 +166,7 @@
     {
       "name": "cssnano-brunch",
       "url": "dlepaux/cssnano-brunch",
-      "category": "Compilers",
-      "subcategory": "Style languages",
+      "category": "Minifiers",
       "description": "<a href=\"http://cssnano.co/\">CSSNano</a> is a modular minifier, composed of single-responsibility PostCSS plugins."
     },
     {
