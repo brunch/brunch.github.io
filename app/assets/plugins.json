@@ -626,6 +626,13 @@
       "url": "roperzh/grunticon-brunch",
       "category": "Others",
       "description": "<a href=\"https://github.com/roperzh/grunticon-brunch\">grunticon-brunch</a> adds <a href=\"https://github.com/filamentgroup/grunticon-lib\">Grunticon</a> support to Brunch."
+    },
+    {
+      "name": "pegjs-brunch",
+      "url": "caleb531/pegjs-brunch",
+      "category": "Compilers",
+      "subcategory": "Script languages",
+      "description": "Adds support for <a href=\"https://github.com/pegjs/pegjs\">PEG.js</a>, a parser generator for JavaScript."
     }
   ]
 }
