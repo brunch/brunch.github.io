@@ -1,4 +1,4 @@
-```javascript
+```js
 module.exports = {
   files: {
     javascripts: {
@@ -19,7 +19,7 @@ module.exports = {
 
 `package.json`:
 
-```javascript
+```js
 {
   "devDependencies": {
     "brunch": "^2.0",
