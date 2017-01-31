@@ -1,14 +1,6 @@
 {
   "plugins": [
     {
-      "name": "JavaScript-brunch",
-      "url": "brunch/javascript-brunch",
-      "category": "Compilers",
-      "subcategory": "Script languages",
-      "description": "Provides JS support out-of-box. Without it, your JS files will be ignored.",
-      "featured": true
-    },
-    {
       "name": "HMR-brunch",
       "url": "brunch/hmr-brunch",
       "category": "Others",
