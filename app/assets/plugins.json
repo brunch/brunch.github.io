@@ -149,8 +149,8 @@
       "desc": "<a href=\"pleeease.io\">Pleeease</a> is a css post-processor built with PostCSS. It adds prefixes, packs media queries, minification and provides some polyfills too."
     },
     {
-      "name": "PostCSS",
-      "url": "postcss/postcss",
+      "name": "postcss-brunch",
+      "url": "brunch/postcss-brunch",
       "category": "Compilers",
       "subcategory": "Style languages",
       "description": "(a CSS postprocessor). Add as many PostCSS plugins as you want (like <a href=\"https://github.com/postcss/autoprefixer\">Autoprefixer</a>)."
