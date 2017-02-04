@@ -7,12 +7,9 @@ Below is a schema which shows the order of function calls inside brunch while it
 * Linked things are underlined by the same color.
 * Phrases in quotes are relative to the debug mode output.
 
-You can start brunch with debug mode by adding `d` flag, for example: `brunch buld -d`<br/>
+You can start brunch with debug mode by adding `d` flag, for example: `brunch build -d`<br/>
 Be sure to check out brunch commands [here](http://brunch.io/docs/commands).
 
-
-![Brunch architecture schema](./../images/schema/brunch-inside.jpg "Brunch inside")
-
-
-
-
+<a href="./../images/schema/brunch-inside.jpg">
+  <img src="./../images/schema/brunch-inside.jpg" alt="Brunch architecture schema">
+</a>
