@@ -24,6 +24,7 @@ const docSidebar = [
     {title: 'Config', path: 'config'},
     {title: 'Plugin API', path: 'plugins'},
     {title: 'Troubleshooting', path: 'troubleshooting'},
+    {title: 'Architecture', path: 'architecture'},
     {title: 'Changelog', link: 'https://github.com/brunch/brunch/blob/master/CHANGELOG.md'},
   ]},
   {section: 'Community Resources', items: [
