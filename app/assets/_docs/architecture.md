@@ -10,6 +10,8 @@ Below is a schema which shows the order of function calls inside brunch while it
 You can start brunch with debug mode by adding `d` flag, for example: `brunch build -d`<br/>
 Be sure to check out brunch commands [here](http://brunch.io/docs/commands).
 
-<a href="./../images/schema/brunch-inside.jpg">
-  <img src="./../images/schema/brunch-inside.jpg" alt="Brunch architecture schema">
-</a>
+[![Brunch architecture schema][brunch-inside]][brunch-inside]
+
+<!-- References -->
+
+[brunch-inside]: ./../images/schema/brunch-inside.jpg
