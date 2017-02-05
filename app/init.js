@@ -87,6 +87,7 @@ const deferIframe = () => {
 // Fix for: https://github.com/brunch/brunch.github.io/issues/233
 if (process.env.NODE_ENV === 'development') {
   [...document.querySelectorAll('a[href]')]
+    .filter(({pathname}) => !pathname.includes('.')) // already has extension
     .filter(({pathname}) => pathname !== '/' && pathname.startsWith('/'))
     .forEach(link => link.href += '.html'); // eslint-disable-line
 }
