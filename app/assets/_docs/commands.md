@@ -9,7 +9,7 @@ Create new brunch project. Full syntax: `brunch new [path] [-s skeleton]`
 
 Example:
 
-* `brunch new`: The default skeleton does not add any libraries or frameworks
+* `brunch new`: The [default skeleton](#default-skeleton) does not add any libraries or frameworks
 * `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
 * `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
 
@@ -31,6 +31,16 @@ Watches brunch app directory for changes and rebuilds the whole project when the
 * *all the same options* available in `brunch build`, plus:
 * `-s, --server`: run a simple HTTP + pushstate server that would serve `public` dir in `/`
     * `-P PORT, --port PORT`: define on which port the server would run
+
+## Default skeleton
+
+* This is the best option for starting from scratch with Brunch.
+* `brunch new` initializes new brunch project already configured to start work.
+* Clean folder structure, little and simple brunch config and few default brunch plugins.
+* How to start and what skeleton includes you can see in it's [repo](https://github.com/brunch/dead-simple).
+* More about default brunch settings and behavior you can learn in [Conventions and defaults](https://github.com/brunch/brunch-guide/blob/master/content/en/chapter03-conventions-and-defaults.md) of brunch [guide](https://github.com/brunch/brunch-guide).
+
+There are more [other available skeletons](http://brunch.io/skeletons) with already preinstalled and configured stuff for different purposes.
 
 ## Tips
 
