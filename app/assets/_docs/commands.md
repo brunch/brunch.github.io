@@ -13,6 +13,12 @@ Example:
 * `brunch new -s es6` would init a simple app that supports ECMAScript 6 compilation with Babel.
 * `brunch new -s react` and `brunch new -s redux` are lovely skeletons for React fans.
 
+You can specify environment variable `BRUNCH_INIT_SKELETON` for this command.
+
+* `BRUNCH_INIT_SKELETON=es6 brunch new` do the same as `brunch new -s es6`
+
+Firstly Brunch looks for the skeleton provided in command options, then for the env variable `BRUNCH_INIT_SKELETON` and if skeleton wasn't provided Brunch apply [default skeleton](#default-skeleton).
+
 ## `brunch build` / `brunch b`
 
 Builds a brunch project and places the output into `public` directory.
@@ -35,10 +41,10 @@ Watches brunch app directory for changes and rebuilds the whole project when the
 ## Default skeleton
 
 * This is the best option for starting from scratch with Brunch.
-* `brunch new` initializes new brunch project already configured to start work.
-* Clean folder structure, little and simple brunch config and few default brunch plugins.
+* `brunch new` initializes new Brunch project already configured to start work.
+* Clean folder structure, little and simple Brunch config and few default Brunch plugins.
 * How to start and what skeleton includes you can see in it's [repo](https://github.com/brunch/dead-simple).
-* More about default brunch settings and behavior you can learn in [Conventions and defaults](https://github.com/brunch/brunch-guide/blob/master/content/en/chapter03-conventions-and-defaults.md) of brunch [guide](https://github.com/brunch/brunch-guide).
+* More about default Brunch settings and behavior you can learn in [Conventions and defaults](https://github.com/brunch/brunch-guide/blob/master/content/en/chapter03-conventions-and-defaults.md) of Brunch [guide](https://github.com/brunch/brunch-guide).
 
 There are more [other available skeletons](http://brunch.io/skeletons) with already preinstalled and configured stuff for different purposes.
 
