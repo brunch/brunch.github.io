@@ -44,38 +44,35 @@ const social = [
   },
 ];
 
-module.exports = {
-  files: {
-    javascripts: {joinTo: 'app.js'},
-    templates: {joinTo: 'app.js'},
-    stylesheets: {joinTo: 'app.css'},
+exports.files = {
+  javascripts: {joinTo: 'app.js'},
+  stylesheets: {joinTo: 'app.css'},
+};
+exports.npm = {
+  styles: {'inuit.css': ['_inuit.scss']},
+  globals: {
+    // FIXME: Do not use globals
+    Inferno: 'inferno',
+    createElement: 'inferno-create-element',
+    Promise: 'es6-promise',
   },
-  npm: {
-    styles: {'inuit.css': ['_inuit.scss']},
-    globals: {
-      // FIXME: Do not use globals
-      Inferno: 'inferno',
-      createElement: 'inferno-create-element',
-      Promise: 'es6-promise',
-    },
+};
+exports.plugins = {
+  babel: {
+    presets: ['es2015'],
+    plugins: ['inferno', 'transform-object-rest-spread'],
   },
-  plugins: {
-    babel: {
-      presets: ['es2015'],
-      plugins: ['inferno', 'transform-object-rest-spread'],
-    },
-    jade: {
-      locals: {nav, social, docSidebar},
-    },
-    autoReload: {
-      enabled: {css: true, js: false, assets: true},
-    },
-    postcss: {
-      processors: [
-        require('autoprefixer')({
-          browsers: ['last 2 versions'],
-        }),
-      ],
-    },
+  jade: {
+    locals: {nav, social, docSidebar},
+  },
+  autoReload: {
+    enabled: {css: true, js: false, assets: true},
+  },
+  postcss: {
+    processors: [
+      require('autoprefixer')({
+        browsers: ['last 2 versions'],
+      }),
+    ],
   },
 };
