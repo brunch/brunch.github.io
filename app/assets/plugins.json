@@ -43,7 +43,7 @@
     },
     {
       "name": "typescript-brunch",
-      "url": "joshheyse/typescript-brunch",
+      "url": "brunch/typescript-brunch",
       "category": "Compilers",
       "subcategory": "Script languages",
       "description": "<a href=\"http://www.typescriptlang.org/\">typescript</a> is a typed superset of JavaScript that compiles to plain JavaScript."
@@ -535,13 +535,6 @@
       "url": "colinbate/environment-brunch",
       "category": "Others",
       "description": "Replace a token in your JS/TS files with the current Brunch environment."
-    },
-    {
-      "name": "brunch-typescript",
-      "url": "/baptistedonaux/brunch-typescript",
-      "category": "Compilers",
-      "subcategory": "Script languages",
-      "description": "<a href=\"http://www.typescriptlang.org/\">Typescript</a> is a typed superset of JavaScript that compiles to plain JavaScript."
     },
     {
       "name": "Vue Brunch",
