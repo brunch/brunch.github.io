@@ -1,19 +1,17 @@
 ```js
-module.exports = {
-  files: {
-    javascripts: {
-      joinTo: {
-        'vendor.js': /^(?!app)/,
-        'app.js': /^app/
-      }
-    },
-    stylesheets: {joinTo: 'app.css'}
+exports.files = {
+  javascripts: {
+    joinTo: {
+      'vendor.js': /^(?!app)/,
+      'app.js': /^app/
+    }
   },
+  stylesheets: {joinTo: 'app.css'}
+};
 
-  plugins: {
-    babel: {presets: ['es2015', 'react']},
-    postcss: {processors: [require('autoprefixer')]}
-  }
+exports.plugins = {
+  babel: {presets: ['latest', 'react']},
+  postcss: {processors: [require('autoprefixer')]}
 };
 ```
 
@@ -22,13 +20,14 @@ module.exports = {
 ```js
 {
   "devDependencies": {
-    "brunch": "^2.0",
-    "babel-brunch": "^6.0",
-    "sass-brunch": "^2.0",
-    "uglify-js-brunch": "^2.0",
-    "postcss-brunch": "^2.0",
-    "autoprefixer": "^6.0",
-    "babel-preset-react": "^6.0"
+    "brunch": "^2",
+    "babel-brunch": "^6",
+    "postcss-brunch": "^2",
+    "sass-brunch": "^2",
+    "uglify-js-brunch": "^2",
+    "autoprefixer": "^6",
+    "babel-preset-react": "^6",
+    "babel-preset-latest": "^6"
   }
 }
 ```
