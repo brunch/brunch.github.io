@@ -106,14 +106,6 @@
       "description": "Transpile GLSL to javascript strings through <a href=\"https://github.com/stackgl/glslify\">glslify</a>, a node-like module system for GLSL."
     },
     {
-      "name": "CSS-brunch",
-      "url": "brunch/css-brunch",
-      "category": "Compilers",
-      "subcategory": "Style languages",
-      "description": "Provides CSS support out-of-box. Without it, your CSS files will be ignored.",
-      "featured": true
-    },
-    {
       "name": "Stylus-brunch",
       "url": "brunch/stylus-brunch",
       "category": "Compilers",
