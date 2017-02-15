@@ -267,10 +267,10 @@
     },
     {
       "name": "nunjucks-brunch",
-      "url": "PxlBuzzard/nunjucks-brunch",
+      "url": "brunch/nunjucks-brunch",
       "category": "Compilers",
       "subcategory": "Pre-compiled templates",
-      "description": "<a href=\"http://jlongster.github.io/nunjucks/\">Nunjucks</a> is a rich and powerful templating language for JavaScript."
+      "description": "<a href=\"https://mozilla.github.io/nunjucks/\">Nunjucks</a> is a rich and powerful templating language for JavaScript."
     },
     {
       "name": "html2js-brunch",
