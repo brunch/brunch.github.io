@@ -1,6 +1,12 @@
 {
   "plugins": [
     {
+      "name": "elm-css-brunch",
+      "url": "dustinfarris/elm-css-brunch",
+      "category": "Compilers",
+      "description": "Compile your elm-css stylesheets in to css files."
+    },
+    {
       "name": "HMR-brunch",
       "url": "brunch/hmr-brunch",
       "category": "Others",
