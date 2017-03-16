@@ -616,6 +616,12 @@
       "category": "Compilers",
       "subcategory": "Script languages",
       "description": "Adds support for <a href=\"https://github.com/pegjs/pegjs\">PEG.js</a>, a parser generator for JavaScript."
+    },
+    {
+      "name": "kssbrunch",
+      "url": "FaKeller/kss-brunch",
+      "category": "Others",
+      "description": "Integrate <a href=\"https://github.com/kss-node/kss-node\">kss-node</a> to generate a living style guide from <a href=\"http://warpspire.com/kss/\">KSS</a> documentation."
     }
   ]
 }
