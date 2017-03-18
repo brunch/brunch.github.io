@@ -1,6 +1,12 @@
 {
   "plugins": [
     {
+      "name": "elm-css-brunch",
+      "url": "dustinfarris/elm-css-brunch",
+      "category": "Compilers",
+      "description": "Compile your elm-css stylesheets in to css files."
+    },
+    {
       "name": "HMR-brunch",
       "url": "brunch/hmr-brunch",
       "category": "Others",
@@ -617,6 +623,12 @@
       "category": "Compilers",
       "subcategory": "Pre-compiled templates",
       "description": "A Brunch plugins for raw modules."
+    },
+    {
+      "name": "kssbrunch",
+      "url": "FaKeller/kss-brunch",
+      "category": "Others",
+      "description": "Integrate <a href=\"https://github.com/kss-node/kss-node\">kss-node</a> to generate a living style guide from <a href=\"http://warpspire.com/kss/\">KSS</a> documentation."
     }
   ]
 }
