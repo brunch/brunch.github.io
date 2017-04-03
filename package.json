@@ -8,7 +8,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "prod": "npm run lint && brunch build --production",
-    "lint": "eslint app && node validateJSON.js"
+    "lint": "eslint app"
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
