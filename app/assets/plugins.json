@@ -618,6 +618,13 @@
       "description": "Adds support for <a href=\"https://github.com/pegjs/pegjs\">PEG.js</a>, a parser generator for JavaScript."
     },
     {
+      "name": "raw-brunch",
+      "url": "denysdovhan/raw-brunch",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "A Brunch plugins for raw modules."
+    },
+    {
       "name": "kssbrunch",
       "url": "FaKeller/kss-brunch",
       "category": "Others",
