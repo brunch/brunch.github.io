@@ -21,7 +21,7 @@ const toc = (contentClass, fallbackContentClass, tableClass) => {
   const els = [...art.childNodes]
     .filter(el => el.tagName === 'H2' || el.tagName === 'H3');
 
-  if (els.length === 0) return;
+  if (!els.length) return;
 
   const grouped = els.reduce((memo, el) => {
     // FIXME: Need to fix this reducer
