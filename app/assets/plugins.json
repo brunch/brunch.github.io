@@ -1,6 +1,12 @@
 {
   "plugins": [
     {
+      "name": "brunch-tumblr-theme-parser",
+      "url": "silbinarywolf/brunch-tumblr-theme-parser",
+      "category": "Compilers",
+      "description": "Compile your tumblr template into plain HTML."
+    },
+    {
       "name": "elm-css-brunch",
       "url": "dustinfarris/elm-css-brunch",
       "category": "Compilers",
