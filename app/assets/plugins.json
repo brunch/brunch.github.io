@@ -635,6 +635,12 @@
       "url": "FaKeller/kss-brunch",
       "category": "Others",
       "description": "Integrate <a href=\"https://github.com/kss-node/kss-node\">kss-node</a> to generate a living style guide from <a href=\"http://warpspire.com/kss/\">KSS</a> documentation."
+    },
+    {
+      "name": "imagemin-brunch",
+      "url": "stawberri/imagemin-brunch",
+      "category": "Minifiers",
+      "description": "Minify images with <a href=\"https://github.com/imagemin/imagemin\">imagemin</a>."
     }
   ]
 }
