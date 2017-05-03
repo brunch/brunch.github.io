@@ -108,11 +108,11 @@ Also, consider [`module.nameCleaner` option](#-modules-), if you need to require
 `Required, object`: `files` configures handling of application files: which compiler would be used on which file, what name should output file have etc. Any paths specified here must be listed in `paths.watched` as described above, for building.
 
 * `<type>`: `javascripts`, `stylesheets` or `templates`
-  - joinTo: (required) describes how files will be compiled & joined together.
+  - joinTo: (required when no `entypoints` was declared) describes how files will be compiled & joined together.
     Available formats:
     + `'outputFilePath'` in order to have all source files compiled together to one
     + map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
-  - entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file. Resembles `joinTo` but allows to included only the files you need.
+  - entryPoints: (optional) describes the entry points of an application. The specified file and all of its dependencies will then be joined into a single file (or if you have specified a mapping, into several files). Resembles `joinTo` but allows to included only required files. Because `entryPoints` is so similar to `joinTo`, it is better to choose only one of them in most cases. See the example below.
     Available formats:
     + `'entryFile.js': 'outputFilePath'`
     + `'entryFile.js':` map of `'outputFilePath'` (see [Pattern matching](#pattern-matching) section)
@@ -134,6 +134,14 @@ files: {
       'javascripts/app.js': /^app/,
       'javascripts/vendor.js': /^(?!app)/
     }
+   // or
+   // entryPoints: {
+   //   'entryPoints.js': {
+   //     'javascripts/app.js': /^app/,
+   //     'javascripts/vendor.js': /^(?!app)/
+   //   }
+   // }
+   
   },
   stylesheets: {
     joinTo: 'stylesheets/app.css'
