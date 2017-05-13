@@ -647,6 +647,13 @@
       "url": "stawberri/imagemin-brunch",
       "category": "Minifiers",
       "description": "Minify images with <a href=\"https://github.com/imagemin/imagemin\">imagemin</a>."
+    },
+    {
+      "name": "svelte-brunch",
+      "url": "kazzkiq/svelte-brunch",
+      "category": "Compilers",
+      "subcategory": "Script languages",
+      "description": "Adds support to <a href=\"https://svelte.technology/\">Svelte</a> components to your project"
     }
   ]
 }
