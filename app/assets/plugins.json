@@ -1,6 +1,12 @@
 {
   "plugins": [
     {
+      "name": "spritesheet-js-brunch",
+      "url": "blackmirror1980/spritesheet-js-brunch",
+      "category": "Compilers",
+      "description": "Adds spritesheet-js support to brunch"
+    },
+    {
       "name": "replacer-brunch",
       "url": "tkesgar/replacer-brunch",
       "category": "Compilers",
