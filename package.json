@@ -19,6 +19,7 @@
     "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
+    "appcache-brunch": "denar90/appcache-brunch#refactoring",
     "auto-reload-brunch": "^2",
     "autoprefixer": "^6",
     "babel-brunch": "^6",
