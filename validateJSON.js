@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const jsonPaths = ['./app/assets/plugins.json', './app/assets/manifest.json'];
