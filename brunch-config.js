@@ -74,5 +74,5 @@ exports.plugins = {
         browsers: ['last 2 versions'],
       }),
     ],
-  },
+  }
 };
