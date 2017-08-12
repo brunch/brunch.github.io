@@ -35,7 +35,7 @@
     "jade-brunch": "^2.8",
     "jstransformer-marked": "^1.0.1",
     "postcss-brunch": "^0.5",
-    "sass-brunch": "^2.10",
+    "sass-brunch": "brunch/sass-brunch",
     "uglify-js-brunch": "^2.0"
   }
 }
