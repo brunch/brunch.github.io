@@ -35,11 +35,11 @@ watch(files)
 // Check whether the file is correct.
 lint(file): Boolean
 |
-// Extract file's dependants & dependencies
-getDependencies(file): Array[Path]
-|
 // Transform file contents into js, css etc.
 compile(file): File
+|
+// Extract file's dependants & dependencies
+getDependencies(file): Array[Path]
 |
 // [internal] wrap file into a module definition
 wrap(file): File
