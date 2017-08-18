@@ -660,6 +660,12 @@
       "category": "Compilers",
       "subcategory": "Script languages",
       "description": "Adds support to <a href=\"https://svelte.technology/\">Svelte</a> components to your project"
+    },
+    {
+      "name": "stylint-brunch",
+      "url": "tomquirk/stylint-brunch",
+      "category": "Linters",
+      "description": "<a href=\"https://github.com/tomquirk/stylint-brunch\">stylint-brunch</a> adds <a href=\"https://github.com/SimenB/stylint\">Stylint</a> (a <a href=\"http://stylus-lang.com/\">Stylus</a> linter) support to Brunch.<br>"
     }
   ]
 }
