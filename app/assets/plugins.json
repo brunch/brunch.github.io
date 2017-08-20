@@ -672,6 +672,12 @@
       "url": "tungd/obfuscator-brunch",
       "category": "Minifiers",
       "description": "<a href=\"https://github.com/tungd/obfuscator-brunch\">obfuscator-brunch</a> adds <a href=\"https://github.com/javascript-obfuscator/javascript-obfuscator\">JavaScript Obfuscator</a> support to Brunch.<br>"
+    },
+    {
+      "name": "ractive-component-brunch",
+      "url": "tungd/ractive-component-brunch",
+      "category": "Compilers",
+      "description": "<a href=\"https://github.com/tungd/ractive-component-brunch\">ractive-component-brunch</a> adds support for compiling <a href=\"https://ractive.js.org/\">RactiveJS</a> component files.<br>"
     }
   ]
 }
