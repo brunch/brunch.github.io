@@ -666,6 +666,12 @@
       "url": "tomquirk/stylint-brunch",
       "category": "Linters",
       "description": "<a href=\"https://github.com/tomquirk/stylint-brunch\">stylint-brunch</a> adds <a href=\"https://github.com/SimenB/stylint\">Stylint</a> (a <a href=\"http://stylus-lang.com/\">Stylus</a> linter) support to Brunch.<br>"
+    },
+    {
+      "name": "obfuscator-brunch",
+      "url": "tungd/obfuscator-brunch",
+      "category": "Minifiers",
+      "description": "<a href=\"https://github.com/tungd/obfuscator-brunch\">obfuscator-brunch</a> adds <a href=\"https://github.com/javascript-obfuscator/javascript-obfuscator\">JavaScript Obfuscator</a> support to Brunch.<br>"
     }
   ]
 }
