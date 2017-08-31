@@ -360,6 +360,12 @@
       "description": "<a href=\"http://eslint.org/\">ESLint</a> a pluggable linting utility for JavaScript and JSX."
     },
     {
+      "name": "stylelint-brunch",
+      "url": "hweeks/stylelint-brunch",
+      "category": "Linters",
+      "description": "Allows stylelint to be added as a linter for your project."
+    },
+    {
       "name": "static-site-brunch",
       "url": "devinus/static-site-brunch",
       "category": "Others",
