@@ -684,6 +684,12 @@
       "url": "tungd/ractive-component-brunch",
       "category": "Compilers",
       "description": "<a href=\"https://github.com/tungd/ractive-component-brunch\">ractive-component-brunch</a> adds support for compiling <a href=\"https://ractive.js.org/\">RactiveJS</a> component files.<br>"
+    },
+    {
+      "name": "adaptive-brunch",
+      "url": "ciming/adaptive-brunch",
+      "category": "Compilers",
+      "description": "<a href=\"https://github.com/ciming/adaptive-brunch\">adaptive-brunch</a> adds support forcalculates and generates adaptive css code, such as `rem` and `0.5px borders for retina devices`<br>"
     }
   ]
 }
