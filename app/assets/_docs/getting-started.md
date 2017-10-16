@@ -110,6 +110,6 @@ $ echo 'console.log([1, 2, 3].reduce((s, n) => s + n ** 2))' > app/index.js
 
 Since you've added Babel plugin to the board, Brunch would *magically* recompile the app and include *compiled* content of `index.js` in the output file. **Voila!**
 
-## Becoming professional cook
+## Becoming a professional cook
 
 Keen to learn the remaining 10%? Check out the [advanced guide to Brunch](https://github.com/brunch/brunch-guide#readme), which also describes using Brunch on a legacy codebase. Happy cooking!
