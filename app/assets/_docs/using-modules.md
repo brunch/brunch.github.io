@@ -7,7 +7,7 @@
 Organizing your JS code by modules is a central idea in Brunch.
 It allows your files to each have a separate scope, and also execute only when needed.
 
-File name is also it module name.
+A file's name is also its module name.
 To make things a bit nicer, Brunch cuts the `app` portion from the module name.
 For example, `app/config.js` will have a module name of `config.js`.
 With CommonJS, your modules will return values by putting them into `module.exports`, just like you would with Node.
