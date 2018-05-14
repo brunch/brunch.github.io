@@ -690,6 +690,12 @@
       "url": "ciming/adaptive-brunch",
       "category": "Compilers",
       "description": "<a href=\"https://github.com/ciming/adaptive-brunch\">adaptive-brunch</a> adds support forcalculates and generates adaptive css code, such as `rem` and `0.5px borders for retina devices`<br>"
+    },
+    {
+      "name": "purgecss-brunch",
+      "url": "jeffreyguenther/purgecss-brunch",
+      "category": "Optimizers",
+      "description": "<a href=\"https://github.com/jeffreyguenther/purgecss-brunch\">purgecss-brunch</a> adds support for purgecss.<br>"
     }
   ]
 }
