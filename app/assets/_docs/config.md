@@ -2,19 +2,19 @@
 
 Brunch uses configuration file `brunch-config.js` _(or `.coffee`)_ to manage various aspects of your app.
 
-* [**`paths`**](#-paths-) — where to take files from and where to put generated ones
-* [**`files`**](#-files-) — which files exactly should Brunch generate and how.
-* [**`npm`**](#-npm-) — NPM dependencies settings
-* [**`plugins`**](#-plugins-) — individual plugin settings.
+* [**`paths`**](#paths) — where to take files from and where to put generated ones
+* [**`files`**](#files) — which files exactly should Brunch generate and how.
+* [**`npm`**](#npm) — NPM dependencies settings
+* [**`plugins`**](#plugins) — individual plugin settings.
 
 Less common options:
 
-* [`modules`](#-modules-) — specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
-* [`conventions`](#-conventions-) — defines which files are treated as assets and which ones are ignored in your app.
-* [`watcher`](#-watcher-) — low-level configuration of the file watcher which empowers Brunch.
-* [`server`](#-server-) — allows to describe custom web-servers instead of the built-in one.
+* [`modules`](#modules) — specifies details of JS module implementation, such as `wrapper`, `definition`, `autoRequire` and `nameCleaner`.
+* [`conventions`](#conventions) — defines which files are treated as assets and which ones are ignored in your app.
+* [`watcher`](#watcher) — low-level configuration of the file watcher which empowers Brunch.
+* [`server`](#server) — allows to describe custom web-servers instead of the built-in one.
 * `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` — simple true/false options
-* [`hooks`](#-hooks-) — allows to specify handlers for different moments of building cycle
+* [`hooks`](#hooks) — allows to specify handlers for different moments of building cycle
 
 <span class="note">
   You can see the config schema, and all the defaults, in the `configBaseSchema` of [`lib/utils/config-validate.js`](https://github.com/brunch/brunch/blob/master/lib/utils/config-validate.js#L9) in the Brunch source code.
