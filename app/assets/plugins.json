@@ -1,6 +1,12 @@
 {
   "plugins": [
     {
+      "name": "brunch-feature-switcher",
+      "url": "shalimov/brunch-feature-switcher",
+      "category": "Compilers",
+      "description": "Plugin that hepls to add/remove/replace code based on included features, acts as conditional code replacer."
+    },
+    {
       "name": "spritesheet-js-brunch",
       "url": "blackmirror1980/spritesheet-js-brunch",
       "category": "Compilers",
