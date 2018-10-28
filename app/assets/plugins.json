@@ -372,6 +372,12 @@
       "description": "Allows stylelint to be added as a linter for your project."
     },
     {
+      "name": "tslint-brunch",
+      "url": "paulmedynski/tslint-brunch",
+      "category": "Linters",
+      "description": "Adds <a href=\"https://palantir.github.io/tslint\">TSLint</a> support for linting TypeScript files."
+    },
+    {
       "name": "static-site-brunch",
       "url": "devinus/static-site-brunch",
       "category": "Others",
