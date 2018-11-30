@@ -324,6 +324,13 @@
       "featured": true
     },
     {
+      "name": "uglify-es-brunch",
+      "url": "paulmedynski/uglify-es-brunch",
+      "category": "Minifiers",
+      "description": "Adds <a href=\"https://github.com/mishoo/UglifyJS2/tree/harmony\">uglify-es</a> support to Brunch.",
+      "featured": true
+    },
+    {
       "name": "CleanCSS-brunch",
       "url": "brunch/clean-css-brunch",
       "category": "Minifiers",
