@@ -15,7 +15,6 @@
     "inferno-component": "1.1.2",
     "inferno-create-element": "1.1.2",
     "inuitcss": "^6.0.0-beta.4",
-    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",
