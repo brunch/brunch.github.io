@@ -13,8 +13,7 @@
   "dependencies": {
     "inferno": "1.1.1",
     "inferno-component": "1.1.2",
-    "inferno-create-element": "1.1.2",
-    "inuitcss": "^6.0.0-beta.4",
+    "inferno-create-element": "1.1.2"
   },
   "devDependencies": {
     "auto-reload-brunch": "^2",
@@ -32,7 +31,7 @@
     "jade-brunch": "^2.8",
     "jstransformer-marked": "^1.0.1",
     "postcss-brunch": "^0.5",
-    "sass-brunch": "brunch/sass-brunch",
+    "sass-brunch": "2.10.5",
     "uglify-js-brunch": "^2.0"
   }
 }

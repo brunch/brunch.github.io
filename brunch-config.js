@@ -49,7 +49,6 @@ exports.files = {
   stylesheets: {joinTo: 'app.css'},
 };
 exports.npm = {
-  styles: {'inuit.css': ['_inuit.scss']},
   globals: {
     // FIXME: Do not use globals
     Inferno: 'inferno',
