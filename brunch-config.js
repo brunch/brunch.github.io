@@ -54,7 +54,6 @@ exports.npm = {
     // FIXME: Do not use globals
     Inferno: 'inferno',
     createElement: 'inferno-create-element',
-    Promise: 'es6-promise',
   },
 };
 exports.plugins = {

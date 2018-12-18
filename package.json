@@ -11,7 +11,6 @@
     "lint": "eslint app && ./validateJSON.js"
   },
   "dependencies": {
-    "es6-promise": "^4.0.5",
     "inferno": "1.1.1",
     "inferno-component": "1.1.2",
     "inferno-create-element": "1.1.2",
