@@ -715,6 +715,12 @@
       "url": "jeffreyguenther/purgecss-brunch",
       "category": "Optimizers",
       "description": "<a href=\"https://github.com/jeffreyguenther/purgecss-brunch\">purgecss-brunch</a> adds support for purgecss.<br>"
+    },
+    {
+      "name": "elm-fancy-brunch",
+      "url": "MattCheely/elm-fancy-brunch",
+      "category": "Compilers",
+      "description": "Elm compiler plugin with in-browser error message display."
     }
   ]
 }
