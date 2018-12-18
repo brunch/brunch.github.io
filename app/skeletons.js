@@ -1,6 +1,5 @@
 'use strict';
 
-require('whatwg-fetch');
 const Component = require('inferno-component');
 const {filterItems} = require('./utils');
 

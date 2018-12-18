@@ -11,15 +11,11 @@
     "lint": "eslint app && ./validateJSON.js"
   },
   "dependencies": {
-    "es6-promise": "^4.0.5",
     "inferno": "1.1.1",
     "inferno-component": "1.1.2",
-    "inferno-create-element": "1.1.2",
-    "inuitcss": "^6.0.0-beta.4",
-    "whatwg-fetch": "^2.0.1"
+    "inferno-create-element": "1.1.2"
   },
   "devDependencies": {
-    "appcache-brunch": "denar90/appcache-brunch#refactoring",
     "auto-reload-brunch": "^2",
     "autoprefixer": "^6",
     "babel-brunch": "^6",
@@ -35,7 +31,7 @@
     "jade-brunch": "^2.8",
     "jstransformer-marked": "^1.0.1",
     "postcss-brunch": "^0.5",
-    "sass-brunch": "brunch/sass-brunch",
+    "sass-brunch": "2.10.5",
     "uglify-js-brunch": "^2.0"
   }
 }
