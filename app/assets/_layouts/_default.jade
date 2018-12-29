@@ -15,7 +15,8 @@ html(lang='en')
 
     #navbar
       .container
-        a.icon-brunch-logo-web(href="/")
+        a.brunch-header-logo(href="/")
+          img(src="/images/logos/brunch-label.svg", alt="", width="107", height="40")
 
         ul.nav.nav--main-nav
           each item in nav
@@ -39,22 +40,18 @@ html(lang='en')
 
         script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js' defer onload="hljs.initHighlightingOnLoad()")
         script(src='/app.js' defer onload="require('init')")
-        script(src='/images/svg/grunticon.loader.js' defer onload="grunticon( [ '/images/svg/icons.data.svg.css', '/images/svg/icons.data.png.css', '/images/svg/icons.fallback.css' ] )")
 
         link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic')
         link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,700')
         link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css')
-        link(rel='publisher', href='https://plus.google.com/+PaulMillerLi')
 
     script.
       var _gauges = _gauges || [];
       (function() {
         var t   = document.createElement('script');
-        t.type  = 'text/javascript';
-        t.async = true;
         t.id    = 'gauges-tracker';
         t.setAttribute('data-site-id', '4f1631bbcb25bc723b000007');
         t.src = '//secure.gaug.es/track.js';
-        var s = document.getElementsByTagName('script')[0];
+        var s = document.querySelector('script');
         s.parentNode.insertBefore(t, s);
       })();

@@ -27,7 +27,6 @@
     "eslint": "^3.13.1",
     "eslint-config-brunch": "^1",
     "eslint-plugin-react": "^6.9.0",
-    "grunticon-lib": "^1.0.4",
     "jade-brunch": "^2.8",
     "jstransformer-marked": "^1.0.1",
     "postcss-brunch": "^0.5",
