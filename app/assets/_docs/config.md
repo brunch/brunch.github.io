@@ -13,7 +13,7 @@ Less common options:
 * [`conventions`](#conventions) — defines which files are treated as assets and which ones are ignored in your app.
 * [`watcher`](#watcher) — low-level configuration of the file watcher which empowers Brunch.
 * [`server`](#server) — allows to describe custom web-servers instead of the built-in one.
-* `sourceMaps`, `optimize`, `notifications`, `notificationsTitle` — simple true/false options
+* [`sourceMaps`](#sourcemaps), [`optimize`](#optimize), [`notifications`](#notifications), [`notificationsTitle`](#notificationstitle) — simple true/false options
 * [`hooks`](#hooks) — allows to specify handlers for different moments of building cycle
 
 <span class="note">
@@ -305,19 +305,17 @@ modules: {
 
 ## `notifications`
 
-`Boolean`: enables or disables
-           [Growl](http://growl.info/downloads) /
-           [Growl for Windows](http://www.growlforwindows.com/gfw/help/growlnotify.aspx) /
-           [terminal-notifier](https://github.com/alloy/terminal-notifier#download) /
-           [libnotify for Ubuntu](http://packages.ubuntu.com/search?keywords=libnotify-bin)
-           notifications.
-           Default value is `true` (enabled).
+Notifications are on by default.
 
-When set to `true`, only errors trigger notifications. If you want to display success, warning, or informational messages, set this to an array of strings with the levels you want to see, e.g. `['error', 'warn', 'info']`. See [documentation for the Loggy package](https://github.com/paulmillr/loggy) for complete details.
+* **`false`**: deactivate notifications.
 
-## `notificationsTitle`
+* **Array**:
 
-`String`: sets the title used in notifications. Default value is `Brunch`. [The notifications setting](#notifications) must be enabled for this to have any effect.
+    * `notifications.levels` (`Array`): By default, only errors trigger notifications. If you want to display success, warning, or informational messages, set this to an array of strings with the levels you want to see, e.g. `['error', 'warn', 'info']`.
+    * `notifications.app` (`String`): Sets the title used in notifications. Default value is Brunch.
+    * `notifications.icon` (`String`): Sets the icon of the notification popup.
+
+See [documentation for the Loggy package](https://github.com/paulmillr/loggy) for complete details.
 
 ## `optimize`
 
@@ -412,6 +410,7 @@ server: {
 ## `sourceMaps`
 
 `Boolean`: enables or disables Source Map generation. Default value is `true` (enabled), `false` (disabled) if you run `brunch build --production`.
+
 `String`:
   * set to `'old'` to use the old `@` control character instead of `#`.
   * set to `'absoluteUrl'` to set the `sourceMappingURL` to the complete URL path starting from `config.paths.public`
