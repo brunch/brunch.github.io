@@ -13,7 +13,8 @@ Less common options:
 * [`conventions`](#conventions) — defines which files are treated as assets and which ones are ignored in your app.
 * [`watcher`](#watcher) — low-level configuration of the file watcher which empowers Brunch.
 * [`server`](#server) — allows to describe custom web-servers instead of the built-in one.
-* [`sourceMaps`](#sourcemaps), [`optimize`](#optimize), [`notifications`](#notifications), [`notificationsTitle`](#notificationstitle) — simple true/false options
+* [`notifications`](#notifications) — configures the levels of notifications, their title, icon, etc.
+* [`sourceMaps`](#sourcemaps), [`optimize`](#optimize) — simple true/false options
 * [`hooks`](#hooks) — allows to specify handlers for different moments of building cycle
 
 <span class="note">
