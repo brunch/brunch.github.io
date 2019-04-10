@@ -721,6 +721,12 @@
       "url": "MattCheely/elm-fancy-brunch",
       "category": "Compilers",
       "description": "Elm compiler plugin with in-browser error message display."
+    },
+    {
+      "name": "workbox-brunch",
+      "url": "kamilpiskorski/workbox-brunch",
+      "category": "Others",
+      "description": "Workbox Build support for brunch"
     }
   ]
 }
