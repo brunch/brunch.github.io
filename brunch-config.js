@@ -6,7 +6,7 @@ const nav = [
   {title: 'Plugins', path: 'plugins'},
   {title: 'Skeletons', path: 'skeletons'},
   {title: 'In Production', path: 'examples'},
-  {title: 'Community', path: 'support'},
+  {title: 'GitHub', path: 'https://github.com/brunch/brunch'},
 ];
 
 const docSidebar = [
