@@ -81,6 +81,24 @@ files: {
 }
 ```
 
+### Compiling NPM dependencies
+
+Brunch can also handle compiling client-side libraries, by providing the `compilers` attribute which is an array of strings, listing which plugins should be used to process dependencies. Take care that (for plug-ins that are set to compile common file extensions like .js) that the plugin configuration ignores packages that should not be compiled.
+
+```js
+npm: {
+  //allow to transpile ES6 NPM dependencies
+  compilers: ['babel-brunch'],      
+},
+plugins: {
+  //babel transpiler options
+  babel: {
+    //skip external libraries, except those we wish to compile
+    ignore: [/^node_modules\/(?!LIB_TO_COMPILER)/]
+  }
+}
+```
+
 ### Including modules' styles
 
 Brunch can also handle styles of client-side libraries, by providing `styles` attribute which is key-value object where key is package name and value is an array with relative to package path of styles which should be included.
