@@ -198,6 +198,13 @@
       "description": "Adds Stylus support with <a href=\"http://visionmedia.github.com/nib/\">nib</a> and sprite sheet generation via <a href=\"https://github.com/Ensighten/spritesmith\">Spritesmith</a>."
     },
     {
+      "name": "brunch-preval",
+      "url": "seanmorris/brunch-preval",
+      "category": "Compilers",
+      "subcategory": "Pre-compiled templates",
+      "description": "Stitch the results of simple javascript commands into your static files."
+    },
+    {
       "name": "Handlebars-brunch",
       "url": "brunch/handlebars-brunch",
       "category": "Compilers",
