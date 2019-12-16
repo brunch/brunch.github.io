@@ -24,7 +24,7 @@
     "babel-preset-latest": "^6.22.0",
     "brunch": "^3",
     "clean-css-brunch": "^3",
-    "eslint": "^3.13.1",
+    "eslint": "^6.7",
     "eslint-config-brunch": "^1",
     "eslint-plugin-react": "^6.9.0",
     "jade-brunch": "^2.8",
