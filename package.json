@@ -22,15 +22,15 @@
     "babel-plugin-inferno": "^1.5.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-preset-latest": "^6.22.0",
-    "brunch": "^2",
-    "clean-css-brunch": "^2",
+    "brunch": "^3",
+    "clean-css-brunch": "^3",
     "eslint": "^3.13.1",
     "eslint-config-brunch": "^1",
     "eslint-plugin-react": "^6.9.0",
     "jade-brunch": "^2.8",
     "jstransformer-marked": "^1.0.1",
-    "postcss-brunch": "^0.5",
-    "sass-brunch": "2.10.5",
-    "uglify-js-brunch": "^2.0"
+    "postcss-brunch": "^3",
+    "sass-brunch": "brunch/sass-brunch",
+    "terser-brunch": "^4.0"
   }
 }
