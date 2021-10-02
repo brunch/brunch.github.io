@@ -184,6 +184,7 @@ It is important to keep a few things in mind regarding entry points & their know
 * `npm.styles`: `Object`: a mapping from package name (string) to an array of stylesheet paths (relative to package root) to be included into the build.
 * `npm.static`: `Array`: a list of javascript files from npm packages to be included as-is, without analyzing their dependencies or wrapping them into modules.
 * `npm.aliases`: `Object`: a mapping of files from an alias to a real package name. For example, if you are using `exoskeleton` fork of Backbone, setting this to `{"backbone": "exoskeleton"}` would load Exoskeleton when requiring backbone.
+* `npm.compilers`: `Array`: a list of plugin names that will be used to compile npm packages. For example, to include a coffeescript library, you would set this to `['coffee-script-brunch']`. 
 
 Example:
 
@@ -201,7 +202,6 @@ npm: {
 * `off`: Plugins that may be installed, but should not be run.
 * `on`: Forces listed plugins to be run, such as an optimizer even when the `optimize` flag is off.
 * `only`: Explicitly list the plugins to be used, ignoring any others that are installed.
-* `npm`: An array list of plugin names that will compile `node_modules/`. Defaults to `[]`. *(Note: for the time being, it works only with `.js` files)*
 * _Per-Plugin_: Refer to each plugin's documentation for usage information.
 
 Example:
