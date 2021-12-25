@@ -38,4 +38,10 @@
     remove files from directory and move files from your temporary
     dir here.
   </li>
+  <li>
+    If you use 
+    <a href="http://www.layer0.co/">Layer0</a>,
+    follow the
+    <a href="https://docs.layer0.co/guides/brunch">official guide</a>.
+  </li>
 </ul>
