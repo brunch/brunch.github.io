@@ -13,12 +13,6 @@
       "description": "Adds spritesheet-js support to brunch"
     },
     {
-      "name": "replacer-brunch",
-      "url": "tkesgar/replacer-brunch",
-      "category": "Compilers",
-      "description": "Ruthlessly simple string replacement plugin to Brunch."
-    },
-    {
       "name": "brunch-tumblr-theme-parser",
       "url": "silbinarywolf/brunch-tumblr-theme-parser",
       "category": "Compilers",
