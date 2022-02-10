@@ -8,7 +8,7 @@ Any Brunch **project** consists of the following:
 * **`package.json`**, which lists the plugins you want Brunch to use, as well as your app's own dependencies
   * a **plugin** is what allows Brunch to provide any custom behavior or handle all the various JS-/CSS- transpiled languages for you (see [Using plugins](/docs/using-plugins) and [plugins list](/plugins) to get an idea)
 * **source files** — files that you author in your preferred language, which later get compiled into either JS or CSS
-* **assets** — files that are copied as-is (in some cases these can be compiled too, e.g. Jade &rarr; HTML)
+* **assets** — files that are copied as-is (in some cases these can be compiled too, e.g. Pug &rarr; HTML)
 * **vendor files** — JS and CSS files that do not need any processing
 * **output files** refer to the browser-ready JS bundles or stylesheets, which are obtained by joining your source files into one
 
